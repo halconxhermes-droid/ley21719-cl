@@ -6,10 +6,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirect /api/* to backend
+# Redirect /api/* to backend (IP pública donde corre uvicorn 0.0.0.0:8000)
 [[redirects]]
   from = "/api/*"
-  to = "http://82.239.175.215:9000/api/:splat"
+  to = "http://82.239.175.215:8000/api/:splat"
   status = 200
   force = true
 
