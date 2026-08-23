@@ -1,0 +1,16 @@
+{
+  "descripcion": "Videos educativos NotebookLM sobre Ley 21.719 (fuente: usuario, 22-08-2026)",
+  "resolucion": "1280x720",
+  "videos": [
+    {"archivo": "videos/01-reloj-control-asistencia.mp4", "titulo": "¿Es ilegal el reloj de control de asistencia?", "tema": "biometria-laboral", "duracion": "09:02", "modulos_sugeridos": ["datos-sensibles-biometria", "escenario-laboral"]},
+    {"archivo": "videos/02-algoritmo-rechaza-credito.mp4", "titulo": "¿Qué pasa si un algoritmo rechaza tu crédito?", "tema": "decisiones-automatizadas", "duracion": "06:51", "modulos_sugeridos": ["derechos-titular", "perfilamiento"]},
+    {"archivo": "videos/03-multas-20000-utm-parte1.mp4", "titulo": "Multas de hasta 20.000 UTM", "tema": "sanciones", "duracion": "07:13", "modulos_sugeridos": ["sanciones-fiscalizacion"]},
+    {"archivo": "videos/04-nueva-era-privacidad-5-claves.mp4", "titulo": "Nueva Era de Privacidad: 5 claves", "tema": "introduccion", "duracion": "07:13", "modulos_sugeridos": ["que-es-la-ley"]},
+    {"archivo": "videos/05-fin-ley-19628-arsop-apdp.mp4", "titulo": "Adiós Ley 19.628: ARSOP y APDP", "tema": "transicion-normativa", "duracion": "05:51", "modulos_sugeridos": ["que-es-la-ley", "derechos-titular"]},
+    {"archivo": "videos/06-calendario-vigencia-multas-dic2026.mp4", "titulo": "Calendario: multas desde 1-dic-2026", "tema": "vigencia", "duracion": "07:46", "modulos_sugeridos": ["calendario-vigencia"]},
+    {"archivo": "videos/07-multas-20000-utm-parte2.mp4", "titulo": "Multas 20.000 UTM: qué las gatilla", "tema": "sanciones", "duracion": "07:55", "modulos_sugeridos": ["sanciones-fiscalizacion"]},
+    {"archivo": "videos/08-guia-empresas-6-pasos.mp4", "titulo": "Guía empresas: políticas, banners, ARSOP", "tema": "cumplimiento-empresas", "duracion": "06:44", "modulos_sugeridos": ["obligaciones-responsable"], "ruta": "empresa"},
+    {"archivo": "videos/09-datos-estudiantes-colegios.mp4", "titulo": "¿Están seguros los datos de los estudiantes?", "tema": "datos-menores-colegios", "duracion": "09:53", "modulos_sugeridos": ["datos-ninos"], "ruta": "institucion"},
+    {"archivo": "videos/10-ecommerce-marketing-sernac.mp4", "titulo": "E-commerce y marketing según SERNAC", "tema": "ecommerce-marketing", "duracion": "08:10", "modulos_sugeridos": ["consentimiento", "marketing"], "ruta": "empresa"}
+  ]
+}

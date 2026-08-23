@@ -5,3 +5,4 @@ __pycache__/
 .env
 .venv/
 qa/reports/*.png
+media/videos/*.mp4
