@@ -3,11 +3,18 @@
   command = "pnpm build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirect /api/* to backend
 [[redirects]]
   from = "/api/*"
   to = "http://82.239.175.215:9000/api/:splat"
   status = 200
   force = true
 
-[build.environment]
-  NODE_VERSION = "20"
+# SPA fallback — importante para Vite Router (single-page app)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

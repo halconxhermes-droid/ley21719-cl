@@ -1,6 +1,8 @@
 /**
  * Cliente fetch tipado contra /api/v1 (design/api-contract.md).
  * En dev, Vite proxifica /api → http://localhost:8000.
+ * En prod (Netlify), el request a "/api/v1" se redirige automáticamente
+ * a http://82.239.175.215:9000/api/v1 gracias al [[redirects]] en netlify.toml.
  */
 
 const API_BASE = "/api/v1";
