@@ -1,0 +1,132 @@
+[
+  {
+    "id": "ft-1",
+    "moduleId": "empresa",
+    "pregunta": "¿Cuál es la fecha de vigencia plena de la Ley 21.719?",
+    "opciones": [
+      "13 de diciembre de 2024",
+      "1 de diciembre de 2026",
+      "17 de diciembre de 2026",
+      "1 de enero de 2027"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 1 transitorio: las modificaciones entran en vigencia el día primero del mes vigésimo cuarto posterior a la publicación (13-dic-2024), es decir, el 1 de diciembre de 2026."
+  },
+  {
+    "id": "ft-2",
+    "moduleId": "ciudadano",
+    "pregunta": "¿Cuántos derechos ARSOP reconoce la Ley 21.719 al titular de datos?",
+    "opciones": [
+      "3 (Acceso, Rectificación, Supresión)",
+      "5 (Acceso, Rectificación, Supresión, Oposición, Portabilidad) + bloqueo temporal",
+      "7 derechos sin bloqueo",
+      "Solo 2 (Acceso y Rectificación)"
+    ],
+    "correcta": 1,
+    "explicacion": "Arts. 4-9: Acceso (5), Rectificación (6), Supresión (7), Oposición (8), Portabilidad (9). Art. 11 inc. 7 añade el bloqueo temporal. Art. 8 bis añade el derecho a no ser objeto de decisiones automatizadas."
+  },
+  {
+    "id": "ft-3",
+    "moduleId": "desarrollador",
+    "pregunta": "¿Qué es la Agencia de Protección de Datos Personales (APDP) según el Art. 30?",
+    "opciones": [
+      "Un departamento del Ministerio del Interior",
+      "Una corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, relacionada con el Presidente vía Ministerio de Economía",
+      "Una empresa privada contratada por el Estado",
+      "Un comité del Senado"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 30: la APDP es corporación autónoma de derecho público, de carácter técnico, descentralizado, con personalidad jurídica y patrimonio propio. Se relaciona con el Presidente a través del Ministerio de Economía, Fomento y Turismo."
+  },
+  {
+    "id": "ft-4",
+    "moduleId": "institucion",
+    "pregunta": "¿Cuál es el régimen de PYMEs durante el primer año de vigencia (Art. 6 transitorio)?",
+    "opciones": [
+      "Multas normales sin excepción",
+      "La Agencia podrá aplicar amonestación por escrito en lugar de multas durante los primeros 12 meses",
+      "Suspensión total de la ley para PYMEs",
+      "Solo aplican las infracciones leves"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 6 transitorio: durante los primeros 12 meses de vigencia, para empresas de menor tamaño (Ley 20.416), la Agencia podrá aplicar amonestación por escrito en lugar de multa, señalando la gravedad y las medidas de subsanación."
+  },
+  {
+    "id": "ft-5",
+    "moduleId": "empresa",
+    "pregunta": "¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) según el Art. 15 ter?",
+    "opciones": [
+      "Un reporte trimestral obligatorio para todas las empresas",
+      "Un análisis previo al tratamiento de alto riesgo que evalúa necesidad, proporcionalidad y riesgos",
+      "Un certificado que emite la Agencia",
+      "Una auditoría posterior a una brecha"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 15 ter: la EIPD es un análisis previo obligatorio cuando el tratamiento probablemente produzca alto riesgo. Casos: decisiones automatizadas con efectos jurídicos, tratamiento masivo a gran escala, monitoreo de zonas públicas, datos sensibles en excepciones al consentimiento."
+  },
+  {
+    "id": "ft-6",
+    "moduleId": "ciudadano",
+    "pregunta": "¿Qué plazo tiene el titular para reclamar ante la Agencia tras una denegación (Art. 41)?",
+    "opciones": [
+      "10 días hábiles",
+      "30 días hábiles",
+      "60 días hábiles",
+      "90 días hábiles"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 41 letra a: el titular tiene 30 días hábiles desde la respuesta negativa o el vencimiento del plazo del responsable para presentar reclamación ante la Agencia."
+  },
+  {
+    "id": "ft-7",
+    "moduleId": "desarrollador",
+    "pregunta": "¿Qué exige el Art. 14 sexies respecto a las brechas de seguridad?",
+    "opciones": [
+      "Reportar a la Agencia anualmente",
+      "Reportar a la Agencia por los medios más expeditos y sin dilaciones indebidas; notificar a titulares si afecta datos sensibles o de menores",
+      "No existe obligación de reporte",
+      "Solo reportar si afecta a más de 1.000 personas"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 14 sexies: el responsable debe reportar a la Agencia 'sin dilaciones indebidas' las vulneraciones que causen destrucción, filtración, pérdida o alteración de datos. Si afecta datos sensibles, de menores de 14 o datos económicos, debe también notificar a cada titular."
+  },
+  {
+    "id": "ft-8",
+    "moduleId": "institucion",
+    "pregunta": "¿Cuáles son las 3 vías de licitud de transferencias internacionales (Art. 27)?",
+    "opciones": [
+      "Consentimiento del titular, pago de arancel, autorización del Ministerio",
+      "País con nivel adecuado de protección; cláusulas contractuales/normas corporativas vinculantes; o excepciones tasadas (consentimiento expreso, tratados, etc.)",
+      "Solo a países miembros de la OCDE",
+      "Transferencias prohibidas totalmente"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 27: (a) país con nivel adecuado (Art. 28), (b) cláusulas contractuales o normas corporativas vinculantes con garantías adecuadas, (c) modelo de cumplimiento certificado. Sin estas, solo transferencias específicas y no habituales en casos tasados (consentimiento expreso, tratados, contratos, etc.)."
+  },
+  {
+    "id": "ft-9",
+    "moduleId": "empresa",
+    "pregunta": "¿Puede el dueño de una microempresa asumir el rol de Delegado de Protección de Datos (DPO)?",
+    "opciones": [
+      "No, siempre debe contratar a un profesional externo",
+      "Sí, en micro, pequeñas y medianas empresas el dueño o sus máximas autoridades pueden asumir personalmente las tareas de DPO (Art. 50)",
+      "Solo si la empresa tiene menos de 5 empleados",
+      "Solo con autorización de la Agencia"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 50: 'En las micro, pequeñas y medianas empresas, el dueño o sus máximas autoridades podrán asumir personalmente las tareas de delegado de protección de datos.'"
+  },
+  {
+    "id": "ft-10",
+    "moduleId": "ciudadano",
+    "pregunta": "¿Qué es el Registro Nacional de Sanciones y Cumplimiento (Art. 39)?",
+    "opciones": [
+      "Un registro privado de empresas",
+      "Un registro público administrado por la Agencia que consigna modelos certificados de prevención, responsables que los adoptaron y sanciones impuestas",
+      "Un registro del SERNAC",
+      "Un registro policial de infractores"
+    ],
+    "correcta": 1,
+    "explicacion": "Art. 2 letra z y Art. 39: es un registro nacional de carácter público administrado por la Agencia que consigna los modelos certificados de prevención (MPI), los responsables que los hayan adoptado y las sanciones impuestas."
+  }
+]
