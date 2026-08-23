@@ -1,0 +1,311 @@
+{
+  "quizzes_por_modulo": {
+    "empresa": [
+      {
+        "pregunta": "¿Cuál es la multa máxima para una infracción gravísima según el Art. 35 de la Ley 21.719?",
+        "opciones": [
+          "5.000 UTM",
+          "10.000 UTM",
+          "20.000 UTM",
+          "50.000 UTM"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Art. 35: las infracciones gravísimas se sancionan con multa de hasta 20.000 UTM (~$1.340M CLP). Para grandes empresas reincidentes puede alcanzar el 2% o 4% de los ingresos anuales por ventas (Art. 35 inc. final)."
+      },
+      {
+        "pregunta": "¿Cuál es el plazo que tiene el responsable para responder una solicitud de derechos ARSOP del titular (Art. 11)?",
+        "opciones": [
+          "15 días hábiles",
+          "30 días corridos (prorrogables una vez)",
+          "60 días hábiles improrrogables",
+          "90 días corridos"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 11 inc. 2: el responsable debe pronunciarse a más tardar dentro de 30 días corridos, prorrogables por una sola vez hasta 30 días más. El bloqueo temporal debe resolverse en 2 días hábiles (Art. 11 inc. 7)."
+      },
+      {
+        "pregunta": "¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) y cuándo es obligatoria (Art. 15 ter)?",
+        "opciones": [
+          "Un formulario voluntario para empresas grandes; nunca obligatoria",
+          "Un análisis previo obligatorio cuando el tratamiento puede producir alto riesgo: decisiones automatizadas, tratamiento masivo, datos sensibles, monitoreo de espacios públicos",
+          "Un reporte posterior a una brecha de seguridad",
+          "Un certificado que emite la Agencia automáticamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 15 ter: la EIPD debe realizarse ANTES del tratamiento cuando sea probable que produzca alto riesgo. Casos taxativos: evaluación sistemática y exhaustiva con decisiones automatizadas, tratamiento masivo a gran escala, observación de zona pública, tratamiento de datos sensibles en hipótesis de excepción al consentimiento."
+      },
+      {
+        "pregunta": "¿En qué consiste el Modelo de Prevención de Infracciones (MPI) del Art. 49?",
+        "opciones": [
+          "Un seguro obligatorio contratado con la Agencia",
+          "Un programa de cumplimiento voluntario que incluye designación de delegado (DPO), identificación de riesgos, protocolos internos y mecanismos de reporte de brechas",
+          "Una auditoría anual realizada por el SERNAC",
+          "Un curso obligatorio de capacitación para todos los trabajadores"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 49: el MPI es voluntario y contiene: designación de DPO, identificación de tipo de información y actividades de riesgo, protocolos internos, mecanismos de reporte (incluyendo Art. 14 sexies) y sanciones internas. Implementarlo puede ser atenuante (DS 662/2025)."
+      },
+      {
+        "pregunta": "¿Cuándo una transferencia internacional de datos es lícita sin garantías adicionales (Art. 27)?",
+        "opciones": [
+          "Siempre, sin restricciones",
+          "Cuando el país destino tenga un nivel adecuado de protección (decisión de adecuación por la Agencia, Art. 28)",
+          "Solo si el titular no se opone",
+          "Solo si el país destino pertenece a la OCDE"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Art. 27 letra a: la transferencia es lícita si el país tiene nivel adecuado de protección (Art. 28). Sin adecuación, se requieren cláusulas contractuales, normas corporativas vinculantes, o excepciones tasadas (consentimiento expreso, tratados internacionales, etc.)."
+      }
+    ],
+    "ciudadano": [
+      {
+        "pregunta": "¿Qué significa ARSOP y cuáles son los derechos que incluye?",
+        "opciones": [
+          "Acceso, Rectificación, Supresión, Oposición y Portabilidad",
+          "Acceso, Rectificación, Cancelación, Oposición y Protección",
+          "Autenticación, Registro, Seguridad, Orden y Privacidad",
+          "Auditoría, Revisión, Supervisión, Ortogonalidad y Protección"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "ARSOP son los 5 derechos del titular que sustituyen al antiguo ARCO: Acceso (Art. 5), Rectificación (Art. 6), Supresión (Art. 7), Oposición (Art. 8) y Portabilidad (Art. 9). La Ley 21.719 añade además el bloqueo temporal (Art. 11 inc. 7) y el derecho a no ser objeto de decisiones automatizadas (Art. 8 bis)."
+      },
+      {
+        "pregunta": "¿Qué plazo tienes para reclamar ante la Agencia si el responsable rechaza tu solicitud o no responde (Art. 41)?",
+        "opciones": [
+          "10 días hábiles",
+          "30 días hábiles",
+          "60 días hábiles",
+          "90 días hábiles"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 41 letra a: tienes 30 días hábiles desde que recibas la respuesta negativa o venza el plazo de 30 días del responsable. Si la Agencia no se pronuncia en 10 días hábiles sobre admisibilidad, se entiende acogido (Art. 41 letra c)."
+      },
+      {
+        "pregunta": "Si una empresa sufre una brecha que expone tus datos sensibles o los de tus hijos menores de 14 años, ¿qué debe hacer (Art. 14 sexies)?",
+        "opciones": [
+          "Nada, solo documentarlo internamente",
+          "Reportar a la Agencia sin dilaciones indebidas Y notificar a cada titular afectado en lenguaje claro y sencillo",
+          "Esperar 6 meses para ver si se repite la brecha",
+          "Publicar un aviso en el Diario Oficial únicamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 14 sexies: si la brecha afecta datos sensibles, datos de menores de 14 años o datos económicos/financieros, el responsable debe notificar a cada titular afectado (o difusión masiva si no fuera posible) además de reportar a la Agencia."
+      },
+      {
+        "pregunta": "¿Puede una empresa tratar tus datos personales sin tu consentimiento?",
+        "opciones": [
+          "Nunca, el consentimiento es siempre obligatorio",
+          "Sí, en 6 bases de licitud alternativas al consentimiento (Art. 13): obligaciones contractuales, intereses legítimos, cumplimiento legal, protección vital, etc.",
+          "Sí, pero solo si la empresa tiene más de 10 años de antigüedad",
+          "Sí, pero solo con autorización del SERNAC"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 12 (consentimiento) y Art. 13 (otras 6 fuentes de licitud): el tratamiento es lícito sin consentimiento cuando medie obligación contractual, cumplimiento de ley, ejercicio de derechos, interés legítimo, protección vital o autorización legal expresa."
+      }
+    ],
+    "desarrollador": [
+      {
+        "pregunta": "¿Qué medidas técnicas exige el Art. 14 quinquies para garantizar la seguridad del tratamiento?",
+        "opciones": [
+          "Solo firewall y antivirus",
+          "Seudonimización, cifrado, resiliencia, capacidad de restauración y verificación regular de eficacia",
+          "Únicamente contraseñas de 8 caracteres",
+          "Doble factor de autenticación únicamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 14 quinquies: las medidas deben incluir (a) seudonimización y cifrado, (b) confidencialidad, integridad, disponibilidad y resiliencia, (c) capacidad de restauración tras incidente, (d) verificación regular de eficacia. En controversia, el responsable debe acreditar su existencia."
+      },
+      {
+        "pregunta": "¿Qué requisitos debe cumplir el consentimiento para ser válido bajo la Ley 21.719 (Art. 2 letra p, Art. 12)?",
+        "opciones": [
+          "Tácito, genérico y verbal",
+          "Libre, específico, inequívoco, informado y mediante clara acción afirmativa (no pre-marcado)",
+          "Firmado ante notario únicamente",
+          "Validado por la Agencia previamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 2 letra p: el consentimiento debe ser 'libre, específica, inequívoca e informada, otorgada a través de una declaración o una clara acción afirmativa'. Las casillas premarcadas son inválidas. SERNAC exige diseño de dos botones equivalentes y revocabilidad sencilla."
+      },
+      {
+        "pregunta": "¿Qué es un contrato DPA (Data Processing Agreement) y cuándo es obligatorio (Art. 15 bis)?",
+        "opciones": [
+          "Un acuerdo de no divulgación entre competidores",
+          "Un contrato de encargo de tratamiento entre responsable y encargado que restringe uso, exige seguridad y establece destrucción/devolución al término",
+          "Un permiso de la Agencia para operar",
+          "Un contrato laboral con el DPO"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 15 bis: el responsable que delega tratamiento a un tercero mandatario/encargado debe formalizar un DPA que limite el uso a los fines del encargo, garantice seguridad, y establezca la destrucción o devolución de los datos al finalizar."
+      },
+      {
+        "pregunta": "¿Qué es el 'Shadow AI' y por qué representa un riesgo bajo la Ley 21.719?",
+        "opciones": [
+          "Un tipo de malware que roba datos automáticamente",
+          "El uso no autorizado de herramientas de IA generativa por empleados que introducen datos personales en prompts, constituyendo tratamiento ilícito y potencial brecha",
+          "Una técnica de seudonimización avanzada",
+          "Un servicio de backup automático de la Agencia"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "El Shadow AI (uso de ChatGPT, Gemini, Copilot con datos de clientes/RRHH sin autorización) constituye tratamiento ilícito y puede generar brechas. Las empresas deben implementar políticas de gobernanza de IA y sanitizar PII antes de enviar datos a APIs externas."
+      }
+    ],
+    "institucion": [
+      {
+        "pregunta": "¿Pueden los órganos públicos tratar datos personales sin consentimiento del titular (Art. 20)?",
+        "opciones": [
+          "No, el consentimiento es siempre obligatorio también para el Estado",
+          "Sí, cuando el tratamiento se realiza para el cumplimiento de sus funciones legales dentro del ámbito de sus competencias",
+          "Sí, pero solo con autorización del Presidente",
+          "Solo si los datos son de funcionarios públicos"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 20: es lícito el tratamiento por órganos públicos cuando se realiza para el cumplimiento de sus funciones legales, dentro del ámbito de sus competencias. Sin embargo, deben respetar los principios del Art. 3 y los derechos ARSOP del titular."
+      },
+      {
+        "pregunta": "¿Qué obligación de transparencia mensual tienen los organismos públicos respecto a convenios de cesión de datos (Art. 22)?",
+        "opciones": [
+          "No tienen obligación de transparencia",
+          "Informar mensualmente en su sitio web institucional los convenios suscritos de cesión o transferencia de datos personales",
+          "Publicar en el Diario Oficial trimestralmente",
+          "Enviar un reporte anual al Congreso"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 22: los órganos públicos están facultados para ceder datos entre sí para cumplimiento de funciones, pero deben publicar mensualmente en su sitio web los convenios de cesión. Esta obligación será fiscalizada por la Agencia."
+      },
+      {
+        "pregunta": "¿Qué responsabilidad personal tiene el jefe superior de un órgano público por incumplimientos de la ley (Art. 44)?",
+        "opciones": [
+          "Ninguna, la responsabilidad es siempre del Estado",
+          "Suspensión del cargo por 5 a 15 días hábiles o multas deducidas de su remuneración mensual (20%-50%)",
+          "Destitución inmediata sin proceso",
+          "Solo una amonestación verbal"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 44: la sanción no recae sobre el erario fiscal sino que el jefe superior del servicio puede ser suspendido 5-15 días hábiles o recibir multas deducidas de su remuneración. Esto evita que el presupuesto público se vea afectado por incumplimientos."
+      },
+      {
+        "pregunta": "¿Qué debe hacer el Servicio de Registro Civil antes de la entrada en vigencia (Art. 3 transitorio)?",
+        "opciones": [
+          "Crear un nuevo registro nacional de bases de datos",
+          "Eliminar el registro de los bancos de datos personales del antiguo Art. 22 de la Ley 19.628",
+          "Migrar todos los datos a la nube",
+          "Contratar al primer DPO del país"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 3 transitorio: el Registro Civil debe eliminar el registro de bancos de datos personales contemplado en el antiguo Art. 22 de la Ley 19.628 dentro de los 60 días anteriores a la entrada en vigencia."
+      }
+    ]
+  },
+  "test_final": [
+    {
+      "pregunta": "¿Cuál es la fecha de vigencia plena de la Ley 21.719?",
+      "opciones": [
+        "13 de diciembre de 2024",
+        "1 de diciembre de 2026",
+        "17 de diciembre de 2026",
+        "1 de enero de 2027"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 1 transitorio: las modificaciones entran en vigencia el día primero del mes vigésimo cuarto posterior a la publicación (13-dic-2024), es decir, el 1 de diciembre de 2026."
+    },
+    {
+      "pregunta": "¿Cuántos derechos ARSOP reconoce la Ley 21.719 al titular de datos?",
+      "opciones": [
+        "3 (Acceso, Rectificación, Supresión)",
+        "5 (Acceso, Rectificación, Supresión, Oposición, Portabilidad) + bloqueo temporal",
+        "7 derechos sin bloqueo",
+        "Solo 2 (Acceso y Rectificación)"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Arts. 4-9: Acceso (5), Rectificación (6), Supresión (7), Oposición (8), Portabilidad (9). Art. 11 inc. 7 añade el bloqueo temporal. Art. 8 bis añade el derecho a no ser objeto de decisiones automatizadas."
+    },
+    {
+      "pregunta": "¿Qué es la Agencia de Protección de Datos Personales (APDP) según el Art. 30?",
+      "opciones": [
+        "Un departamento del Ministerio del Interior",
+        "Una corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, relacionada con el Presidente vía Ministerio de Economía",
+        "Una empresa privada contratada por el Estado",
+        "Un comité del Senado"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 30: la APDP es corporación autónoma de derecho público, de carácter técnico, descentralizado, con personalidad jurídica y patrimonio propio. Se relaciona con el Presidente a través del Ministerio de Economía, Fomento y Turismo."
+    },
+    {
+      "pregunta": "¿Cuál es el régimen de PYMEs durante el primer año de vigencia (Art. 6 transitorio)?",
+      "opciones": [
+        "Multas normales sin excepción",
+        "La Agencia podrá aplicar amonestación por escrito en lugar de multas durante los primeros 12 meses",
+        "Suspensión total de la ley para PYMEs",
+        "Solo aplican las infracciones leves"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 6 transitorio: durante los primeros 12 meses de vigencia, para empresas de menor tamaño (Ley 20.416), la Agencia podrá aplicar amonestación por escrito en lugar de multa, señalando la gravedad y las medidas de subsanación."
+    },
+    {
+      "pregunta": "¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) según el Art. 15 ter?",
+      "opciones": [
+        "Un reporte trimestral obligatorio para todas las empresas",
+        "Un análisis previo al tratamiento de alto riesgo que evalúa necesidad, proporcionalidad y riesgos",
+        "Un certificado que emite la Agencia",
+        "Una auditoría posterior a una brecha"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 15 ter: la EIPD es un análisis previo obligatorio cuando el tratamiento probablemente produzca alto riesgo. Casos: decisiones automatizadas con efectos jurídicos, tratamiento masivo a gran escala, monitoreo de zonas públicas, datos sensibles en excepciones al consentimiento."
+    },
+    {
+      "pregunta": "¿Qué plazo tiene el titular para reclamar ante la Agencia tras una denegación (Art. 41)?",
+      "opciones": [
+        "10 días hábiles",
+        "30 días hábiles",
+        "60 días hábiles",
+        "90 días hábiles"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 41 letra a: el titular tiene 30 días hábiles desde la respuesta negativa o el vencimiento del plazo del responsable para presentar reclamación ante la Agencia."
+    },
+    {
+      "pregunta": "¿Qué exige el Art. 14 sexies respecto a las brechas de seguridad?",
+      "opciones": [
+        "Reportar a la Agencia anualmente",
+        "Reportar a la Agencia por los medios más expeditos y sin dilaciones indebidas; notificar a titulares si afecta datos sensibles o de menores",
+        "No existe obligación de reporte",
+        "Solo reportar si afecta a más de 1.000 personas"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 14 sexies: el responsable debe reportar a la Agencia 'sin dilaciones indebidas' las vulneraciones que causen destrucción, filtración, pérdida o alteración de datos. Si afecta datos sensibles, de menores de 14 o datos económicos, debe también notificar a cada titular."
+    },
+    {
+      "pregunta": "¿Cuáles son las 3 vías de licitud de transferencias internacionales (Art. 27)?",
+      "opciones": [
+        "Consentimiento del titular, pago de arancel, autorización del Ministerio",
+        "País con nivel adecuado de protección; cláusulas contractuales/normas corporativas vinculantes; o excepciones tasadas (consentimiento expreso, tratados, etc.)",
+        "Solo a países miembros de la OCDE",
+        "Transferencias prohibidas totalmente"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 27: (a) país con nivel adecuado (Art. 28), (b) cláusulas contractuales o normas corporativas vinculantes con garantías adecuadas, (c) modelo de cumplimiento certificado. Sin estas, solo transferencias específicas y no habituales en casos tasados (consentimiento expreso, tratados, contratos, etc.)."
+    },
+    {
+      "pregunta": "¿Puede el dueño de una microempresa asumir el rol de Delegado de Protección de Datos (DPO)?",
+      "opciones": [
+        "No, siempre debe contratar a un profesional externo",
+        "Sí, en micro, pequeñas y medianas empresas el dueño o sus máximas autoridades pueden asumir personalmente las tareas de DPO (Art. 50)",
+        "Solo si la empresa tiene menos de 5 empleados",
+        "Solo con autorización de la Agencia"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 50: 'En las micro, pequeñas y medianas empresas, el dueño o sus máximas autoridades podrán asumir personalmente las tareas de delegado de protección de datos.'"
+    },
+    {
+      "pregunta": "¿Qué es el Registro Nacional de Sanciones y Cumplimiento (Art. 39)?",
+      "opciones": [
+        "Un registro privado de empresas",
+        "Un registro público administrado por la Agencia que consigna modelos certificados de prevención, responsables que los adoptaron y sanciones impuestas",
+        "Un registro del SERNAC",
+        "Un registro policial de infractores"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 2 letra z y Art. 39: es un registro nacional de carácter público administrado por la Agencia que consigna los modelos certificados de prevención (MPI), los responsables que los hayan adoptado y las sanciones impuestas."
+    }
+  ]
+}
