@@ -2,7 +2,8 @@
 from __future__ import annotations
 
 MODULE_WITH_QUESTIONS = "empresa"
-EXPECTED_QUESTION_COUNT = 5
+# Actualizado: ahora hay 19 preguntas (5 originales + 14 enriquecidas del proyecto manual)
+EXPECTED_QUESTION_COUNT = 19
 
 
 def test_get_quiz_happy_path(client):
