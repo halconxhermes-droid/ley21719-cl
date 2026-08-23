@@ -1,0 +1,343 @@
+1
+00:00:00,000 --> 00:00:04,180
+Vamos directo al grano con este análisis, porque hoy desplosamos uno de los cambios
+
+2
+00:00:04,180 --> 00:00:08,680
+regulatorios más gigantescos a los que se ha enfrentado el ecosistema sanitario en Chile.
+
+3
+00:00:09,260 --> 00:00:14,120
+Para quienes administran hospitales, centros clínicos, laboratorios o plataformas de telemedicina,
+
+4
+00:00:14,520 --> 00:00:18,620
+hay una fecha que debería estar marcada en rojo en todos los calendarios estratégicos,
+
+5
+00:00:19,040 --> 00:00:24,520
+el 1 de diciembre de 2026. Ese día entran en pleno vigor dos marcos legales que van a
+
+6
+00:00:24,520 --> 00:00:29,200
+transformar radicalmente cómo procesamos, resguardamos y auditamos la información clínica.
+
+7
+00:00:29,200 --> 00:00:34,020
+Y ojo, no hablamos de actualizar unos simples términos y condiciones. Hablamos de un rediseño
+
+8
+00:00:34,020 --> 00:00:38,760
+absoluto de la infraestructura digital en el sector salud. 20.000 unidades tributarias
+
+9
+00:00:38,760 --> 00:00:44,520
+mensuales. Es una barbaridad. Estamos hablando de unos 1.400 millones de pesos chilenos como
+
+10
+00:00:44,520 --> 00:00:49,480
+sanción económica máxima por infracciones gravísimas bajo la nueva normativa. Para poner
+
+11
+00:00:49,480 --> 00:00:53,920
+esto en perspectiva, el coste de una sola de estas multas equivale básicamente a comprar un
+
+12
+00:00:53,920 --> 00:00:58,320
+equipo de resonancia magnética de última generación. El cuide la cuestión es entender
+
+13
+00:00:58,320 --> 00:00:59,180
+lo que esto significa.
+
+14
+00:00:59,200 --> 00:01:04,700
+Una brecha de datos ya no es un pequeño dolor de cabeza para el equipo de soporte técnico. Es un
+
+15
+00:01:04,700 --> 00:01:09,700
+riesgo clínico y financiero de primerísimo nivel, capaz de comprometer seriamente la viabilidad y la
+
+16
+00:01:09,700 --> 00:01:14,640
+reputación de cualquier institución médica. Nuestra hoja de ruta para este análisis incluye
+
+17
+00:01:14,640 --> 00:01:22,260
+cinco puntos muy claros. Primero, las leyes 21.719 y 21.663. Segundo, el tratamiento de
+
+18
+00:01:22,260 --> 00:01:27,540
+las fichas clínicas como datos sensibles. Tercero, la obligatoriedad de la IPD. Cuarto,
+
+19
+00:01:29,200 --> 00:01:43,760
+las leyes 21.719 y 21.663. Y lo que supone este gran cambio regulatorio. Durante décadas,
+
+20
+00:01:44,000 --> 00:01:48,620
+el sector ha operado en una especie de zona gris tecnológica, sin fiscalizadores demasiado
+
+21
+00:01:48,620 --> 00:01:53,300
+estrictos. Pues bien, eso se acabó. Hoy el ecosistema es dual. Por un lado,
+
+22
+00:01:53,300 --> 00:01:58,980
+tenemos la reciente ley 21.663 de ciberseguridad, que da un poder enorme a la nueva Agencia
+
+23
+00:01:59,200 --> 00:02:03,300
+Nacional de Ciberseguridad y a su equipo de la expuesta, el CISIRT. Y en paralelo,
+
+24
+00:02:03,520 --> 00:02:09,660
+entra en juego la ley 21.719 sobre protección de datos personales, que crea la APDP, la Agencia
+
+25
+00:02:09,660 --> 00:02:14,200
+de Protección de Datos Personales. En la práctica, esto significa que las áreas de tecnología de
+
+26
+00:02:14,200 --> 00:02:19,660
+las clínicas tienen que estructurarse para rendir cuentas ante dos organismos muy poderosos y con
+
+27
+00:02:19,660 --> 00:02:23,840
+facultades sancionatorias reales al mismo tiempo. Es un auténtico malabarismo operativo.
+
+28
+00:02:24,400 --> 00:02:28,600
+Pasamos a la sección 2, fichas clínicas consideradas como datos sensibles y el impacto
+
+29
+00:02:29,200 --> 00:02:33,800
+de los datos de salud. Aquí entramos en el corazón del asunto. La ley es tajante al
+
+30
+00:02:33,800 --> 00:02:38,480
+definir la información sensible. Cualquier dato sobre estados de salud, información biométrica,
+
+31
+00:02:38,840 --> 00:02:42,980
+perfiles genéticos y, por descontado, los diagnósticos médicos, exige ahora protección
+
+32
+00:02:42,980 --> 00:02:48,120
+máxima. Tratar estos registros requiere un estándar excepcionalmente riguroso. Ya no nos
+
+33
+00:02:48,120 --> 00:02:52,640
+vale con un consentimiento tácito o con dejar una casilla premarcada en un formulario de admisión.
+
+34
+00:02:53,140 --> 00:02:58,120
+El consentimiento tiene que ser explícito, inequívoco y revocable. Y si lo pensamos bien,
+
+35
+00:02:58,120 --> 00:02:59,120
+tiene todo el sentido.
+
+36
+00:02:59,200 --> 00:03:04,640
+Un acceso indebido a datos médicos puede generar discriminación o exponer las vulnerabilidades
+
+37
+00:03:04,640 --> 00:03:11,620
+más íntimas de una persona. De esta legislación se extrae una premisa brutal. Esa vieja cultura
+
+38
+00:03:11,620 --> 00:03:17,280
+hospitalaria de guardemos todo por si acaso se ha convertido en una bomba de relojería. El
+
+39
+00:03:17,280 --> 00:03:23,100
+mandato actual es pura minimización y proporcionalidad. Las instituciones están obligadas a tener políticas
+
+40
+00:03:23,100 --> 00:03:28,440
+de retención activas. Es decir, una vez que el propósito original de un dato ha caducado y no
+
+41
+00:03:29,200 --> 00:03:35,440
+puede mantenerlo, esa información se elimina de forma sistemática o se anonimiza por completo. Es así de simple.
+
+42
+00:03:35,440 --> 00:03:41,620
+Avanzamos a la sección 3. La obligatoriedad de la EIPD y el mandato de diagnóstico.
+
+43
+00:03:41,620 --> 00:03:48,960
+Vamos a desglosar este concepto que es absolutamente clave. La evaluación de impacto en la protección de datos, o EIPD.
+
+44
+00:03:48,960 --> 00:03:54,320
+Y la palabra más importante de toda esta diapositiva es antes. No es el típico formulario burocrático que
+
+45
+00:03:54,320 --> 00:03:58,520
+rellenamos para salir del paso después de instalar un sistema. Si un centro médico va a lanzar un
+
+46
+00:03:58,520 --> 00:04:02,960
+nuevo portal para pacientes, a usar inteligencia artificial para diagnosticar o simplemente a
+
+47
+00:04:02,960 --> 00:04:07,700
+cambiar su base de datos principal, la ley exige que este análisis se haga de forma proactiva.
+
+48
+00:04:08,180 --> 00:04:12,380
+Hacerlo cuando el sistema ya está procesando datos sensibles significa que ese software ha nacido
+
+49
+00:04:12,380 --> 00:04:17,680
+siendo ilegal. Para que quede súper claro, pensemos en la EIPD exactamente como si fuera un proceso de
+
+50
+00:04:17,680 --> 00:04:18,940
+atención médica. El proceso de atención médica es un proceso de atención médica que se hace con la
+
+51
+00:04:18,959 --> 00:04:23,700
+EIPD. El paso 1 es el mapeo de datos, digamos que es la anamnesis del paciente. Consiste en saber con
+
+52
+00:04:23,700 --> 00:04:28,660
+total exactitud clínica qué datos se capturan, en qué servidor residen y a qué proveedores externos
+
+53
+00:04:28,660 --> 00:04:33,420
+van a parar. El paso 2 es identificar los riesgos, que sería el diagnóstico, qué pasaría si hay una
+
+54
+00:04:33,420 --> 00:04:38,140
+filtración en ese servidor. Y el paso 3 es la mitigación, la receta médica. Aquí se definen los
+
+55
+00:04:38,140 --> 00:04:42,540
+controles técnicos, como aislar servidores, y se documenta absolutamente todo para tener pruebas
+
+56
+00:04:42,540 --> 00:04:48,860
+del cumplimiento. Sección 4. Ciberseguridad y reporte de brechas. Hablemos de los protocolos
+
+57
+00:04:48,860 --> 00:04:55,060
+de seguridad operativa. Imaginemos que ocurre lo peor, un ciberataque masivo, como un ransomware,
+
+58
+00:04:55,300 --> 00:05:00,120
+que secuestra los datos del hospital. En ese momento de pánico, se activa un doble cronómetro
+
+59
+00:05:00,120 --> 00:05:05,560
+operativo que no perdona. La ley de ciberseguridad nos da una ventana increíblemente estrecha,
+
+60
+00:05:05,940 --> 00:05:10,860
+apenas tres horas para reportar el incidente al CSICERT. Y por otro lado, la ley de protección
+
+61
+00:05:10,860 --> 00:05:16,000
+de datos nos da un máximo de 72 horas para notificar la filtración a la APDP. Sin un
+
+62
+00:05:16,000 --> 00:05:18,840
+protocolo ensayado hasta el aburrimiento y altamente automatizado,
+
+63
+00:05:18,860 --> 00:05:22,880
+es literalmente imposible cumplir con estos tiempos mientras intentamos apagar el fuego
+
+64
+00:05:22,880 --> 00:05:27,620
+en los servidores. Todo esto demuestra que el cumplimiento ya no es solo cosa del departamento
+
+65
+00:05:27,620 --> 00:05:32,460
+legal. La privacidad tiene que incrustarse en el mismísimo código informático de la clínica.
+
+66
+00:05:32,880 --> 00:05:37,020
+Hablamos de medidas muy concretas. Cifrado absoluto en reposo, para cualquier tabla que
+
+67
+00:05:37,020 --> 00:05:41,520
+contenga diagnósticos o números de identificación. Hablamos de limpiar a fondo los registros del
+
+68
+00:05:41,520 --> 00:05:45,860
+sistema para que un simple log de errores no exponga el nombre de un paciente. Hablamos
+
+69
+00:05:45,860 --> 00:05:48,080
+de planes de respuesta documentados al milímetro.
+
+70
+00:05:48,860 --> 00:05:53,240
+Hablamos, por supuesto, de desarrollar portales donde la gente pueda ejercer sus derechos ARS-OB,
+
+71
+00:05:53,240 --> 00:05:58,460
+acceso, rectificación, supresión, oposición y portabilidad, y que el sistema informático ejecute
+
+72
+00:05:58,460 --> 00:06:04,080
+esas órdenes de forma automática y fiable. Finalmente, llegamos a la sección 5, la ruta
+
+73
+00:06:04,080 --> 00:06:08,980
+de cumplimiento clínico y el camino hacia la resiliencia. Esta lista es, esencialmente,
+
+74
+00:06:09,140 --> 00:06:14,340
+un plan de salud preventivo indispensable para nuestra infraestructura digital. Todo tiene que
+
+75
+00:06:14,340 --> 00:06:18,640
+empezar con un levantamiento integral, creando el famoso RAT, el registro de actividades de
+
+76
+00:06:18,640 --> 00:06:23,440
+tratamiento, que es el gran inventario de los flujos de datos. Le siguen políticas estrictas
+
+77
+00:06:23,440 --> 00:06:27,680
+sobre el BIOD, es decir, los dispositivos personales que los médicos utilizan en los
+
+78
+00:06:27,680 --> 00:06:32,520
+pasillos de la clínica. Dada la sensibilidad de estos datos, hay que nombrar sí o sí a un
+
+79
+00:06:32,520 --> 00:06:37,320
+delegado de protección de datos, un DPO, que garantice todo a nivel interno. Y, finalmente,
+
+80
+00:06:37,660 --> 00:06:42,840
+implementar el cifrado y ensayar los protocolos de incidentes a 3 y 72 horas de los que acabamos
+
+81
+00:06:42,840 --> 00:06:48,340
+de hablar. El tiempo pasa volando y la exigencia a estas nuevas agencias fiscalizadoras va a sentar
+
+82
+00:06:48,640 --> 00:06:53,180
+brutal en el país. Las instituciones que vean esto no como una carga administrativa,
+
+83
+00:06:53,300 --> 00:06:57,100
+sino como una oportunidad gigante para blindar la confianza de sus pacientes,
+
+84
+00:06:57,500 --> 00:07:01,580
+van a definir el estándar de oro en la medicina del futuro. Así que, la pregunta clave es,
+
+85
+00:07:01,940 --> 00:07:05,780
+¿sobreviviría la infraestructura actual a una auditoría estricta en 2026?
+
+86
+00:07:06,200 --> 00:07:09,240
+Es el momento de empezar esos mapeos de datos, hoy mismo.

@@ -1,0 +1,403 @@
+1
+00:00:00,000 --> 00:00:04,520
+Vamos a meternos de lleno en este análisis. Hoy toca abordar un cambio absolutamente monumental
+
+2
+00:00:04,520 --> 00:00:09,380
+que está a punto de poner patas arriba el ecosistema digital en Chile. Hablamos, por
+
+3
+00:00:09,380 --> 00:00:14,780
+supuesto, de la inminente entrada en vigor de la Ley 21.719 sobre protección de datos
+
+4
+00:00:14,780 --> 00:00:20,400
+personales. Apuntad la fecha, 1 de diciembre de 2026. Y ojo, porque esto no es una simple
+
+5
+00:00:20,400 --> 00:00:24,420
+actualización burocrática de esas que se quedan en un cajón. Es un rediseño completo,
+
+6
+00:00:24,620 --> 00:00:28,600
+desde los cimientos, de cómo las plataformas interactúan con la información. Así que
+
+7
+00:00:28,600 --> 00:00:32,780
+vamos a desgranar exactamente qué significa este terremoto legal para el diseño web,
+
+8
+00:00:32,980 --> 00:00:37,340
+el marketing y el comercio electrónico. Bueno, pues vamos a ello. En el análisis de hoy
+
+9
+00:00:37,340 --> 00:00:42,040
+repasaremos el fin de este salvaje oeste digital, cómo deben ser los nuevos banners según
+
+10
+00:00:42,040 --> 00:00:47,080
+el CERNAC, el bloqueo preventivo de scripts, cómo conseguir un consentimiento verdaderamente
+
+11
+00:00:47,080 --> 00:00:51,520
+granular para marketing, qué pasa con la gestión del e-commerce y, finalmente, cómo
+
+12
+00:00:51,520 --> 00:00:54,360
+podemos convertir todo esto en una ventaja competitiva.
+
+13
+00:00:54,780 --> 00:00:58,360
+Punto número 1. El fin del salvaje oeste y el reemplazo
+
+14
+00:00:58,600 --> 00:01:05,860
+de la antigua ley 19.628. A ver, durante casi 25 años, el entorno digital en Chile ha operado
+
+15
+00:01:05,860 --> 00:01:11,340
+con una normativa que, seamos sinceros, no asustaba a nadie. Un verdadero salvaje oeste de los datos.
+
+16
+00:01:11,800 --> 00:01:15,980
+Pero para entender por qué ahora la cosa va en serio, solo hay que fijarse en este número. La
+
+17
+00:01:15,980 --> 00:01:20,360
+nueva Agencia de Protección de Datos Personales va a poder imponer multas de hasta 20.000 unidades
+
+18
+00:01:20,360 --> 00:01:24,920
+tributarias mensuales. Es una barbaridad. Estamos hablando de cifras que superan los
+
+19
+00:01:24,920 --> 00:01:28,580
+mil millones de pesos chilenos. O lo que es lo mismo, te pueden llegar a quitar hasta un
+
+20
+00:01:28,600 --> 00:01:34,000
+4% de los ingresos anuales si hay reincidencia. Es el tipo de sanción que quita el sueño a
+
+21
+00:01:34,000 --> 00:01:38,720
+cualquier director financiero. Ignorar esto ya no es una opción. Es un riesgo literalmente
+
+22
+00:01:38,720 --> 00:01:44,000
+insostenible. Para ponernos en contexto con las fechas, la ley se publicó en diciembre de 2024.
+
+23
+00:01:44,580 --> 00:01:48,800
+Eso significa que ahora mismo estamos en una fase crucial de preparación, lo que se llama el
+
+24
+00:01:48,800 --> 00:01:53,500
+periodo de vacancia legal. Las organizaciones tienen de margen hasta el 1 de diciembre de
+
+25
+00:01:53,500 --> 00:01:58,280
+2026 para darle la vuelta a sus operaciones antes de que empiecen las inspecciones de verdad.
+
+26
+00:01:58,600 --> 00:02:03,360
+Y cuidado con pensar que esto se arregla un mes antes con un par de parches. Quienes lo dejen
+
+27
+00:02:03,360 --> 00:02:07,680
+para el último minuto se van a dar de bruces contra un muro técnico ilegal imposible de saltar.
+
+28
+00:02:08,139 --> 00:02:13,360
+Pasamos al segundo punto. Los banners, según el CERNAC, la puerta de entrada digital.
+
+29
+00:02:14,080 --> 00:02:18,520
+Esta primera interacción, esa ventanita que salta nada más entrar en una web,
+
+30
+00:02:18,880 --> 00:02:23,500
+ilustra a la perfección el cambio de paradigma. Hasta ahora lo normal era encontrarse con los
+
+31
+00:02:23,500 --> 00:02:28,500
+famosos patrones oscuros. Ya sabéis, casillas que ya vienen marcadas, botones gigantes,
+
+32
+00:02:28,500 --> 00:02:32,800
+de aceptar todo y un laberinto imposible si querías rechazar algo. Pues bien,
+
+33
+00:02:33,000 --> 00:02:38,700
+el CERNAC exige ahora exactamente lo contrario. Privacidad por defecto. Un diseño verdaderamente
+
+34
+00:02:38,700 --> 00:02:43,120
+conforme tiene que ser transparente. Las cookies, que no sean estrictamente necesarias,
+
+35
+00:02:43,440 --> 00:02:47,380
+tienen que estar desactivadas desde el principio, usando un lenguaje clarísimo y,
+
+36
+00:02:47,500 --> 00:02:52,880
+por supuesto, sin trampas visuales de ningún tipo. Hay una máxima que resume todo este nuevo marco
+
+37
+00:02:52,880 --> 00:02:57,660
+legal. Para que el consentimiento sea válido, tiene que cumplir cuatro reglas de oro. Tiene
+
+38
+00:02:57,660 --> 00:03:01,960
+que ser libre de cualquier tipo de presión. Tiene que informar claramente de para qué se van a usar
+
+39
+00:03:01,960 --> 00:03:07,360
+los datos. Debe ser específico para cada caso y, sobre todo, inequívoco. Es decir, requiere que
+
+40
+00:03:07,360 --> 00:03:12,880
+la persona haga algo de forma activa y consciente, como hacer clic en un botón desmarcado. Eso de
+
+41
+00:03:12,880 --> 00:03:17,280
+navegar por una página y que se dé por hecho que aceptas las condiciones, eso ya es historia.
+
+42
+00:03:17,880 --> 00:03:21,940
+Pero claro, una vez que tenemos un banner precioso y totalmente transparente,
+
+43
+00:03:22,180 --> 00:03:27,460
+surge la gran pregunta técnica. ¿Qué está pasando realmente en las tripas de la página web antes de
+
+44
+00:03:27,460 --> 00:03:32,320
+que alguien le dé al botón de aceptar? Porque no sirve de nada tener un diseño muy ético si,
+
+45
+00:03:32,480 --> 00:03:36,160
+por detrás, los datos ya se están fugando hacia servidores de terceros.
+
+46
+00:03:36,640 --> 00:03:40,560
+Tercer punto. El bloqueo preventivo de scripts y su desafío técnico.
+
+47
+00:03:41,160 --> 00:03:45,800
+Aquí es justo donde la ley deja de ser un texto aburrido y se convierte en un reto puro y duro de
+
+48
+00:03:45,800 --> 00:03:51,360
+arquitectura de software. Hay una coreografía exacta que tiene que cumplirse sí o sí. Paso 1. Alguien
+
+49
+00:03:51,360 --> 00:03:56,300
+entra en la web. Paso 2. Y ojo que este es vital. Todas las tecnologías de rastreo, cosas como el
+
+50
+00:03:57,460 --> 00:04:02,460
+Analytics, tienen que estar bloqueadas por defecto. Cero capturas. Paso 3. Se produce la
+
+51
+00:04:02,460 --> 00:04:07,860
+aceptación activa. Y solo entonces, en el paso 4, se pueden activar esos scripts. Si un píxel recopila
+
+52
+00:04:07,860 --> 00:04:11,920
+información un solo milisegundo antes de ese opt-in, ya hay una infracción sobre la mesa.
+
+53
+00:04:12,440 --> 00:04:16,720
+En el fondo, de lo que estamos hablando es de la privacidad desde el diseño. El cumplimiento
+
+54
+00:04:16,720 --> 00:04:21,399
+normativo ya no es un tocho de texto legal redactado por abogados y escondido en la letra
+
+55
+00:04:21,399 --> 00:04:26,420
+pequeña del pie de página. Ahora es una cuestión técnica. Tiene que estar integrado en el ADN del
+
+56
+00:04:26,420 --> 00:04:27,440
+software desde el primer instante. Y, por último, la privacidad desde el primer instante. El
+
+57
+00:04:27,460 --> 00:04:33,360
+momento en el que el equipo de desarrollo empieza a escribir código. Punto 4. El consentimiento
+
+58
+00:04:33,360 --> 00:04:38,060
+granular para marketing y cómo navegar la transacción. Cuando entramos en el terreno
+
+59
+00:04:38,060 --> 00:04:43,500
+de las transacciones y las campañas de marketing, la cosa se pone aún más estricta. Volvemos a los
+
+60
+00:04:43,500 --> 00:04:47,300
+requisitos que mencionamos antes para el consentimiento, pero hay que sumar una palabra
+
+61
+00:04:47,300 --> 00:04:53,060
+absolutamente clave. Revocable. Los mecanismos para echarse atrás y retirar el consentimiento
+
+62
+00:04:53,060 --> 00:04:57,260
+tienen que ser exactamente igual de fáciles de usar que los que había para darlo. Si
+
+63
+00:04:57,260 --> 00:05:01,620
+bastó con un solo clic para suscribirse a una newsletter, tiene que bastar con un solo clic
+
+64
+00:05:01,620 --> 00:05:06,420
+para darse de baja. Así de simple. Y mucha atención a esto, que es uno de los errores
+
+65
+00:05:06,420 --> 00:05:11,860
+más típicos y que más caro se va a pagar. El famoso empaquetamiento. Es completamente
+
+66
+00:05:11,860 --> 00:05:16,620
+ilegal obligar a alguien a suscribirse a un boletín comercial o ceder sus datos a otras
+
+67
+00:05:16,620 --> 00:05:21,740
+empresas solo para poder usar un servicio o aceptar unos términos y condiciones. Se acabó
+
+68
+00:05:21,740 --> 00:05:27,060
+el todo en uno. Cada actividad necesita su propia validación por separado. Condicionar un servicio a
+
+69
+00:05:27,260 --> 00:05:33,440
+regalen datos para marketing está rotundamente prohibido. Sección 5. La gestión de e-commerce.
+
+70
+00:05:34,020 --> 00:05:40,200
+Carritos y transacciones. En pleno proceso de compra online, el detalle crucial es entender que no todos
+
+71
+00:05:40,200 --> 00:05:44,900
+los datos juegan con las mismas reglas legales. Para procesar un pedido, la base legal es lo que
+
+72
+00:05:44,900 --> 00:05:49,640
+se llama la ejecución de un contrato. Es de cajón. Necesitas la dirección física para poder enviar
+
+73
+00:05:49,640 --> 00:05:55,040
+el paquete. Pero si lo que quieres es mandar ese típico correo recordando un carrito abandonado,
+
+74
+00:05:55,380 --> 00:05:57,240
+la película cambia. Ahí vas a necesitar un correo de e-commerce para poder enviar el paquete.
+
+75
+00:05:57,260 --> 00:06:02,060
+Necesitas un consentimiento explícito previo. O bien poder justificar un interés legítimo muy
+
+76
+00:06:02,060 --> 00:06:07,180
+bien fundamentado y documentado. Y la cosa no acaba ahí, porque los consumidores ganan
+
+77
+00:06:07,180 --> 00:06:12,800
+muchísimo poder con esta ley. Dejamos atrás los viejos derechos ARCO y pasamos a los ARSOP
+
+78
+00:06:12,800 --> 00:06:17,720
+más B. Esto incorpora cosas tan interesantes como la portabilidad, que permite llevarse los
+
+79
+00:06:17,720 --> 00:06:23,180
+datos a otro proveedor en un formato estructurado. Y una novedad potentísima, el derecho al bloqueo
+
+80
+00:06:23,180 --> 00:06:27,140
+provisional. Básicamente, se puede exigir que se congele temporalmente el derecho a bloqueo provisional.
+
+81
+00:06:27,140 --> 00:06:35,420
+En el día a día, esto obliga a darle una vuelta de tuerca tremenda a las bases de datos y a los
+
+82
+00:06:35,420 --> 00:06:40,560
+CRM. Las empresas tienen que implementar políticas reales y activas para borrar los datos cuando ya
+
+83
+00:06:40,560 --> 00:06:44,800
+no hagan falta. Eso de guardar información para siempre, por si acaso, se convierte en una
+
+84
+00:06:44,800 --> 00:06:49,800
+infracción directa. Además, es obligatorio cifrar la información sensible y tener integradas en el
+
+85
+00:06:49,800 --> 00:06:53,600
+propio sistema las herramientas necesarias para automatizar todas estas peticiones de derechos
+
+86
+00:06:53,600 --> 00:06:56,760
+de los usuarios. Y llegamos al sexto y último punto.
+
+87
+00:06:57,140 --> 00:07:00,540
+La confianza como ventaja y la estrategia más allá de la norma.
+
+88
+00:07:01,140 --> 00:07:05,320
+A ver, es verdad que todos estos requisitos técnicos pueden sonar bastante agobiantes,
+
+89
+00:07:05,380 --> 00:07:10,400
+pero hay una forma muy inteligente de enfocarlo. La nueva Agencia de Protección de Datos no se
+
+90
+00:07:10,400 --> 00:07:15,080
+va a conformar con que haya un documento en PDF muy bonito colgado en la web. Va a exigir
+
+91
+00:07:15,080 --> 00:07:20,360
+evidencias operativas. Es decir, va a pedir registros de auditoría, logs limpios de datos
+
+92
+00:07:20,360 --> 00:07:25,660
+personales, pruebas digitales sólidas de quién dio su consentimiento y cuándo. La privacidad
+
+93
+00:07:25,660 --> 00:07:29,400
+tiene que demostrarse todos los días desde el corazón mismo del negocio.
+
+94
+00:07:29,960 --> 00:07:34,920
+Para cerrar este análisis, hay una reflexión que resulta absolutamente clave. Aquellos que
+
+95
+00:07:34,920 --> 00:07:39,460
+hagan los cambios arrastrando los pies y solo por miedo a las multas, van a sufrir esta ley
+
+96
+00:07:39,460 --> 00:07:44,040
+como una losa tremenda. Sin embargo, las plataformas que apuesten por una transparencia
+
+97
+00:07:44,040 --> 00:07:48,840
+real, que abracen la privacidad por defecto sin patrones oscuros y que den el control de verdad
+
+98
+00:07:48,840 --> 00:07:53,700
+a los usuarios, esas plataformas van a transformar un simple requisito legal en un argumento de
+
+99
+00:07:53,700 --> 00:07:54,480
+venta espectacular.
+
+100
+00:07:55,660 --> 00:07:59,960
+En el fondo, en el futuro digital que nos espera, la confianza va a ser, sin duda, el activo
+
+101
+00:07:59,960 --> 00:08:06,460
+más valioso. Muchas gracias por acompañarnos en este repaso a la Ley 21.719. Y hasta la próxima.

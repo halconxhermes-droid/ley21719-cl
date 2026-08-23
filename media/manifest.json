@@ -1,16 +1,22 @@
 {
-  "descripcion": "Videos educativos NotebookLM sobre Ley 21.719 (fuente: usuario, 22-08-2026)",
+  "descripcion": "Videos educativos NotebookLM sobre Ley 21.719 + transcripciones oficiales del usuario. Emparejados por duración exacta (manifest original del usuario).",
   "resolucion": "1280x720",
+  "fecha_recepcion": "2026-08-23",
   "videos": [
-    {"archivo": "videos/01-reloj-control-asistencia.mp4", "titulo": "¿Es ilegal el reloj de control de asistencia?", "tema": "biometria-laboral", "duracion": "09:02", "modulos_sugeridos": ["datos-sensibles-biometria", "escenario-laboral"]},
-    {"archivo": "videos/02-algoritmo-rechaza-credito.mp4", "titulo": "¿Qué pasa si un algoritmo rechaza tu crédito?", "tema": "decisiones-automatizadas", "duracion": "06:51", "modulos_sugeridos": ["derechos-titular", "perfilamiento"]},
-    {"archivo": "videos/03-multas-20000-utm-parte1.mp4", "titulo": "Multas de hasta 20.000 UTM", "tema": "sanciones", "duracion": "07:13", "modulos_sugeridos": ["sanciones-fiscalizacion"]},
-    {"archivo": "videos/04-nueva-era-privacidad-5-claves.mp4", "titulo": "Nueva Era de Privacidad: 5 claves", "tema": "introduccion", "duracion": "07:13", "modulos_sugeridos": ["que-es-la-ley"]},
-    {"archivo": "videos/05-fin-ley-19628-arsop-apdp.mp4", "titulo": "Adiós Ley 19.628: ARSOP y APDP", "tema": "transicion-normativa", "duracion": "05:51", "modulos_sugeridos": ["que-es-la-ley", "derechos-titular"]},
-    {"archivo": "videos/06-calendario-vigencia-multas-dic2026.mp4", "titulo": "Calendario: multas desde 1-dic-2026", "tema": "vigencia", "duracion": "07:46", "modulos_sugeridos": ["calendario-vigencia"]},
-    {"archivo": "videos/07-multas-20000-utm-parte2.mp4", "titulo": "Multas 20.000 UTM: qué las gatilla", "tema": "sanciones", "duracion": "07:55", "modulos_sugeridos": ["sanciones-fiscalizacion"]},
-    {"archivo": "videos/08-guia-empresas-6-pasos.mp4", "titulo": "Guía empresas: políticas, banners, ARSOP", "tema": "cumplimiento-empresas", "duracion": "06:44", "modulos_sugeridos": ["obligaciones-responsable"], "ruta": "empresa"},
-    {"archivo": "videos/09-datos-estudiantes-colegios.mp4", "titulo": "¿Están seguros los datos de los estudiantes?", "tema": "datos-menores-colegios", "duracion": "09:53", "modulos_sugeridos": ["datos-ninos"], "ruta": "institucion"},
-    {"archivo": "videos/10-ecommerce-marketing-sernac.mp4", "titulo": "E-commerce y marketing según SERNAC", "tema": "ecommerce-marketing", "duracion": "08:10", "modulos_sugeridos": ["consentimiento", "marketing"], "ruta": "empresa"}
+    {"archivo": "videos/01-reloj-control-asistencia.mp4", "titulo": "¿Es ilegal el reloj de control de asistencia?", "tema": "biometria-laboral-videovigilancia-DPA-sanciones", "duracion_s": 542, "transcript": "docs/transcripts/Ley_21 (3).srt", "modulos_sugeridos": ["datos-sensibles-biometria", "videovigilancia", "encargados-tratamiento"], "ruta": ["empresa"]},
+    {"archivo": "videos/02-algoritmo-rechaza-credito.mp4", "titulo": "¿Qué pasa si un algoritmo rechaza tu crédito?", "tema": "decisiones-automatizadas-art8bis-deudas-prescritas", "duracion_s": 412, "transcript": "docs/transcripts/Ley_21 (7).srt", "modulos_sugeridos": ["derechos-titular", "perfilamiento-ia", "bases-datos-comerciales"], "ruta": ["ciudadano", "empresa"]},
+    {"archivo": "videos/03-salud-fichas-clinicas-eipd.mp4", "titulo": "Nuevas Leyes de Datos en Salud (21.719 + 21.663)", "tema": "salud-fichas-clinicas-eipd-ciberseguridad-3h72h", "duracion_s": 433, "transcript": "docs/transcripts/Nuevas_Leyes_de_Datos_Salud.srt", "modulos_sugeridos": ["datos-sensibles", "eipd", "notificacion-brechas"], "ruta": ["institucion"]},
+    {"archivo": "videos/04-sector-publico-art20-consentimiento.mp4", "titulo": "Sector público: Art. 20, consentimiento y responsabilidad personal", "tema": "sector-publico-transparencia-responsabilidad-directiva", "duracion_s": 351, "transcript": "docs/transcripts/Ley_21 (1).srt", "modulos_sugeridos": ["sector-publico", "transparencia"], "ruta": ["institucion"]},
+    {"archivo": "videos/05-fin-ley-19628-arsop-apdp.mp4", "titulo": "Privacidad en Chile: adiós 19.628, ARSOP y APDP", "tema": "introduccion-general-arsop-apdp-pymes-mpi", "duracion_s": 593, "transcript": "docs/transcripts/Privacidad_en_Chile.srt", "modulos_sugeridos": ["que-es-la-ley", "derechos-titular", "calendario-vigencia"], "ruta": ["ciudadano", "empresa", "desarrollador", "institucion"]},
+    {"archivo": "videos/06-cuenta-atras-dpas-transferencias-shadow-ai.mp4", "titulo": "Cuenta atrás: nuevo estándar, DPAs, transferencias y Shadow AI", "tema": "dpas-art15bis-transferencias-internacionales-shadow-ai", "duracion_s": 466, "transcript": "docs/transcripts/Ley_21 (4).srt", "modulos_sugeridos": ["encargados-tratamiento", "transferencias-internacionales", "gobernanza-ia"], "ruta": ["empresa", "desarrollador"]},
+    {"archivo": "videos/07-logistica-gps-flotas-mdm-brechas.mp4", "titulo": "Logística última milla: GPS, flotas y MDM", "tema": "geolocalizacion-minimizacion-endpoints-mdm-72h", "duracion_s": 476, "transcript": "docs/transcripts/Ley_21 (5).srt", "modulos_sugeridos": ["minimizacion", "seguridad-endpoints", "notificacion-brechas"], "ruta": ["empresa"]},
+    {"archivo": "videos/08-guia-empresas-6-pasos.mp4", "titulo": "Adaptación de plataformas web: checklist 5 puntos críticos", "tema": "politicas-banners-formularios-arsop-terceros", "duracion_s": 405, "transcript": "docs/transcripts/Adaptación_Ley_N°_21.srt", "modulos_sugeridos": ["obligaciones-responsable", "consentimiento"], "ruta": ["empresa", "desarrollador"]},
+    {"archivo": "videos/09-datos-estudiantes-colegios.mp4", "titulo": "¿Están seguros los datos de los estudiantes? (colegios)", "tema": "menores-tutela-reforzada-consentimiento-granular-edtech", "duracion_s": 594, "transcript": "docs/transcripts/Ley_21.srt", "modulos_sugeridos": ["datos-ninos", "consentimiento-granular", "edtech-dpa"], "ruta": ["institucion"]},
+    {"archivo": "videos/10-ecommerce-marketing-sernac.mp4", "titulo": "Navegando la Ley: diseño web, marketing y e-commerce", "tema": "banners-sernac-scripts-consentimiento-granular-ecommerce", "duracion_s": 491, "transcript": "docs/transcripts/Navegando_la_Ley_21.srt", "modulos_sugeridos": ["consentimiento", "marketing-ecommerce"], "ruta": ["empresa", "desarrollador"]}
+  ],
+  "sin_video_pero_con_transcripcion": [
+    {"stem": "Ley_21 (1).mp4", "nota": "video no recibido por Telegram; transcript disponible", "transcript": "docs/transcripts/Ley_21 (1).txt"},
+    {"stem": "Ley_21 (2).mp4", "nota": "duplicado de Ley_21 (1) según manifest (misma duración 351.4s)"},
+    {"stem": "Ley_21 (6).mp4", "nota": "duplicado de Ley_21 (5) según manifest (misma duración 475.9s)"}
   ]
 }

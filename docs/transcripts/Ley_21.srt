@@ -1,0 +1,739 @@
+1
+00:00:00,000 --> 00:00:03,860
+Bueno, la Ley 21.719 y el futuro de los datos escolares.
+
+2
+00:00:04,220 --> 00:00:07,620
+Hoy vamos a desgranar un cambio de paradigma absoluto y urgentísimo
+
+3
+00:00:07,620 --> 00:00:10,020
+en la forma en que las instituciones educativas chilenas
+
+4
+00:00:10,020 --> 00:00:13,040
+tienen que gestionar la información digital de ahora en adelante.
+
+5
+00:00:13,600 --> 00:00:16,420
+Con la entrada en escena de la nueva Ley de Protección de Datos Personales,
+
+6
+00:00:16,500 --> 00:00:19,500
+que básicamente busca alinear a Chile con los estrictos estándares europeos,
+
+7
+00:00:19,920 --> 00:00:23,760
+todo el sector educativo se enfrenta a una transformación, digamos, radical.
+
+8
+00:00:24,260 --> 00:00:27,140
+Y es que procesar esas montañas gigantescas de información cada día
+
+9
+00:00:27,140 --> 00:00:30,220
+ya no es un simple trámite administrativo de archivar papeles, no.
+
+10
+00:00:30,520 --> 00:00:35,000
+Ahora exige una acción inmediata, milimetrada y, sobre todo, sin ningún margen de error.
+
+11
+00:00:35,520 --> 00:00:38,600
+Para arrancar este análisis hay que plantear la gran pregunta.
+
+12
+00:00:38,980 --> 00:00:40,840
+¿Están seguros los datos de los estudiantes?
+
+13
+00:00:41,520 --> 00:00:45,060
+Pensemos por un momento en un colegio o una universidad cualquiera hoy en día.
+
+14
+00:00:45,420 --> 00:00:48,500
+A efectos prácticos, son auténticas minas de oro de información digital
+
+15
+00:00:48,500 --> 00:00:50,260
+y, además, tremendamente vulnerable.
+
+16
+00:00:50,900 --> 00:00:53,300
+No estamos hablando de guardar cuatro nombres y un par de notas.
+
+17
+00:00:53,620 --> 00:00:56,340
+Hablamos de historiales médicos completos, perfiles psicológicos,
+
+18
+00:00:56,340 --> 00:00:59,700
+dinámicas familiares enteras e incluso datos biométricos.
+
+19
+00:01:00,140 --> 00:01:02,500
+Si todos estos sistemas no están blindados a cal y canto,
+
+20
+00:01:02,860 --> 00:01:05,260
+el peligro no es solo un problema reputacional para el centro,
+
+21
+00:01:05,620 --> 00:01:09,040
+sino que afecta de lleno a las personas más vulnerables y protegidas por nuestra sociedad,
+
+22
+00:01:09,400 --> 00:01:10,200
+los menores de edad.
+
+23
+00:01:10,680 --> 00:01:12,780
+20.000 UTM. ¡Madre mía!
+
+24
+00:01:13,240 --> 00:01:17,240
+Detengámonos un momento en esta cifra para entender bien la magnitud de lo que está en juego.
+
+25
+00:01:17,720 --> 00:01:23,020
+Hablamos de la multa máxima estipulada para las infracciones gravísimas bajo el nuevo marco legal.
+
+26
+00:01:23,180 --> 00:01:24,780
+Para ponerlo en perspectiva,
+
+27
+00:01:26,340 --> 00:01:29,660
+la multa máxima estipulada para las infracciones gravísimas bajo el nuevo marco legal
+
+28
+00:01:29,660 --> 00:01:31,660
+es de 1.300 millones de pesos chilenos.
+
+29
+00:01:31,660 --> 00:01:33,660
+Una auténtica barbaridad.
+
+30
+00:01:33,660 --> 00:01:37,660
+Con la nueva Agencia de Protección de Datos Personales asumiendo plenas facultades
+
+31
+00:01:37,660 --> 00:01:39,100
+para aplicar estos castigos,
+
+32
+00:01:39,100 --> 00:01:42,860
+queda clarísimo que hacer la vista gorda ha dejado de ser un riesgo teórico.
+
+33
+00:01:42,860 --> 00:01:47,860
+Ahora es una amenaza financiera capaz de paralizar y hundir a cualquier sostenedor o centro educativo.
+
+34
+00:01:47,860 --> 00:01:50,860
+Y esto nos lleva directamente a entender el cambio de paradigma,
+
+35
+00:01:50,860 --> 00:01:55,940
+la diferencia entre la realidad antes de 2024 y lo que nos espera en diciembre de 2026.
+
+36
+00:01:55,940 --> 00:01:58,940
+En diciembre de 2024, correcto, pero estableció un periodo de gracia,
+
+37
+00:01:58,940 --> 00:02:00,940
+una adecuación de 24 meses.
+
+38
+00:02:00,940 --> 00:02:04,940
+Así que en diciembre de 2026, ¡pum!, la ley entra en vigencia al 100%.
+
+39
+00:02:04,940 --> 00:02:08,940
+Ahora bien, que nadie se engañe, este margen de tiempo no son unas vacaciones,
+
+40
+00:02:08,940 --> 00:02:11,940
+es una cuenta trasimplacable para auditar datos,
+
+41
+00:02:11,940 --> 00:02:15,940
+reescribir formularios de arriba a abajo, cambiar sistemas informáticos enteros
+
+42
+00:02:15,940 --> 00:02:17,940
+y, sobre todo, formar al personal.
+
+43
+00:02:17,940 --> 00:02:22,940
+El tiempo que queda es el justo y necesario para evitar acabar en el punto de mira de los inspectores.
+
+44
+00:02:22,940 --> 00:02:25,940
+Comparemos un momento el estándar antiguo de la ley,
+
+45
+00:02:25,940 --> 00:02:28,940
+ley 19.628, con el nuevo panorama.
+
+46
+00:02:28,940 --> 00:02:32,940
+Históricamente, era súper común tirar del consentimiento tácito o global, ¿verdad?,
+
+47
+00:02:32,940 --> 00:02:35,940
+una sola firma de los padres al arrancar el año escolar,
+
+48
+00:02:35,940 --> 00:02:38,940
+y ale, eso parecía cubrir absolutamente todo,
+
+49
+00:02:38,940 --> 00:02:43,940
+desde usar una aplicación de matemáticas hasta subir fotos de la función de fin de curso a las redes sociales.
+
+50
+00:02:43,940 --> 00:02:47,940
+Pues bien, ese modelo ha muerto, está completamente finiquitado.
+
+51
+00:02:47,940 --> 00:02:50,940
+El nuevo estándar exige algo muchísimo más complejo,
+
+52
+00:02:50,940 --> 00:02:53,940
+un consentimiento granular, libre e informado y sumamente claro,
+
+53
+00:02:53,940 --> 00:02:58,940
+respaldado además por una estructura de protección que está a años luz de lo que conocíamos.
+
+54
+00:02:58,940 --> 00:03:02,940
+Y aquí, precisamente aquí, tocamos el corazón de esta reforma para el mundo educativo,
+
+55
+00:03:02,940 --> 00:03:04,940
+la famosa tutela reforzada.
+
+56
+00:03:04,940 --> 00:03:08,940
+Suena a concepto jurídico muy denso, pero en la práctica es fascinante.
+
+57
+00:03:08,940 --> 00:03:12,940
+Significa que los datos de niños, niñas y adolescentes, los NNA,
+
+58
+00:03:12,940 --> 00:03:16,940
+adquieren un estatus de protección drásticamente más alto que el de cualquier adulto.
+
+59
+00:03:16,940 --> 00:03:18,940
+Es como un súper escudo legal.
+
+60
+00:03:18,940 --> 00:03:20,940
+Un menor jamás puede consentir por su cuenta,
+
+61
+00:03:20,940 --> 00:03:22,940
+requiere una autorización verificable y robusta de sus padres,
+
+62
+00:03:22,940 --> 00:03:24,940
+o tutores.
+
+63
+00:03:24,940 --> 00:03:27,940
+Y un detalle clave, la ley prohíbe de forma absolutamente tajante
+
+64
+00:03:27,940 --> 00:03:31,940
+usar datos de menores para fines comerciales, publicitarios o de creación de perfiles.
+
+65
+00:03:31,940 --> 00:03:33,940
+Cero excepciones.
+
+66
+00:03:33,940 --> 00:03:39,940
+El pilar filosófico y legal de todo esto se resume a la perfección en el artículo 16 quater.
+
+67
+00:03:39,940 --> 00:03:41,940
+La norma lo dice textualmente.
+
+68
+00:03:41,940 --> 00:03:44,940
+El tratamiento de los datos personales que conciernen a los niños
+
+69
+00:03:44,940 --> 00:03:48,940
+sólo puede realizarse atendiendo al interés superior de estos.
+
+70
+00:03:48,940 --> 00:03:51,940
+Ojo con esto, porque cambia las reglas del juego.
+
+71
+00:03:51,940 --> 00:03:55,940
+Cualquier decisión que se tome, cualquier app tecnológica que se contrate
+
+72
+00:03:55,940 --> 00:03:59,940
+o cualquier dato que se guarde, tiene que justificarse única y exclusivamente
+
+73
+00:03:59,940 --> 00:04:01,940
+porque beneficia al alumno.
+
+74
+00:04:01,940 --> 00:04:04,940
+Nunca, jamás, por simple conveniencia burocrática del colegio.
+
+75
+00:04:04,940 --> 00:04:09,940
+El interés superior del menor pasa a ser la prueba de fuego de cualquier auditoría.
+
+76
+00:04:09,940 --> 00:04:13,940
+Claro, imaginemos el impacto operativo masivo que supone todo esto.
+
+77
+00:04:13,940 --> 00:04:16,940
+Es, literalmente, el fin del consentimiento global,
+
+78
+00:04:16,940 --> 00:04:18,940
+la muerta de la firma única.
+
+79
+00:04:18,940 --> 00:04:21,940
+Ese formulario tradicional de matrícula de una caricia,
+
+80
+00:04:21,940 --> 00:04:25,940
+donde se marcaba una casilla genérica aceptando todas las políticas del centro,
+
+81
+00:04:25,940 --> 00:04:29,940
+hoy en día es papel mojado bajo la ley 21.719.
+
+82
+00:04:29,940 --> 00:04:32,940
+Ahora los centros tienen que desglosar con un nivel de detalle milimétrico
+
+83
+00:04:32,940 --> 00:04:34,940
+para qué van a usar cada dato.
+
+84
+00:04:34,940 --> 00:04:37,940
+Y un matiz fundamental, si mañana un padre o tutor decide
+
+85
+00:04:37,940 --> 00:04:40,940
+que quiere retirar el permiso para una actividad en concreto,
+
+86
+00:04:40,940 --> 00:04:44,940
+tiene que poder hacerlo exactamente con la misma facilidad con la que lo dio al principio.
+
+87
+00:04:44,940 --> 00:04:48,940
+Es decir, nos enfrentamos a un mapa de consentimiento granular.
+
+88
+00:04:48,940 --> 00:04:50,940
+Pensemos en cómo se divide esto ahora.
+
+89
+00:04:50,940 --> 00:04:52,940
+Por un lado, la inscripción puramente académica,
+
+90
+00:04:52,940 --> 00:04:54,940
+que requiere su propia aceptación.
+
+91
+00:04:54,940 --> 00:04:57,940
+Por otro lado, si el colegio quiere publicar fotos en su Instagram o en su web,
+
+92
+00:04:57,940 --> 00:05:00,940
+eso requiere un segundo consentimiento totalmente independiente.
+
+93
+00:05:00,940 --> 00:05:03,940
+Y si van a compartir datos con plataformas educativas de terceros,
+
+94
+00:05:03,940 --> 00:05:05,940
+pues hace falta un tercer permiso.
+
+95
+00:05:05,940 --> 00:05:08,940
+Cada finalidad tiene su propia casilla, y atención a esto,
+
+96
+00:05:08,940 --> 00:05:11,940
+el negarse a marcar una de esas opciones adicionales jamás puede ser excusa
+
+97
+00:05:11,940 --> 00:05:14,940
+para dejar de prestar el servicio educativo básico.
+
+98
+00:05:14,940 --> 00:05:17,940
+Ahora bien, hasta aquí hablamos de datos normales.
+
+99
+00:05:17,940 --> 00:05:19,940
+Pero el riesgo se dispara y se multiplica de forma exponencial
+
+100
+00:05:19,940 --> 00:05:22,940
+cuando entramos en el terreno de los datos sensibles.
+
+101
+00:05:22,940 --> 00:05:24,940
+Esta es la línea roja absoluta.
+
+102
+00:05:24,940 --> 00:05:27,940
+Más allá de correos electrónicos o direcciones,
+
+103
+00:05:27,940 --> 00:05:30,940
+los colegios manejan a diario información súper íntima
+
+104
+00:05:30,940 --> 00:05:33,940
+que exige la protección más brutal y estricta de todas.
+
+105
+00:05:33,940 --> 00:05:34,940
+¿Por qué?
+
+106
+00:05:34,940 --> 00:05:36,940
+Porque un mal uso aquí puede provocar discriminación directa
+
+107
+00:05:36,940 --> 00:05:39,940
+o dejar a un menor en una situación de extrema vulnerabilidad.
+
+108
+00:05:39,940 --> 00:05:41,940
+Y efectivamente, un solo error manejando estos datos
+
+109
+00:05:41,940 --> 00:05:46,940
+es lo que te catapulta directamente a la multa de las 20.000 UTM que comentábamos antes.
+
+110
+00:05:46,940 --> 00:05:48,940
+Vamos a aterrizarlo con ejemplos concretos
+
+111
+00:05:48,940 --> 00:05:50,940
+que encontramos a diario en cualquier escuela.
+
+112
+00:05:50,940 --> 00:05:53,940
+Hablamos de las fichas PIE, del programa de integración escolar,
+
+113
+00:05:53,940 --> 00:05:57,940
+hablamos de la huella digital para el control de asistencia o el comedor,
+
+114
+00:05:57,940 --> 00:06:01,940
+de las evaluaciones psicológicas o de los expedientes médicos pediátricos.
+
+115
+00:06:01,940 --> 00:06:03,940
+Son datos sensibles de manual.
+
+116
+00:06:03,940 --> 00:06:07,940
+La ley nos obliga a que su tratamiento tenga un consentimiento por escrito expreso,
+
+117
+00:06:07,940 --> 00:06:10,940
+cifrado obligatorio de alto nivel y acceso restringidísimo.
+
+118
+00:06:10,940 --> 00:06:14,940
+De hecho, muchas veces va a requerir hacer previamente una evaluación de impacto.
+
+119
+00:06:14,940 --> 00:06:16,940
+No son papeles más en un archivador.
+
+120
+00:06:16,940 --> 00:06:17,940
+Son auténtico material inflamable
+
+121
+00:06:17,940 --> 00:06:19,940
+a nivel normativo.
+
+122
+00:06:19,940 --> 00:06:23,940
+Pero claro, la película no termina en los ordenadores de la secretaría del colegio.
+
+123
+00:06:23,940 --> 00:06:26,940
+El eslabón débil y el quebradero de cabeza de muchos administradores
+
+124
+00:06:26,940 --> 00:06:30,940
+son los proveedores y las famosas plataformas educativas o EdTech.
+
+125
+00:06:30,940 --> 00:06:33,940
+Hay una regla de oro en ciberseguridad que aplica perfectamente aquí.
+
+126
+00:06:33,940 --> 00:06:38,940
+La privacidad de una institución es tan fuerte como su proveedor tecnológico más débil.
+
+127
+00:06:38,940 --> 00:06:42,940
+Hoy dependemos de la nube, de sistemas de gestión, de apps para hablar con los padres.
+
+128
+00:06:42,940 --> 00:06:46,940
+Y compartir la información de los alumnos con terceros sin tener un marco legal blindado
+
+129
+00:06:46,940 --> 00:06:49,940
+es, lisa llanamente, una infracción gravísima.
+
+130
+00:06:49,940 --> 00:06:54,940
+Para no perdernos, hay que tener clarísimos dos roles jurídicos fundamentales.
+
+131
+00:06:54,940 --> 00:06:58,940
+Por una parte, tenemos al responsable del tratamiento, que es el colegio,
+
+132
+00:06:58,940 --> 00:07:01,940
+el que decide por qué y para qué se piden los datos.
+
+133
+00:07:01,940 --> 00:07:05,940
+Y por otra, está el encargado del tratamiento, que es la plataforma EdTech.
+
+134
+00:07:05,940 --> 00:07:10,940
+Ya hablemos de gigantes tecnológicos o de opciones súper consolidadas en la región
+
+135
+00:07:10,940 --> 00:07:11,940
+como Yumo o Colegium.
+
+136
+00:07:11,940 --> 00:07:15,940
+Estas plataformas procesan la información en nombre del centro educativo.
+
+137
+00:07:15,940 --> 00:07:20,940
+Por tanto, esos acuerdos de palabra, o el crear cuentas masivas sin un respaldo jurídico férreo,
+
+138
+00:07:20,940 --> 00:07:23,940
+son prácticas que hay que desterrar de inmediato.
+
+139
+00:07:23,940 --> 00:07:28,940
+Es justo en este punto donde entran en acción los famosos contratos de encargo de tratamiento,
+
+140
+00:07:28,940 --> 00:07:30,940
+o DPAs por sus siglas en inglés.
+
+141
+00:07:30,940 --> 00:07:34,940
+Y subrayemos esto, son totalmente obligatorios.
+
+142
+00:07:34,940 --> 00:07:38,940
+Es un requisito legal indiscutible tener un documento formal y firmado con cada proveedor
+
+143
+00:07:38,940 --> 00:07:42,940
+que vaya a rozar, aunque sea mínimamente, un solo dato de un estudiante.
+
+144
+00:07:42,940 --> 00:07:45,940
+Si operamos sin este contrato, tanto el colegio como el centro educativo,
+
+145
+00:07:45,940 --> 00:07:48,940
+como la empresa de software, se quedan completamente desnudos a nivel legal,
+
+146
+00:07:48,940 --> 00:07:52,940
+expuestos a sanciones millonarias e inspecciones implacables.
+
+147
+00:07:52,940 --> 00:07:55,940
+Y que nadie piense que esto se soluciona con un contrato de copia y pega.
+
+148
+00:07:55,940 --> 00:07:58,940
+Un DPA requiere cláusulas muy, muy precisas.
+
+149
+00:07:58,940 --> 00:08:02,940
+Tiene que especificar exactamente qué datos se procesan y para qué.
+
+150
+00:08:02,940 --> 00:08:06,940
+Debe fijar los límites de retención, o sea, cuando se borran los datos definitivamente
+
+151
+00:08:06,940 --> 00:08:08,940
+una vez que el alumno abandona el centro.
+
+152
+00:08:08,940 --> 00:08:11,940
+Y, atención, la parte más crítica.
+
+153
+00:08:11,940 --> 00:08:14,940
+Debe incorporar un protocolo estricto que exija la plataforma,
+
+154
+00:08:14,940 --> 00:08:18,940
+notificar cualquier hackeo o brecha de seguridad en un plazo máximo de 72 horas.
+
+155
+00:08:18,940 --> 00:08:21,940
+Si un proveedor no es capaz de firmar y garantizar eso,
+
+156
+00:08:21,940 --> 00:08:24,940
+legalmente el colegio tiene prohibido usar sus servicios.
+
+157
+00:08:24,940 --> 00:08:25,940
+Así de claro.
+
+158
+00:08:25,940 --> 00:08:29,940
+Llegados a este punto, la cuenta atrás para el cumplimiento es real.
+
+159
+00:08:29,940 --> 00:08:34,940
+Teniendo la vista puesta en esa entrada en vigor total de diciembre de 2026,
+
+160
+00:08:34,940 --> 00:08:35,940
+hay que pasar a la acción.
+
+161
+00:08:35,940 --> 00:08:39,940
+Adaptar toda la estructura de un centro escolar a esta nueva realidad
+
+162
+00:08:39,940 --> 00:08:41,940
+no se hace ni en un mes ni en dos.
+
+163
+00:08:41,940 --> 00:08:44,940
+Exige una planificación metódica, paso a paso.
+
+164
+00:08:44,940 --> 00:08:48,940
+Para garantizar que absolutamente todo el ecosistema digital esté en regla
+
+165
+00:08:48,940 --> 00:08:50,940
+antes de que empiecen las auditorías.
+
+166
+00:08:50,940 --> 00:08:53,940
+Para simplificarlo, el plan de acción tiene cuatro pasos clave.
+
+167
+00:08:53,940 --> 00:08:58,940
+auditar todo y crear el registro de actividades de tratamiento, el RAT,
+
+168
+00:08:58,940 --> 00:09:00,940
+sabiendo dónde está cada mínimo dato.
+
+169
+00:09:00,940 --> 00:09:03,940
+reescribir todos los procesos de matrícula
+
+170
+00:09:03,940 --> 00:09:06,940
+incorporando ese consentimiento granular del que hablábamos.
+
+171
+00:09:06,940 --> 00:09:09,940
+identificar a todos los proveedores tecnológicos
+
+172
+00:09:09,940 --> 00:09:12,940
+y dejar firmados esos DPAs obligatorios.
+
+173
+00:09:12,940 --> 00:09:14,940
+designar a un delegado de protección de datos,
+
+174
+00:09:14,940 --> 00:09:17,940
+el famoso DPO, que será la figura interna encargada de vigilar
+
+175
+00:09:17,940 --> 00:09:20,940
+que nadie se salte las normas en el día a día.
+
+176
+00:09:20,940 --> 00:09:24,940
+En definitiva, adaptar los colegios a la Ley 21.719
+
+177
+00:09:24,940 --> 00:09:26,940
+no es un mero trámite para esquivar multas millonarias.
+
+178
+00:09:26,940 --> 00:09:29,940
+Es una inmensa responsabilidad ética que no se puede iludir.
+
+179
+00:09:29,940 --> 00:09:31,940
+El paradigma ha cambiado para siempre
+
+180
+00:09:31,940 --> 00:09:34,940
+y la tutela reforzada de los datos de niños, niñas y adolescentes
+
+181
+00:09:34,940 --> 00:09:38,940
+es hoy por hoy la prioridad número uno al diseñar cualquier proceso educativo.
+
+182
+00:09:38,940 --> 00:09:41,940
+El reloj corre y el momento de blindar los sistemas es ahora.
+
+183
+00:09:41,940 --> 00:09:44,940
+Así que nos despedimos dejando esta reflexión en el aire.
+
+184
+00:09:44,940 --> 00:09:46,940
+¿Está realmente preparado el sector educativo
+
+185
+00:09:46,940 --> 00:09:49,940
+para proteger a sus ciudadanos digitales más vulnerables?

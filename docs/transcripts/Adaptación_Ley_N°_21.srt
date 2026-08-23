@@ -1,0 +1,519 @@
+1
+00:00:00,000 --> 00:00:04,080
+Bienvenidos a este análisis donde vamos a desgranar esa cuenta atrás que ya tenemos
+
+2
+00:00:04,080 --> 00:00:08,220
+encima para adaptar nuestros sitios web a la Ley 21.719.
+
+3
+00:00:08,780 --> 00:00:14,280
+Vamos a transformar un texto legal, que francamente es súper denso, en una hoja de ruta totalmente
+
+4
+00:00:14,280 --> 00:00:16,320
+práctica para diciembre de 2026.
+
+5
+00:00:16,960 --> 00:00:21,880
+Básicamente vamos a ver una lista de verificación de cinco puntos críticos, políticas de privacidad,
+
+6
+00:00:22,160 --> 00:00:26,320
+banners de cookies opt-in, formularios con casillas desmarcadas por defecto, canales
+
+7
+00:00:26,320 --> 00:00:29,740
+ARC-OP y, por supuesto, los contratos de datos con terceros.
+
+8
+00:00:30,000 --> 00:00:33,660
+Quienes gestionan plataformas digitales se enfrentan a un cambio de paradigma brutal.
+
+9
+00:00:33,980 --> 00:00:37,780
+Y entender esto ahora mismo es la única forma de evitar un auténtico desastre operativo.
+
+10
+00:00:38,200 --> 00:00:38,680
+¡Vamos a ello!
+
+11
+00:00:39,220 --> 00:00:42,360
+Para que esto sea súper fácil de digerir, vamos a seguir esta ruta.
+
+12
+00:00:42,780 --> 00:00:44,680
+Empezaremos viendo la nueva realidad digital.
+
+13
+00:00:45,220 --> 00:00:49,600
+Luego entraremos de lleno en las políticas de privacidad claras, pasaremos a los banners
+
+14
+00:00:49,600 --> 00:00:53,660
+y formularios activos y desmitificaremos los canales para derechos ARC-OP.
+
+15
+00:00:54,100 --> 00:00:58,340
+Después echaremos un vistazo a los contratos con terceros y terminaremos hablando de dinero,
+
+16
+00:00:58,340 --> 00:00:59,700
+el coste del incumplimiento.
+
+17
+00:01:00,260 --> 00:01:04,459
+Bueno, pues empezamos por el principio, la nueva realidad digital y lo que está verdaderamente
+
+18
+00:01:04,459 --> 00:01:05,459
+en juego con esta ley.
+
+19
+00:01:05,840 --> 00:01:09,280
+Hay que entender que esto no va de actualizar un texto aburrido escondido en el pie de página,
+
+20
+00:01:09,640 --> 00:01:11,020
+es algo mucho más profundo.
+
+21
+00:01:11,560 --> 00:01:14,980
+Fijaos bien en este número, 20.000 UTM.
+
+22
+00:01:15,660 --> 00:01:20,200
+Literalmente, este es el riesgo financiero máximo al que se enfrentan las empresas si
+
+23
+00:01:20,200 --> 00:01:21,400
+deciden mirar para otro lado.
+
+24
+00:01:21,960 --> 00:01:26,400
+Estamos hablando de sumas millonarias que no son un simple gasto de negocio, es un
+
+25
+00:01:26,400 --> 00:01:29,660
+golpe masivo que puede hundir la viabilidad de cualquier empresa.
+
+26
+00:01:30,000 --> 00:01:34,260
+Es el aviso definitivo de que la privacidad, amigos, ya no es una simple sugerencia.
+
+27
+00:01:34,260 --> 00:01:39,060
+Y es que la Ley 21.719 no es un simple lavado de cara.
+
+28
+00:01:39,060 --> 00:01:43,180
+Hablamos de un cambio de ingeniería total para cualquier plataforma en Chile.
+
+29
+00:01:43,180 --> 00:01:44,180
+¿Por qué?
+
+30
+00:01:44,180 --> 00:01:49,480
+Pues porque eleva los estándares al altísimo nivel europeo y, ojo a esto, crea una Agencia
+
+31
+00:01:49,480 --> 00:01:51,920
+de Protección de Datos Personales totalmente autónoma.
+
+32
+00:01:51,920 --> 00:01:57,060
+O sea, un organismo con poder real y directo para fiscalizar y poner multas.
+
+33
+00:01:57,060 --> 00:01:58,840
+Y aquí está el meollo del asunto.
+
+34
+00:01:58,840 --> 00:02:03,580
+Durante más de 20 años funcionábamos con el consentimiento tácito, es decir, tú entrabas
+
+35
+00:02:03,580 --> 00:02:08,720
+a una web y, por el simple hecho de navegar, se asumía que decías sí, acepto.
+
+36
+00:02:08,720 --> 00:02:11,780
+Pues bien, esa suposición ahora es 100% ilegal.
+
+37
+00:02:11,780 --> 00:02:15,860
+Hemos pasado al consentimiento explícito, ahora necesitas una prueba afirmativa, clara
+
+38
+00:02:15,860 --> 00:02:19,160
+y demostrable de que el usuario ha dicho que sí de forma consciente.
+
+39
+00:02:19,160 --> 00:02:22,960
+Vale, sé que suena abrumador, pero respirad hondo.
+
+40
+00:02:22,960 --> 00:02:26,720
+Toda esta complejidad legal se puede filtrar en esta lista de verificación de cinco puntos
+
+41
+00:02:26,720 --> 00:02:27,720
+críticos.
+
+42
+00:02:27,720 --> 00:02:28,720
+Primero.
+
+43
+00:02:28,840 --> 00:02:29,840
+Políticas de privacidad.
+
+44
+00:02:29,840 --> 00:02:30,840
+Segundo.
+
+45
+00:02:30,840 --> 00:02:32,200
+Los banners de cookies con opt-in real.
+
+46
+00:02:32,200 --> 00:02:33,200
+Tercero.
+
+47
+00:02:33,200 --> 00:02:35,280
+Nada de casillas marcadas por defecto en los formularios.
+
+48
+00:02:35,280 --> 00:02:36,280
+Cuarto.
+
+49
+00:02:36,280 --> 00:02:37,700
+Tener listos los canales ARS o P.
+
+50
+00:02:37,700 --> 00:02:38,700
+Y quinto.
+
+51
+00:02:38,700 --> 00:02:40,180
+Amarrar los contratos con terceros.
+
+52
+00:02:40,180 --> 00:02:45,500
+Si dominamos estos cinco pilares, transformamos un riesgo gigante en un entorno digital seguro.
+
+53
+00:02:45,500 --> 00:02:50,300
+Vamos al punto número uno de nuestra lista, Políticas de privacidad claras.
+
+54
+00:02:50,300 --> 00:02:54,680
+Se acabaron los días de copiar y pegar un texto genérico e incomprensible lleno de
+
+55
+00:02:54,680 --> 00:02:56,100
+jerga legal.
+
+56
+00:02:56,100 --> 00:02:58,800
+Esas frases de «nos importa mucho tu privacidad»…
+
+57
+00:02:58,840 --> 00:03:01,680
+no sirven absolutamente para nada.
+
+58
+00:03:01,680 --> 00:03:05,920
+La política tiene que ser transparente y declarar cuatro cosas innegociables.
+
+59
+00:03:05,920 --> 00:03:10,540
+Tenéis que identificar exactamente qué datos estáis pidiendo, explicar para qué los queréis
+
+60
+00:03:10,540 --> 00:03:14,540
+de forma específica, decir cuánto tiempo los vais a guardar y, por último, si se
+
+61
+00:03:14,540 --> 00:03:17,780
+los vais a pasar a un tercero, hay que decirlo alto y claro.
+
+62
+00:03:17,780 --> 00:03:21,520
+Ya no hay base legal para guardar correos o teléfonos por si acaso en un futuro nos
+
+63
+00:03:21,520 --> 00:03:22,640
+hacen falta.
+
+64
+00:03:22,640 --> 00:03:24,720
+Avanzamos a los puntos dos y tres.
+
+65
+00:03:24,720 --> 00:03:26,040
+Banners y formularios activos.
+
+66
+00:03:26,040 --> 00:03:28,800
+Aquí es donde el diseño de vuestra web choca de frente con la ley.
+
+67
+00:03:28,840 --> 00:03:33,880
+Si alguna vez os habéis preguntado si esas típicas casillas de «acepto recibir ofertas»
+
+68
+00:03:33,880 --> 00:03:39,160
+que ya vienen marcadas por defecto siguen siendo legales, la respuesta es un NO rotundo.
+
+69
+00:03:39,160 --> 00:03:43,220
+Cualquier formulario de contacto o página de pago tiene que requerir un clic activo
+
+70
+00:03:43,220 --> 00:03:44,980
+y voluntario del usuario.
+
+71
+00:03:44,980 --> 00:03:47,900
+La inacción o el silencio ya no son un sí.
+
+72
+00:03:47,900 --> 00:03:51,060
+El consentimiento ahora tiene que cumplir estas cuatro reglas de oro.
+
+73
+00:03:51,060 --> 00:03:53,840
+Tiene que ser libre, o sea, sin obligar a nadie.
+
+74
+00:03:53,840 --> 00:03:54,840
+Informado.
+
+75
+00:03:54,840 --> 00:03:55,880
+Súper específico.
+
+76
+00:03:55,880 --> 00:03:58,040
+Nada de agrupar mil cosas en un solo botón.
+
+77
+00:03:58,040 --> 00:03:59,600
+E inequívoco.
+
+78
+00:03:59,600 --> 00:04:03,520
+Esto hace que esos muros de «acepta todo para poder seguir leyendo» sean historia.
+
+79
+00:04:03,520 --> 00:04:05,360
+Y un detalle técnico que es fascinante.
+
+80
+00:04:05,360 --> 00:04:09,560
+Si alguien pudo aceptar con un solo clic, la ley dice que tiene que poder cancelar ese
+
+81
+00:04:09,560 --> 00:04:12,560
+consentimiento igual de rápido, con un solo clic.
+
+82
+00:04:12,560 --> 00:04:15,160
+Esto va a obligar a rediseñar muchísimas plataformas.
+
+83
+00:04:15,160 --> 00:04:17,220
+Pasamos al cuarto punto.
+
+84
+00:04:17,220 --> 00:04:19,160
+Canales para derechos ARSOP.
+
+85
+00:04:19,160 --> 00:04:23,560
+Y esto requiere cambios estructurales importantes en la sala de máquinas de cualquier web.
+
+86
+00:04:23,560 --> 00:04:25,400
+ARSOP no es una palabra inventada.
+
+87
+00:04:25,400 --> 00:04:27,980
+Son las siglas de cinco derechos fundamentales.
+
+88
+00:04:27,980 --> 00:04:30,980
+Acceso, para que el usuario sepa qué datos tenéis.
+
+89
+00:04:30,980 --> 00:04:33,500
+Rectificación, para corregirlos si están mal.
+
+90
+00:04:33,500 --> 00:04:35,380
+Supresión, para borrarlos.
+
+91
+00:04:35,380 --> 00:04:38,780
+Oposición, para deciros «oye, no uses mis datos para marketing».
+
+92
+00:04:38,780 --> 00:04:42,740
+Y portabilidad, que es entregarles sus datos en un formato estructurado para que se los
+
+93
+00:04:42,740 --> 00:04:43,980
+lleve a otra parte.
+
+94
+00:04:43,980 --> 00:04:48,000
+Hay que tener canales digitales clarísimos y accesibles para que la gente pueda ejercer
+
+95
+00:04:48,000 --> 00:04:49,900
+cualquiera de estas cinco acciones.
+
+96
+00:04:49,900 --> 00:04:52,900
+Y ojo con esto, porque aquí viene la urgencia técnica real.
+
+97
+00:04:52,900 --> 00:04:56,540
+Tenéis un plazo de dos días hábiles para ejecutar un bloqueo temporal de datos.
+
+98
+00:04:56,540 --> 00:04:57,980
+Dos días.
+
+99
+00:04:57,980 --> 00:05:01,380
+Treinta días como plazo estándar para responder a una solicitud normal.
+
+100
+00:05:01,380 --> 00:05:04,480
+Y un máximo de sesenta días para temas muy complejos.
+
+101
+00:05:04,480 --> 00:05:07,980
+Recibir una petición y tener que bloquearla en cuarenta y ocho horas exige un nivel de
+
+102
+00:05:07,980 --> 00:05:11,480
+automatización que, seamos sinceros, la mayoría de los sistemas actuales no tienen
+
+103
+00:05:11,480 --> 00:05:12,500
+ni de broma.
+
+104
+00:05:12,500 --> 00:05:15,540
+Llegamos al quinto y último punto de la lista.
+
+105
+00:05:15,540 --> 00:05:17,220
+Contratos con terceros.
+
+106
+00:05:17,220 --> 00:05:20,420
+Porque hoy en día nadie opera en una burbuja aislada.
+
+107
+00:05:20,420 --> 00:05:22,520
+Aquí entran los encargados de tratamiento.
+
+108
+00:05:22,520 --> 00:05:26,800
+Hablamos de vuestro servidor en la nube, el CRM, la herramienta de analítica web, cualquier
+
+109
+00:05:26,800 --> 00:05:27,800
+integración externa.
+
+110
+00:05:27,800 --> 00:05:31,980
+Para que toque datos de vuestros usuarios, necesita un acuerdo formal, por escrito, que
+
+111
+00:05:31,980 --> 00:05:34,680
+garantice que ese proveedor también cumple la ley.
+
+112
+00:05:34,680 --> 00:05:39,200
+Porque si vuestro proveedor falla, la responsabilidad legal sigue siendo vuestra, no podéis delegar
+
+113
+00:05:39,200 --> 00:05:40,200
+la culpa.
+
+114
+00:05:40,200 --> 00:05:43,800
+Y para terminar, hablemos de lo que pasa si ignoramos todo esto.
+
+115
+00:05:43,800 --> 00:05:45,620
+El coste del incumplimiento.
+
+116
+00:05:45,620 --> 00:05:49,700
+La época en la que estas normas eran simples recomendaciones teóricas se ha acabado.
+
+117
+00:05:49,700 --> 00:05:53,440
+El nuevo sistema clasifica las infracciones en tres niveles que asustan.
+
+118
+00:05:53,440 --> 00:05:57,780
+Leves hasta 5.000 UTM, graves hasta 10.000 UTM y las gravísimas hasta 20.000 UTM.
+
+119
+00:05:57,780 --> 00:06:04,020
+Ignorar a un usuario que pide borrar sus datos o tener un banner engañoso es motivo de sanción.
+
+120
+00:06:04,020 --> 00:06:07,920
+Pero lo más fuerte de todo es que cualquier persona, desde el sofá de su casa y a golpe
+
+121
+00:06:07,920 --> 00:06:12,520
+de clic, puede denunciar una web ante la agencia de forma totalmente gratuita.
+
+122
+00:06:12,520 --> 00:06:15,760
+El riesgo de que os hagan una auditoría se multiplica por mil.
+
+123
+00:06:15,760 --> 00:06:18,900
+Así que todo esto nos deja con una pregunta final inevitable.
+
+124
+00:06:18,900 --> 00:06:22,580
+¿Vuestras plataformas digitales actuales van a ser un motor de crecimiento en el que
+
+125
+00:06:22,580 --> 00:06:27,020
+la gente confíe, o se van a convertir en una bomba de relojería de 20.000 UTM para
+
+126
+00:06:27,020 --> 00:06:28,960
+diciembre de 2026?
+
+127
+00:06:28,960 --> 00:06:30,260
+El reloj ya está en marcha.
+
+128
+00:06:30,260 --> 00:06:34,260
+La privacidad por diseño es una exigencia operativa ineludible hoy mismo.
+
+129
+00:06:34,260 --> 00:06:37,760
+El momento exacto para hacer esta auditoría y empezar la transformación de vuestros sistemas
+
+130
+00:06:37,760 --> 00:06:40,620
+es ahora, mucho antes de que la cuenta atrás llegue a cero.
