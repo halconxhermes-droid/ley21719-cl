@@ -1,0 +1,13 @@
+[build]
+  base = "frontend"
+  command = "pnpm build"
+  publish = "frontend/dist"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://82.239.175.215:9000/api/:splat"
+  status = 200
+  force = true
+
+[build.environment]
+  NODE_VERSION = "20"
