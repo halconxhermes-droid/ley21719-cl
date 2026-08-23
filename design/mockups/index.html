@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Ley 21.719 - Protección de Datos Personales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+  <style>
+    /* ==========================================================
+       CSS VARIABLES — Institutional Chilean palette (style-guide.md)
+       ========================================================== */
+    :root {
+      /* Neutros (Slate) */
+      --color-slate-50:  #f8fafc;
+      --color-slate-100: #f1f5f9;
+      --color-slate-200: #e2e8f0;
+      --color-slate-300: #cbd5e1;
+      --color-slate-400: #94a3b8;
+      --color-slate-500: #64748b;
+      --color-slate-600: #475569;
+      --color-slate-700: #334155;
+      --color-slate-800: #1e293b;
+      --color-slate-900: #0f172a;
+
+      /* Primarios (Azules institucionales Chile) */
+      --color-primary-50:  #e0f2fe;
+      --color-primary-100: #bae6fd;
+      --color-primary-500: #0ea5e9;
+      --color-primary-600: #0284c7;
+      --color-primary-700: #0369a1;
+      --color-primary-800: #075985;
+      --color-primary-900: #0c4a6e;
+
+      /* Semánticos y Estados */
+      --color-success-bg:  #dcfce7;
+      --color-success-text: #166534;
+      --color-success-border: #bbf7d0;
+      --color-warning-bg:  #fef9c3;
+      --color-warning-text: #854d0e;
+      --color-warning-border: #fef08a;
+      --color-error-bg:    #fee2e2;
+      --color-error-text:  #991b1b;
+      --color-error-border: #fecaca;
+      --color-info-bg:     #e0f2fe;
+      --color-info-text:   #0369a1;
+      --color-info-border: #bae6fd;
+
+      /* Tipografía */
+      --font-family: "Inter", system-ui, -apple-system, sans-serif;
+      --font-family-mono: "JetBrains Mono", ui-monospace, monospace;
+      --font-size-xs:   0.75rem;
+      --font-size-sm:   0.875rem;
+      --font-size-base: 1rem;
+      --font-size-lg:   1.125rem;
+      --font-size-xl:   1.25rem;
+      --font-size-2xl:  1.5rem;
+      --font-size-3xl:  1.875rem;
+      --font-size-4xl:  2.25rem;
+      --font-weight-normal: 400;
+      --font-weight-medium: 500;
+      --font-weight-semibold: 600;
+      --font-weight-bold: 700;
+      --line-height-tight: 1.25;
+      --line-height-base: 1.5;
+      --line-height-relaxed: 1.75;
+
+      /* Espaciado (Grid de 4px / 8px) */
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+
+      /* Radii */
+      --radius-sm:  0.25rem;
+      --radius-md:  0.5rem;
+      --radius-lg:  0.75rem;
+      --radius-full: 9999px;
+
+      /* Sombras (Elevation) */
+      --shadow-sm:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+      /* Transiciones */
+      --transition-fast: 150ms ease;
+      --transition-base: 250ms ease;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ==========================================================
+       RESET & BASE
+       ========================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-base);
+      color: var(--color-slate-800);
+      background: var(--color-slate-50);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: var(--color-primary-700); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+      outline: 3px solid var(--color-primary-500);
+      outline-offset: 2px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    h1, h2, h3, h4 { line-height: var(--line-height-tight); margin: 0 0 var(--space-3); }
+    h1 { font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); }
+    h2 { font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); }
+    h3 { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); }
+    p { margin: 0 0 var(--space-4); }
+    ul, ol { margin: 0 0 var(--space-4) var(--space-6); }
+    li { margin: var(--space-2) 0; }
+
+    /* ==========================================================
+       LAYOUT: HEADER, MAIN, FOOTER
+       ========================================================== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: var(--space-4);
+      background: var(--color-primary-700);
+      color: white;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-md);
+      z-index: 10000;
+      font-weight: var(--font-weight-medium);
+    }
+    .skip-link:focus { top: var(--space-4); }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--color-slate-200);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-4) var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-weight: var(--font-weight-bold);
+      font-size: var(--font-size-xl);
+      color: var(--color-primary-900);
+      text-decoration: none;
+    }
+    .logo svg { width: 36px; height: 36px; flex-shrink: 0; }
+    .countdown {
+      background: var(--color-primary-900);
+      color: white;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-sm);
+      white-space: nowrap;
+      font-family: var(--font-family-mono);
+    }
+    .role-indicator {
+      background: var(--color-primary-50);
+      color: var(--color-primary-800);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+    }
+
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: var(--space-6) var(--space-4);
+    }
+
+    footer {
+      background: var(--color-slate-900);
+      color: var(--color-slate-300);
+      padding: var(--space-8) var(--space-6);
+      margin-top: auto;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+    .footer-section h4 {
+      color: white;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-4);
+    }
+    .footer-section ul { list-style: none; padding: 0; margin: 0; }
+    .footer-section li { margin: var(--space-2) 0; }
+    .footer-section a { color: var(--color-slate-300); font-size: var(--font-size-sm); }
+    .footer-section a:hover { color: var(--color-primary-100); }
+    .footer-bottom {
+      border-top: 1px solid var(--color-slate-800);
+      padding-top: var(--space-6);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+      font-size: var(--font-size-sm);
+    }
+    .access-links { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .access-links a {
+      background: var(--color-slate-800);
+      color: var(--color-slate-200);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-xs);
+      transition: all var(--transition-fast);
+    }
+    .access-links a:hover { background: var(--color-primary-900); color: white; text-decoration: none; }
+
+    /* ==========================================================
+       BUTTONS
+       ========================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-size-base);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      min-height: 44px;
+      text-decoration: none;
+    }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-primary {
+      background: var(--color-primary-700);
+      color: white;
+      border-color: var(--color-primary-700);
+    }
+    .btn-primary:hover:not(:disabled) { background: var(--color-primary-800); border-color: var(--color-primary-800); }
+    .btn-secondary {
+      background: white;
+      color: var(--color-slate-700);
+      border-color: var(--color-slate-300);
+    }
+    .btn-secondary:hover:not(:disabled) { background: var(--color-slate-50); border-color: var(--color-slate-400); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--color-primary-700);
+    }
+    .btn-ghost:hover:not(:disabled) { background: var(--color-primary-50); }
+    .btn-sm { padding: var(--space-2) var(--space-4); font-size: var(--font-size-sm); min-height: 36px; }
+
+    /* ==========================================================
+       ROLE CARDS (Home)
+       ========================================================== */
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    .role-card {
+      background: white;
+      border: 2px solid var(--color-slate-200);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      cursor: pointer;
+      transition: all var(--transition-base);
+      position: relative;
+    }
+    .role-card:hover { border-color: var(--color-primary-500); box-shadow: var(--shadow-md); }
+    .role-card:focus-visible { border-color: var(--color-primary-500); box-shadow: var(--shadow-md); }
+    .role-card.selected { border-color: var(--color-primary-700); background: var(--color-primary-50); }
+    .role-card.selected::after {
+      content: "";
+      position: absolute;
+      top: -2px; right: -2px;
+      width: 24px; height: 24px;
+      background: var(--color-primary-700);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+    }
+    .role-icon { width: 48px; height: 48px; margin-bottom: var(--space-3); color: var(--color-primary-700); }
+    .role-card h3 { font-size: var(--font-size-lg); color: var(--color-slate-900); margin-bottom: var(--space-2); }
+    .role-card p { font-size: var(--font-size-sm); color: var(--color-slate-600); margin: 0; }
+
+    /* ==========================================================
+       PROGRESS BAR
+       ========================================================== */
+    .progress-bar { height: 8px; background: var(--color-slate-100); border-radius: var(--radius-full); overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--color-primary-600); border-radius: var(--radius-full); transition: width var(--transition-base); }
+    .progress-label { font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--color-slate-700); margin-top: var(--space-1); }
+
+    /* ==========================================================
+       CARDS & PANELS
+       ========================================================== */
+    .card { background: white; border: 1px solid var(--color-slate-200); border-radius: var(--radius-lg); padding: var(--space-6); }
+    .panel { background: var(--color-slate-50); border: 1px solid var(--color-slate-200); border-radius: var(--radius-lg); padding: var(--space-6); }
+
+    /* ==========================================================
+       READER (Lector módulo)
+       ========================================================== */
+    .reader-toolbar { display: flex; gap: var(--space-2); margin-bottom: var(--space-6); flex-wrap: wrap; }
+    .level-btn {
+      padding: var(--space-2) var(--space-4);
+      border: 1px solid var(--color-slate-300);
+      background: white;
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .level-btn.active { background: var(--color-primary-700); border-color: var(--color-primary-700); color: white; }
+    .level-btn:not(.active):hover { border-color: var(--color-primary-500); color: var(--color-primary-700); }
+    .reader-content { min-height: 300px; }
+    .reader-content h1 { font-size: var(--font-size-2xl); margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-slate-200); }
+    .reader-content h2 { font-size: var(--font-size-xl); margin-top: var(--space-6); margin-bottom: var(--space-3); }
+    .reader-content h3 { font-size: var(--font-size-lg); margin-top: var(--space-4); margin-bottom: var(--space-2); }
+    .reader-content p { margin-bottom: var(--space-4); }
+    .reader-content ul, .reader-content ol { margin-bottom: var(--space-4); padding-left: var(--space-6); }
+    .reader-content li { margin: var(--space-2) 0; }
+    .reader-content strong { font-weight: var(--font-weight-semibold); }
+    .reader-content code { font-family: var(--font-family-mono); background: var(--color-slate-100); padding: 0.1em 0.4em; border-radius: var(--radius-sm); font-size: 0.9em; }
+    .reader-content pre { background: var(--color-slate-900); color: var(--color-slate-100); padding: var(--space-4); border-radius: var(--radius-md); overflow-x: auto; margin: var(--space-4) 0; }
+    .reader-content pre code { background: none; padding: 0; color: inherit; }
+    .term-link {
+      border-bottom: 1px dashed var(--color-primary-500);
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--color-primary-800);
+      transition: all var(--transition-fast);
+    }
+    .term-link:hover { border-bottom-style: solid; background: var(--color-primary-50); border-radius: var(--radius-sm); padding: 0 2px; }
+    .whatif-box {
+      background: var(--color-info-bg);
+      border: 1px solid var(--color-info-border);
+      border-left: 4px solid var(--color-info-text);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+    .whatif-box h4 { margin: 0 0 var(--space-2); color: var(--color-info-text); font-size: var(--font-size-base); }
+    .whatif-box p { margin: 0; }
+
+    /* ==========================================================
+       QUIZ
+       ========================================================== */
+    .quiz-progress { margin-bottom: var(--space-6); }
+    .quiz-question { margin-bottom: var(--space-6); }
+    .quiz-question h3 { font-size: var(--font-size-lg); margin-bottom: var(--space-4); }
+    .quiz-options { display: flex; flex-direction: column; gap: var(--space-3); }
+    .quiz-option {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      border: 2px solid var(--color-slate-200);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: white;
+    }
+    .quiz-option:hover { border-color: var(--color-primary-500); }
+    .quiz-option:has(input:checked) { border-color: var(--color-primary-700); background: var(--color-primary-50); }
+    .quiz-option.correct { border-color: var(--color-success-text); background: var(--color-success-bg); }
+    .quiz-option.incorrect { border-color: var(--color-error-text); background: var(--color-error-bg); }
+    .quiz-option input { margin-top: 2px; accent-color: var(--color-primary-700); width: 20px; height: 20px; flex-shrink: 0; }
+    .quiz-option label { flex: 1; cursor: pointer; font-size: var(--font-size-base); }
+    .quiz-feedback { padding: var(--space-4); border-radius: var(--radius-md); margin-top: var(--space-4); display: none; }
+    .quiz-feedback.show { display: block; animation: fadeIn var(--transition-base); }
+    .quiz-feedback.correct { background: var(--color-success-bg); border: 1px solid var(--color-success-border); color: var(--color-success-text); }
+    .quiz-feedback.incorrect { background: var(--color-error-bg); border: 1px solid var(--color-error-border); color: var(--color-error-text); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+    .quiz-actions { display: flex; gap: var(--space-3); justify-content: flex-end; margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--color-slate-200); }
+
+    /* ==========================================================
+       CHECKLIST
+       ========================================================== */
+    .checklist-section { margin-bottom: var(--space-6); }
+    .checklist-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-4); }
+    .checklist-header h3 { margin: 0; font-size: var(--font-size-lg); }
+    .checklist-items { display: flex; flex-direction: column; gap: var(--space-2); }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: white;
+      border: 1px solid var(--color-slate-200);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+    .checklist-item:hover { border-color: var(--color-slate-300); }
+    .checklist-item.completed { background: var(--color-success-bg); border-color: var(--color-success-border); }
+    .checklist-item input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--color-primary-700); flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+    .checklist-item label { flex: 1; cursor: pointer; font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); }
+    .checklist-progress { margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--color-slate-200); }
+
+    /* ==========================================================
+       GLOSARIO
+       ========================================================== */
+    .glosario-search { margin-bottom: var(--space-6); position: relative; }
+    .glosario-search input { width: 100%; padding: var(--space-3) var(--space-4); padding-left: 44px; border: 1px solid var(--color-slate-300); border-radius: var(--radius-md); font-size: var(--font-size-base); transition: border-color var(--transition-fast); }
+    .glosario-search input:focus { border-color: var(--color-primary-500); outline: none; }
+    .glosario-search svg { position: absolute; left: var(--space-4); top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--color-slate-400); pointer-events: none; }
+    .glosario-az { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
+    .glosario-az button { padding: var(--space-1) var(--space-3); border: 1px solid var(--color-slate-300); background: white; border-radius: var(--radius-full); font-size: var(--font-size-sm); cursor: pointer; transition: all var(--transition-fast); }
+    .glosario-az button.active { background: var(--color-primary-700); border-color: var(--color-primary-700); color: white; }
+    .glosario-az button:not(.active):hover { border-color: var(--color-primary-500); color: var(--color-primary-700); }
+    .glosario-list { display: flex; flex-direction: column; gap: var(--space-2); }
+    .glosario-item { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); background: white; border: 1px solid var(--color-slate-200); border-radius: var(--radius-md); transition: all var(--transition-fast); }
+    .glosario-item:hover { border-color: var(--color-primary-500); }
+    .glosario-term { font-weight: var(--font-weight-medium); color: var(--color-slate-800); }
+    .glosario-item button { background: none; border: none; color: var(--color-primary-700); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); cursor: pointer; padding: var(--space-1) var(--space-2); border-radius: var(--radius-sm); }
+    .glosario-item button:hover { background: var(--color-primary-50); }
+
+    /* ==========================================================
+       MODAL
+       ========================================================== */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; padding: var(--space-4); z-index: 1000; opacity: 0; visibility: hidden; transition: all var(--transition-base); }
+    .modal-overlay.show { opacity: 1; visibility: visible; }
+    .modal { background: white; border-radius: var(--radius-lg); padding: var(--space-6); max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; transform: scale(0.95); transition: transform var(--transition-base); box-shadow: var(--shadow-lg); }
+    .modal-overlay.show .modal { transform: scale(1); }
+    .modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-slate-200); }
+    .modal-header h3 { margin: 0; font-size: var(--font-size-xl); }
+    .modal-close { background: none; border: none; font-size: 1.5rem; line-height: 1; color: var(--color-slate-400); cursor: pointer; padding: var(--space-1); }
+    .modal-close:hover { color: var(--color-slate-700); }
+    .modal-body { color: var(--color-slate-700); line-height: var(--line-height-relaxed); }
+    .related-terms { margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid var(--color-slate-200); }
+    .related-terms h4 { font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-2); }
+    .related-terms .tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .related-terms .tag { background: var(--color-primary-50); color: var(--color-primary-800); padding: var(--space-1) var(--space-2); border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: var(--font-weight-medium); cursor: pointer; transition: all var(--transition-fast); }
+    .related-terms .tag:hover { background: var(--color-primary-100); }
+
+    /* ==========================================================
+       TEST FINAL / RESULTADOS
+       ========================================================== */
+    .test-header { text-align: center; margin-bottom: var(--space-8); }
+    .test-header h1 { margin-bottom: var(--space-2); }
+    .test-header p { color: var(--color-slate-600); margin: 0; }
+    .test-question { background: white; border: 1px solid var(--color-slate-200); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-6); }
+    .test-question h3 { margin-bottom: var(--space-4); }
+    .test-result { text-align: center; padding: var(--space-12) var(--space-6); }
+    .result-score { font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--color-primary-700); margin-bottom: var(--space-2); }
+    .result-status { font-size: var(--font-size-xl); font-weight: var(--font-weight-semibold); margin-bottom: var(--space-8); }
+    .result-status.approved { color: var(--color-success-text); }
+    .result-status.failed { color: var(--color-error-text); }
+    .result-breakdown { text-align: left; max-width: 600px; margin: 0 auto var(--space-8); }
+    .result-breakdown h3 { font-size: var(--font-size-lg); margin-bottom: var(--space-4); }
+    .result-breakdown .row { display: flex; justify-content: space-between; padding: var(--space-3) 0; border-bottom: 1px solid var(--color-slate-200); }
+    .result-breakdown .row:last-child { border-bottom: none; }
+    .result-actions { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+
+    /* ==========================================================
+       VIEW HIDING
+       ========================================================== */
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .view { display: none; }
+    .view.active { display: block; animation: fadeIn var(--transition-base); }
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+    @media (max-width: 640px) {
+      .header-inner { padding: var(--space-3) var(--space-4); }
+      .logo { font-size: var(--font-size-lg); }
+      main { padding: var(--space-4) var(--space-3); }
+      .role-grid { grid-template-columns: 1fr; }
+      .quiz-actions { flex-direction: column; }
+      .quiz-actions .btn { width: 100%; }
+      .modal { margin: var(--space-4); max-height: calc(100vh - 2rem); }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <header role="banner">
+    <div class="header-inner">
+      <a href="#" class="logo" data-view="home" aria-label="Ley 21.719 - Inicio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        Ley 21.719
+      </a>
+      <div class="countdown" id="countdown" aria-live="polite" aria-label="Cuenta regresiva a vigencia plena">Cargando…</div>
+      <div class="role-indicator" id="roleIndicator" aria-live="polite" hidden>Rol: <span id="roleName">—</span></div>
+    </div>
+  </header>
+  <main id="main-content" role="main">    <!-- ============ VISTA 1: HOME + SELECTOR DE ROL ============ -->
+    <section id="view-home" class="view active" aria-labelledby="home-title">
+      <div class="hero card" style="padding: var(--space-8) var(--space-6); background: linear-gradient(135deg, var(--color-primary-900), var(--color-primary-700)); color: white; text-align: center; border: none;">
+        <p style="font-size: var(--font-size-sm); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--space-2); opacity: 0.85;">Mockup navegable · Datos embebidos</p>
+        <h1 id="home-hero-title" style="font-size: clamp(1.75rem, 5vw, 2.75rem); margin-bottom: var(--space-3);">Ley 21.719: Protección de Datos Personales en Chile</h1>
+        <p style="font-size: var(--font-size-lg); max-width: 640px; margin: 0 auto var(--space-6); opacity: 0.95;">Nueva ley de protección de datos personales para Chile — <strong>vigencia plena: 1&nbsp;de diciembre de 2026</strong>.</p>
+        <div style="max-width: 720px; margin: 0 auto; background: rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-6);">
+          <p style="margin: 0; font-size: var(--font-size-sm); opacity: 0.9;">Cuenta regresiva a la vigencia plena (actualizada cada segundo):</p>
+          <p id="countdown-hero" aria-live="polite" style="margin: var(--space-2) 0 0; font-family: var(--font-family-mono); font-size: var(--font-size-lg); font-weight: var(--font-weight-bold);">—</p>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <h2 id="home-title">¿Quién eres? Personaliza tu experiencia</h2>
+        <p style="color: var(--color-slate-600);">Selecciona tu rol para personalizar checklist y textos.</p>
+      </div>
+      <div class="role-grid" role="group" aria-label="Selector de rol">
+        <button type="button" class="role-card" data-role="empresa" aria-pressed="false">
+          <svg class="role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4a3 3 0 0 1 6 0v4"/>
+          </svg>
+          <h3>Empresas</h3>
+          <p>Responsables y encargados de tratamiento: obligaciones legales, multas y cumplimiento.</p>
+          <span class="btn btn-primary btn-sm" aria-hidden="true">Empezar como Empresa</span>
+        </button>
+        <button type="button" class="role-card" data-role="ciudadano" aria-pressed="false">
+          <svg class="role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 16v-4M12 8h.01"/>
+          </svg>
+          <h3>Ciudadanos / Titulares</h3>
+          <p>Ejerce tus derechos ARSOP+: acceso, rectificación, supresión, oposición, portabilidad.</p>
+          <span class="btn btn-primary btn-sm" aria-hidden="true">Empezar como Ciudadano</span>
+        </button>
+        <button type="button" class="role-card" data-role="desarrollador" aria-pressed="false">
+          <svg class="role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+          </svg>
+          <h3>Desarrolladores / Técnicos</h3>
+          <p>Consentimiento explícito, seudonimización, EIPD y medidas del Art. 14 quinquies.</p>
+          <span class="btn btn-primary btn-sm" aria-hidden="true">Empezar como Desarrollador</span>
+        </button>
+        <button type="button" class="role-card" data-role="institucion" aria-pressed="false">
+          <svg class="role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6"/>
+          </svg>
+          <h3>Instituciones Públicas</h3>
+          <p>Transparencia, RAT, AGEPRODAT y plazos de respuesta a titulares.</p>
+          <span class="btn btn-primary btn-sm" aria-hidden="true">Empezar como Institución</span>
+        </button>
+      </div>
+    </section>
+    <!-- ============ VISTA 2: LECTURA DE MÓDULO ============ -->
+    <section id="view-lector" class="view" aria-labelledby="lector-title">
+      <nav aria-label="Selector de módulo" style="margin-bottom: var(--space-4);">
+        <div class="reader-toolbar" role="tablist" aria-label="Módulos disponibles">
+          <button type="button" class="level-btn module-tab active" data-module-tab="empresa" role="tab" aria-selected="true">Empresas</button>
+          <button type="button" class="level-btn module-tab" data-module-tab="ciudadano" role="tab" aria-selected="false">Ciudadanos</button>
+          <button type="button" class="level-btn module-tab" data-module-tab="desarrollador" role="tab" aria-selected="false">Desarrolladores</button>
+          <button type="button" class="level-btn module-tab" data-module-tab="institucion" role="tab" aria-selected="false">Instituciones</button>
+        </div>
+      </nav>
+
+      <div class="card">
+        <header style="display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap;">
+          <div>
+            <h2 id="lector-title">Lectura del módulo</h2>
+            <p style="color: var(--color-slate-600); margin: 0;">Tiempo de lectura estimado: <span id="lector-time">8 min</span></p>
+          </div>
+          <a href="#" class="btn btn-primary" data-goto-quiz data-view-link="quiz">Ir al quiz del módulo →</a>
+        </header>
+
+        <div class="reader-toolbar" role="group" aria-label="Nivel de lectura">
+          <button type="button" class="level-btn level-tab active" data-level="resumen" aria-pressed="true">Resumen · 3 min</button>
+          <button type="button" class="level-btn level-tab" data-level="amigable" aria-pressed="false">Explicación amigable · 15 min</button>
+          <button type="button" class="level-btn level-tab" data-level="legal" aria-pressed="false">Texto legal</button>
+        </div>
+
+        <div id="lector-content" class="reader-content" tabindex="0" role="document">
+          <!-- contenido renderizado por JS -->
+        </div>
+
+        <aside class="whatif-box" id="lector-whatif" aria-label="Escenario ¿Qué pasa si...?">
+          <h4>¿Qué pasa si…?</h4>
+          <div id="lector-whatif-body"></div>
+        </aside>
+      </div>
+    </section>
+    <!-- ============ VISTA 3: QUIZ DEL MÓDULO ============ -->
+    <section id="view-quiz" class="view" aria-labelledby="quiz-title">
+      <div class="card">
+        <div class="quiz-progress">
+          <p style="display:flex; justify-content: space-between; margin: 0 0 var(--space-2); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">
+            <span>Pregunta <span id="quiz-current">1</span> de <span id="quiz-total">5</span></span>
+            <span>Correctas: <span id="quiz-correct">0</span></span>
+          </p>
+        </div>
+        <h2 id="quiz-title" class="visually-hidden">Quiz del módulo</h2>
+        <div class="progress-bar" style="margin-bottom: var(--space-6);"><div class="progress-fill" id="quiz-bar" style="width: 0%;"></div></div>
+
+        <div class="quiz-question">
+          <h3 id="quiz-question-text">Cargando…</h3>
+          <div class="quiz-options" id="quiz-options" role="radiogroup" aria-labelledby="quiz-question-text"></div>
+          <div id="quiz-feedback" class="quiz-feedback" role="status" aria-live="polite"></div>
+          <div class="quiz-actions">
+            <button type="button" class="btn btn-secondary" id="quiz-exit">Salir del quiz</button>
+            <button type="button" class="btn btn-primary" id="quiz-answer" disabled>Responder</button>
+            <button type="button" class="btn btn-primary" id="quiz-next" style="display:none;">Siguiente →</button>
+            <button type="button" class="btn btn-primary" id="quiz-finish" style="display:none;">Ver resultados</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ VISTA 4: CHECKLIST ¿ESTOY LISTO? ============ -->
+    <section id="view-checklist" class="view" aria-labelledby="checklist-title">
+      <header class="checklist-header">
+        <div>
+          <h2 id="checklist-title">Checklist «¿Estoy listo?»</h2>
+          <p style="color: var(--color-slate-600); margin: 0;">Tu progreso se guarda automáticamente por rol en este navegador.</p>
+        </div>
+        <div class="reader-toolbar" role="group" aria-label="Filtrar checklist por rol" style="margin-bottom: 0;">
+          <button type="button" class="level-btn ck-role active" data-ckrole="empresa">Empresa</button>
+          <button type="button" class="level-btn ck-role" data-ckrole="ciudadano">Ciudadano</button>
+          <button type="button" class="level-btn ck-role" data-ckrole="desarrollador">Desarrollador</button>
+          <button type="button" class="level-btn ck-role" data-ckrole="institucion">Institución</button>
+        </div>
+      </header>
+
+      <div id="checklist-global-progress" style="margin: var(--space-6) 0;">
+        <div style="display:flex; justify-content: space-between; font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); margin-bottom: var(--space-1);">
+          <span>Progreso global</span><span id="checklist-global-pct">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="checklist-global-bar" style="width:0%"></div></div>
+        <p class="progress-label" id="checklist-global-count">0 de 0 ítems completados</p>
+      </div>
+
+      <div id="checklist-sections"></div>
+
+      <div style="display:flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6);">
+        <button type="button" class="btn btn-secondary" id="checklist-reset">Reiniciar progreso</button>
+        <a href="#" class="btn btn-primary" data-view-link="testfinal">Ir al test final →</a>
+      </div>
+    </section>
+    <!-- ============ VISTA 5: GLOSARIO A–Z ============ -->
+    <section id="view-glosario" class="view" aria-labelledby="glosario-title">
+      <h2 id="glosario-title">Glosario de la Ley 21.719</h2>
+      <p style="color: var(--color-slate-600);">23 términos clave. Haz clic en un término para ver su definición completa.</p>
+
+      <div class="glosario-search">
+        <label for="glosario-search-input" class="visually-hidden">Buscar término en el glosario</label>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="search" id="glosario-search-input" placeholder="Buscar término…" autocomplete="off">
+      </div>
+      <div class="glosario-az" id="glosario-az" role="group" aria-label="Filtrar por letra inicial"></div>
+      <p id="glosario-count" class="progress-label" role="status">Mostrando 23 términos</p>
+      <div class="glosario-list" id="glosario-list"></div>
+      <p id="glosario-empty" hidden style="color: var(--color-slate-500); padding: var(--space-6); text-align:center;">No se encontraron términos.</p>
+    </section>
+    <!-- ============ VISTA 6: TEST FINAL (10 PREGUNTAS) ============ -->
+    <section id="view-testfinal" class="view" aria-labelledby="testfinal-title">
+      <header class="test-header">
+        <h2 id="testfinal-title">Test final</h2>
+        <p>10 preguntas sobre toda la ley · Sin feedback inmediato · Resultados al terminar.</p>
+      </header>
+      <form id="testfinal-form" novalidate>
+        <div id="testfinal-questions"></div>
+        <div style="text-align: center; margin-top: var(--space-6);">
+          <button type="submit" class="btn btn-primary" id="testfinal-submit">Enviar respuestas y ver resultados</button>
+        </div>
+      </form>
+    </section>
+    <!-- ============ VISTA 7: RESULTADOS ============ -->
+    <section id="view-resultados" class="view" aria-labelledby="resultados-title">
+      <div class="test-result">
+        <h2 id="resultados-title" style="text-align:center;">Resultados del test final</h2>
+        <p class="result-score" id="result-score">0 / 10</p>
+        <p class="result-status" id="result-status">—</p>
+
+        <div class="result-breakdown card">
+          <h3>Detalle por pregunta</h3>
+          <div id="result-detail"></div>
+        </div>
+
+        <div class="result-actions">
+          <button type="button" class="btn btn-secondary" id="result-retry">Repetir test</button>
+          <a href="#" class="btn btn-primary" data-view-link="home">Volver al inicio</a>
+          <a href="#" class="btn btn-ghost" data-view-link="glosario">Repasar glosario</a>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h4>Ley 21.719</h4>
+            <ul>
+              <li><a href="#" data-view-link="home">Inicio y selector de rol</a></li>
+              <li><a href="#" data-view-link="lector">Lectura de módulos</a></li>
+              <li><a href="#" data-view-link="quiz">Quiz del módulo</a></li>
+              <li><a href="#" data-view-link="checklist">Checklist «¿Estoy listo?»</a></li>
+              <li><a href="#" data-view-link="glosario">Glosario A–Z</a></li>
+              <li><a href="#" data-view-link="testfinal">Test final</a></li>
+              <li><a href="#" data-view-link="resultados">Resultados</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Recursos</h4>
+            <ul>
+              <li><a href="https://www.bcn.cl/leychile/navegar?idNorma=1205835" target="_blank" rel="noopener">Texto de la ley (BCN)</a></li>
+              <li><a href="https://www.gob.cl" target="_blank" rel="noopener">Gob.cl</a></li>
+              <li><a href="#" data-open-term="agencia_proteccion_datos">AGEPRODAT</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Acerca de</h4>
+            <p style="font-size: var(--font-size-sm); color: var(--color-slate-400);">Mockup educativo autocontenido sobre la Ley 21.719. Datos embebidos replican el contrato de la API; el equipo Frontend debe reemplazarlos por REST real.</p>
+            <p style="font-size: var(--font-size-sm); color: var(--color-slate-400);">Accesibilidad: WCAG 2.1 AA · skip-link · focus visible · prefers-reduced-motion.</p>
+          </div>
+        </div>
+        <div class="access-links-wrap">
+          <p style="margin: 0 0 var(--space-2); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.05em;">Accesos de revisión</p>
+          <div class="access-links" id="footer-access-links"></div>
+        </div>
+        <p style="margin:0; color: var(--color-slate-500);">Ley 21.719 · Vigencia plena: 1-dic-2026 · Mockup v2</p>
+      </div>
+    </footer>
+
+    <!-- ============ MODAL GLOSARIO ============ -->
+    <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="modal-title">Término</h3>
+          <button type="button" class="modal-close" id="modal-close" aria-label="Cerrar modal">×</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="related-terms" id="modal-related">
+          <h4>Términos relacionados</h4>
+          <div class="tags" id="modal-related-tags"></div>
+        </div>
+      </div>
+    </div>
+<script>
+window.MOCK_DATA = {"modulos":[{"id":"empresa","titulo":"Ley 21.719 para Empresas","tiempo_lectura_min":8,"nivel":"amigable","contenido_md":"# Módulo Empresarial - Ley 21.719\n\n## Objetivo\nComprender las obligaciones de su empresa bajo la Ley de Protección de Datos Personales (Ley 21.719). Este módulo aborda los requisitos específicos para responsables de datos comerciales.\n\n## 1. Prácticas Obligatorias para Empresas\n- **Designar respaldo de protección de datos**: Art. 50 permite designar voluntariamente un delegado (DPO). Art. 49 exige modelo de prevención de infracciones.\n- **Implementar medidas de seguridad**: Art. 14 bis y 14 quinquies establecen requisitos técnicos y organizativos.\n- **Ejecutar evaluación de impacto (EIPD)**: Art. 15 ter obliga cuando sea probable alto riesgo.\n- **Transferencias internacionales**: Art. 27 requiere adecuación, cláusulas contractuales u otros mecanismos.\n\n## 2. Estadísticas clave para empresas\n- **Unidades Tributarias Mensuales (UTM)**: Base para sanciones (Art. 35, 37). Las multas van de 5.000 UTM a 2-4% de ingresos anuales para empresas no exentas.\n\n## 3. Procedimientos operativos\n- **Plazos de respuesta a titulares**: Art. 11 establece 30 días naturales (prorrogables una vez).\n- **Notificación de brechas de seguridad**: Art. 14 sexies exige notificación \"sin dilaciones indebidas\" a la Agencia y titulares afectados.\n\n## 4. Casos prácticos\n### Caso \"Brecha de seguridad en base de datos cliente\"\nCuando ocurra una vulneración que comprometa datos personales de 500 clientes, el responsable debe:\n  a) Registrar la vulneración (Art. 14 sexies)\n  b) Notificar a la Agencia \"sin dilaciones indebidas\"\n  c) Emitir comunicación a cada titular afectado (párrafo 2º)\n  d) Adoptar medidas correctivas en 60 días\n\n### Caso \"Transferencia de datos a nuevo proveedor SaaS\"\nEl responsable debe:\n  a) Evaluar si el nuevo país de transferencia tiene adecuación (Art. 27)\n  b) Si no tiene adecuación, usar cláusulas contractuales o consentimiento expreso (subpárrafo a)\n  c) Documentar el mecanismo de garantías (cláusulas contractuales, etc.)\n\n## 5. Checklist de implementación\n- [ ] Verificar si se requiere designar plenamente un delegado de protección de datos\n- [ ] Implementar proceso de evaluación de impacto (EIPD)\n- [ ] Actualizar cláusulas de contratos con terceros (subcontratistas)\n- [ ] Implementar mecanismos de consentimiento explícito\n- [ ] Realizar auditoría de seguridad de datos\n- [ ] Definir procedimiento interno de notificación de brechas\n","terminos_glosario":["DPO","EIPD","UTM","transferencia internacional","brecha de seguridad"],"escenario":"¿Qué pasa si una empresa transfiere datos personales a un proveedor en Estados Unidos sin cláusulas contractuales ni consentimiento?\n\n**Respuesta:** Se considera transferencia ilegal según Art. 27 y 28. La empresa debe o bien:\n1) Obtener consentimiento expreso del titular para esa transferencia específica, o\n2) Usar cláusulas contractuales vinculantes y demostrar que existen, o\n3) Esperar a que Estados Unidos tenga adecuación (actualmente no), o\n4) Ninguna opción es legal sin uno de los mecanismos del Art. 27. El responsable incurre en infracción grave y podrá recibir multas de hasta 20.000 UTM.","serie_preguntas_ids":[]},{"id":"ciudadano","titulo":"Ley 21.719 para Ciudadanos/ Titulares de Datos","tiempo_lectura_min":5,"nivel":"amigable","contenido_md":"# Módulo Ciudadano - Ley 21.719\n\n## Sus Derechos bajo la Ley 21.719\nLa Ley 21.719 refuerza los derechos del titular de datos personales. Como ciudadano chileno, estos son sus derechos:\n\n### Los 6 Derechos Fundamentales\n1. **Acceso** (Art. 5º): Solicitar confirmación si tus datos son tratados y obtener una copia en formato estructurado.\n2. **Rectificación** (Art. 6º): Corregir datos inexactos, desactualizados o incompletos.\n3. **Supresión** (Art. 7º): Eliminar datos cuando ya no sean necesarios o se retire el consentimiento.\n4. **Oposición** (Art. 8º): Negarte a que usen tus datos para fines de marketing, perfilado o ciertos análisis.\n5. **Portabilidad** (Art. 9º): Obtener tus datos en formato móvil y transferirlos a otro responsable.\n6. **Bloqueo** (Art. 8º letra a): Congelar el tratamiento mientras se resuelve una reclamación.\n\n### Cómo ejercer estos derechos\n- Envíe solicitud al responsable por correo o formulario\n- Exija respuesta en 30 días (Art. 11)\n- Si le niegan o no responden, presente reclamación ante la Agencia (Art. 41)\n\n## Protección de datos para menores\nEl tratamiento de datos sensibles de menores de 16 años requiere consentimiento explícito de sus padres o representantes legales (Art. 16 quáter).\n\n### Escenarios reales\n- **¿Cómo solicitar la eliminación de tus datos de una red social?**\n  - Envío solicitud a la empresa por correo; usa el derecho de supresión!\n  - Si no responden, presentas reclamación ante la Agencia.\n- **¿Puedo oponerme a que una empresa use mis datos para publicidad?**\n  - Sí, mediante la oposición del Art. 8º. La empresa debe dejar de usar tus datos para ese fin.\n\n## Preguntas frecuentes\n- **¿Qué es un dato biométrico?** Información derivada de la fisiología única (huellas, iris, voz). Requiere consentimiento expreso (Art. 16 ter).\n- **¿Puedo trasladar mis datos de un banco a otro?** Sí, mediante el derecho de portabilidad del Art. 9º.\n- **¿Cuándo una empresa puede tratar mis datos sin mi consentimiento?** En seis casos excepcionales del Art. 16 bis (interés legítimo, obstrucción de delitos, etc.).\n","terminos_glosario":["dato personal","dato sensible","DPO","EIPD","consentimiento ARCO+","derechos ARCO+","tratamiento de datos"],"escenario":"¿Qué pasa si una empresa se niega a darme una copia de mis datos personales pese a mi solicitud escrita?\n\n**Respuesta:** La empresa está incumpliendo el Art. 5º. Tienes derecho a presentar una reclamación ante la Agencia (Art. 41). La Agencia puede ordenar el acceso y sancionar la empresa con multas (Art. 35).","serie_preguntas_ids":[]},{"id":"desarrollador","titulo":"Implementación Técnica de la Ley 21.719","tiempo_lectura_min":7,"nivel":"legal","contenido_md":"# Módulo Técnico - Ley 21.719\n\n## Visión General\nImplementar conformidad con la Ley 21.719 requiere entender la naturaleza jurídica de los requisitos y cómo mapearlos a sistemas técnicos.\n\n### 1. Principios Técnicos\n- **Licitud, lealtad y transparencia** (Art. 3°): Toda operación de tratamiento debe ser transparente en su ejecución.\n- **Almacenamiento limitado** (Art. 2° letra k): Los datos deben ser destruidos o eliminados cuando ya no sean necesarios.\n- **Integridad** (Art. 3): Prevenir alteración, pérdida o acceso no autorizado.\n- **Minimización**: Recopilar solo los datos estrictamente necesarios para el propósito.\n\n### 2. Ciclo de Vida de los Datos\n#### Etapas técnicas y cumplimiento\n1. **Recolección**: Implementar formularios con:\n   - Campos obligatorios claramente identificados\n   - Texto de consentimiento explícito (no pre-marcado)\n   - Identificación del responsable del tratamiento\n\n2. **Almacenamiento**:\n   - Evitar formato binario que dificulte su eliminación\n   - Implementar metadatos de fecha de posibilidad (retention policy)\n   - Utilizar cifrado en reposo\n\n3. **Procesamiento**:\n   - Registrar quién, cuándo y con qué propósito se accedió\n   - Revisar periódicamente los accesos en logs de auditoría\n\n4. **Cese o eliminación**:\n   - Ejecutar procesos de borrado físico o lógica de eliminación\n   - Confirmar que el dato ya no aparece en backups\n   - Registrar el proceso de baja\n\n## 3. Modelos de Seguridad\n### Requisitos técnicos del Art. 14 quinquies:\n1. **Cifrado (subpunto a)**: AES-256 para datos en reposo y TLS 1.3 para transmisión\n2. **Pseudonimización (subpunto b)**: Separar datos identificantes de datos analíticos\n3. **Resiliencia (subpunto c)**: Planes de recuperación ante desastres\n4. **Monitoreo (subpunto d)**: Módulos de detección de anomalías y alertas\n\n## 4. Aspectos de Modelado y Algoritmos\n### a) Regla general del tratamiento (Art. 4°)\n- El consentimiento debe ser:\n  - Escrito\n  - Informado\n  - Específico\n  - Clara aceptación\n\n### b) Fallos en sesión: regístrate, no repitas\n```json\n{ \"error\": \"Background delivery failed, escalate to foreground\", \"required\": \"foreground action\", \"command\": \"raise_window=true\", \"app\": \"Firefox\", \"element\": 17 }\n```\n\n## 5. Datos Especiales\n### a) Datos biométricos (Art. 16 ter)\n- Only allowed with expressed consent\n- Requires specific security measures\n- Cannot be used for marketing\n\n## 6. Servicio interno de atención al cliente\nEn la práctica, los desarrolladores suelen:\n- Implementar un [bot de soporte] que acepte la solicitud de los titulares usando variaciones de plantilla\n- Asegurar que el bot registra la interacción para auditoría\n- Seguimiento a los incidentes reportados anualmente a nivel nacional\n\n# Ejemplo de implementación técnica\n```python\n# Ejemplo de consentimiento explícito valido\ndef solicitar_consentimiento():\n    form = {\n        \"tipo\": \"consentimiento\",\n        \"texto\": \"Autorizo el tratamiento de mis datos personales para el envio de boletines\",\n        \"checkbox\": \"checked\"  # NO permitido si está preseleccionado\n    }\n    return form\n```\n\n> **Nota para desarrolladores**: Este módulo es el que te lleva del conocimiento legal directo a la implementación práctica. Si generas sistemas que manejan datos de personas en Chile, este es el mapa de ruta obligatorio.","ejercicio_practico":"Diseña el flujo de registro de consentimiento explícito que incluya: (1) texto que deberás usar, (2) mecanismos de registro de la efectividad del consentimiento, (3) criterios para revocabilidad y registro de revocaciones. Ejemplo de código en Python/JavaScript para chequear que no estuvo pre-marcado.","terminos_glosario":["dato personal","dato sensible","DPO","EIPD","consentimiento ARCO+","derechos ARCO+","tratamiento de datos"],"escenario":"¿Qué pasa si un desarrollador implementa un sistema que trata datos biométricos de empleados sin consentimiento explícito y sin medidas de seguridad específicas?\n\n**Respuesta:** Según Art. 16 ter, los datos biométricos requieren consentimiento expreso y medidas específicas de seguridad. La empresa sería responsable de infracción grave (Art. 35) y la Agencia podría ordenar la eliminación de los datos y aplicar multas de hasta 20.000 UTM. El desarrollador podría enfrentar sanciones en su rol como encargado del tratamiento.","serie_preguntas_ids":[]},{"id":"institucion","titulo":"Ley 21.719 para Instituciones Públicas","tiempo_lectura_min":6,"nivel":"legal","contenido_md":"# Módulo Institucional Público\n\n## Marco Jurídico Aplicable\nLas entidades del sector público (ministerios, municipalidades, universidades, hospitales) se encuentran bajo un régimen especial de la Ley 21.719:\n\n### Principios de aplicación\n- **Acceso y transparencia (Art. 2°, 54 y 56)**: Las instituciones públicas deben permitir que los ciudadanos conozcan sus registros y bases de datos\n- **Régimen especiales (Art. 24 y 25)**: Tratamientos de datos relativos a infracciones penales o afectos a la seguridad nacional siguen regímenes diferenciados\n- **Principios generales (Art. 3°)**: Mantienen validez pero con foco en coordinación interinstitucional\n\n## Órganos Públicos y la Ley\n- **Agencia de Protección de Datos Personales (Art. 30)**: Creada para fiscalizar y coordinar a todas las entidades\n- **Organismos competentes**: Buscador de regulaciones de seguridad nacional (por ejemplo, Ministerio del Interior)\n\n## Obligaciones Especiales\n\n### a) Registro de operaciones básicas (Antiguo Art. 22)\nLas instituciones públicas deben:\n- Mantener registros actualizados de bases de datos\n- Publicar el contenido de los registros que puedan estar sujetos a acceso ciudadano\n- Los datos relativos a infracciones penales pueden compartirse exclusivamente con la justicia\n\n### b) Periodo transitorio de colocación\n- Las instituciones deben eliminar registros contrarios a la Ley 21.719 dentro de los 60 días previos a la entrada en vigencia\n- Este proceso debe ser coordinado con la Agencia y el Servicio de Registro Civil\n- **Plazo crítico**: 60 días previos a la entrada en vigencia (1 de diciembre de 2026)\n\n### c) Cooperación interinstitucional\n- Compartir datos con otros organismos cuando sea necesario para cumplimiento de funciones legales\n- Mantener mecanismos de seguridad para transferencias internacionales\n\n## c) Fiscalización y control interno\n- Las instituciones deben autorizar acceso a la Agencia para auditorías\n- Deben presentar informes periódicos de cumplimiento\n- Los sistemas de información deben ser compatibles con requisitos de la Agencia\n\n## Casos Prácticos\n### Caso del Minuto que No Cumple\nUna municipalidad intenta clasificar un registro breve como \"no aplica\" la Ley. La Agencia puede:\n- Requerir que el registro se elimine\n- Aplicar multas (Art. 35)\n- Iniciar procedimiento de fiscalización\n\n### Procedimiento de 10 Días\nCuando una ciudadana solicita acceso a un registro del municipio:\n- El municipio debe responder en 30 días\n- Si rechaza, debe fundar la negativa\n- Si no responde, la ciudadana puede reclamar ante la Agencia tras agotar el plazo\n\n### Presupuesto y Recursos\n- El mayor gasto fiscal de la primera vigencia se financiará con presupuesto de 2027\n- Las instituciones deben planificar recursos para adecuación e implementación\n\n## Recomendaciones Prácticas\n1. Realizar auditoría interno inmediato de cumplimiento\n2. Identificar y clasificar todas las bases de datos existentes\n3. Destacar los registros que podrían no cumplir con nuevos principios (minimización, finalidad)\n4. Definir responsable interno de cumplimiento (puede ser designado delegado por la entidad)\n5. Preparar planes de actualización presupuestaria hasta 2027\n\n> **Importante:** Este módulo destaca que la transición afecta proveedores de servicios críticos—no se puede posponer la preparación.","terminos_glosario":["responsable de datos","tratamiento transitorio","registro de operaciones","derecho de acceso","plazos respondidos"],"escenario":"¿Cómo debe actuar una universidad pública que mantiene registros de estudiantes antiguos que ya no deben quedar en su base de datos según la Ley 21.719?\n\n**Respuesta:** Según el Art. 24 y el período transitorio, la universidad debe:\n1) Identificar qué registros son de estudiantes ya graduados (posiblemente durante más de 60 días desde terminación)\n2) Iniciar proceso de eliminación al menos 60 días antes de la entrada en vigencia de la ley\n3) Documentar la eliminación a la Agencia\n4) Garantizar que la base de datos del estudiante graduado quede archivada de forma segura pero fuera de los sistemas de tratamiento\n5) Registrar el proceso en el Registro Nacional de Sanciones y Cumplimiento","serie_preguntas_ids":[]}],"vigencia":"2026-12-01","terminos":[{"id":"dato_personal","termino":"Dato personal","definicion":"Cualquier información vinculada o referida a una persona natural identificada o identificable. Se considera identificable toda persona cuya identidad pueda determinarse, directa o indirectamente, en particular mediante identificadores como el nombre, el número de cédula de identidad o el análisis de elementos propios de la identidad física, fisiológica, genética, psíquica, económica, cultural o social. (Art. 2°, letra f)"},{"id":"dato_sensible","termino":"Datos personales sensibles","definicion":"Datos personales que se refieren a las características físicas o morales de las personas o a hechos o circunstancias de su vida privada o intimidad, que revelen: origen étnico o racial, afiliación política, sindical o gremial, situación socioeconómica, convicciones ideológicas o filosóficas, creencias religiosas, datos relativos a la salud, al perfil biológico humano, los datos biométricos, y la información relativa a la vida sexual, a la orientación sexual y a la identidad de género. (Art. 2°, letra g)"},{"id":"titular","termino":"Titular de datos (o titular)","definicion":"Persona natural, identificada o identificable, a quien conciernen o se refieren los datos personales. Es quien ejerce los derechos ARCO+ frente al responsable. (Art. 2°, letra ñ)"},{"id":"responsable","termino":"Responsable de datos (o responsable)","definicion":"Toda persona natural o jurídica, pública o privada, que decide acerca de los fines y medios del tratamiento de datos personales, con independencia de si los datos son tratados directamente por ella o a través de un tercero mandatario o encargado. (Art. 2°, letra n)"},{"id":"encargado","termino":"Tercero mandatario o encargado","definicion":"Persona natural o jurídica que trata datos personales por cuenta del responsable de datos. No decide sobre finalidades ni medios, solo ejecuta instrucciones. (Art. 2°, letra x)"},{"id":"arco_mas","termino":"Derechos ARCO+","definicion":"Conjunto de derechos del titular de datos: Acceso (Art. 5º), Rectificación (Art. 6º), Supresión (Art. 7º), Oposición (Art. 8º), más Portabilidad (Art. 9º), Bloqueo temporal (Art. 11 inc. 7º) e información sobre decisiones automatizadas (Art. 3°). El símbolo \"+\" indica que la Ley 21.719 amplía el catálogo tradicional ARCO."},{"id":"dpo","termino":"Delegado de protección de datos (DPO)","definicion":"Persona designada por la máxima autoridad del responsable para supervisar el cumplimiento de la normativa de protección de datos. Debe contar con autonomía respecto de la administración. Puede ser asumido por el dueño en micro, pequeñas y medianas empresas. (Arts. 49 y 50)"},{"id":"eipd","termino":"Evaluación de impacto en protección de datos (EIPD)","definicion":"Análisis previo a iniciar un tratamiento que probablemente produzca un alto riesgo para los derechos de las personas. Obligatorio siempre en casos de evaluación sistemática exhaustiva con decisiones automatizadas, tratamiento masivo a gran escala, observación sistemática de zonas públicas, o tratamiento de datos sensibles en hipótesis de excepción al consentimiento. (Art. 15 ter)"},{"id":"brecha_seguridad","termino":"Brecha / Vulneración de seguridad","definicion":"Vulneración de las medidas de seguridad que ocasione la destrucción, filtración, pérdida o alteración accidental o ilícita de datos personales, o su comunicación o acceso no autorizados. El responsable debe reportarla a la Agencia sin dilaciones indebidas y comunicarla también a los titulares cuando se trate de datos sensibles, datos de menores de 14 años o datos económicos/financieros. (Art. 14 sexies)"},{"id":"seudonimizacion","termino":"Seudonimización","definicion":"Tratamiento de datos personales de manera tal que ya no puedan atribuirse a un titular sin utilizar información adicional, siempre que dicha información adicional figure por separado y esté sujeta a medidas técnicas y organizativas destinadas a garantizar que los datos no se atribuyan a una persona natural identificada o identificable. A diferencia de la anonimización, el dato seudonimizado sigue siendo dato personal. (Art. 2°, letra l)"},{"id":"anonimizacion","termino":"Anonimización","definicion":"Procedimiento irreversible en virtud del cual un dato personal no puede vincularse o asociarse a una persona determinada, ni permitir su identificación, por haberse destruido o eliminado el nexo con la información que vincula, asocia o identifica a esa persona. Un dato anonimizado deja de ser un dato personal. (Art. 2°, letra k)"},{"id":"consentimiento","termino":"Consentimiento","definicion":"Toda manifestación de voluntad libre, específica, inequívoca e informada, otorgada a través de una declaración o una clara acción afirmativa, mediante la cual el titular de datos, su representante legal o mandatario autoriza el tratamiento de sus datos personales. (Art. 2°, letra p; Art. 12)"},{"id":"tratamiento","termino":"Tratamiento de datos","definicion":"Cualquier operación o conjunto de operaciones o procedimientos técnicos, de carácter automatizado o no, que permitan de cualquier forma recolectar, procesar, almacenar, comunicar, transmitir o utilizar datos personales o conjuntos de datos personales. (Art. 2°, letra o)"},{"id":"transferencia_internacional","termino":"Transferencia internacional de datos","definicion":"Envío de datos personales a un responsable o tercero ubicado en otro país. Es lícita si el país destino ofrece niveles adecuados de protección (Art. 28) o si existen cláusulas contractuales, normas corporativas vinculantes u otros instrumentos jurídicos con garantías adecuadas. Sin adecuación ni garantías, sólo procede transferencias específicas y no habituales en casos tasados (consentimiento expreso, obligaciones bancarias, tratados internacionales, etc.). (Art. 27)"},{"id":"agencia_proteccion_datos","termino":"Agencia de Protección de Datos Personales (AGEPRODAT)","definicion":"Corporación autónoma de derecho público, de carácter técnico, descentralizado, con personalidad jurídica y patrimonio propio, relacionada con el Presidente de la República a través del Ministerio de Economía, Fomento y Turismo. Tiene por objeto velar por la efectiva protección de los derechos que garantizan la vida privada y fiscalizar el cumplimiento de la ley. Creada por Art. 30."},{"id":"registro_nacional_sanciones","termino":"Registro Nacional de Sanciones y Cumplimiento","definicion":"Registro nacional de carácter público administrado por la Agencia, que consigna los modelos certificados de prevención, los responsables de datos que los hayan adoptado y las sanciones impuestas a los responsables que hayan infringido la ley. (Art. 2°, letra z; Art. 39)"},{"id":"modelo_prevencion","termino":"Modelo de prevención de infracciones (programa de cumplimiento)","definicion":"Programa que los responsables pueden adoptar voluntariamente para prevenir infracciones. Debe contener, al menos: designación de un delegado de protección de datos, definición de sus facultades, identificación de tipos de información y bases de datos, protocolos internos, mecanismos de reporte (incluyendo reporte de brechas del Art. 14 sexies) y sanciones administrativas internas. (Art. 49)"},{"id":"utms","termino":"Unidades Tributarias Mensuales (UTM)","definicion":"Unidad de medida tributaria chilena ajustada por IPC. La Ley 21.719 usa las UTM como base de cálculo de las multas: hasta 5.000 UTM para infracciones leves, hasta 10.000 UTM para graves, hasta 20.000 UTM para gravísimas. Para grandes empresas reincidentes puede alcanzar al 4% de ingresos anuales. (Art. 35)"},{"id":"datos_biometricos","termino":"Datos biométricos","definicion":"Datos obtenidos a partir de un tratamiento técnico específico relativos a las características físicas, fisiológicas o conductuales de una persona que permitan o confirmen su identificación única, tales como huella digital, iris, rasgos de la mano o faciales y la voz. Sólo pueden tratarse con consentimiento expreso e información específica sobre el sistema usado. (Art. 16 ter)"},{"id":"menores_edad","termino":"Niños, niñas y adolescentes (para efectos de la Ley)","definicion":"Para efectos de la Ley 21.719, son niños/niñas los menores de 14 años y adolescentes los mayores de 14 y menores de 18 años. El tratamiento de datos de niños/niñas requiere consentimiento de padres o representantes legales. Los adolescentes pueden consentir como adultos, salvo sus datos sensibles antes de los 16 años que requieren autorización parental. (Art. 16 quáter)"},{"id":"cesion_comunicacion","termino":"Cesión vs Comunicación de datos","definicion":"Comunicación es dar a conocer datos a personas distintas del titular sin llegar a cederlos o transferirlos (Art. 2°, letra c). Cesión es la transferencia de datos personales por parte del responsable a otro responsable de datos (Art. 2°, letra v). Ambas requieren consentimiento o causal legal habilitante."},{"id":"elaboracion_perfiles","termino":"Elaboración de perfiles (profiling)","definicion":"Toda forma de tratamiento automatizado de datos personales que consista en utilizar esos datos para evaluar, analizar o predecir aspectos relativos al rendimiento profesional, situación económica, salud, preferencias personales, intereses, fiabilidad, comportamiento, ubicación o movimientos de una persona natural. (Art. 2°, letra w)"},{"id":"bloqueo_temporal","termino":"Bloqueo temporal","definicion":"Medida cautelar que permite al titular solicitar la suspensión del tratamiento de sus datos mientras se resuelve una solicitud de rectificación, supresión u oposición. El responsable debe responder en dos días hábiles. Mientras tanto, no puede tratar los datos. No afecta su almacenamiento. (Art. 11 inc. 7º)"}],"quizzes_por_modulo":{"empresa":[{"pregunta":"¿Cuál es la multa máxima para una infracción gravísima según el Art. 35 de la Ley 21.719?","opciones":["5.000 UTM","10.000 UTM","20.000 UTM","50.000 UTM"],"correcta":2,"explicacion_al_fallar":"Art. 35: las infracciones gravísimas se sancionan con multa de hasta 20.000 UTM (~$1.340M CLP). Para grandes empresas reincidentes puede alcanzar el 2% o 4% de los ingresos anuales por ventas (Art. 35 inc. final)."},{"pregunta":"¿Cuál es el plazo que tiene el responsable para responder una solicitud de derechos ARSOP del titular (Art. 11)?","opciones":["15 días hábiles","30 días corridos (prorrogables una vez)","60 días hábiles improrrogables","90 días corridos"],"correcta":1,"explicacion_al_fallar":"Art. 11 inc. 2: el responsable debe pronunciarse a más tardar dentro de 30 días corridos, prorrogables por una sola vez hasta 30 días más. El bloqueo temporal debe resolverse en 2 días hábiles (Art. 11 inc. 7)."},{"pregunta":"¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) y cuándo es obligatoria (Art. 15 ter)?","opciones":["Un formulario voluntario para empresas grandes; nunca obligatoria","Un análisis previo obligatorio cuando el tratamiento puede producir alto riesgo: decisiones automatizadas, tratamiento masivo, datos sensibles, monitoreo de espacios públicos","Un reporte posterior a una brecha de seguridad","Un certificado que emite la Agencia automáticamente"],"correcta":1,"explicacion_al_fallar":"Art. 15 ter: la EIPD debe realizarse ANTES del tratamiento cuando sea probable que produzca alto riesgo. Casos taxativos: evaluación sistemática y exhaustiva con decisiones automatizadas, tratamiento masivo a gran escala, observación de zona pública, tratamiento de datos sensibles en hipótesis de excepción al consentimiento."},{"pregunta":"¿En qué consiste el Modelo de Prevención de Infracciones (MPI) del Art. 49?","opciones":["Un seguro obligatorio contratado con la Agencia","Un programa de cumplimiento voluntario que incluye designación de delegado (DPO), identificación de riesgos, protocolos internos y mecanismos de reporte de brechas","Una auditoría anual realizada por el SERNAC","Un curso obligatorio de capacitación para todos los trabajadores"],"correcta":1,"explicacion_al_fallar":"Art. 49: el MPI es voluntario y contiene: designación de DPO, identificación de tipo de información y actividades de riesgo, protocolos internos, mecanismos de reporte (incluyendo Art. 14 sexies) y sanciones internas. Implementarlo puede ser atenuante (DS 662/2025)."},{"pregunta":"¿Cuándo una transferencia internacional de datos es lícita sin garantías adicionales (Art. 27)?","opciones":["Siempre, sin restricciones","Cuando el país destino tenga un nivel adecuado de protección (decisión de adecuación por la Agencia, Art. 28)","Solo si el titular no se opone","Solo si el país destino pertenece a la OCDE"],"correcta":0,"explicacion_al_fallar":"Art. 27 letra a: la transferencia es lícita si el país tiene nivel adecuado de protección (Art. 28). Sin adecuación, se requieren cláusulas contractuales, normas corporativas vinculantes, o excepciones tasadas (consentimiento expreso, tratados internacionales, etc.)."}],"ciudadano":[{"pregunta":"¿Qué significa ARSOP y cuáles son los derechos que incluye?","opciones":["Acceso, Rectificación, Supresión, Oposición y Portabilidad","Acceso, Rectificación, Cancelación, Oposición y Protección","Autenticación, Registro, Seguridad, Orden y Privacidad","Auditoría, Revisión, Supervisión, Ortogonalidad y Protección"],"correcta":0,"explicacion_al_fallar":"ARSOP son los 5 derechos del titular que sustituyen al antiguo ARCO: Acceso (Art. 5), Rectificación (Art. 6), Supresión (Art. 7), Oposición (Art. 8) y Portabilidad (Art. 9). La Ley 21.719 añade además el bloqueo temporal (Art. 11 inc. 7) y el derecho a no ser objeto de decisiones automatizadas (Art. 8 bis)."},{"pregunta":"¿Qué plazo tienes para reclamar ante la Agencia si el responsable rechaza tu solicitud o no responde (Art. 41)?","opciones":["10 días hábiles","30 días hábiles","60 días hábiles","90 días hábiles"],"correcta":1,"explicacion_al_fallar":"Art. 41 letra a: tienes 30 días hábiles desde que recibas la respuesta negativa o venza el plazo de 30 días del responsable. Si la Agencia no se pronuncia en 10 días hábiles sobre admisibilidad, se entiende acogido (Art. 41 letra c)."},{"pregunta":"Si una empresa sufre una brecha que expone tus datos sensibles o los de tus hijos menores de 14 años, ¿qué debe hacer (Art. 14 sexies)?","opciones":["Nada, solo documentarlo internamente","Reportar a la Agencia sin dilaciones indebidas Y notificar a cada titular afectado en lenguaje claro y sencillo","Esperar 6 meses para ver si se repite la brecha","Publicar un aviso en el Diario Oficial únicamente"],"correcta":1,"explicacion_al_fallar":"Art. 14 sexies: si la brecha afecta datos sensibles, datos de menores de 14 años o datos económicos/financieros, el responsable debe notificar a cada titular afectado (o difusión masiva si no fuera posible) además de reportar a la Agencia."},{"pregunta":"¿Puede una empresa tratar tus datos personales sin tu consentimiento?","opciones":["Nunca, el consentimiento es siempre obligatorio","Sí, en 6 bases de licitud alternativas al consentimiento (Art. 13): obligaciones contractuales, intereses legítimos, cumplimiento legal, protección vital, etc.","Sí, pero solo si la empresa tiene más de 10 años de antigüedad","Sí, pero solo con autorización del SERNAC"],"correcta":1,"explicacion_al_fallar":"Art. 12 (consentimiento) y Art. 13 (otras 6 fuentes de licitud): el tratamiento es lícito sin consentimiento cuando medie obligación contractual, cumplimiento de ley, ejercicio de derechos, interés legítimo, protección vital o autorización legal expresa."}],"desarrollador":[{"pregunta":"¿Qué medidas técnicas exige el Art. 14 quinquies para garantizar la seguridad del tratamiento?","opciones":["Solo firewall y antivirus","Seudonimización, cifrado, resiliencia, capacidad de restauración y verificación regular de eficacia","Únicamente contraseñas de 8 caracteres","Doble factor de autenticación únicamente"],"correcta":1,"explicacion_al_fallar":"Art. 14 quinquies: las medidas deben incluir (a) seudonimización y cifrado, (b) confidencialidad, integridad, disponibilidad y resiliencia, (c) capacidad de restauración tras incidente, (d) verificación regular de eficacia. En controversia, el responsable debe acreditar su existencia."},{"pregunta":"¿Qué requisitos debe cumplir el consentimiento para ser válido bajo la Ley 21.719 (Art. 2 letra p, Art. 12)?","opciones":["Tácito, genérico y verbal","Libre, específico, inequívoco, informado y mediante clara acción afirmativa (no pre-marcado)","Firmado ante notario únicamente","Validado por la Agencia previamente"],"correcta":1,"explicacion_al_fallar":"Art. 2 letra p: el consentimiento debe ser 'libre, específica, inequívoca e informada, otorgada a través de una declaración o una clara acción afirmativa'. Las casillas premarcadas son inválidas. SERNAC exige diseño de dos botones equivalentes y revocabilidad sencilla."},{"pregunta":"¿Qué es un contrato DPA (Data Processing Agreement) y cuándo es obligatorio (Art. 15 bis)?","opciones":["Un acuerdo de no divulgación entre competidores","Un contrato de encargo de tratamiento entre responsable y encargado que restringe uso, exige seguridad y establece destrucción/devolución al término","Un permiso de la Agencia para operar","Un contrato laboral con el DPO"],"correcta":1,"explicacion_al_fallar":"Art. 15 bis: el responsable que delega tratamiento a un tercero mandatario/encargado debe formalizar un DPA que limite el uso a los fines del encargo, garantice seguridad, y establezca la destrucción o devolución de los datos al finalizar."},{"pregunta":"¿Qué es el 'Shadow AI' y por qué representa un riesgo bajo la Ley 21.719?","opciones":["Un tipo de malware que roba datos automáticamente","El uso no autorizado de herramientas de IA generativa por empleados que introducen datos personales en prompts, constituyendo tratamiento ilícito y potencial brecha","Una técnica de seudonimización avanzada","Un servicio de backup automático de la Agencia"],"correcta":1,"explicacion_al_fallar":"El Shadow AI (uso de ChatGPT, Gemini, Copilot con datos de clientes/RRHH sin autorización) constituye tratamiento ilícito y puede generar brechas. Las empresas deben implementar políticas de gobernanza de IA y sanitizar PII antes de enviar datos a APIs externas."}],"institucion":[{"pregunta":"¿Pueden los órganos públicos tratar datos personales sin consentimiento del titular (Art. 20)?","opciones":["No, el consentimiento es siempre obligatorio también para el Estado","Sí, cuando el tratamiento se realiza para el cumplimiento de sus funciones legales dentro del ámbito de sus competencias","Sí, pero solo con autorización del Presidente","Solo si los datos son de funcionarios públicos"],"correcta":1,"explicacion_al_fallar":"Art. 20: es lícito el tratamiento por órganos públicos cuando se realiza para el cumplimiento de sus funciones legales, dentro del ámbito de sus competencias. Sin embargo, deben respetar los principios del Art. 3 y los derechos ARSOP del titular."},{"pregunta":"¿Qué obligación de transparencia mensual tienen los organismos públicos respecto a convenios de cesión de datos (Art. 22)?","opciones":["No tienen obligación de transparencia","Informar mensualmente en su sitio web institucional los convenios suscritos de cesión o transferencia de datos personales","Publicar en el Diario Oficial trimestralmente","Enviar un reporte anual al Congreso"],"correcta":1,"explicacion_al_fallar":"Art. 22: los órganos públicos están facultados para ceder datos entre sí para cumplimiento de funciones, pero deben publicar mensualmente en su sitio web los convenios de cesión. Esta obligación será fiscalizada por la Agencia."},{"pregunta":"¿Qué responsabilidad personal tiene el jefe superior de un órgano público por incumplimientos de la ley (Art. 44)?","opciones":["Ninguna, la responsabilidad es siempre del Estado","Suspensión del cargo por 5 a 15 días hábiles o multas deducidas de su remuneración mensual (20%-50%)","Destitución inmediata sin proceso","Solo una amonestación verbal"],"correcta":1,"explicacion_al_fallar":"Art. 44: la sanción no recae sobre el erario fiscal sino que el jefe superior del servicio puede ser suspendido 5-15 días hábiles o recibir multas deducidas de su remuneración. Esto evita que el presupuesto público se vea afectado por incumplimientos."},{"pregunta":"¿Qué debe hacer el Servicio de Registro Civil antes de la entrada en vigencia (Art. 3 transitorio)?","opciones":["Crear un nuevo registro nacional de bases de datos","Eliminar el registro de los bancos de datos personales del antiguo Art. 22 de la Ley 19.628","Migrar todos los datos a la nube","Contratar al primer DPO del país"],"correcta":1,"explicacion_al_fallar":"Art. 3 transitorio: el Registro Civil debe eliminar el registro de bancos de datos personales contemplado en el antiguo Art. 22 de la Ley 19.628 dentro de los 60 días anteriores a la entrada en vigencia."}]},"test_final":[{"pregunta":"¿Cuál es la fecha de vigencia plena de la Ley 21.719?","opciones":["13 de diciembre de 2024","1 de diciembre de 2026","17 de diciembre de 2026","1 de enero de 2027"],"correcta":1,"explicacion_al_fallar":"Art. 1 transitorio: las modificaciones entran en vigencia el día primero del mes vigésimo cuarto posterior a la publicación (13-dic-2024), es decir, el 1 de diciembre de 2026."},{"pregunta":"¿Cuántos derechos ARSOP reconoce la Ley 21.719 al titular de datos?","opciones":["3 (Acceso, Rectificación, Supresión)","5 (Acceso, Rectificación, Supresión, Oposición, Portabilidad) + bloqueo temporal","7 derechos sin bloqueo","Solo 2 (Acceso y Rectificación)"],"correcta":1,"explicacion_al_fallar":"Arts. 4-9: Acceso (5), Rectificación (6), Supresión (7), Oposición (8), Portabilidad (9). Art. 11 inc. 7 añade el bloqueo temporal. Art. 8 bis añade el derecho a no ser objeto de decisiones automatizadas."},{"pregunta":"¿Qué es la Agencia de Protección de Datos Personales (APDP) según el Art. 30?","opciones":["Un departamento del Ministerio del Interior","Una corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, relacionada con el Presidente vía Ministerio de Economía","Una empresa privada contratada por el Estado","Un comité del Senado"],"correcta":1,"explicacion_al_fallar":"Art. 30: la APDP es corporación autónoma de derecho público, de carácter técnico, descentralizado, con personalidad jurídica y patrimonio propio. Se relaciona con el Presidente a través del Ministerio de Economía, Fomento y Turismo."},{"pregunta":"¿Cuál es el régimen de PYMEs durante el primer año de vigencia (Art. 6 transitorio)?","opciones":["Multas normales sin excepción","La Agencia podrá aplicar amonestación por escrito en lugar de multas durante los primeros 12 meses","Suspensión total de la ley para PYMEs","Solo aplican las infracciones leves"],"correcta":1,"explicacion_al_fallar":"Art. 6 transitorio: durante los primeros 12 meses de vigencia, para empresas de menor tamaño (Ley 20.416), la Agencia podrá aplicar amonestación por escrito en lugar de multa, señalando la gravedad y las medidas de subsanación."},{"pregunta":"¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) según el Art. 15 ter?","opciones":["Un reporte trimestral obligatorio para todas las empresas","Un análisis previo al tratamiento de alto riesgo que evalúa necesidad, proporcionalidad y riesgos","Un certificado que emite la Agencia","Una auditoría posterior a una brecha"],"correcta":1,"explicacion_al_fallar":"Art. 15 ter: la EIPD es un análisis previo obligatorio cuando el tratamiento probablemente produzca alto riesgo. Casos: decisiones automatizadas con efectos jurídicos, tratamiento masivo a gran escala, monitoreo de zonas públicas, datos sensibles en excepciones al consentimiento."},{"pregunta":"¿Qué plazo tiene el titular para reclamar ante la Agencia tras una denegación (Art. 41)?","opciones":["10 días hábiles","30 días hábiles","60 días hábiles","90 días hábiles"],"correcta":1,"explicacion_al_fallar":"Art. 41 letra a: el titular tiene 30 días hábiles desde la respuesta negativa o el vencimiento del plazo del responsable para presentar reclamación ante la Agencia."},{"pregunta":"¿Qué exige el Art. 14 sexies respecto a las brechas de seguridad?","opciones":["Reportar a la Agencia anualmente","Reportar a la Agencia por los medios más expeditos y sin dilaciones indebidas; notificar a titulares si afecta datos sensibles o de menores","No existe obligación de reporte","Solo reportar si afecta a más de 1.000 personas"],"correcta":1,"explicacion_al_fallar":"Art. 14 sexies: el responsable debe reportar a la Agencia 'sin dilaciones indebidas' las vulneraciones que causen destrucción, filtración, pérdida o alteración de datos. Si afecta datos sensibles, de menores de 14 o datos económicos, debe también notificar a cada titular."},{"pregunta":"¿Cuáles son las 3 vías de licitud de transferencias internacionales (Art. 27)?","opciones":["Consentimiento del titular, pago de arancel, autorización del Ministerio","País con nivel adecuado de protección; cláusulas contractuales/normas corporativas vinculantes; o excepciones tasadas (consentimiento expreso, tratados, etc.)","Solo a países miembros de la OCDE","Transferencias prohibidas totalmente"],"correcta":1,"explicacion_al_fallar":"Art. 27: (a) país con nivel adecuado (Art. 28), (b) cláusulas contractuales o normas corporativas vinculantes con garantías adecuadas, (c) modelo de cumplimiento certificado. Sin estas, solo transferencias específicas y no habituales en casos tasados (consentimiento expreso, tratados, contratos, etc.)."},{"pregunta":"¿Puede el dueño de una microempresa asumir el rol de Delegado de Protección de Datos (DPO)?","opciones":["No, siempre debe contratar a un profesional externo","Sí, en micro, pequeñas y medianas empresas el dueño o sus máximas autoridades pueden asumir personalmente las tareas de DPO (Art. 50)","Solo si la empresa tiene menos de 5 empleados","Solo con autorización de la Agencia"],"correcta":1,"explicacion_al_fallar":"Art. 50: 'En las micro, pequeñas y medianas empresas, el dueño o sus máximas autoridades podrán asumir personalmente las tareas de delegado de protección de datos.'"},{"pregunta":"¿Qué es el Registro Nacional de Sanciones y Cumplimiento (Art. 39)?","opciones":["Un registro privado de empresas","Un registro público administrado por la Agencia que consigna modelos certificados de prevención, responsables que los adoptaron y sanciones impuestas","Un registro del SERNAC","Un registro policial de infractores"],"correcta":1,"explicacion_al_fallar":"Art. 2 letra z y Art. 39: es un registro nacional de carácter público administrado por la Agencia que consigna los modelos certificados de prevención (MPI), los responsables que los hayan adoptado y las sanciones impuestas."}],"checklists":{"empresa":[{"item":"Identificar e inventariar todas las bases de datos y flujos de datos personales bajo responsabilidad propia (RAT)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Implementar políticas de consentimiento explícito, específico e informado (no casillas premarcadas) según Art. 12 y Art. 2 letra p","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Evaluar y documentar medidas de seguridad técnicas y organizativas (Art. 14 quinquies): cifrado, pseudonimización, resiliencia, restauración post-incidente, verificación regular","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Definir procedimiento de notificación de brechas de seguridad 'sin dilaciones indebidas' a la Agencia y a titulares (Art. 14 sexies)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Ejecutar EIPD (Evaluación de Impacto) previa cuando haya riesgo alto: decisiones automatizadas, tratamiento masivo, datos sensibles o monitoreo público (Art. 15 ter)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Verificar si requiere designar delegado de protección de datos (DPO) o autodesignar el dueño (PYMEs Art. 50)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Actualizar cláusulas de contratos con terceros/encargados (DPA Art. 15 bis)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Mapear transferencias internacionales: validar país con adecuación o usar CCT/BCR (Art. 27-28)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Implementar modelo de prevención de infracciones (MPI) si aplica: atenuante bajo DS 662/2025 (Art. 49)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Definir plazos de retención y políticas de purgado de datos (no mantener indefinidamente; Art. 2° letra k, Art. 2° letra o)","referencia_modulo":"contenido_empresa","items_pendientes":false},{"item":"Implementar revocabilidad del consentimiento de forma sencilla y gratuita para titulares (Art. 11 inc. 7 bloqueo temporal 2 días hábiles)","referencia_modulo":"contenido_empresa","items_pendientes":false}],"ciudadano":[{"item":"Identificar qué datos personales trata tu institución/empresa y ejercicio de tus derechos ARSOP: acceso, rectificación, supresión, oposición y portabilidad","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Solicitar al responsable la confirmación de tratamiento y/o copia de tus datos en formato estructurado (Art. 5)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Si tus datos son inexactos o desactualizados, solicitar su rectificación ante el responsable (Art. 6, plazo 30 días)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Ejercer tu derecho a oponerte al tratamiento de tus datos para fines de marketing, perfilado o determinadas finalidades (Art. 8)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Solicitar la portabilidad de tus datos a otro responsable cuando los hayas facilitado (Art. 9, formato electrónico estructurado)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Solicitar bloqueo temporal de tus datos durante la resolución de una reclamación o disputa (Art. 11 inc. 7, plazo fatal 2 días hábiles)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Si el responsable niega tu solicitud o no responde en 30 días hábiles, presentar reclamación ante la Agencia (Art. 41)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Si hay una brecha que afecta datos sensibles o de menores de 14 años, exige que se notifique tanto a la Agencia como a los titulares afectados (Art. 14 sexies)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Revocar tu consentimiento en cualquier momento si lo otorgaste previamente (Art. 12)","referencia_modulo":"contenido_ciudadano","items_pendientes":false},{"item":"Forma en que se deben gestionar los datos de menores (menores de 14 años: solo representante legal; 14-16: consentimiento propio para datos académicos, parental para sensibles; mayores de 16: régimen adulto, Art. 16 quáter)","referencia_modulo":"contenido_ciudadano","items_pendientes":false}],"desarrollador":[{"item":"Implementar consentimiento explícito con checkbox no pre-marcado y registro de efectividad (Art. 12, Art. 2 letra p)","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Integrar flujos de ejercicio de derechos ARSOP (acceso, rectificación, supresión, oposición, portabilidad, bloqueo temporal) con plazos legales (30 días hábiles)","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Aplicar medidas de seguridad por diseño: cifrado en reposo y tránsito (TLS 1.3), seudonimización/cifrado por Art. 14 quinquies","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Contratar DPA (Data Processing Agreement) con encargados (Art. 15 bis): confidencialidad, límites de uso, seguridad, destrucción/devolución al término","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Evitar Shadow AI: políticas internas de gobernanza para uso de IA generativa con datos personales; sanitizar PII antes de prompts","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Para transferencias internacionales: validar país con adecuación o firmar cláusulas contractuales tipo/BCR (Art. 27-28)","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Implementar anonimización irreversible o borrado remoto en dispositivos móviles/terreno (Art. 30, Art. 4° retención)","referencia_modulo":"contenido_desarrollador","items_pendientes":false},{"item":"Registrar todas las actividades de tratamiento y brechas en RAT y documentación soportada","referencia_modulo":"contenido_desarrollador","items_pendientes":false}],"institucion":[{"item":"Levantar inventario completo de bases de datos públicas y registrar actividades de tratamiento (RAT Art. 30)","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Eliminar registros del antiguo Art. 22 Ley 19.628 dentro de 60 días previos a la vigencia (Art. 3 transitorio)","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Configurar publicación mensual obligatoria de convenios de cesión/transferencia de datos en portal institucional (Art. 22)","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Establecer canales sencillos y con SLA de 30 días hábiles para solicitudes ciudadanas ARCOP","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Configurar perfiles y logs lúdicos en registros de infracciones para evitar tratamiento masivo (Art. 25 prohibición absoluta)","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Designar Delegado de Protección de Datos (DPO) entre funcionarios de la dotación vigente","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Capacitar obligatoriamente al personal administrativo (causa #1 de brechas por error humano)","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Configurar publicación mensual de convenios de cesión en portal web institucional","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Establecer responsabilidad personal del jefe superior (suspensión 5-15 días o multas 20-50% sueldo Art. 44) por incumplimiento","referencia_modulo":"contenido_institucion","items_pendientes":false},{"item":"Implementar políticas de retención acotada y cifrado obligatorio en endpoints (Art. 2° letra k, Art. 3°)","referencia_modulo":"contenido_institucion","items_pendientes":false}]}};
+var App = (function () {
+  'use strict';
+
+  var DATA = window.MOCK_DATA || {};
+  var VIEWS = ['home', 'lector', 'quiz', 'checklist', 'glosario', 'testfinal', 'resultados'];
+  var ROLE_LABELS = {
+    empresa: 'Empresa',
+    ciudadano: 'Ciudadano / Titular',
+    desarrollador: 'Desarrollador / Técnico',
+    institucion: 'Institución Pública'
+  };
+
+  var state = {
+    role: localStorage.getItem('ley21719_role') || null,
+    view: 'home',
+    module: 'empresa',
+    level: 'resumen',
+    quiz: { idx: 0, correct: 0, answered: false },
+    ckRole: 'empresa',
+    ckDone: {}
+  };
+
+  /* ---------- Utilities ---------- */
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  /* ---------- Markdown mínimo (para contenido_md) ---------- */
+  function mdToHtml(md) {
+    // Convertir términos del glosario en links clicables
+    var names = (DATA.terminos || []).map(function (t) { return t.termino; })
+      .sort(function (a, b) { return b.length - a.length; });
+    var text = esc(md);
+    names.forEach(function (name) {
+      var re = new RegExp('(' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      text = text.replace(re, '<button type="button" class="term-link" data-open-term="' +
+        esc(getTermIdByName(name)) + '">$1</button>');
+    });
+    var lines = text.split('\n');
+    var html = '', inList = false, inCode = false, codeBuf = [];
+    function flushList() { if (inList) { html += '</ul>'; inList = false; } }
+    lines.forEach(function (line) {
+      if (/^```/.test(line)) {
+        if (inCode) { html += '<pre><code>' + codeBuf.join('\n') + '</code></pre>'; codeBuf = []; inCode = false; }
+        else { flushList(); inCode = true; }
+        return;
+      }
+      if (inCode) { codeBuf.push(line); return; }
+      var s = line.trim();
+      if (!s) { flushList(); return; }
+      var m;
+      if ((m = s.match(/^(#{1,4})\s+(.*)$/))) {
+        flushList();
+        var lvl = m[1].length;
+        html += '<h' + lvl + '>' + m[2] + '</h' + lvl + '>';
+      } else if ((m = s.match(/^\*\s+(.*)$/)) || (m = s.match(/^-\s+(.*)$/))) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += '<li>' + m[1] + '</li>';
+      } else if ((m = s.match(/^(\d+)\.\s+(.*)$/))) {
+        flushList();
+        html += '<p>' + s + '</p>';
+      } else {
+        flushList();
+        html += '<p>' + s + '</p>';
+      }
+    });
+    flushList();
+    if (inCode) { html += '<pre><code>' + codeBuf.join('\n') + '</code></pre>'; }
+    return html;
+  }
+
+  function getTermIdByName(name) {
+    var t = (DATA.terminos || []).find(function (x) { return x.termino === name; });
+    return t ? t.id : null;
+  }
+  function getTermById(id) {
+    return (DATA.terminos || []).find(function (x) { return x.id === id; });
+  }
+
+  /* ---------- Vista: navegación ---------- */
+  function setView(view) {
+    if (VIEWS.indexOf(view) === -1) view = 'home';
+    state.view = view;
+    VIEWS.forEach(function (v) {
+      var el = document.getElementById('view-' + v);
+      if (el) el.classList.toggle('active', v === view);
+    });
+    document.title = 'Ley 21.719 · ' + view;
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    if (view === 'home') renderRoleState();
+    if (view === 'lector') renderLector();
+    if (view === 'quiz') startQuiz();
+    if (view === 'checklist') renderChecklist();
+    if (view === 'glosario') renderGlossary();
+  }
+
+  /* ---------- Cuenta regresiva ---------- */
+  function getVigenciaTarget() {
+    // Vigencia plena: 1 DIC 2026 00:00 hora Chile (CLST = UTC-3)
+    var parts = (DATA.vigencia || '2026-12-01').split('-');
+    var y = +parts[0], mo = +parts[1] - 1, d = +parts[2];
+    return Date.UTC(y, mo, d, 3, 0, 0); // 00:00 CLST = 03:00 UTC
+  }
+  function updateCountdown() {
+    var target = getVigenciaTarget();
+    var now = Date.now();
+    var diff = target - now;
+    var el = document.getElementById('countdown');
+    var hero = document.getElementById('countdown-hero');
+    if (diff <= 0) {
+      var msg = '¡Vigencia plena en curso!';
+      if (el) el.textContent = msg;
+      if (hero) hero.textContent = msg;
+      return;
+    }
+    var s = Math.floor(diff / 1000);
+    var days = Math.floor(s / 86400);
+    var hrs = Math.floor((s % 86400) / 3600);
+    var mins = Math.floor((s % 3600) / 60);
+    var secs = s % 60;
+    var txt = days + ' días, ' + hrs + 'h ' + mins + 'm ' + secs + 's';
+    if (el) el.textContent = '⏳ ' + txt;
+    if (hero) hero.textContent = txt;
+  }
+
+  /* ---------- Estado de rol ---------- */
+  function setRole(role) {
+    state.role = role;
+    localStorage.setItem('ley21719_role', role);
+    renderRoleState();
+  }
+  function renderRoleState() {
+    var nameEl = document.getElementById('roleName');
+    var ind = document.getElementById('roleIndicator');
+    if (state.role) {
+      if (nameEl) nameEl.textContent = ROLE_LABELS[state.role] || state.role;
+      if (ind) ind.hidden = false;
+    } else {
+      if (ind) ind.hidden = true;
+    }
+    $all('.role-card').forEach(function (c) {
+      var sel = c.getAttribute('data-role') === state.role;
+      c.classList.toggle('selected', sel);
+      c.setAttribute('aria-pressed', sel ? 'true' : 'false');
+    });
+  }
+
+  /* ---------- Lector ---------- */
+  function buildLevelContent(moduleObj, level) {
+    var md = moduleObj.contenido_md || '';
+    if (level === 'legal') return md;
+    if (level === 'resumen') {
+      // Extraer objetivo / primeros párrafos
+      var lines = md.split('\n');
+      var out = [];
+      var started = false;
+      for (var i = 0; i < lines.length; i++) {
+        var l = lines[i];
+        if (/^##\s*Objetivo/i.test(l)) { started = true; out.push(l); continue; }
+        if (started && /^##\s/.test(l) && !/^##\s*Objetivo/i.test(l)) break;
+        if (started) out.push(l);
+      }
+      if (!out.length) out = lines.slice(0, 12);
+      return out.join('\n');
+    }
+    // amigable: todo el contenido
+    return md;
+  }
+  function renderLector() {
+    var m = (DATA.modulos || []).find(function (x) { return x.id === state.module; }) ||
+      (DATA.modulos || [])[0];
+    if (!m) return;
+    $('#lector-time').textContent = (m.tiempo_lectura_min || 8) + ' min';
+    var md = buildLevelContent(m, state.level);
+    $('#lector-content').innerHTML = mdToHtml(md);
+    var wi = $('#lector-whatif-body');
+    if (wi && m.escenario) {
+      wi.innerHTML = mdToHtml(m.escenario);
+    }
+    // tabs de nivel activos
+    $all('.level-tab').forEach(function (b) {
+      var on = b.getAttribute('data-level') === state.level;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    $all('.module-tab').forEach(function (b) {
+      var on = b.getAttribute('data-module-tab') === state.module;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+
+  /* ---------- Quiz ---------- */
+  function currentQuizQuestions() {
+    var key = state.role && DATA.quizzes_por_modulo[state.role]
+      ? state.role
+      : state.module;
+    return DATA.quizzes_por_modulo[key] || [];
+  }
+  function startQuiz() {
+    state.quiz = { idx: 0, correct: 0, answered: false };
+    renderQuizQuestion();
+  }
+  function renderQuizQuestion() {
+    var qs = currentQuizQuestions();
+    var total = qs.length;
+    $('#quiz-total').textContent = total;
+    $('#quiz-current').textContent = state.quiz.idx + 1;
+    $('#quiz-correct').textContent = state.quiz.correct;
+    $('#quiz-bar').style.width = (state.quiz.idx / total * 100) + '%';
+    var q = qs[state.quiz.idx];
+    if (!q) return;
+    $('#quiz-question-text').textContent = q.pregunta;
+    var opts = $('#quiz-options');
+    opts.innerHTML = '';
+    q.opciones.forEach(function (op, i) {
+      var labId = 'q' + state.quiz.idx + '_' + i;
+      var div = document.createElement('div');
+      div.className = 'quiz-option';
+      div.setAttribute('role', 'radio');
+      div.setAttribute('aria-checked', 'false');
+      div.innerHTML =
+        '<input type="radio" name="quiz-opt" id="' + labId + '" value="' + i + '">' +
+        '<label for="' + labId + '">' + esc(op) + '</label>';
+      opts.appendChild(div);
+    });
+    var fb = $('#quiz-feedback');
+    fb.className = 'quiz-feedback';
+    fb.innerHTML = '';
+    $('#quiz-answer').style.display = '';
+    $('#quiz-answer').disabled = true;
+    $('#quiz-next').style.display = 'none';
+    $('#quiz-finish').style.display = 'none';
+    state.quiz.answered = false;
+  }
+  function submitQuizAnswer() {
+    if (state.quiz.answered) return;
+    var qs = currentQuizQuestions();
+    var q = qs[state.quiz.idx];
+    var sel = $('input[name="quiz-opt"]:checked');
+    if (!sel) return;
+    var val = +sel.value;
+    state.quiz.answered = true;
+    var correct = val === q.correcta;
+    if (correct) state.quiz.correct++;
+    $('#quiz-correct').textContent = state.quiz.correct;
+    var opts = $all('.quiz-option');
+    opts.forEach(function (div, i) {
+      if (i === q.correcta) div.classList.add('correct');
+      else if (i === val) div.classList.add('incorrect');
+    });
+    var fb = $('#quiz-feedback');
+    fb.className = 'quiz-feedback show ' + (correct ? 'correct' : 'incorrect');
+    fb.innerHTML = '<strong>' + (correct ? '✓ Correcto' : '✗ Incorrecto') + '</strong><br>' +
+      (correct ? (q.explicacion_al_acertar || '¡Bien hecho!') : esc(q.explicacion_al_fallar || ''));
+    $('#quiz-answer').style.display = 'none';
+    if (state.quiz.idx < qs.length - 1) {
+      $('#quiz-next').style.display = '';
+    } else {
+      $('#quiz-finish').style.display = '';
+    }
+  }
+
+  /* ---------- Checklist ---------- */
+  function ckKey(role) { return 'ley21719_ck_' + role; }
+  function loadCk(role) {
+    try { return JSON.parse(localStorage.getItem(ckKey(role)) || '{}'); }
+    catch (e) { return {}; }
+  }
+  function saveCk(role, obj) { localStorage.setItem(ckKey(role), JSON.stringify(obj)); }
+  function renderChecklist() {
+    var role = state.ckRole;
+    var items = DATA.checklists[role] || [];
+    var done = loadCk(role);
+    var sec = $('#checklist-sections');
+    sec.innerHTML = '';
+    var completed = items.filter(function (it) { return done[it.item]; }).length;
+    items.forEach(function (it, i) {
+      var row = document.createElement('div');
+      row.className = 'checklist-item' + (done[it.item] ? ' completed' : '');
+      row.innerHTML =
+        '<input type="checkbox" id="ck_' + role + '_' + i + '" ' + (done[it.item] ? 'checked' : '') +
+        ' aria-label="' + esc(it.item) + '">' +
+        '<label for="ck_' + role + '_' + i + '">' + esc(it.item) +
+        (it.referencia_modulo ? ' <em style="color:var(--color-slate-400);font-style:normal;font-size:var(--font-size-xs);">(' + esc(it.referencia_modulo.replace('contenido_', '')) + ')</em>' : '') +
+        '</label>';
+      var cb = row.querySelector('input');
+      cb.addEventListener('change', function () {
+        var d = loadCk(role);
+        if (cb.checked) d[it.item] = true; else delete d[it.item];
+        saveCk(role, d);
+        row.classList.toggle('completed', cb.checked);
+        renderChecklistProgress();
+      });
+      sec.appendChild(row);
+    });
+    renderChecklistProgress();
+    $all('.ck-role').forEach(function (b) {
+      var on = b.getAttribute('data-ckrole') === role;
+      b.classList.toggle('active', on);
+    });
+  }
+  function renderChecklistProgress() {
+    var role = state.ckRole;
+    var items = DATA.checklists[role] || [];
+    var done = loadCk(role);
+    var c = items.filter(function (it) { return done[it.item]; }).length;
+    var pct = items.length ? Math.round(c / items.length * 100) : 0;
+    $('#checklist-global-pct').textContent = pct + '%';
+    $('#checklist-global-bar').style.width = pct + '%';
+    $('#checklist-global-count').textContent = c + ' de ' + items.length + ' ítems completados';
+  }
+
+  /* ---------- Glosario ---------- */
+  function renderGlossary() {
+    var az = $('#glosario-az');
+    if (!az.dataset.built) {
+      az.innerHTML = '';
+      var letters = {};
+      (DATA.terminos || []).forEach(function (t) {
+        var L = t.termino.charAt(0).toUpperCase();
+        letters[L] = true;
+      });
+      Object.keys(letters).sort().forEach(function (L) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = L;
+        b.dataset.letter = L;
+        b.addEventListener('click', function () { filterGlossary(L); });
+        az.appendChild(b);
+      });
+      az.dataset.built = '1';
+    }
+    drawGlossaryList('');
+    $('#glosario-search-input').value = '';
+  }
+  function drawGlossaryList(q, letter) {
+    var list = $('#glosario-list');
+    var terms = (DATA.terminos || []).filter(function (t) {
+      var ok = true;
+      if (q) ok = ok && t.termino.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+      if (letter) ok = ok && t.termino.charAt(0).toUpperCase() === letter;
+      return ok;
+    });
+    list.innerHTML = '';
+    terms.forEach(function (t) {
+      var row = document.createElement('div');
+      row.className = 'glosario-item';
+      row.innerHTML = '<span class="glosario-term">' + esc(t.termino) + '</span>' +
+        '<button type="button" data-open-term="' + esc(t.id) + '">Ver definición →</button>';
+      list.appendChild(row);
+    });
+    $('#glosario-count').textContent = 'Mostrando ' + terms.length + ' término' + (terms.length === 1 ? '' : 's');
+    $('#glosario-empty').hidden = terms.length !== 0;
+    $all('.glosario-az button').forEach(function (b) {
+      b.classList.toggle('active', letter && b.dataset.letter === letter);
+    });
+  }
+  function filterGlossary(letter) {
+    var q = $('#glosario-search-input').value;
+    drawGlossaryList(q, letter);
+  }
+
+  /* ---------- Modal ---------- */
+  var lastFocused = null;
+  function openModal(termId) {
+    var t = getTermById(termId);
+    if (!t) return;
+    lastFocused = document.activeElement;
+    $('#modal-title').textContent = t.termino;
+    var def = t.definicion || '';
+    $('#modal-body').textContent = def;
+    var rel = $('#modal-related-tags');
+    rel.innerHTML = '';
+    // Relacionados: otros términos mencionados en la definición
+    var others = (DATA.terminos || []).filter(function (x) {
+      return x.id !== t.id && def.indexOf(x.termino) !== -1;
+    }).slice(0, 5);
+    if (!others.length) {
+      $('#modal-related').style.display = 'none';
+    } else {
+      $('#modal-related').style.display = '';
+      others.forEach(function (o) {
+        var tag = document.createElement('button');
+        tag.type = 'button';
+        tag.className = 'tag';
+        tag.textContent = o.termino;
+        tag.setAttribute('data-open-term', o.id);
+        rel.appendChild(tag);
+      });
+    }
+    var ov = $('#modal-overlay');
+    ov.classList.add('show');
+    ov.setAttribute('aria-hidden', 'false');
+    $('#modal-close').focus();
+  }
+  function closeModal() {
+    var ov = $('#modal-overlay');
+    ov.classList.remove('show');
+    ov.setAttribute('aria-hidden', 'true');
+    if (lastFocused) lastFocused.focus();
+  }
+
+  /* ---------- Test final ---------- */
+  function renderTestFinal() {
+    var qs = DATA.test_final || [];
+    var wrap = $('#testfinal-questions');
+    wrap.innerHTML = '';
+    qs.forEach(function (q, qi) {
+      var block = document.createElement('div');
+      block.className = 'test-question';
+      var opts = q.opciones.map(function (op, oi) {
+        var id = 'tf_' + qi + '_' + oi;
+        return '<div class="quiz-option">' +
+          '<input type="radio" name="tf_' + qi + '" id="' + id + '" value="' + oi + '">' +
+          '<label for="' + id + '">' + esc(op) + '</label></div>';
+      }).join('');
+      block.innerHTML = '<h3>' + (qi + 1) + '. ' + esc(q.pregunta) + '</h3><div class="quiz-options">' + opts + '</div>';
+      wrap.appendChild(block);
+    });
+  }
+  function gradeTestFinal(e) {
+    e.preventDefault();
+    var qs = DATA.test_final || [];
+    var correct = 0;
+    var detail = [];
+    qs.forEach(function (q, qi) {
+      var sel = $('input[name="tf_' + qi + '"]:checked');
+      var val = sel ? +sel.value : -1;
+      var ok = val === q.correcta;
+      if (ok) correct++;
+      detail.push({ n: qi + 1, ok: ok, pregunta: q.pregunta, tuResp: val === -1 ? 'Sin responder' : q.opciones[val], correcta: q.opciones[q.correcta] });
+    });
+    showResults(correct, qs.length, detail);
+  }
+  function showResults(correct, total, detail) {
+    $('#result-score').textContent = correct + ' / ' + total;
+    var status = $('#result-status');
+    var pct = Math.round(correct / total * 100);
+    var approved = pct >= 60;
+    status.textContent = approved
+      ? '✓ Aprobado (' + pct + '%)'
+      : '✗ No alcanzado (' + pct + '%) — repasa y vuelve a intentarlo';
+    status.className = 'result-status ' + (approved ? 'approved' : 'failed');
+    var dd = $('#result-detail');
+    dd.innerHTML = detail.map(function (d) {
+      return '<div class="row"><span><strong>' + d.n + '.</strong> ' + (d.ok ? '✓' : '✗') +
+        '</span><span>' + (d.ok ? 'Correcto' : 'Tu respuesta: ' + esc(d.tuResp)) + '</span></div>';
+    }).join('');
+    setView('resultados');
+  }
+
+  /* ---------- Footer accesos ---------- */
+  function buildFooterAccess() {
+    var wrap = $('#footer-access-links');
+    if (!wrap) return;
+    wrap.innerHTML = '';
+    VIEWS.forEach(function (v) {
+      var a = document.createElement('a');
+      a.href = '#';
+      a.textContent = v.charAt(0).toUpperCase() + v.slice(1);
+      a.setAttribute('data-view-link', v);
+      wrap.appendChild(a);
+    });
+  }
+
+  /* ---------- Event bindings ---------- */
+  function bind() {
+    // Navegación por data-view / data-view-link
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('[data-view-link]');
+      if (link) { e.preventDefault(); setView(link.getAttribute('data-view-link')); return; }
+      var logo = e.target.closest('[data-view="home"]');
+      if (logo) { e.preventDefault(); setView('home'); return; }
+      var termBtn = e.target.closest('[data-open-term]');
+      if (termBtn) { e.preventDefault(); openModal(termBtn.getAttribute('data-open-term')); return; }
+    });
+
+    // Rol cards
+    $all('.role-card').forEach(function (c) {
+      c.addEventListener('click', function () { setRole(c.getAttribute('data-role')); });
+    });
+
+    // Lector: tabs de nivel
+    $all('.level-tab').forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.level = b.getAttribute('data-level');
+        renderLector();
+      });
+    });
+    // Lector: tabs de módulo
+    $all('.module-tab').forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.module = b.getAttribute('data-module-tab');
+        renderLector();
+      });
+    });
+    // link "ir al quiz"
+    $all('[data-goto-quiz]').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.preventDefault(); startQuiz(); setView('quiz'); });
+    });
+
+    // Quiz
+    $('#quiz-answer').addEventListener('click', submitQuizAnswer);
+    $('#quiz-next').addEventListener('click', function () {
+      state.quiz.idx++;
+      renderQuizQuestion();
+    });
+    $('#quiz-finish').addEventListener('click', function () {
+      setView('resultados');
+      $('#result-score').textContent = state.quiz.correct + ' / ' + currentQuizQuestions().length;
+      var s = $('#result-status');
+      s.textContent = 'Quiz del módulo completado: ' + state.quiz.correct + ' de ' + currentQuizQuestions().length;
+      s.className = 'result-status';
+      $('#result-detail').innerHTML = '';
+      $('#result-retry').textContent = 'Repetir quiz';
+    });
+    $('#quiz-exit').addEventListener('click', function () { setView('home'); });
+    // selección de opción habilita Responder
+    document.addEventListener('change', function (e) {
+      if (e.target.name === 'quiz-opt') {
+        $all('.quiz-option').forEach(function (d, i) {
+          d.setAttribute('aria-checked', i === +e.target.value ? 'true' : 'false');
+        });
+        $('#quiz-answer').disabled = false;
+      }
+    });
+
+    // Checklist rol tabs
+    $all('.ck-role').forEach(function (b) {
+      b.addEventListener('click', function () {
+        state.ckRole = b.getAttribute('data-ckrole');
+        renderChecklist();
+      });
+    });
+    $('#checklist-reset').addEventListener('click', function () {
+      saveCk(state.ckRole, {});
+      renderChecklist();
+    });
+
+    // Glosario buscador
+    $('#glosario-search-input').addEventListener('input', function (e) {
+      var letter = ($all('.glosario-az button.active')[0] || {}).dataset
+        ? ($all('.glosario-az button.active')[0]).dataset.letter : null;
+      drawGlossaryList(e.target.value, letter);
+    });
+
+    // Modal
+    $('#modal-close').addEventListener('click', closeModal);
+    $('#modal-overlay').addEventListener('click', function (e) {
+      if (e.target === $('#modal-overlay')) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Test final
+    $('#testfinal-form').addEventListener('submit', gradeTestFinal);
+    $('#result-retry').addEventListener('click', function () {
+      renderTestFinal();
+      setView('testfinal');
+    });
+
+    // Inicializar
+    buildFooterAccess();
+    renderRoleState();
+    renderLector();
+    renderTestFinal();
+    renderGlossary();
+    setView('home');
+  }
+
+  // Exponer para debugging
+  return {
+    init: function () {
+      bind();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    },
+    setView: setView
+  };
+})();
+
+document.addEventListener('DOMContentLoaded', function () { App.init(); });
+
+</script>
+</body>
+</html>
