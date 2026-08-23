@@ -1,0 +1,119 @@
+{
+  "terminos": [
+    {
+      "id": "dato_personal",
+      "termino": "Dato personal",
+      "definicion": "Cualquier información vinculada o referida a una persona natural identificada o identificable. Se considera identificable toda persona cuya identidad pueda determinarse, directa o indirectamente, en particular mediante identificadores como el nombre, el número de cédula de identidad o el análisis de elementos propios de la identidad física, fisiológica, genética, psíquica, económica, cultural o social. (Art. 2°, letra f)"
+    },
+    {
+      "id": "dato_sensible",
+      "termino": "Datos personales sensibles",
+      "definicion": "Datos personales que se refieren a las características físicas o morales de las personas o a hechos o circunstancias de su vida privada o intimidad, que revelen: origen étnico o racial, afiliación política, sindical o gremial, situación socioeconómica, convicciones ideológicas o filosóficas, creencias religiosas, datos relativos a la salud, al perfil biológico humano, los datos biométricos, y la información relativa a la vida sexual, a la orientación sexual y a la identidad de género. (Art. 2°, letra g)"
+    },
+    {
+      "id": "titular",
+      "termino": "Titular de datos (o titular)",
+      "definicion": "Persona natural, identificada o identificable, a quien conciernen o se refieren los datos personales. Es quien ejerce los derechos ARCO+ frente al responsable. (Art. 2°, letra ñ)"
+    },
+    {
+      "id": "responsable",
+      "termino": "Responsable de datos (o responsable)",
+      "definicion": "Toda persona natural o jurídica, pública o privada, que decide acerca de los fines y medios del tratamiento de datos personales, con independencia de si los datos son tratados directamente por ella o a través de un tercero mandatario o encargado. (Art. 2°, letra n)"
+    },
+    {
+      "id": "encargado",
+      "termino": "Tercero mandatario o encargado",
+      "definicion": "Persona natural o jurídica que trata datos personales por cuenta del responsable de datos. No decide sobre finalidades ni medios, solo ejecuta instrucciones. (Art. 2°, letra x)"
+    },
+    {
+      "id": "arco_mas",
+      "termino": "Derechos ARCO+",
+      "definicion": "Conjunto de derechos del titular de datos: Acceso (Art. 5º), Rectificación (Art. 6º), Supresión (Art. 7º), Oposición (Art. 8º), más Portabilidad (Art. 9º), Bloqueo temporal (Art. 11 inc. 7º) e información sobre decisiones automatizadas (Art. 3°). El símbolo \"+\" indica que la Ley 21.719 amplía el catálogo tradicional ARCO."
+    },
+    {
+      "id": "dpo",
+      "termino": "Delegado de protección de datos (DPO)",
+      "definicion": "Persona designada por la máxima autoridad del responsable para supervisar el cumplimiento de la normativa de protección de datos. Debe contar con autonomía respecto de la administración. Puede ser asumido por el dueño en micro, pequeñas y medianas empresas. (Arts. 49 y 50)"
+    },
+    {
+      "id": "eipd",
+      "termino": "Evaluación de impacto en protección de datos (EIPD)",
+      "definicion": "Análisis previo a iniciar un tratamiento que probablemente produzca un alto riesgo para los derechos de las personas. Obligatorio siempre en casos de evaluación sistemática exhaustiva con decisiones automatizadas, tratamiento masivo a gran escala, observación sistemática de zonas públicas, o tratamiento de datos sensibles en hipótesis de excepción al consentimiento. (Art. 15 ter)"
+    },
+    {
+      "id": "brecha_seguridad",
+      "termino": "Brecha / Vulneración de seguridad",
+      "definicion": "Vulneración de las medidas de seguridad que ocasione la destrucción, filtración, pérdida o alteración accidental o ilícita de datos personales, o su comunicación o acceso no autorizados. El responsable debe reportarla a la Agencia sin dilaciones indebidas y comunicarla también a los titulares cuando se trate de datos sensibles, datos de menores de 14 años o datos económicos/financieros. (Art. 14 sexies)"
+    },
+    {
+      "id": "seudonimizacion",
+      "termino": "Seudonimización",
+      "definicion": "Tratamiento de datos personales de manera tal que ya no puedan atribuirse a un titular sin utilizar información adicional, siempre que dicha información adicional figure por separado y esté sujeta a medidas técnicas y organizativas destinadas a garantizar que los datos no se atribuyan a una persona natural identificada o identificable. A diferencia de la anonimización, el dato seudonimizado sigue siendo dato personal. (Art. 2°, letra l)"
+    },
+    {
+      "id": "anonimizacion",
+      "termino": "Anonimización",
+      "definicion": "Procedimiento irreversible en virtud del cual un dato personal no puede vincularse o asociarse a una persona determinada, ni permitir su identificación, por haberse destruido o eliminado el nexo con la información que vincula, asocia o identifica a esa persona. Un dato anonimizado deja de ser un dato personal. (Art. 2°, letra k)"
+    },
+    {
+      "id": "consentimiento",
+      "termino": "Consentimiento",
+      "definicion": "Toda manifestación de voluntad libre, específica, inequívoca e informada, otorgada a través de una declaración o una clara acción afirmativa, mediante la cual el titular de datos, su representante legal o mandatario autoriza el tratamiento de sus datos personales. (Art. 2°, letra p; Art. 12)"
+    },
+    {
+      "id": "tratamiento",
+      "termino": "Tratamiento de datos",
+      "definicion": "Cualquier operación o conjunto de operaciones o procedimientos técnicos, de carácter automatizado o no, que permitan de cualquier forma recolectar, procesar, almacenar, comunicar, transmitir o utilizar datos personales o conjuntos de datos personales. (Art. 2°, letra o)"
+    },
+    {
+      "id": "transferencia_internacional",
+      "termino": "Transferencia internacional de datos",
+      "definicion": "Envío de datos personales a un responsable o tercero ubicado en otro país. Es lícita si el país destino ofrece niveles adecuados de protección (Art. 28) o si existen cláusulas contractuales, normas corporativas vinculantes u otros instrumentos jurídicos con garantías adecuadas. Sin adecuación ni garantías, sólo procede transferencias específicas y no habituales en casos tasados (consentimiento expreso, obligaciones bancarias, tratados internacionales, etc.). (Art. 27)"
+    },
+    {
+      "id": "agencia_proteccion_datos",
+      "termino": "Agencia de Protección de Datos Personales (AGEPRODAT)",
+      "definicion": "Corporación autónoma de derecho público, de carácter técnico, descentralizado, con personalidad jurídica y patrimonio propio, relacionada con el Presidente de la República a través del Ministerio de Economía, Fomento y Turismo. Tiene por objeto velar por la efectiva protección de los derechos que garantizan la vida privada y fiscalizar el cumplimiento de la ley. Creada por Art. 30."
+    },
+    {
+      "id": "registro_nacional_sanciones",
+      "termino": "Registro Nacional de Sanciones y Cumplimiento",
+      "definicion": "Registro nacional de carácter público administrado por la Agencia, que consigna los modelos certificados de prevención, los responsables de datos que los hayan adoptado y las sanciones impuestas a los responsables que hayan infringido la ley. (Art. 2°, letra z; Art. 39)"
+    },
+    {
+      "id": "modelo_prevencion",
+      "termino": "Modelo de prevención de infracciones (programa de cumplimiento)",
+      "definicion": "Programa que los responsables pueden adoptar voluntariamente para prevenir infracciones. Debe contener, al menos: designación de un delegado de protección de datos, definición de sus facultades, identificación de tipos de información y bases de datos, protocolos internos, mecanismos de reporte (incluyendo reporte de brechas del Art. 14 sexies) y sanciones administrativas internas. (Art. 49)"
+    },
+    {
+      "id": "utms",
+      "termino": "Unidades Tributarias Mensuales (UTM)",
+      "definicion": "Unidad de medida tributaria chilena ajustada por IPC. La Ley 21.719 usa las UTM como base de cálculo de las multas: hasta 5.000 UTM para infracciones leves, hasta 10.000 UTM para graves, hasta 20.000 UTM para gravísimas. Para grandes empresas reincidentes puede alcanzar al 4% de ingresos anuales. (Art. 35)"
+    },
+    {
+      "id": "datos_biometricos",
+      "termino": "Datos biométricos",
+      "definicion": "Datos obtenidos a partir de un tratamiento técnico específico relativos a las características físicas, fisiológicas o conductuales de una persona que permitan o confirmen su identificación única, tales como huella digital, iris, rasgos de la mano o faciales y la voz. Sólo pueden tratarse con consentimiento expreso e información específica sobre el sistema usado. (Art. 16 ter)"
+    },
+    {
+      "id": "menores_edad",
+      "termino": "Niños, niñas y adolescentes (para efectos de la Ley)",
+      "definicion": "Para efectos de la Ley 21.719, son niños/niñas los menores de 14 años y adolescentes los mayores de 14 y menores de 18 años. El tratamiento de datos de niños/niñas requiere consentimiento de padres o representantes legales. Los adolescentes pueden consentir como adultos, salvo sus datos sensibles antes de los 16 años que requieren autorización parental. (Art. 16 quáter)"
+    },
+    {
+      "id": "cesion_comunicacion",
+      "termino": "Cesión vs Comunicación de datos",
+      "definicion": "Comunicación es dar a conocer datos a personas distintas del titular sin llegar a cederlos o transferirlos (Art. 2°, letra c). Cesión es la transferencia de datos personales por parte del responsable a otro responsable de datos (Art. 2°, letra v). Ambas requieren consentimiento o causal legal habilitante."
+    },
+    {
+      "id": "elaboracion_perfiles",
+      "termino": "Elaboración de perfiles (profiling)",
+      "definicion": "Toda forma de tratamiento automatizado de datos personales que consista en utilizar esos datos para evaluar, analizar o predecir aspectos relativos al rendimiento profesional, situación económica, salud, preferencias personales, intereses, fiabilidad, comportamiento, ubicación o movimientos de una persona natural. (Art. 2°, letra w)"
+    },
+    {
+      "id": "bloqueo_temporal",
+      "termino": "Bloqueo temporal",
+      "definicion": "Medida cautelar que permite al titular solicitar la suspensión del tratamiento de sus datos mientras se resuelve una solicitud de rectificación, supresión u oposición. El responsable debe responder en dos días hábiles. Mientras tanto, no puede tratar los datos. No afecta su almacenamiento. (Art. 11 inc. 7º)"
+    }
+  ]
+}

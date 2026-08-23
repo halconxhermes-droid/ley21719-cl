@@ -1,0 +1,51 @@
+{
+  "checklists": {
+    "empresa": [
+      { "item": "Identificar e inventariar todas las bases de datos y flujos de datos personales bajo responsabilidad propia (RAT)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Implementar políticas de consentimiento explícito, específico e informado (no casillas premarcadas) según Art. 12 y Art. 2 letra p", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Evaluar y documentar medidas de seguridad técnicas y organizativas (Art. 14 quinquies): cifrado, pseudonimización, resiliencia, restauración post-incidente, verificación regular", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Definir procedimiento de notificación de brechas de seguridad 'sin dilaciones indebidas' a la Agencia y a titulares (Art. 14 sexies)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Ejecutar EIPD (Evaluación de Impacto) previa cuando haya riesgo alto: decisiones automatizadas, tratamiento masivo, datos sensibles o monitoreo público (Art. 15 ter)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Verificar si requiere designar delegado de protección de datos (DPO) o autodesignar el dueño (PYMEs Art. 50)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Actualizar cláusulas de contratos con terceros/encargados (DPA Art. 15 bis)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Mapear transferencias internacionales: validar país con adecuación o usar CCT/BCR (Art. 27-28)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Implementar modelo de prevención de infracciones (MPI) si aplica: atenuante bajo DS 662/2025 (Art. 49)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Definir plazos de retención y políticas de purgado de datos (no mantener indefinidamente; Art. 2° letra k, Art. 2° letra o)", "referencia_modulo": "contenido_empresa", "items_pendientes": false },
+      { "item": "Implementar revocabilidad del consentimiento de forma sencilla y gratuita para titulares (Art. 11 inc. 7 bloqueo temporal 2 días hábiles)", "referencia_modulo": "contenido_empresa", "items_pendientes": false }
+    ],
+    "ciudadano": [
+      { "item": "Identificar qué datos personales trata tu institución/empresa y ejercicio de tus derechos ARSOP: acceso, rectificación, supresión, oposición y portabilidad", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Solicitar al responsable la confirmación de tratamiento y/o copia de tus datos en formato estructurado (Art. 5)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Si tus datos son inexactos o desactualizados, solicitar su rectificación ante el responsable (Art. 6, plazo 30 días)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Ejercer tu derecho a oponerte al tratamiento de tus datos para fines de marketing, perfilado o determinadas finalidades (Art. 8)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Solicitar la portabilidad de tus datos a otro responsable cuando los hayas facilitado (Art. 9, formato electrónico estructurado)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Solicitar bloqueo temporal de tus datos durante la resolución de una reclamación o disputa (Art. 11 inc. 7, plazo fatal 2 días hábiles)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Si el responsable niega tu solicitud o no responde en 30 días hábiles, presentar reclamación ante la Agencia (Art. 41)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Si hay una brecha que afecta datos sensibles o de menores de 14 años, exige que se notifique tanto a la Agencia como a los titulares afectados (Art. 14 sexies)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Revocar tu consentimiento en cualquier momento si lo otorgaste previamente (Art. 12)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false },
+      { "item": "Forma en que se deben gestionar los datos de menores (menores de 14 años: solo representante legal; 14-16: consentimiento propio para datos académicos, parental para sensibles; mayores de 16: régimen adulto, Art. 16 quáter)", "referencia_modulo": "contenido_ciudadano", "items_pendientes": false }
+    ],
+    "desarrollador": [
+      { "item": "Implementar consentimiento explícito con checkbox no pre-marcado y registro de efectividad (Art. 12, Art. 2 letra p)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Integrar flujos de ejercicio de derechos ARSOP (acceso, rectificación, supresión, oposición, portabilidad, bloqueo temporal) con plazos legales (30 días hábiles)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Aplicar medidas de seguridad por diseño: cifrado en reposo y tránsito (TLS 1.3), seudonimización/cifrado por Art. 14 quinquies", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Contratar DPA (Data Processing Agreement) con encargados (Art. 15 bis): confidencialidad, límites de uso, seguridad, destrucción/devolución al término", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Evitar Shadow AI: políticas internas de gobernanza para uso de IA generativa con datos personales; sanitizar PII antes de prompts", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Para transferencias internacionales: validar país con adecuación o firmar cláusulas contractuales tipo/BCR (Art. 27-28)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Implementar anonimización irreversible o borrado remoto en dispositivos móviles/terreno (Art. 30, Art. 4° retención)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Registrar todas las actividades de tratamiento y brechas en RAT y documentación soportada", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false }
+    ],
+    "institucion": [
+      { "item": "Levantar inventario completo de bases de datos públicas y registrar actividades de tratamiento (RAT Art. 30)", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Eliminar registros del antiguo Art. 22 Ley 19.628 dentro de 60 días previos a la vigencia (Art. 3 transitorio)", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Configurar publicación mensual obligatoria de convenios de cesión/transferencia de datos en portal institucional (Art. 22)", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Establecer canales sencillos y con SLA de 30 días hábiles para solicitudes ciudadanas ARCOP", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Configurar perfiles y logs lúdicos en registros de infracciones para evitar tratamiento masivo (Art. 25 prohibición absoluta)", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Designar Delegado de Protección de Datos (DPO) entre funcionarios de la dotación vigente", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Capacitar obligatoriamente al personal administrativo (causa #1 de brechas por error humano)", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Configurar publicación mensual de convenios de cesión en portal web institucional", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Establecer responsabilidad personal del jefe superior (suspensión 5-15 días o multas 20-50% sueldo Art. 44) por incumplimiento", "referencia_modulo": "contenido_institucion", "items_pendientes": false },
+      { "item": "Implementar políticas de retención acotada y cifrado obligatorio en endpoints (Art. 2° letra k, Art. 3°)", "referencia_modulo": "contenido_institucion", "items_pendientes": false }
+    ]
+  }
+}

@@ -1,0 +1,519 @@
+1
+00:00:00,000 --> 00:00:04,660
+Durante casi 25 años, el sistema de protección de datos en Chile se ha guiado por una normativa
+
+2
+00:00:04,660 --> 00:00:10,080
+que, seamos sinceros, actuaba como un tigre de papel, la antigua Ley 19.628.
+
+3
+00:00:10,520 --> 00:00:12,960
+Pero bueno, el escenario acaba de dar un vuelco radical.
+
+4
+00:00:13,540 --> 00:00:17,340
+En el análisis de hoy, vamos a desgranar a fondo este nuevo paradigma de privacidad
+
+5
+00:00:17,340 --> 00:00:19,260
+y la Ley 21.719.
+
+6
+00:00:19,840 --> 00:00:23,740
+Hablamos de una reforma monumental, un cambio de las reglas del juego que alinea por fin
+
+7
+00:00:23,740 --> 00:00:26,440
+al país con el exigente estándar europeo del GDPR.
+
+8
+00:00:26,440 --> 00:00:30,440
+Para que no nos perdamos, nuestra hoja de ruta de hoy tiene cinco paradas rápidas.
+
+9
+00:00:30,880 --> 00:00:34,360
+Primero, le diremos adiós a la vieja Ley 19.628.
+
+10
+00:00:35,060 --> 00:00:38,000
+Segundo, repasaremos los nuevos derechos ARSOP.
+
+11
+00:00:38,600 --> 00:00:41,400
+Tercero, conoceremos a la nueva autoridad reguladora.
+
+12
+00:00:42,020 --> 00:00:45,040
+Cuarto, hablaremos de plazos y de cómo afecta esto a las pymes.
+
+13
+00:00:45,500 --> 00:00:48,100
+Y quinto, marcaremos los pasos clave para la adecuación.
+
+14
+00:00:48,680 --> 00:00:54,840
+Empezamos con el primer bloque, el adiós definitivo a la Ley 19.628 y la enorme transición
+
+15
+00:00:54,840 --> 00:00:56,360
+legal desde 1999.
+
+16
+00:00:56,440 --> 00:00:57,820
+Hasta 2024.
+
+17
+00:00:58,580 --> 00:01:03,040
+Fíjate bien, porque no estamos ante un simple lavado de cara o un parche normativo.
+
+18
+00:01:03,480 --> 00:01:06,360
+Es una reconstrucción estructural de arriba a abajo.
+
+19
+00:01:06,760 --> 00:01:10,360
+El viejo modelo de 1999 era, digamos, demasiado relajado.
+
+20
+00:01:10,780 --> 00:01:15,020
+Se basaba en el consentimiento tácito, no había una autoridad real que vigilara y las
+
+21
+00:01:15,020 --> 00:01:19,400
+multas eran tan pero tan irrisorias que a muchas empresas literalmente les salía más
+
+22
+00:01:19,400 --> 00:01:21,340
+a cuenta infringir la ley que cumplirla.
+
+23
+00:01:21,780 --> 00:01:24,500
+El nuevo horizonte de 2026 cambia esto por completo.
+
+24
+00:01:24,500 --> 00:01:29,020
+Ahora se exige una alineación internacional, el consentimiento tiene que ser totalmente
+
+25
+00:01:29,020 --> 00:01:33,520
+explícito y, ojo a esto, introduce el concepto de responsabilidad proactiva.
+
+26
+00:01:33,740 --> 00:01:36,280
+O sea, ya no vale con reaccionar, hay que prevenir.
+
+27
+00:01:36,860 --> 00:01:40,640
+Pasamos al segundo punto, los nuevos derechos ARSOP.
+
+28
+00:01:41,080 --> 00:01:44,220
+Y cómo esta ley busca empoderar de verdad al ciudadano.
+
+29
+00:01:44,740 --> 00:01:48,640
+El objetivo principal aquí es devolverle a cada persona el control absoluto sobre su
+
+30
+00:01:48,640 --> 00:01:49,200
+huella digital.
+
+31
+00:01:49,840 --> 00:01:54,480
+Históricamente, siempre nos hemos centrado en los famosos derechos ARCO, ya sabes, acceso
+
+32
+00:01:54,500 --> 00:01:56,400
+rectificación, cancelación y oposición.
+
+33
+00:01:56,860 --> 00:02:01,660
+Pues bien, la nueva ley añade un par de piezas clave y transforma el acrónimo en ARSOP.
+
+34
+00:02:02,240 --> 00:02:05,940
+Añade la portabilidad, que básicamente te permite exigir que tu información se transfiera
+
+35
+00:02:05,940 --> 00:02:07,160
+directamente a otro proveedor.
+
+36
+00:02:07,520 --> 00:02:11,440
+Y además suma el bloqueo temporal, que es una herramienta potentísima para congelar
+
+37
+00:02:11,440 --> 00:02:14,300
+el procesamiento de tus datos si hay algún tipo de disputa abierta.
+
+38
+00:02:14,780 --> 00:02:17,160
+Y hay un número que debes grabarte a fuego.
+
+39
+00:02:17,700 --> 00:02:18,020
+30.
+
+40
+00:02:18,600 --> 00:02:19,800
+30 días hábiles.
+
+41
+00:02:20,400 --> 00:02:24,440
+Ese es el plazo máximo legal, inamovible, que tiene cualquier organización.
+
+42
+00:02:24,500 --> 00:02:27,340
+Para responder a una solicitud ARSOP.
+
+43
+00:02:28,060 --> 00:02:31,280
+Se acabó eso de darle largas al usuario con burocracia interminable.
+
+44
+00:02:31,740 --> 00:02:36,780
+Ahora, retrasarse es abrirle la puerta de par en par a sanciones muy, muy severas.
+
+45
+00:02:37,260 --> 00:02:38,380
+Vamos con el tercer bloque.
+
+46
+00:02:38,760 --> 00:02:44,260
+Toca conocer a la APDP, el nuevo supervisor que, esta vez sí, viene con dientes.
+
+47
+00:02:44,900 --> 00:02:48,960
+Porque claro, al final del día, los derechos son simples sugerencias si no hay nadie que
+
+48
+00:02:48,960 --> 00:02:49,980
+obligue a cumplirlos.
+
+49
+00:02:50,040 --> 00:02:54,480
+La Agencia de Protección de Datos Personales, o APDP, no es un mero panel consultorio.
+
+50
+00:02:54,500 --> 00:02:55,760
+Es un cultivo que da consejos, que va.
+
+51
+00:02:56,120 --> 00:02:58,320
+Es una corporación pública totalmente autónoma.
+
+52
+00:02:58,800 --> 00:03:02,800
+Tiene el poder exclusivo para interpretar la ley, auditar oficinas, exigir documentación
+
+53
+00:03:02,800 --> 00:03:07,200
+confidencial y, lo más importante, dictar resoluciones inmediatas que, literalmente,
+
+54
+00:03:07,540 --> 00:03:10,700
+podrían paralizar las operaciones de cualquier empresa de un día para otro.
+
+55
+00:03:11,180 --> 00:03:14,540
+Para entender de verdad el peso de esta nueva agencia, hablemos de dinero.
+
+56
+00:03:15,040 --> 00:03:17,780
+Las multas tienen un tope de 20.000 UTM.
+
+57
+00:03:18,340 --> 00:03:22,740
+Para que te hagas una idea, al cambio, estamos hablando de unos 14 millones de pesos chilenos.
+
+58
+00:03:23,100 --> 00:03:24,180
+Es una barbaridad.
+
+59
+00:03:24,500 --> 00:03:29,280
+Un riesgo financiero tan monumental que coloca la privacidad exactamente al mismo nivel de
+
+60
+00:03:29,280 --> 00:03:33,940
+importancia que los impuestos o las leyes laborales dentro de cualquier consejo de administración.
+
+61
+00:03:34,460 --> 00:03:37,300
+A ver, estas multas operan bajo una estructura de pirámide.
+
+62
+00:03:37,680 --> 00:03:41,500
+Todo empieza con infracciones leves de hasta 5.000 UTM, por típicos errores administrativos
+
+63
+00:03:41,500 --> 00:03:41,900
+menores.
+
+64
+00:03:42,300 --> 00:03:45,860
+El escalón grave sube a 10.000 UTM, por cosas como, por ejemplo, ignorar los derechos
+
+65
+00:03:45,860 --> 00:03:47,340
+a IRESOP que mencionábamos antes.
+
+66
+00:03:47,780 --> 00:03:52,260
+Y, finalmente, el nivel gravísimo, que castiga con esas 20.000 UTM conductas críticas como
+
+67
+00:03:52,260 --> 00:03:53,940
+tratar los dos sensibles de forma ilegal.
+
+68
+00:03:54,500 --> 00:03:55,180
+Punto crucial aquí.
+
+69
+00:03:55,560 --> 00:03:59,340
+Si una empresa es reincidente, la multa ya no es una cantidad fisa, sino que puede calcularse
+
+70
+00:03:59,340 --> 00:04:01,560
+sobre un porcentaje de sus ingresos anuales a nivel global.
+
+71
+00:04:01,880 --> 00:04:02,640
+Poca broma con esto.
+
+72
+00:04:03,240 --> 00:04:04,540
+Cuarto punto de nuestra agenda.
+
+73
+00:04:04,800 --> 00:04:06,980
+Plazos y al régimen especial para pymes.
+
+74
+00:04:07,520 --> 00:04:10,540
+Básicamente, la cuenta regresiva hacia 2026.
+
+75
+00:04:11,160 --> 00:04:12,820
+El reloj ya está haciendo tic-tac.
+
+76
+00:04:12,820 --> 00:04:17,660
+Todo esto arrancó en diciembre de 2024, cuando se publicó la ley, abriendo un periodo de
+
+77
+00:04:17,660 --> 00:04:19,120
+adaptación de 24 meses.
+
+78
+00:04:19,440 --> 00:04:23,240
+Pero, ojo, esta ventana se cierra de golpe el 1 de diciembre de 2026.
+
+79
+00:04:23,240 --> 00:04:25,020
+Esa es la fecha crítica.
+
+80
+00:04:25,420 --> 00:04:29,700
+A partir de ese día, la PDP asume plenos poderes y el rigor de las multas entra en vigor al
+
+81
+00:04:29,700 --> 00:04:30,300
+100%.
+
+82
+00:04:30,300 --> 00:04:33,280
+Sin embargo, la ley tiene un toque de pragmatismo económico.
+
+83
+00:04:33,540 --> 00:04:37,340
+Para no ahogar el emprendimiento de buenas a primeras, hay un régimen transitorio para
+
+84
+00:04:37,340 --> 00:04:37,880
+las pymes.
+
+85
+00:04:38,360 --> 00:04:41,320
+Las micro y pequeñas empresas van a tener 12 meses extra.
+
+86
+00:04:41,640 --> 00:04:46,060
+Es decir, hasta diciembre de 2027 estarán bajo un modelo puramente correctivo.
+
+87
+00:04:46,380 --> 00:04:50,160
+Si incumplen algo, recibirán una amonestación oficial para que lo arreglen, pero sin la
+
+88
+00:04:50,160 --> 00:04:51,260
+multa económica de por medio.
+
+89
+00:04:51,420 --> 00:04:53,220
+Ojo, es un respiro vital para adaptarse.
+
+90
+00:04:53,240 --> 00:04:56,320
+Sí, pero en ningún caso significa que estén exentas de cumplir la ley.
+
+91
+00:04:56,700 --> 00:04:58,280
+Y llegamos a la recta final.
+
+92
+00:04:58,980 --> 00:04:59,740
+Sección 5.
+
+93
+00:05:00,340 --> 00:05:04,880
+La hoja de ruta de adecuación y los pasos exactos para el cumplimiento corporativo.
+
+94
+00:05:05,460 --> 00:05:09,880
+Este es el manual de acción que toda empresa necesita para alinear su tecnología, sus
+
+95
+00:05:09,880 --> 00:05:12,280
+recursos humanos y sus prácticas legales.
+
+96
+00:05:12,760 --> 00:05:17,180
+El paso 1 es hacer un diagnóstico sincero y elaborar el registro de actividades de tratamiento
+
+97
+00:05:17,180 --> 00:05:17,700
+o RAT.
+
+98
+00:05:17,960 --> 00:05:20,800
+Al final, no puedes proteger lo que no sabes que tienes, ¿verdad?
+
+99
+00:05:20,920 --> 00:05:23,200
+El paso 2 es auditar el argumento legal.
+
+100
+00:05:23,240 --> 00:05:29,260
+El paso 3 obliga a reescribir las políticas de privacidad y despedirse para siempre del
+
+101
+00:05:29,260 --> 00:05:32,320
+viejo truco de las casillas premarcadas para obtener el consentimiento.
+
+102
+00:05:32,600 --> 00:05:37,240
+Y por último, el paso 4 que exige hacer evaluaciones de impacto obligatorias antes de meterse con
+
+103
+00:05:37,240 --> 00:05:41,240
+tecnologías de alto riesgo, como usar inteligencia artificial para tomar decisiones automatizadas.
+
+104
+00:05:42,100 --> 00:05:45,240
+Y aquí es vital desmontar uno de los grandes mitos sobre la privacidad.
+
+105
+00:05:46,100 --> 00:05:49,940
+Conseguir el consentimiento explícito de la persona no es la única vía para usar sus
+
+106
+00:05:49,940 --> 00:05:50,180
+datos.
+
+107
+00:05:50,180 --> 00:05:52,520
+La ley establece hasta seis bases legales.
+
+108
+00:05:52,520 --> 00:05:56,600
+Aparte del consentimiento, puedes tratar datos si son necesarios para ejecutar un contrato,
+
+109
+00:05:56,860 --> 00:06:00,980
+para cumplir una obligación legal, para proteger un interés vital en una emergencia, por temas
+
+110
+00:06:00,980 --> 00:06:04,420
+de interés público o bajo el paraguas del interés legítimo de la organización.
+
+111
+00:06:04,680 --> 00:06:09,000
+Basar toda tu estrategia únicamente en pedir permiso es un error estratégico que debilita
+
+112
+00:06:09,000 --> 00:06:10,620
+muchísimo la operativa diaria.
+
+113
+00:06:11,160 --> 00:06:15,700
+Todo este inmenso esfuerzo de adaptación converge en algo llamado Modelo de Prevención
+
+114
+00:06:15,700 --> 00:06:17,300
+de Infracciones, o MPI.
+
+115
+00:06:17,580 --> 00:06:22,440
+A ver, es un programa de cumplimiento totalmente voluntario, pero desde un punto de vista estratégico,
+
+116
+00:06:22,520 --> 00:06:23,640
+es oro puro.
+
+117
+00:06:24,220 --> 00:06:28,540
+Si lo implementas y logras que la agencia lo certifique, te estás construyendo un escuro
+
+118
+00:06:28,540 --> 00:06:29,960
+defensivo increíble.
+
+119
+00:06:30,560 --> 00:06:32,140
+Es demostrar máxima diligencia.
+
+120
+00:06:32,560 --> 00:06:36,980
+Si algún día sufres un ciberataque, una brecha de seguridad, tener un MPI certificado
+
+121
+00:06:36,980 --> 00:06:41,640
+actúa como un atenuante clave que reduce drásticamente tu exposición legal y, sobre
+
+122
+00:06:41,640 --> 00:06:42,740
+todo, financiera.
+
+123
+00:06:43,280 --> 00:06:48,260
+Así que, con un marco normativo completamente rediseñado, ciudadanos mucho más conscientes
+
+124
+00:06:48,260 --> 00:06:52,500
+de sus derechos y una agencia reguladora lista para morder, solo queda una gran parte de
+
+125
+00:06:52,520 --> 00:06:53,220
+la pregunta en el aire.
+
+126
+00:06:53,660 --> 00:06:57,620
+¿Está tu organización realmente preparada para abrir sus puertas al escrutinio legal
+
+127
+00:06:57,620 --> 00:06:59,340
+el 1 de diciembre de 2026?
+
+128
+00:06:59,720 --> 00:07:02,640
+El periodo de mentalizarse y tomar conciencia ya pasó.
+
+129
+00:07:03,020 --> 00:07:05,320
+Ahora es el momento de remangarse y ejecutar.
+
+130
+00:07:05,760 --> 00:07:09,220
+Esperemos que este repaso sirva como ese empujón definitivo para pasar a la acción.

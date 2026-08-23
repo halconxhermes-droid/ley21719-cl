@@ -1,0 +1,479 @@
+1
+00:00:00,000 --> 00:00:02,140
+Bueno, vamos a meternos de lleno en esto.
+
+2
+00:00:02,640 --> 00:00:07,720
+En diciembre de 2026, Chile va a vivir uno de los cambios normativos más profundos de
+
+3
+00:00:07,720 --> 00:00:09,480
+toda su historia digital y financiera.
+
+4
+00:00:09,980 --> 00:00:13,220
+Hablamos de la entrada en vigor de la Ley 21.719.
+
+5
+00:00:13,860 --> 00:00:17,480
+Y ojo, porque esto no es un simple parche administrativo, para nada.
+
+6
+00:00:17,920 --> 00:00:22,500
+Es una transformación absoluta que pone el estándar chileno al mismo nivel que el famosísimo
+
+7
+00:00:22,500 --> 00:00:24,860
+Reglamento General de Protección de Datos Europeo.
+
+8
+00:00:25,540 --> 00:00:29,560
+En este análisis vamos a desgranar exactamente qué significa este cambio tan monumental
+
+9
+00:00:29,560 --> 00:00:33,520
+poniendo el foco en los datos que mueven la economía actual y, sobre todo, en esos
+
+10
+00:00:33,520 --> 00:00:37,540
+nuevos derechos que van a cambiar para siempre las reglas del juego entre las organizaciones
+
+11
+00:00:37,540 --> 00:00:38,940
+y nuestra información personal.
+
+12
+00:00:39,420 --> 00:00:43,500
+A ver, para entender realmente la magnitud de esta ley, tenemos que hacernos un par de
+
+13
+00:00:43,500 --> 00:00:44,140
+preguntas clave.
+
+14
+00:00:44,700 --> 00:00:46,020
+Imaginemos la siguiente situación.
+
+15
+00:00:46,500 --> 00:00:50,260
+Alguien pide un crédito y un sistema automatizado se lo deniega en cuestión de milisegundos.
+
+16
+00:00:50,640 --> 00:00:54,480
+O, por otro lado, una deuda comercial antigua por fin cumple su plazo legal de prescripción.
+
+17
+00:00:55,020 --> 00:00:59,180
+Hasta hace nada, enfrentarse a estos escenarios era meterse en un auténtico laberinto burocrático.
+
+18
+00:00:59,660 --> 00:01:02,180
+¿Pero qué pasa exactamente ahora bajo este nuevo marco legal?
+
+19
+00:01:02,620 --> 00:01:06,700
+Las respuestas a estas preguntas son el corazón de la normativa y, básicamente, reescriben
+
+20
+00:01:06,700 --> 00:01:10,020
+los límites de lo que las empresas pueden o no pueden hacer con nuestra información.
+
+21
+00:01:10,640 --> 00:01:12,100
+Y aquí viene el punto crucial.
+
+22
+00:01:12,480 --> 00:01:16,520
+Las reglas del juego ahora tienen un árbitro de verdad, con sanciones que asustan.
+
+23
+00:01:16,880 --> 00:01:21,480
+Hablamos de multas máximas de hasta 20.000 unidades tributarias mensuales por infracciones
+
+24
+00:01:21,480 --> 00:01:22,100
+gravísimas.
+
+25
+00:01:22,500 --> 00:01:24,780
+Eso equivale a miles de millones de pesos chilenos.
+
+26
+00:01:25,040 --> 00:01:26,100
+Una auténtica locura.
+
+27
+00:01:26,600 --> 00:01:29,180
+Además, se crea la nueva Agencia de Protección de Datos Personales.
+
+28
+00:01:29,560 --> 00:01:33,540
+Una institución autónoma y con poder real para fiscalizar y multar.
+
+29
+00:01:33,980 --> 00:01:38,460
+O sea que las organizaciones ya no se enfrentan a un riesgo teórico en un papel, sino a una
+
+30
+00:01:38,460 --> 00:01:40,020
+autoridad totalmente activa.
+
+31
+00:01:40,440 --> 00:01:45,040
+Para que todo quede clarísimo, en este análisis vamos a recorrer cuatro áreas fundamentales.
+
+32
+00:01:45,460 --> 00:01:47,880
+Uno, la biometría y los datos de alta sensibilidad.
+
+33
+00:01:48,420 --> 00:01:51,120
+Dos, el derecho a impugnar decisiones automatizadas.
+
+34
+00:01:51,600 --> 00:01:54,240
+Tres, el fin de las bases de datos con deudas prescritas.
+
+35
+00:01:54,540 --> 00:01:56,760
+Y cuatro, el nuevo estándar de cumplimiento.
+
+36
+00:01:57,020 --> 00:01:59,440
+Así que, empezando por el punto número uno.
+
+37
+00:01:59,620 --> 00:02:01,320
+Biometría y alta sensibilidad.
+
+38
+00:02:01,980 --> 00:02:05,920
+Hablemos de esa información que, a diferencia de una contraseña cualquiera, es imposible
+
+39
+00:02:05,920 --> 00:02:08,020
+de cambiar porque forma parte de nuestro cuerpo.
+
+40
+00:02:08,600 --> 00:02:13,360
+La Ley 21.719 cataloga la biometría como un dato sensible de nivel máximo.
+
+41
+00:02:13,800 --> 00:02:18,400
+Pensemos en los famosos procesos KYC o Conoce a tu cliente, que usa tantísimo la banca
+
+42
+00:02:18,400 --> 00:02:22,680
+actual, donde nos piden reconocimiento facial para verificar quiénes somos, o incluso algo
+
+43
+00:02:22,680 --> 00:02:25,080
+tan básico como fichar en el trabajo con la huella dactilar.
+
+44
+00:02:25,420 --> 00:02:29,440
+Tratar una huella, un rostro o la voz ya no es un simple trámite técnico.
+
+45
+00:02:29,720 --> 00:02:33,520
+Es una operación de altísimo riesgo legal que exige muchísimo cuidado.
+
+46
+00:02:33,960 --> 00:02:37,920
+Entonces, la gran pregunta es, ¿cómo se tiene que gestionar esto ahora?
+
+47
+00:02:38,200 --> 00:02:39,720
+Pues la ley se pone estricta.
+
+48
+00:02:40,120 --> 00:02:44,640
+Antes de encender siquiera la cámara o el lector de huellas, es obligatorio hacer una
+
+49
+00:02:44,640 --> 00:02:46,140
+evaluación de impacto en privacidad.
+
+50
+00:02:46,440 --> 00:02:48,600
+Hay que medir el riesgo antes de actuar.
+
+51
+00:02:48,980 --> 00:02:53,200
+Además, se exige aplicar la privacidad desde el diseño, lo que en la práctica está
+
+52
+00:02:53,200 --> 00:02:57,160
+impulsando soluciones interesantísimas como el Edge Computing o procesamiento local.
+
+53
+00:02:57,520 --> 00:02:57,920
+Fijaos.
+
+54
+00:02:57,920 --> 00:02:59,020
+Si el reconocimiento facial se procesa en el diseño, la ley se pone estricta.
+
+55
+00:02:59,020 --> 00:03:01,560
+Si el reconocimiento facial se procesa en el propio móvil y esos datos no viajan a
+
+56
+00:03:01,560 --> 00:03:05,440
+la nube ni se guardan por ahí en servidores externos, el riesgo cae en picado.
+
+57
+00:03:06,020 --> 00:03:09,380
+Pasamos al segundo pilar, impugnando decisiones automatizadas.
+
+58
+00:03:09,880 --> 00:03:10,960
+Y esto es interesantísimo.
+
+59
+00:03:11,440 --> 00:03:15,540
+Hoy en día, todos sabemos que los algoritmos de inteligencia artificial toman decisiones
+
+60
+00:03:15,540 --> 00:03:16,780
+por nosotros constantemente.
+
+61
+00:03:17,220 --> 00:03:19,580
+Y claro, ahora están bajo una lupa legal gigantesca.
+
+62
+00:03:20,000 --> 00:03:22,060
+Pensemos en el scoring crediticio automatizado.
+
+63
+00:03:22,560 --> 00:03:26,960
+Si un modelo de IA evalúa un perfil de riesgo y decide rechazar un crédito de forma automática,
+
+64
+00:03:26,960 --> 00:03:29,000
+eso tiene un impacto jurídico enorme.
+
+65
+00:03:29,080 --> 00:03:34,380
+Y lo mismo pasa con los sistemas que descartan currículums en recursos humanos o los algoritmos
+
+66
+00:03:34,380 --> 00:03:35,360
+de precios dinámicos.
+
+67
+00:03:35,900 --> 00:03:39,540
+Y aquí es donde el artículo 8bis introduce un cambio que es brillante.
+
+68
+00:03:40,060 --> 00:03:44,180
+Se acabó esa impotencia de recibir un no automático dictado por una máquina.
+
+69
+00:03:44,600 --> 00:03:49,820
+Ahora nace un nuevo remedio legal, el derecho fundamental a no ser objeto de decisiones
+
+70
+00:03:49,820 --> 00:03:51,720
+basadas únicamente en algoritmos.
+
+71
+00:03:52,260 --> 00:03:56,720
+Esto nos da el poder directo de impugnar un resultado y exigir que un ser humano, de carne
+
+72
+00:03:56,720 --> 00:03:58,260
+y hueso, revise el caso.
+
+73
+00:03:59,080 --> 00:04:05,060
+Para no pillarse los dedos, las organizaciones que usen estos algoritmos tienen que implementar
+
+74
+00:04:05,060 --> 00:04:06,460
+tres pasos innegociables.
+
+75
+00:04:06,900 --> 00:04:08,300
+Primero, transparencia absoluta.
+
+76
+00:04:08,600 --> 00:04:10,560
+Hay que avisar de que es una IA la que decide.
+
+77
+00:04:11,060 --> 00:04:12,280
+Segundo, explicabilidad.
+
+78
+00:04:12,640 --> 00:04:16,180
+Hay que poder contar de forma sencilla qué lógica ha seguido la máquina para llegar
+
+79
+00:04:16,180 --> 00:04:16,920
+a esa conclusión.
+
+80
+00:04:17,300 --> 00:04:18,440
+Y tercero, revisión.
+
+81
+00:04:18,800 --> 00:04:21,940
+Tiene que haber un canal rápido para que una persona real evalúe las quejas.
+
+82
+00:04:22,440 --> 00:04:26,420
+Ignorar esto al diseñar una app de finanzas es, literalmente, buscarse una multa.
+
+83
+00:04:26,900 --> 00:04:29,000
+Vamos con el tercer punto clave de este análisis.
+
+84
+00:04:29,020 --> 00:04:33,040
+El fin a las deudas prescritas y la limpieza de los registros comerciales.
+
+85
+00:04:33,560 --> 00:04:36,560
+La contundencia del texto legal en este apartado es espectacular.
+
+86
+00:04:36,980 --> 00:04:41,320
+Si pensamos en bases de datos tan conocidas en Chile como Dicom, el artículo 17 lanza
+
+87
+00:04:41,320 --> 00:04:42,240
+un mandato radical.
+
+88
+00:04:42,660 --> 00:04:46,820
+Los responsables de estos registros financieros tienen que suprimir automáticamente la información
+
+89
+00:04:46,820 --> 00:04:48,240
+sobre deudas prescritas.
+
+90
+00:04:48,540 --> 00:04:49,540
+Y ojo a esta parte final.
+
+91
+00:04:49,920 --> 00:04:54,300
+Sin necesidad de mediar solicitud, orden judicial ni instrucción de la autoridad.
+
+92
+00:04:54,740 --> 00:04:57,800
+Es decir, es una eliminación activa, obligatoria y por defecto.
+
+93
+00:04:58,080 --> 00:04:58,960
+Para que veamos la información, vamos a ver un ejemplo.
+
+94
+00:04:58,960 --> 00:05:00,900
+Veamos cómo cambia esto la vida real.
+
+95
+00:05:01,540 --> 00:05:05,980
+Tradicionalmente, cuando una deuda prescribía, empezaba un calvario de juzgados y papeleos
+
+96
+00:05:05,980 --> 00:05:09,820
+para intentar borrar ese registro, algo que a veces era peor que la propia deuda.
+
+97
+00:05:10,340 --> 00:05:12,060
+Con la nueva ley todo esto desaparece.
+
+98
+00:05:12,400 --> 00:05:16,680
+Al cumplirse el plazo legal, la entidad que gestiona esa base de datos está obligada
+
+99
+00:05:16,680 --> 00:05:20,320
+a purgar esa información de sus sistemas, de forma totalmente automática.
+
+100
+00:05:20,880 --> 00:05:23,700
+La conclusión que tenemos que sacar de esto es rotunda.
+
+101
+00:05:24,100 --> 00:05:28,460
+La costumbre de acumular y guardar datos históricos por si acaso se ha terminado.
+
+102
+00:05:28,460 --> 00:05:30,960
+El principio de minimización manda ahora.
+
+103
+00:05:31,320 --> 00:05:34,080
+Si un dato ya no tiene base legal o su propósito ha caducado,
+
+104
+00:05:34,500 --> 00:05:37,220
+retenerlo indefinidamente es una vulneración directa.
+
+105
+00:05:37,580 --> 00:05:42,360
+Todas las bases de datos comerciales van a tener que programar políticas de purga automática sí o sí.
+
+106
+00:05:42,900 --> 00:05:46,800
+Y llegamos al cuarto y último bloque, el nuevo estándar de cumplimiento corporativo.
+
+107
+00:05:47,380 --> 00:05:51,280
+Sabiendo todo lo que hay en juego, aquí tenemos la hoja de ruta práctica para adaptarse.
+
+108
+00:05:51,760 --> 00:05:55,080
+Primero, hay que levantar el RAT, el Registro de Actividades de Tratamiento,
+
+109
+00:05:55,080 --> 00:05:58,300
+para saber exactamente qué datos hay y por qué se tienen.
+
+110
+00:05:58,820 --> 00:06:04,220
+Segundo, lanzar evaluaciones de impacto cada vez que haya un riesgo alto, como usar biometría o IA.
+
+111
+00:06:04,660 --> 00:06:08,540
+Tercero, fundamental, montar un canal ágil para responder a los derechos ARSOP,
+
+112
+00:06:08,700 --> 00:06:13,740
+acceso, rectificación, supresión, oposición y portabilidad en el plazo legal máximo de 30 días.
+
+113
+00:06:14,180 --> 00:06:18,120
+Y cuarto, aplicar siempre la privacidad desde el diseño en cualquier proceso nuevo.
+
+114
+00:06:18,620 --> 00:06:22,200
+Para cerrar este andálisis nos quedamos con una reflexión importantísima.
+
+115
+00:06:22,340 --> 00:06:27,080
+La privacidad ya no es ese aburrido texto de términos y condiciones que nadie se lee,
+
+116
+00:06:28,460 --> 00:06:33,140
+sino la arquitectura misma sobre la que se van a construir los sistemas financieros y tecnológicos del mañana.
+
+117
+00:06:33,140 --> 00:06:37,140
+La fecha límite de diciembre de 2026 está a la vuelta de la esquina.
+
+118
+00:06:37,140 --> 00:06:40,140
+Las reglas están claras y las herramientas existen.
+
+119
+00:06:40,140 --> 00:06:43,140
+La verdadera pregunta que queda flotando en el aire es
+
+120
+00:06:43,140 --> 00:06:48,140
+¿están realmente las organizaciones preparadas para rediseñar su futuro digital a tiempo?

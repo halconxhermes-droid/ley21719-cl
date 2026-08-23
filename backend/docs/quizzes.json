@@ -1,0 +1,1756 @@
+{
+  "quizzes_por_modulo": {
+    "empresa": [
+      {
+        "pregunta": "¿Cuál es la multa máxima para una infracción gravísima según el Art. 35 de la Ley 21.719?",
+        "opciones": [
+          "5.000 UTM",
+          "10.000 UTM",
+          "20.000 UTM",
+          "50.000 UTM"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Art. 35: las infracciones gravísimas se sancionan con multa de hasta 20.000 UTM (~$1.340M CLP). Para grandes empresas reincidentes puede alcanzar el 2% o 4% de los ingresos anuales por ventas (Art. 35 inc. final)."
+      },
+      {
+        "pregunta": "¿Cuál es el plazo que tiene el responsable para responder una solicitud de derechos ARSOP del titular (Art. 11)?",
+        "opciones": [
+          "15 días hábiles",
+          "30 días corridos (prorrogables una vez)",
+          "60 días hábiles improrrogables",
+          "90 días corridos"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 11 inc. 2: el responsable debe pronunciarse a más tardar dentro de 30 días corridos, prorrogables por una sola vez hasta 30 días más. El bloqueo temporal debe resolverse en 2 días hábiles (Art. 11 inc. 7)."
+      },
+      {
+        "pregunta": "¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) y cuándo es obligatoria (Art. 15 ter)?",
+        "opciones": [
+          "Un formulario voluntario para empresas grandes; nunca obligatoria",
+          "Un análisis previo obligatorio cuando el tratamiento puede producir alto riesgo: decisiones automatizadas, tratamiento masivo, datos sensibles, monitoreo de espacios públicos",
+          "Un reporte posterior a una brecha de seguridad",
+          "Un certificado que emite la Agencia automáticamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 15 ter: la EIPD debe realizarse ANTES del tratamiento cuando sea probable que produzca alto riesgo. Casos taxativos: evaluación sistemática y exhaustiva con decisiones automatizadas, tratamiento masivo a gran escala, observación de zona pública, tratamiento de datos sensibles en hipótesis de excepción al consentimiento."
+      },
+      {
+        "pregunta": "¿En qué consiste el Modelo de Prevención de Infracciones (MPI) del Art. 49?",
+        "opciones": [
+          "Un seguro obligatorio contratado con la Agencia",
+          "Un programa de cumplimiento voluntario que incluye designación de delegado (DPO), identificación de riesgos, protocolos internos y mecanismos de reporte de brechas",
+          "Una auditoría anual realizada por el SERNAC",
+          "Un curso obligatorio de capacitación para todos los trabajadores"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 49: el MPI es voluntario y contiene: designación de DPO, identificación de tipo de información y actividades de riesgo, protocolos internos, mecanismos de reporte (incluyendo Art. 14 sexies) y sanciones internas. Implementarlo puede ser atenuante (DS 662/2025)."
+      },
+      {
+        "pregunta": "¿Cuándo una transferencia internacional de datos es lícita sin garantías adicionales (Art. 27)?",
+        "opciones": [
+          "Siempre, sin restricciones",
+          "Cuando el país destino tenga un nivel adecuado de protección (decisión de adecuación por la Agencia, Art. 28)",
+          "Solo si el titular no se opone",
+          "Solo si el país destino pertenece a la OCDE"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Art. 27 letra a: la transferencia es lícita si el país tiene nivel adecuado de protección (Art. 28). Sin adecuación, se requieren cláusulas contractuales, normas corporativas vinculantes, o excepciones tasadas (consentimiento expreso, tratados internacionales, etc.)."
+      },
+      {
+        "pregunta": "¿Cuál es la multa máxima por una infracción gravísima según la Ley 21.719?",
+        "opciones": [
+          "5.000 UTM",
+          "10.000 UTM",
+          "20.000 UTM",
+          "50.000 UTM"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Las infracciones gravísimas pueden llegar hasta 20.000 UTM (≈ US$ 1,5 millones). En reincidencia, hasta el 4% de los ingresos anuales.",
+        "articulos": [
+          "Art. 35",
+          "Art. 37"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuánto tiempo puede durar la suspensión temporal de operaciones ordenada por la Agencia?",
+        "opciones": [
+          "7 días",
+          "15 días",
+          "30 días",
+          "90 días"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "La Agencia puede ordenar el cese temporal del tratamiento por hasta 30 días, lo que puede paralizar remuneraciones, contratos y operaciones.",
+        "articulos": [
+          "Art. 44"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Las sanciones de la Ley 21.719 son prácticamente inaplicables, como ocurría con la Ley 19.628.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. La Ley 21.719 crea la Agencia de Protección de Datos Personales con poder real de fiscalización y sanción, y las multas llegan hasta 20.000 UTM con reincidencia hasta el 4% de ingresos.",
+        "articulos": [
+          "Art. 30",
+          "Art. 35"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuánto tiempo permanecen visibles las sanciones en el Registro Nacional?",
+        "opciones": [
+          "1 año",
+          "3 años",
+          "5 años",
+          "10 años"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Las anotaciones en el Registro Nacional de Sanciones permanecen visibles por 5 años, lo que puede bloquear licitaciones que exijan limpieza reglamentaria.",
+        "articulos": [
+          "Art. 36"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Empareje cada nivel de infracción con su multa máxima:",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Infracciones leves: hasta 5.000 UTM. Graves: hasta 10.000 UTM. Gravísimas: hasta 20.000 UTM. En reincidencia, hasta el 4% de ingresos anuales.",
+        "articulos": [
+          "Art. 35"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuál es el plazo general para responder una solicitud ARCOP?",
+        "opciones": [
+          "5 días hábiles",
+          "15 días corridos",
+          "30 días corridos, prorrogables por otros 30",
+          "60 días corridos"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "El plazo general es 30 días corridos, prorrogables por otros 30 en casos complejos (debiendo fundamentar).",
+        "articulos": [
+          "Art. 11"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Si el titular pide el bloqueo temporal conjunto con su solicitud, ¿en cuánto tiempo debe ejecutarse?",
+        "opciones": [
+          "24 horas",
+          "2 días hábiles",
+          "7 días corridos",
+          "30 días corridos"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "El bloqueo temporal conjunto tiene plazo fatal de 2 días hábiles, distinto del plazo general de 30 días corridos. Exige un SLA operativo interno muy corto.",
+        "articulos": [
+          "Art. 8",
+          "Art. 10"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Toda solicitud de supresión debe ser aceptada sin excepciones.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. Existen excepciones legales: obligación legal (ej. documentación laboral 5 años, tributaria 6 años), interés legítimo prevalente, defensa en juicio. En esos casos debe denegar fundadamente.",
+        "articulos": [
+          "Art. 7",
+          "Art. 16"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Qué derecho permite al titular recibir sus datos en formato estructurado para llevarlos a otro proveedor?",
+        "opciones": [
+          "Acceso",
+          "Rectificación",
+          "Portabilidad",
+          "Oposición"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "La portabilidad permite al titular recibir sus datos en formato estructurado, de uso común y lectura mecánica, para llevarlos a otro proveedor.",
+        "articulos": [
+          "Art. 9"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Empareje cada derecho ARCOP+ con su descripción:",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "A-R-S-O-P: Acceso, Rectificación, Supresión, Oposición, Portabilidad. Los plazos generales son 30 días corridos, salvo bloqueo temporal que es 2 días hábiles.",
+        "articulos": [
+          "Art. 5",
+          "Art. 6",
+          "Art. 7",
+          "Art. 8",
+          "Art. 9",
+          "Art. 10"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Hasta qué fecha se extiende el período de gracia sin multas pecuniarias para MIPYMEs?",
+        "opciones": [
+          "1 de diciembre de 2026",
+          "1 de junio de 2027",
+          "1 de diciembre de 2027",
+          "1 de diciembre de 2028"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "El período de gracia va del 1 dic 2026 al 1 dic 2027, durante el cual la Agencia aplicará amonestaciones y planes de subsanación sin multas pecuniarias para MIPYMEs (ventas hasta 100.000 UF).",
+        "articulos": [
+          "Prólogo Art. 1 / Transitorio"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Las MIPYMEs quedan completamente exentas de toda obligación bajo la Ley 21.719 durante el período de gracia.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. Durante el período de gracia las MIPYMEs tienen simplificación documental del RAT y exención de DPO externo, pero siguen obligadas a las demás obligaciones (consentimiento, ARCOP+, seguridad, breach notification).",
+        "articulos": [
+          "Art. 33"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuál es el plazo máximo para responder a una solicitud de derechos ARCOP+?",
+        "opciones": [
+          "5 días hábiles",
+          "10 días hábiles",
+          "15 días hábiles",
+          "30 días hábiles"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "El plazo máximo legal es 15 días hábiles desde la recepción de la solicitud. La falta de respuesta dentro de plazo constituye denegación tácita y es sancionable.",
+        "articulos": [
+          "Art. 11"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "La portabilidad de datos es un derecho que permite al titular recibir sus datos en un formato estructurado y de uso común.",
+        "opciones": [],
+        "correcta": true,
+        "explicacion_al_fallar": "Verdadero. La portabilidad es uno de los derechos ARCOP+ y permite al titular recibir y transmitir sus datos a otro responsable en un formato estructurado, de uso común y legible por máquina.",
+        "articulos": [
+          "Art. 9"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      }
+    ],
+    "ciudadano": [
+      {
+        "pregunta": "¿Qué significa ARSOP y cuáles son los derechos que incluye?",
+        "opciones": [
+          "Acceso, Rectificación, Supresión, Oposición y Portabilidad",
+          "Acceso, Rectificación, Cancelación, Oposición y Protección",
+          "Autenticación, Registro, Seguridad, Orden y Privacidad",
+          "Auditoría, Revisión, Supervisión, Ortogonalidad y Protección"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "ARSOP son los 5 derechos del titular que sustituyen al antiguo ARCO: Acceso (Art. 5), Rectificación (Art. 6), Supresión (Art. 7), Oposición (Art. 8) y Portabilidad (Art. 9). La Ley 21.719 añade además el bloqueo temporal (Art. 11 inc. 7) y el derecho a no ser objeto de decisiones automatizadas (Art. 8 bis)."
+      },
+      {
+        "pregunta": "¿Qué plazo tienes para reclamar ante la Agencia si el responsable rechaza tu solicitud o no responde (Art. 41)?",
+        "opciones": [
+          "10 días hábiles",
+          "30 días hábiles",
+          "60 días hábiles",
+          "90 días hábiles"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 41 letra a: tienes 30 días hábiles desde que recibas la respuesta negativa o venza el plazo de 30 días del responsable. Si la Agencia no se pronuncia en 10 días hábiles sobre admisibilidad, se entiende acogido (Art. 41 letra c)."
+      },
+      {
+        "pregunta": "Si una empresa sufre una brecha que expone tus datos sensibles o los de tus hijos menores de 14 años, ¿qué debe hacer (Art. 14 sexies)?",
+        "opciones": [
+          "Nada, solo documentarlo internamente",
+          "Reportar a la Agencia sin dilaciones indebidas Y notificar a cada titular afectado en lenguaje claro y sencillo",
+          "Esperar 6 meses para ver si se repite la brecha",
+          "Publicar un aviso en el Diario Oficial únicamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 14 sexies: si la brecha afecta datos sensibles, datos de menores de 14 años o datos económicos/financieros, el responsable debe notificar a cada titular afectado (o difusión masiva si no fuera posible) además de reportar a la Agencia."
+      },
+      {
+        "pregunta": "¿Puede una empresa tratar tus datos personales sin tu consentimiento?",
+        "opciones": [
+          "Nunca, el consentimiento es siempre obligatorio",
+          "Sí, en 6 bases de licitud alternativas al consentimiento (Art. 13): obligaciones contractuales, intereses legítimos, cumplimiento legal, protección vital, etc.",
+          "Sí, pero solo si la empresa tiene más de 10 años de antigüedad",
+          "Sí, pero solo con autorización del SERNAC"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 12 (consentimiento) y Art. 13 (otras 6 fuentes de licitud): el tratamiento es lícito sin consentimiento cuando medie obligación contractual, cumplimiento de ley, ejercicio de derechos, interés legítimo, protección vital o autorización legal expresa."
+      },
+      {
+        "pregunta": "¿Qué organismo creado por la Ley 21.719 tiene poder real de fiscalización y sanción?",
+        "opciones": [
+          "El Ministerio de Justicia",
+          "La Agencia de Protección de Datos Personales",
+          "El SERNAC",
+          "La Dirección del Trabajo"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La Agencia de Protección de Datos Personales (Agencia PDP) es el órgano fiscalizador y sancionador creado por la Ley 21.719. Opera y fiscaliza de oficio.",
+        "articulos": [
+          "Art. 30"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "La Ley 19.628 ya contemplaba la obligatoriedad de mantener un RAT, DPIA y designar un DPO.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. La Ley 19.628 no exigía instrumentos de gestión concretos. La Ley 21.719 introduce RAT, DPIA, DPO y contrato escrito con cada encargado.",
+        "articulos": [
+          "Art. 50",
+          "Art. 49"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuántas bases de licitud reconoce la Ley 21.719?",
+        "opciones": [
+          "2 (consentimiento y obligación legal)",
+          "4 (consentimiento, contrato, obligación legal, interés legítimo)",
+          "6 (consentimiento, contrato, obligación legal, interés legítimo, interés vital, función pública)",
+          "8 (incluye además interés público y autorización judicial)"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "La Ley 21.719 reconoce 6 bases de licitud: consentimiento, ejecución de contrato, obligación legal, interés legítimo, interés vital y función pública.",
+        "articulos": [
+          "Art. 13"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Bajo la Ley 19.628, ¿cuál era la multa máxima aplicable?",
+        "opciones": [
+          "Sin multa efectiva",
+          "10 a 50 UTM",
+          "500 UTM",
+          "5.000 UTM"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La Ley 19.628 establecía multas de 10 a 50 UTM, casi sin aplicación efectiva. La Ley 21.719 eleva esto a 5.000-20.000 UTM.",
+        "articulos": [
+          "Art. 35"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuáles de estos son derechos ARCOP+? (marque todos los correctos)",
+        "opciones": [
+          "Acceso",
+          "Rectificación",
+          "Portabilidad",
+          "Anonimato",
+          "Supresión",
+          "Oposición",
+          "Indemnización automática"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Los 5 derechos ARCOP+ son Acceso, Rectificación, Supresión, Oposición y Portabilidad. Anonimato e indemnización automática no son derechos ARCOP.",
+        "articulos": [
+          "Art. 5",
+          "Art. 6",
+          "Art. 7",
+          "Art. 8",
+          "Art. 9"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "En empresas de aseo industrial con alta rotación de personal, ¿qué instrumento es especialmente crítico?",
+        "opciones": [
+          "Política de cookies",
+          "DPIA por uso masivo de biometría",
+          "Banner publicitario",
+          "Sistema de backup"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La biometría (huella dactilar, reconocimiento facial) en alta rotación requiere DPIA obligatoria que acredite proporcionalidad. Sin ella, es infracción de alto impacto.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 ter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "En logística con geolocalización de conductores, ¿qué medida es obligatoria?",
+        "opciones": [
+          "Publicar la ubicación en redes sociales",
+          "Apagar el GPS fuera del horario laboral",
+          "Vender los datos a aseguradoras",
+          "Mantener el tracking activo 24/7 sin excepciones"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "El Art. 16 sexies obliga a apagar el GPS fuera del horario laboral. También hay que informar previamente al trabajador la finalidad del monitoreo.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 sexies"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Las empresas SaaS que procesan datos por sus clientes son típicamente responsables (controladores).",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. Las empresas SaaS son típicamente encargadas (procesadores) para sus clientes. Tratan datos por cuenta del responsable (el cliente), siguiendo sus instrucciones. Firmar DPAs estrictos con todos sus clientes.",
+        "articulos": [
+          "Art. 21"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "En el sector salud, una brecha de seguridad escala a:",
+        "opciones": [
+          "Infracción leve",
+          "Infracción grave",
+          "Infracción gravísima",
+          "No tiene escala automática"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Una brecha sobre datos de salud escala directamente a infracción gravísima (hasta 20.000 UTM) por tratarse de datos sensibles. La exposición reputacional es inmediata.",
+        "articulos": [
+          "Art. 35"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "En el sector público, ¿qué reglas específicas aplican? (marque todas)",
+        "opciones": [
+          "Excepción del consentimiento por mandato legal",
+          "Jefe Superior responde personalmente (5-15 días de suspensión)",
+          "Publicación mensual obligatoria de cesiones",
+          "Prohibición de multas (solo amonestaciones)",
+          "Transparencia activa obligatoria"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Sector público: excepción del consentimiento, responsabilidad personal del Jefe Superior (5-15 días), publicación mensual de cesiones, transparencia activa. Las multas sí aplican, no hay exención general.",
+        "articulos": [
+          "Art. 20",
+          "Art. 44"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Qué organismo concentra la facultad de fiscalización y sanción en la nueva ley?",
+        "opciones": [
+          "El Ministerio de Justicia",
+          "La Agencia de Protección de Datos Personales (Agencia PDP)",
+          "El Servicio Nacional del Consumidor (SERNAC)",
+          "La Contraloría General de la República"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La Agencia de Protección de Datos Personales (Agencia PDP) es el nuevo organismo especializado con poder real de fiscalización, instrucción y sanción. Es la única entidad facultada para certificar el MPI.",
+        "articulos": [
+          "Art. 30"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "La Ley 21.719 exige que cada empresa tenga una autorización firmada por el titular antes de cualquier tratamiento.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. La nueva ley establece 6 bases de licitud: consentimiento, ejecución de contrato, obligación legal, interés público, interés legítimo y mandato. El consentimiento es solo una de ellas, no la única.",
+        "articulos": [
+          "Art. 13"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuál es la base de licitud típica para el tratamiento de datos del trabajador con fines de remuneración?",
+        "opciones": [
+          "Consentimiento del trabajador",
+          "Ejecución del contrato de trabajo",
+          "Interés legítimo del empleador",
+          "Obligación legal del empleador"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La base de licitud típica para datos laborales (remuneración, evaluación, jornada) es la ejecución del contrato. El consentimiento del trabajador NO es exigible porque está en posición de vulnerabilidad. La obligación legal aplica para temas tributarios y previsionales.",
+        "articulos": [
+          "Art. 13"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Una dirección IP combinada con la geolocalización puede considerarse dato personal identificable.",
+        "opciones": [],
+        "correcta": true,
+        "explicacion_al_fallar": "Verdadero. La dirección IP, cookies persistentes y datos de geolocalización precisa pueden identificar a una persona cuando se combinan con otros datos, por lo que califican como datos personales bajo la ley.",
+        "articulos": [
+          "Art. 4",
+          "Art. 16"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      }
+    ],
+    "desarrollador": [
+      {
+        "pregunta": "¿Qué medidas técnicas exige el Art. 14 quinquies para garantizar la seguridad del tratamiento?",
+        "opciones": [
+          "Solo firewall y antivirus",
+          "Seudonimización, cifrado, resiliencia, capacidad de restauración y verificación regular de eficacia",
+          "Únicamente contraseñas de 8 caracteres",
+          "Doble factor de autenticación únicamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 14 quinquies: las medidas deben incluir (a) seudonimización y cifrado, (b) confidencialidad, integridad, disponibilidad y resiliencia, (c) capacidad de restauración tras incidente, (d) verificación regular de eficacia. En controversia, el responsable debe acreditar su existencia."
+      },
+      {
+        "pregunta": "¿Qué requisitos debe cumplir el consentimiento para ser válido bajo la Ley 21.719 (Art. 2 letra p, Art. 12)?",
+        "opciones": [
+          "Tácito, genérico y verbal",
+          "Libre, específico, inequívoco, informado y mediante clara acción afirmativa (no pre-marcado)",
+          "Firmado ante notario únicamente",
+          "Validado por la Agencia previamente"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 2 letra p: el consentimiento debe ser 'libre, específica, inequívoca e informada, otorgada a través de una declaración o una clara acción afirmativa'. Las casillas premarcadas son inválidas. SERNAC exige diseño de dos botones equivalentes y revocabilidad sencilla."
+      },
+      {
+        "pregunta": "¿Qué es un contrato DPA (Data Processing Agreement) y cuándo es obligatorio (Art. 15 bis)?",
+        "opciones": [
+          "Un acuerdo de no divulgación entre competidores",
+          "Un contrato de encargo de tratamiento entre responsable y encargado que restringe uso, exige seguridad y establece destrucción/devolución al término",
+          "Un permiso de la Agencia para operar",
+          "Un contrato laboral con el DPO"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 15 bis: el responsable que delega tratamiento a un tercero mandatario/encargado debe formalizar un DPA que limite el uso a los fines del encargo, garantice seguridad, y establezca la destrucción o devolución de los datos al finalizar."
+      },
+      {
+        "pregunta": "¿Qué es el 'Shadow AI' y por qué representa un riesgo bajo la Ley 21.719?",
+        "opciones": [
+          "Un tipo de malware que roba datos automáticamente",
+          "El uso no autorizado de herramientas de IA generativa por empleados que introducen datos personales en prompts, constituyendo tratamiento ilícito y potencial brecha",
+          "Una técnica de seudonimización avanzada",
+          "Un servicio de backup automático de la Agencia"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "El Shadow AI (uso de ChatGPT, Gemini, Copilot con datos de clientes/RRHH sin autorización) constituye tratamiento ilícito y puede generar brechas. Las empresas deben implementar políticas de gobernanza de IA y sanitizar PII antes de enviar datos a APIs externas."
+      },
+      {
+        "pregunta": "¿Cuál de los siguientes NO es un dato personal según la Ley 21.719?",
+        "opciones": [
+          "RUT",
+          "Dirección de correo electrónico",
+          "Dirección IP",
+          "Temperatura ambiente de una oficina (sin identificar persona)"
+        ],
+        "correcta": 3,
+        "explicacion_al_fallar": "La temperatura ambiente no es dato personal si no identifica a una persona. RUT, email e IP sí son datos personales porque permiten identificar al titular.",
+        "articulos": [
+          "Art. 4"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Qué dato es considerado 'sensible' y por tanto requiere base de licitud reforzada?",
+        "opciones": [
+          "Nombre completo",
+          "Correo electrónico",
+          "Datos de salud",
+          "Número de teléfono"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Los datos de salud son sensibles. También lo son: origen racial, afiliación política, religión, perfil biológico, biométricos y orientación sexual.",
+        "articulos": [
+          "Art. 15"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Un dato anonimizado sigue dentro del ámbito de aplicación de la Ley 21.719.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. El dato anonimizado, sometido a procedimiento irreversible, queda fuera del ámbito de la ley. Distinto del dato seudonimizado, que sí está dentro del ámbito.",
+        "articulos": [
+          "Art. 23"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Su proveedor de nube que procesa datos por usted es:",
+        "opciones": [
+          "Titular",
+          "Responsable",
+          "Encargado",
+          "Corresponsable"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "El encargado trata datos por cuenta del responsable, siguiendo sus instrucciones y sin decidir sobre las finalidades. Su proveedor de nube es típicamente un encargado.",
+        "articulos": [
+          "Art. 21"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Empareje cada rol con su definición:",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Titular: persona natural. Responsable: decide fines/medios. Encargado: trata por cuenta del responsable. Corresponsable: decide junto con otro responsable.",
+        "articulos": [
+          "Art. 3",
+          "Art. 16"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿En cuáles de estos espacios está PROHIBIDO instalar cámaras de CCTV?",
+        "opciones": [
+          "Recepción y pasillos",
+          "Baños y comedores",
+          "Estacionamientos",
+          "Salas de reuniones con aviso"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Está prohibido instalar cámaras en baños, comedores, vestidores y zonas de descanso. Solo se permiten en zonas comunes y de circulación, con cartel visible.",
+        "articulos": [
+          "Art. 14",
+          "Art. 14 bis"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuál es el plazo de conservación recomendado para grabaciones de CCTV?",
+        "opciones": [
+          "7 días",
+          "30 días",
+          "90 días",
+          "Indefinido"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La buena práctica y la jurisprudencia comparada recomiendan 30 días como plazo máximo de conservación de grabaciones de CCTV, salvo investigación activa.",
+        "articulos": [
+          "Art. 14",
+          "Art. 14 sexies"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Las herramientas de IA generativa usadas por el personal sin política formal constituyen un riesgo material para la empresa.",
+        "opciones": [],
+        "correcta": true,
+        "explicacion_al_fallar": "Verdadero. El 97% de las empresas breachadas carecían de políticas formales de IA. El costo promedio de una brecha con IA involucrada es US$ 670.000. El Shadow AI debe ser levantado, evaluado y registrado en el RAT.",
+        "articulos": [
+          "Art. 17",
+          "Guía ANPD"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Para flotas vehiculares con GPS, ¿qué medida es exigida por el Art. 16 sexies?",
+        "opciones": [
+          "Publicar las rutas en tiempo real",
+          "Apagar el GPS fuera del horario laboral",
+          "Vender los datos a aseguradoras",
+          "Compartir ubicación con la competencia"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "El Art. 16 sexies exige apagar el dispositivo GPS fuera del horario laboral. También se debe informar previamente al trabajador la finalidad del monitoreo.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 sexies"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Para acreditar transferencias internacionales legítimas, ¿cuáles son garantías válidas? (marque todas)",
+        "opciones": [
+          "País con nivel adecuado de protección",
+          "Cláusulas contractuales tipo aprobadas",
+          "Normas corporativas vinculantes",
+          "Solo el consentimiento tácito",
+          "Consentimiento expreso del titular"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Garantías válidas: país con nivel adecuado, cláusulas contractuales tipo, normas corporativas vinculantes, consentimiento expreso del titular. El consentimiento tácito no es válido bajo la nueva ley.",
+        "articulos": [
+          "Art. 27"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuáles de los siguientes son datos sensibles según la ley? (marque todos los correctos)",
+        "opciones": [
+          "Datos de salud y biológicos",
+          "Datos genéticos",
+          "Origen racial o étnico",
+          "RUT o número de identificación",
+          "Opiniones políticas",
+          "Dirección de correo electrónico personal"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Datos sensibles incluyen salud, biológicos, genéticos, origen racial/étnico, opiniones políticas, convicciones religiosas, datos biométricos y orientación sexual. El RUT y el email son datos personales pero NO sensibles.",
+        "articulos": [
+          "Art. 15",
+          "Art. 16"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Quién decide los fines y medios del tratamiento de datos?",
+        "opciones": [
+          "El encargado de tratamiento",
+          "El titular de los datos",
+          "El responsable del tratamiento",
+          "La Agencia PDP"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "El responsable del tratamiento es quien decide los fines y medios del tratamiento. El encargado solo trata datos por cuenta del responsable, según instrucciones documentadas en un contrato.",
+        "articulos": [
+          "Art. 3"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Para instalar CCTV con fines de seguridad, ¿qué condiciones mínimas se deben cumplir?",
+        "opciones": [
+          "Solo basta instalar cámaras sin aviso",
+          "Señalética visible + aviso de privacidad + base de licitud documentada",
+          "Solicitar permiso a la Agencia PDP por cada cámara",
+          "Solo se permite en empresas con más de 100 trabajadores"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "CCTV exige: señalética visible informando la grabación, aviso de privacidad con finalidad, base de licitud (generalmente interés legítimo), y registro en el RAT. No requiere permiso individual a la Agencia pero SI debe cumplir los principios de minimización y proporcionalidad.",
+        "articulos": [
+          "Art. 14",
+          "Art. 14 bis"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Empareje cada tecnología de monitoreo con su base de licitud típica:",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "CCTV usa interés legítimo con señalética visible. Geolocalización de flota se basa en ejecución del contrato. Biometría requiere consentimiento expreso porque es dato sensible. Shadow AI requiere política interna documentada y registro en el RAT.",
+        "articulos": [
+          "Art. 14",
+          "Art. 16",
+          "Art. 16 sexies"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      }
+    ],
+    "institucion": [
+      {
+        "pregunta": "¿Pueden los órganos públicos tratar datos personales sin consentimiento del titular (Art. 20)?",
+        "opciones": [
+          "No, el consentimiento es siempre obligatorio también para el Estado",
+          "Sí, cuando el tratamiento se realiza para el cumplimiento de sus funciones legales dentro del ámbito de sus competencias",
+          "Sí, pero solo con autorización del Presidente",
+          "Solo si los datos son de funcionarios públicos"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 20: es lícito el tratamiento por órganos públicos cuando se realiza para el cumplimiento de sus funciones legales, dentro del ámbito de sus competencias. Sin embargo, deben respetar los principios del Art. 3 y los derechos ARSOP del titular."
+      },
+      {
+        "pregunta": "¿Qué obligación de transparencia mensual tienen los organismos públicos respecto a convenios de cesión de datos (Art. 22)?",
+        "opciones": [
+          "No tienen obligación de transparencia",
+          "Informar mensualmente en su sitio web institucional los convenios suscritos de cesión o transferencia de datos personales",
+          "Publicar en el Diario Oficial trimestralmente",
+          "Enviar un reporte anual al Congreso"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 22: los órganos públicos están facultados para ceder datos entre sí para cumplimiento de funciones, pero deben publicar mensualmente en su sitio web los convenios de cesión. Esta obligación será fiscalizada por la Agencia."
+      },
+      {
+        "pregunta": "¿Qué responsabilidad personal tiene el jefe superior de un órgano público por incumplimientos de la ley (Art. 44)?",
+        "opciones": [
+          "Ninguna, la responsabilidad es siempre del Estado",
+          "Suspensión del cargo por 5 a 15 días hábiles o multas deducidas de su remuneración mensual (20%-50%)",
+          "Destitución inmediata sin proceso",
+          "Solo una amonestación verbal"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 44: la sanción no recae sobre el erario fiscal sino que el jefe superior del servicio puede ser suspendido 5-15 días hábiles o recibir multas deducidas de su remuneración. Esto evita que el presupuesto público se vea afectado por incumplimientos."
+      },
+      {
+        "pregunta": "¿Qué debe hacer el Servicio de Registro Civil antes de la entrada en vigencia (Art. 3 transitorio)?",
+        "opciones": [
+          "Crear un nuevo registro nacional de bases de datos",
+          "Eliminar el registro de los bancos de datos personales del antiguo Art. 22 de la Ley 19.628",
+          "Migrar todos los datos a la nube",
+          "Contratar al primer DPO del país"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "Art. 3 transitorio: el Registro Civil debe eliminar el registro de bancos de datos personales contemplado en el antiguo Art. 22 de la Ley 19.628 dentro de los 60 días anteriores a la entrada en vigencia."
+      },
+      {
+        "pregunta": "¿Qué documento es la base de toda la responsabilidad proactiva?",
+        "opciones": [
+          "DPIA",
+          "RAT",
+          "DPA",
+          "MPI"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "El RAT (Registro de Actividades de Tratamiento) es el inventario obligatorio de todos los flujos de datos. Es la base sobre la cual se construye todo lo demás.",
+        "articulos": [
+          "Art. 44",
+          "Art. 45"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿En qué plazo debe notificarse una brecha de seguridad a la Agencia?",
+        "opciones": [
+          "24 horas",
+          "48 horas",
+          "72 horas",
+          "7 días"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Toda brecha de seguridad debe notificarse a la Agencia PDP en un plazo máximo de 72 horas.",
+        "articulos": [
+          "Art. 14",
+          "Art. 14 sexies"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "El MPI (Modelo de Prevención de Infracciones) es obligatorio para todas las empresas.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. El MPI es voluntario y certificable. Acredita diligencia y atenúa sanciones, pero no es obligatorio. Es una decisión estratégica de la empresa.",
+        "articulos": [
+          "Art. 49"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuándo es obligatoria una DPIA?",
+        "opciones": [
+          "En cualquier tratamiento de datos",
+          "Solo para datos sensibles",
+          "En tratamientos de alto riesgo: biometría, geolocalización masiva, perfilamiento, decisiones automatizadas",
+          "Nunca, es voluntaria"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "La DPIA es obligatoria en tratamientos de alto riesgo: biometría, geolocalización masiva, perfilamiento, decisiones automatizadas con efectos significativos, tratamiento de menores.",
+        "articulos": [
+          "Art. 15",
+          "Art. 15 ter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Qué cláusulas debe contener un DPA (contrato de encargo)? (marque todas)",
+        "opciones": [
+          "Confidencialidad",
+          "Limitación de finalidad",
+          "Subencargados autorizados",
+          "Cláusula penal por incumplimiento del encargado",
+          "Devolución o supresión al término",
+          "Notificación de brechas"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Un DPA completo incluye: confidencialidad, limitación de finalidad, subencargados autorizados, devolución/supresión al término, y notificación de brechas. La cláusula penal es opcional.",
+        "articulos": [
+          "Art. 22"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Para un menor de 13 años, ¿quién puede consentir el tratamiento de sus datos?",
+        "opciones": [
+          "El menor, si demuestra madurez",
+          "El menor con asistencia del colegio",
+          "Solo el representante legal (padre/madre/tutor)",
+          "Nadie, está prohibido tratar datos de menores"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Para menores de 14 años, solo el representante legal puede consentir. Hay prohibición absoluta de consentimiento propio del menor en ese tramo etario.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 quáter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Para un adolescente de 15 años, ¿cuál es la regla para datos sensibles (salud, psicológicos)?",
+        "opciones": [
+          "Consentimiento propio del adolescente",
+          "Consentimiento del colegio",
+          "Apoderado obligatorio",
+          "Está prohibido"
+        ],
+        "correcta": 2,
+        "explicacion_al_fallar": "Entre 14 y 15 años, el consentimiento propio aplica solo para datos académicos estándar. Para datos sensibles (salud, psicológicos, PIE, biometría) se requiere apoderado obligatorio.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 quáter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Está permitido el perfilamiento comercial y la publicidad dirigida a menores de edad.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. Queda prohibido el perfilamiento comercial, publicidad dirigida o marketing directo de bienes y servicios a menores. Toda captación debe justificarse por beneficio pedagógico o seguridad escolar.",
+        "articulos": [
+          "Art. 14",
+          "Art. 14 bis"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "La huella dactilar y el reconocimiento facial son:",
+        "opciones": [
+          "Datos personales comunes",
+          "Datos sensibles (biométricos)",
+          "Solo sensibles en menores",
+          "Depende del contexto"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "La huella dactilar y el reconocimiento facial son datos biométricos, y por tanto datos sensibles. Requieren base de licitud reforzada y DPIA obligatoria.",
+        "articulos": [
+          "Art. 15",
+          "Art. 16 ter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Empareje cada tramo etario con su regla de consentimiento:",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Menores de 14: solo representante legal. De 14-15: consentimiento propio para datos estándar, pero apoderado obligatorio para sensibles. De 16 en adelante: régimen general.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 quáter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿Cuáles de estos son instrumentos exigidos por la ley? (marque todos los correctos)",
+        "opciones": [
+          "Registro de Actividades de Tratamiento (RAT)",
+          "Evaluación de Impacto (DPIA)",
+          "Modelo de Prevención de Implementación (MPI)",
+          "Política de recursos humanos",
+          "Designación de DPO cuando corresponde"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Los 7 instrumentos obligatorios son: RAT, DPIA, DPO, Contratos con encargados (DPA), Medidas de seguridad, Breach notification protocol, y MPI certificado (atenuante). Una política de RR.HH. no es un instrumento de la ley.",
+        "articulos": [
+          "Art. 44",
+          "Art. 45",
+          "Art. 49",
+          "Art. 50"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "El RAT debe estar disponible públicamente en el sitio web del responsable.",
+        "opciones": [],
+        "correcta": false,
+        "explicacion_al_fallar": "Falso. El RAT es un documento interno que el responsable debe mantener actualizado y presentar a la Agencia cuando lo requiera, pero no necesita estar publicado. Lo que sí debe ser público es el aviso de privacidad al titular.",
+        "articulos": [
+          "Art. 45"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "Para tratar datos de menores de 14 años, ¿qué condiciones son exigidas? (marque todos los correctos)",
+        "opciones": [
+          "Consentimiento verificable del representante legal",
+          "Notificación al Ministerio Público",
+          "Finalidad pedagógica, de seguridad o de salud",
+          "DPIA obligatoria",
+          "Permiso especial de la Agencia PDP"
+        ],
+        "correcta": 0,
+        "explicacion_al_fallar": "Datos de menores de 14 años requieren: consentimiento verificable del representante legal, finalidad pedagógica o de seguridad/salud (no comercial), y DPIA obligatoria. No se requiere notificación al Ministerio Público ni permiso especial, pero SI se prohíbe el marketing directo.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 quáter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      },
+      {
+        "pregunta": "¿A partir de qué edad puede un menor consentir autónomamente el tratamiento de sus datos personales en Chile?",
+        "opciones": [
+          "12 años",
+          "14 años",
+          "16 años",
+          "18 años"
+        ],
+        "correcta": 1,
+        "explicacion_al_fallar": "En Chile, los menores de 14 años requieren consentimiento del representante legal. Desde los 14 años pueden consentir autónomamente para actos no lucrativos. Los menores de 16 en algunos contextos requieren autorización especial.",
+        "articulos": [
+          "Art. 16",
+          "Art. 16 quáter"
+        ],
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+      }
+    ]
+  },
+  "test_final": [
+    {
+      "pregunta": "¿Cuál es la fecha de vigencia plena de la Ley 21.719?",
+      "opciones": [
+        "13 de diciembre de 2024",
+        "1 de diciembre de 2026",
+        "17 de diciembre de 2026",
+        "1 de enero de 2027"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 1 transitorio: las modificaciones entran en vigencia el día primero del mes vigésimo cuarto posterior a la publicación (13-dic-2024), es decir, el 1 de diciembre de 2026."
+    },
+    {
+      "pregunta": "¿Cuántos derechos ARSOP reconoce la Ley 21.719 al titular de datos?",
+      "opciones": [
+        "3 (Acceso, Rectificación, Supresión)",
+        "5 (Acceso, Rectificación, Supresión, Oposición, Portabilidad) + bloqueo temporal",
+        "7 derechos sin bloqueo",
+        "Solo 2 (Acceso y Rectificación)"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Arts. 4-9: Acceso (5), Rectificación (6), Supresión (7), Oposición (8), Portabilidad (9). Art. 11 inc. 7 añade el bloqueo temporal. Art. 8 bis añade el derecho a no ser objeto de decisiones automatizadas."
+    },
+    {
+      "pregunta": "¿Qué es la Agencia de Protección de Datos Personales (APDP) según el Art. 30?",
+      "opciones": [
+        "Un departamento del Ministerio del Interior",
+        "Una corporación autónoma de derecho público, con personalidad jurídica y patrimonio propio, relacionada con el Presidente vía Ministerio de Economía",
+        "Una empresa privada contratada por el Estado",
+        "Un comité del Senado"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 30: la APDP es corporación autónoma de derecho público, de carácter técnico, descentralizado, con personalidad jurídica y patrimonio propio. Se relaciona con el Presidente a través del Ministerio de Economía, Fomento y Turismo."
+    },
+    {
+      "pregunta": "¿Cuál es el régimen de PYMEs durante el primer año de vigencia (Art. 6 transitorio)?",
+      "opciones": [
+        "Multas normales sin excepción",
+        "La Agencia podrá aplicar amonestación por escrito en lugar de multas durante los primeros 12 meses",
+        "Suspensión total de la ley para PYMEs",
+        "Solo aplican las infracciones leves"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 6 transitorio: durante los primeros 12 meses de vigencia, para empresas de menor tamaño (Ley 20.416), la Agencia podrá aplicar amonestación por escrito en lugar de multa, señalando la gravedad y las medidas de subsanación."
+    },
+    {
+      "pregunta": "¿Qué es una Evaluación de Impacto en Protección de Datos (EIPD) según el Art. 15 ter?",
+      "opciones": [
+        "Un reporte trimestral obligatorio para todas las empresas",
+        "Un análisis previo al tratamiento de alto riesgo que evalúa necesidad, proporcionalidad y riesgos",
+        "Un certificado que emite la Agencia",
+        "Una auditoría posterior a una brecha"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 15 ter: la EIPD es un análisis previo obligatorio cuando el tratamiento probablemente produzca alto riesgo. Casos: decisiones automatizadas con efectos jurídicos, tratamiento masivo a gran escala, monitoreo de zonas públicas, datos sensibles en excepciones al consentimiento."
+    },
+    {
+      "pregunta": "¿Qué plazo tiene el titular para reclamar ante la Agencia tras una denegación (Art. 41)?",
+      "opciones": [
+        "10 días hábiles",
+        "30 días hábiles",
+        "60 días hábiles",
+        "90 días hábiles"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 41 letra a: el titular tiene 30 días hábiles desde la respuesta negativa o el vencimiento del plazo del responsable para presentar reclamación ante la Agencia."
+    },
+    {
+      "pregunta": "¿Qué exige el Art. 14 sexies respecto a las brechas de seguridad?",
+      "opciones": [
+        "Reportar a la Agencia anualmente",
+        "Reportar a la Agencia por los medios más expeditos y sin dilaciones indebidas; notificar a titulares si afecta datos sensibles o de menores",
+        "No existe obligación de reporte",
+        "Solo reportar si afecta a más de 1.000 personas"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 14 sexies: el responsable debe reportar a la Agencia 'sin dilaciones indebidas' las vulneraciones que causen destrucción, filtración, pérdida o alteración de datos. Si afecta datos sensibles, de menores de 14 o datos económicos, debe también notificar a cada titular."
+    },
+    {
+      "pregunta": "¿Cuáles son las 3 vías de licitud de transferencias internacionales (Art. 27)?",
+      "opciones": [
+        "Consentimiento del titular, pago de arancel, autorización del Ministerio",
+        "País con nivel adecuado de protección; cláusulas contractuales/normas corporativas vinculantes; o excepciones tasadas (consentimiento expreso, tratados, etc.)",
+        "Solo a países miembros de la OCDE",
+        "Transferencias prohibidas totalmente"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 27: (a) país con nivel adecuado (Art. 28), (b) cláusulas contractuales o normas corporativas vinculantes con garantías adecuadas, (c) modelo de cumplimiento certificado. Sin estas, solo transferencias específicas y no habituales en casos tasados (consentimiento expreso, tratados, contratos, etc.)."
+    },
+    {
+      "pregunta": "¿Puede el dueño de una microempresa asumir el rol de Delegado de Protección de Datos (DPO)?",
+      "opciones": [
+        "No, siempre debe contratar a un profesional externo",
+        "Sí, en micro, pequeñas y medianas empresas el dueño o sus máximas autoridades pueden asumir personalmente las tareas de DPO (Art. 50)",
+        "Solo si la empresa tiene menos de 5 empleados",
+        "Solo con autorización de la Agencia"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 50: 'En las micro, pequeñas y medianas empresas, el dueño o sus máximas autoridades podrán asumir personalmente las tareas de delegado de protección de datos.'"
+    },
+    {
+      "pregunta": "¿Qué es el Registro Nacional de Sanciones y Cumplimiento (Art. 39)?",
+      "opciones": [
+        "Un registro privado de empresas",
+        "Un registro público administrado por la Agencia que consigna modelos certificados de prevención, responsables que los adoptaron y sanciones impuestas",
+        "Un registro del SERNAC",
+        "Un registro policial de infractores"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Art. 2 letra z y Art. 39: es un registro nacional de carácter público administrado por la Agencia que consigna los modelos certificados de prevención (MPI), los responsables que los hayan adoptado y las sanciones impuestas."
+    },
+    {
+      "pregunta": "¿Cuál es la multa máxima por una infracción gravísima según la Ley 21.719?",
+      "opciones": [
+        "5.000 UTM",
+        "10.000 UTM",
+        "20.000 UTM",
+        "50.000 UTM"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Las infracciones gravísimas pueden llegar hasta 20.000 UTM (≈ US$ 1,5 millones). En reincidencia, hasta el 4% de los ingresos anuales.",
+      "articulos": [
+        "Art. 35",
+        "Art. 37"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuánto tiempo puede durar la suspensión temporal de operaciones ordenada por la Agencia?",
+      "opciones": [
+        "7 días",
+        "15 días",
+        "30 días",
+        "90 días"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "La Agencia puede ordenar el cese temporal del tratamiento por hasta 30 días, lo que puede paralizar remuneraciones, contratos y operaciones.",
+      "articulos": [
+        "Art. 44"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuánto tiempo permanecen visibles las sanciones en el Registro Nacional?",
+      "opciones": [
+        "1 año",
+        "3 años",
+        "5 años",
+        "10 años"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Las anotaciones en el Registro Nacional de Sanciones permanecen visibles por 5 años, lo que puede bloquear licitaciones que exijan limpieza reglamentaria.",
+      "articulos": [
+        "Art. 36"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Qué organismo creado por la Ley 21.719 tiene poder real de fiscalización y sanción?",
+      "opciones": [
+        "El Ministerio de Justicia",
+        "La Agencia de Protección de Datos Personales",
+        "El SERNAC",
+        "La Dirección del Trabajo"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La Agencia de Protección de Datos Personales (Agencia PDP) es el órgano fiscalizador y sancionador creado por la Ley 21.719. Opera y fiscaliza de oficio.",
+      "articulos": [
+        "Art. 30"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuántas bases de licitud reconoce la Ley 21.719?",
+      "opciones": [
+        "2 (consentimiento y obligación legal)",
+        "4 (consentimiento, contrato, obligación legal, interés legítimo)",
+        "6 (consentimiento, contrato, obligación legal, interés legítimo, interés vital, función pública)",
+        "8 (incluye además interés público y autorización judicial)"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "La Ley 21.719 reconoce 6 bases de licitud: consentimiento, ejecución de contrato, obligación legal, interés legítimo, interés vital y función pública.",
+      "articulos": [
+        "Art. 13"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Bajo la Ley 19.628, ¿cuál era la multa máxima aplicable?",
+      "opciones": [
+        "Sin multa efectiva",
+        "10 a 50 UTM",
+        "500 UTM",
+        "5.000 UTM"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La Ley 19.628 establecía multas de 10 a 50 UTM, casi sin aplicación efectiva. La Ley 21.719 eleva esto a 5.000-20.000 UTM.",
+      "articulos": [
+        "Art. 35"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuáles de estos son derechos ARCOP+? (marque todos los correctos)",
+      "opciones": [
+        "Acceso",
+        "Rectificación",
+        "Portabilidad",
+        "Anonimato",
+        "Supresión",
+        "Oposición",
+        "Indemnización automática"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Los 5 derechos ARCOP+ son Acceso, Rectificación, Supresión, Oposición y Portabilidad. Anonimato e indemnización automática no son derechos ARCOP.",
+      "articulos": [
+        "Art. 5",
+        "Art. 6",
+        "Art. 7",
+        "Art. 8",
+        "Art. 9"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuál de los siguientes NO es un dato personal según la Ley 21.719?",
+      "opciones": [
+        "RUT",
+        "Dirección de correo electrónico",
+        "Dirección IP",
+        "Temperatura ambiente de una oficina (sin identificar persona)"
+      ],
+      "correcta": 3,
+      "explicacion_al_fallar": "La temperatura ambiente no es dato personal si no identifica a una persona. RUT, email e IP sí son datos personales porque permiten identificar al titular.",
+      "articulos": [
+        "Art. 4"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Qué dato es considerado 'sensible' y por tanto requiere base de licitud reforzada?",
+      "opciones": [
+        "Nombre completo",
+        "Correo electrónico",
+        "Datos de salud",
+        "Número de teléfono"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Los datos de salud son sensibles. También lo son: origen racial, afiliación política, religión, perfil biológico, biométricos y orientación sexual.",
+      "articulos": [
+        "Art. 15"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Su proveedor de nube que procesa datos por usted es:",
+      "opciones": [
+        "Titular",
+        "Responsable",
+        "Encargado",
+        "Corresponsable"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "El encargado trata datos por cuenta del responsable, siguiendo sus instrucciones y sin decidir sobre las finalidades. Su proveedor de nube es típicamente un encargado.",
+      "articulos": [
+        "Art. 21"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Qué documento es la base de toda la responsabilidad proactiva?",
+      "opciones": [
+        "DPIA",
+        "RAT",
+        "DPA",
+        "MPI"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "El RAT (Registro de Actividades de Tratamiento) es el inventario obligatorio de todos los flujos de datos. Es la base sobre la cual se construye todo lo demás.",
+      "articulos": [
+        "Art. 44",
+        "Art. 45"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿En qué plazo debe notificarse una brecha de seguridad a la Agencia?",
+      "opciones": [
+        "24 horas",
+        "48 horas",
+        "72 horas",
+        "7 días"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Toda brecha de seguridad debe notificarse a la Agencia PDP en un plazo máximo de 72 horas.",
+      "articulos": [
+        "Art. 14",
+        "Art. 14 sexies"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuándo es obligatoria una DPIA?",
+      "opciones": [
+        "En cualquier tratamiento de datos",
+        "Solo para datos sensibles",
+        "En tratamientos de alto riesgo: biometría, geolocalización masiva, perfilamiento, decisiones automatizadas",
+        "Nunca, es voluntaria"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "La DPIA es obligatoria en tratamientos de alto riesgo: biometría, geolocalización masiva, perfilamiento, decisiones automatizadas con efectos significativos, tratamiento de menores.",
+      "articulos": [
+        "Art. 15",
+        "Art. 15 ter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Qué cláusulas debe contener un DPA (contrato de encargo)? (marque todas)",
+      "opciones": [
+        "Confidencialidad",
+        "Limitación de finalidad",
+        "Subencargados autorizados",
+        "Cláusula penal por incumplimiento del encargado",
+        "Devolución o supresión al término",
+        "Notificación de brechas"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Un DPA completo incluye: confidencialidad, limitación de finalidad, subencargados autorizados, devolución/supresión al término, y notificación de brechas. La cláusula penal es opcional.",
+      "articulos": [
+        "Art. 22"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuál es el plazo general para responder una solicitud ARCOP?",
+      "opciones": [
+        "5 días hábiles",
+        "15 días corridos",
+        "30 días corridos, prorrogables por otros 30",
+        "60 días corridos"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "El plazo general es 30 días corridos, prorrogables por otros 30 en casos complejos (debiendo fundamentar).",
+      "articulos": [
+        "Art. 11"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Si el titular pide el bloqueo temporal conjunto con su solicitud, ¿en cuánto tiempo debe ejecutarse?",
+      "opciones": [
+        "24 horas",
+        "2 días hábiles",
+        "7 días corridos",
+        "30 días corridos"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "El bloqueo temporal conjunto tiene plazo fatal de 2 días hábiles, distinto del plazo general de 30 días corridos. Exige un SLA operativo interno muy corto.",
+      "articulos": [
+        "Art. 8",
+        "Art. 10"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Qué derecho permite al titular recibir sus datos en formato estructurado para llevarlos a otro proveedor?",
+      "opciones": [
+        "Acceso",
+        "Rectificación",
+        "Portabilidad",
+        "Oposición"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "La portabilidad permite al titular recibir sus datos en formato estructurado, de uso común y lectura mecánica, para llevarlos a otro proveedor.",
+      "articulos": [
+        "Art. 9"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "En empresas de aseo industrial con alta rotación de personal, ¿qué instrumento es especialmente crítico?",
+      "opciones": [
+        "Política de cookies",
+        "DPIA por uso masivo de biometría",
+        "Banner publicitario",
+        "Sistema de backup"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La biometría (huella dactilar, reconocimiento facial) en alta rotación requiere DPIA obligatoria que acredite proporcionalidad. Sin ella, es infracción de alto impacto.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 ter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "En logística con geolocalización de conductores, ¿qué medida es obligatoria?",
+      "opciones": [
+        "Publicar la ubicación en redes sociales",
+        "Apagar el GPS fuera del horario laboral",
+        "Vender los datos a aseguradoras",
+        "Mantener el tracking activo 24/7 sin excepciones"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "El Art. 16 sexies obliga a apagar el GPS fuera del horario laboral. También hay que informar previamente al trabajador la finalidad del monitoreo.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 sexies"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "En el sector salud, una brecha de seguridad escala a:",
+      "opciones": [
+        "Infracción leve",
+        "Infracción grave",
+        "Infracción gravísima",
+        "No tiene escala automática"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Una brecha sobre datos de salud escala directamente a infracción gravísima (hasta 20.000 UTM) por tratarse de datos sensibles. La exposición reputacional es inmediata.",
+      "articulos": [
+        "Art. 35"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "En el sector público, ¿qué reglas específicas aplican? (marque todas)",
+      "opciones": [
+        "Excepción del consentimiento por mandato legal",
+        "Jefe Superior responde personalmente (5-15 días de suspensión)",
+        "Publicación mensual obligatoria de cesiones",
+        "Prohibición de multas (solo amonestaciones)",
+        "Transparencia activa obligatoria"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Sector público: excepción del consentimiento, responsabilidad personal del Jefe Superior (5-15 días), publicación mensual de cesiones, transparencia activa. Las multas sí aplican, no hay exención general.",
+      "articulos": [
+        "Art. 20",
+        "Art. 44"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Para un menor de 13 años, ¿quién puede consentir el tratamiento de sus datos?",
+      "opciones": [
+        "El menor, si demuestra madurez",
+        "El menor con asistencia del colegio",
+        "Solo el representante legal (padre/madre/tutor)",
+        "Nadie, está prohibido tratar datos de menores"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Para menores de 14 años, solo el representante legal puede consentir. Hay prohibición absoluta de consentimiento propio del menor en ese tramo etario.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 quáter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Para un adolescente de 15 años, ¿cuál es la regla para datos sensibles (salud, psicológicos)?",
+      "opciones": [
+        "Consentimiento propio del adolescente",
+        "Consentimiento del colegio",
+        "Apoderado obligatorio",
+        "Está prohibido"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "Entre 14 y 15 años, el consentimiento propio aplica solo para datos académicos estándar. Para datos sensibles (salud, psicológicos, PIE, biometría) se requiere apoderado obligatorio.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 quáter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "La huella dactilar y el reconocimiento facial son:",
+      "opciones": [
+        "Datos personales comunes",
+        "Datos sensibles (biométricos)",
+        "Solo sensibles en menores",
+        "Depende del contexto"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La huella dactilar y el reconocimiento facial son datos biométricos, y por tanto datos sensibles. Requieren base de licitud reforzada y DPIA obligatoria.",
+      "articulos": [
+        "Art. 15",
+        "Art. 16 ter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿En cuáles de estos espacios está PROHIBIDO instalar cámaras de CCTV?",
+      "opciones": [
+        "Recepción y pasillos",
+        "Baños y comedores",
+        "Estacionamientos",
+        "Salas de reuniones con aviso"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "Está prohibido instalar cámaras en baños, comedores, vestidores y zonas de descanso. Solo se permiten en zonas comunes y de circulación, con cartel visible.",
+      "articulos": [
+        "Art. 14",
+        "Art. 14 bis"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuál es el plazo de conservación recomendado para grabaciones de CCTV?",
+      "opciones": [
+        "7 días",
+        "30 días",
+        "90 días",
+        "Indefinido"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La buena práctica y la jurisprudencia comparada recomiendan 30 días como plazo máximo de conservación de grabaciones de CCTV, salvo investigación activa.",
+      "articulos": [
+        "Art. 14",
+        "Art. 14 sexies"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Para flotas vehiculares con GPS, ¿qué medida es exigida por el Art. 16 sexies?",
+      "opciones": [
+        "Publicar las rutas en tiempo real",
+        "Apagar el GPS fuera del horario laboral",
+        "Vender los datos a aseguradoras",
+        "Compartir ubicación con la competencia"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "El Art. 16 sexies exige apagar el dispositivo GPS fuera del horario laboral. También se debe informar previamente al trabajador la finalidad del monitoreo.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 sexies"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Para acreditar transferencias internacionales legítimas, ¿cuáles son garantías válidas? (marque todas)",
+      "opciones": [
+        "País con nivel adecuado de protección",
+        "Cláusulas contractuales tipo aprobadas",
+        "Normas corporativas vinculantes",
+        "Solo el consentimiento tácito",
+        "Consentimiento expreso del titular"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Garantías válidas: país con nivel adecuado, cláusulas contractuales tipo, normas corporativas vinculantes, consentimiento expreso del titular. El consentimiento tácito no es válido bajo la nueva ley.",
+      "articulos": [
+        "Art. 27"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Hasta qué fecha se extiende el período de gracia sin multas pecuniarias para MIPYMEs?",
+      "opciones": [
+        "1 de diciembre de 2026",
+        "1 de junio de 2027",
+        "1 de diciembre de 2027",
+        "1 de diciembre de 2028"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "El período de gracia va del 1 dic 2026 al 1 dic 2027, durante el cual la Agencia aplicará amonestaciones y planes de subsanación sin multas pecuniarias para MIPYMEs (ventas hasta 100.000 UF).",
+      "articulos": [
+        "Prólogo Art. 1 / Transitorio"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Qué organismo concentra la facultad de fiscalización y sanción en la nueva ley?",
+      "opciones": [
+        "El Ministerio de Justicia",
+        "La Agencia de Protección de Datos Personales (Agencia PDP)",
+        "El Servicio Nacional del Consumidor (SERNAC)",
+        "La Contraloría General de la República"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La Agencia de Protección de Datos Personales (Agencia PDP) es el nuevo organismo especializado con poder real de fiscalización, instrucción y sanción. Es la única entidad facultada para certificar el MPI.",
+      "articulos": [
+        "Art. 30"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuáles de los siguientes son datos sensibles según la ley? (marque todos los correctos)",
+      "opciones": [
+        "Datos de salud y biológicos",
+        "Datos genéticos",
+        "Origen racial o étnico",
+        "RUT o número de identificación",
+        "Opiniones políticas",
+        "Dirección de correo electrónico personal"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Datos sensibles incluyen salud, biológicos, genéticos, origen racial/étnico, opiniones políticas, convicciones religiosas, datos biométricos y orientación sexual. El RUT y el email son datos personales pero NO sensibles.",
+      "articulos": [
+        "Art. 15",
+        "Art. 16"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Quién decide los fines y medios del tratamiento de datos?",
+      "opciones": [
+        "El encargado de tratamiento",
+        "El titular de los datos",
+        "El responsable del tratamiento",
+        "La Agencia PDP"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "El responsable del tratamiento es quien decide los fines y medios del tratamiento. El encargado solo trata datos por cuenta del responsable, según instrucciones documentadas en un contrato.",
+      "articulos": [
+        "Art. 3"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuáles de estos son instrumentos exigidos por la ley? (marque todos los correctos)",
+      "opciones": [
+        "Registro de Actividades de Tratamiento (RAT)",
+        "Evaluación de Impacto (DPIA)",
+        "Modelo de Prevención de Implementación (MPI)",
+        "Política de recursos humanos",
+        "Designación de DPO cuando corresponde"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Los 7 instrumentos obligatorios son: RAT, DPIA, DPO, Contratos con encargados (DPA), Medidas de seguridad, Breach notification protocol, y MPI certificado (atenuante). Una política de RR.HH. no es un instrumento de la ley.",
+      "articulos": [
+        "Art. 44",
+        "Art. 45",
+        "Art. 49",
+        "Art. 50"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuál es el plazo máximo para responder a una solicitud de derechos ARCOP+?",
+      "opciones": [
+        "5 días hábiles",
+        "10 días hábiles",
+        "15 días hábiles",
+        "30 días hábiles"
+      ],
+      "correcta": 2,
+      "explicacion_al_fallar": "El plazo máximo legal es 15 días hábiles desde la recepción de la solicitud. La falta de respuesta dentro de plazo constituye denegación tácita y es sancionable.",
+      "articulos": [
+        "Art. 11"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿Cuál es la base de licitud típica para el tratamiento de datos del trabajador con fines de remuneración?",
+      "opciones": [
+        "Consentimiento del trabajador",
+        "Ejecución del contrato de trabajo",
+        "Interés legítimo del empleador",
+        "Obligación legal del empleador"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "La base de licitud típica para datos laborales (remuneración, evaluación, jornada) es la ejecución del contrato. El consentimiento del trabajador NO es exigible porque está en posición de vulnerabilidad. La obligación legal aplica para temas tributarios y previsionales.",
+      "articulos": [
+        "Art. 13"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Para tratar datos de menores de 14 años, ¿qué condiciones son exigidas? (marque todos los correctos)",
+      "opciones": [
+        "Consentimiento verificable del representante legal",
+        "Notificación al Ministerio Público",
+        "Finalidad pedagógica, de seguridad o de salud",
+        "DPIA obligatoria",
+        "Permiso especial de la Agencia PDP"
+      ],
+      "correcta": 0,
+      "explicacion_al_fallar": "Datos de menores de 14 años requieren: consentimiento verificable del representante legal, finalidad pedagógica o de seguridad/salud (no comercial), y DPIA obligatoria. No se requiere notificación al Ministerio Público ni permiso especial, pero SI se prohíbe el marketing directo.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 quáter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "¿A partir de qué edad puede un menor consentir autónomamente el tratamiento de sus datos personales en Chile?",
+      "opciones": [
+        "12 años",
+        "14 años",
+        "16 años",
+        "18 años"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "En Chile, los menores de 14 años requieren consentimiento del representante legal. Desde los 14 años pueden consentir autónomamente para actos no lucrativos. Los menores de 16 en algunos contextos requieren autorización especial.",
+      "articulos": [
+        "Art. 16",
+        "Art. 16 quáter"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    },
+    {
+      "pregunta": "Para instalar CCTV con fines de seguridad, ¿qué condiciones mínimas se deben cumplir?",
+      "opciones": [
+        "Solo basta instalar cámaras sin aviso",
+        "Señalética visible + aviso de privacidad + base de licitud documentada",
+        "Solicitar permiso a la Agencia PDP por cada cámara",
+        "Solo se permite en empresas con más de 100 trabajadores"
+      ],
+      "correcta": 1,
+      "explicacion_al_fallar": "CCTV exige: señalética visible informando la grabación, aviso de privacidad con finalidad, base de licitud (generalmente interés legítimo), y registro en el RAT. No requiere permiso individual a la Agencia pero SI debe cumplir los principios de minimización y proporcionalidad.",
+      "articulos": [
+        "Art. 14",
+        "Art. 14 bis"
+      ],
+      "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+    }
+  ],
+  "metadata": {
+    "version": "2.0-ampliada",
+    "total_preguntas": 121,
+    "articulos_referenciados": [
+      "Art. 10",
+      "Art. 11",
+      "Art. 13",
+      "Art. 14",
+      "Art. 14 bis",
+      "Art. 14 sexies",
+      "Art. 15",
+      "Art. 15 ter",
+      "Art. 16",
+      "Art. 16 quáter",
+      "Art. 16 sexies",
+      "Art. 16 ter",
+      "Art. 20",
+      "Art. 21",
+      "Art. 22",
+      "Art. 27",
+      "Art. 3",
+      "Art. 30",
+      "Art. 35",
+      "Art. 36",
+      "Art. 37",
+      "Art. 4",
+      "Art. 44",
+      "Art. 45",
+      "Art. 49",
+      "Art. 5",
+      "Art. 50",
+      "Art. 6",
+      "Art. 7",
+      "Art. 8",
+      "Art. 9",
+      "Prólogo Art. 1 / Transitorio"
+    ]
+  }
+}

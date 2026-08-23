@@ -1,0 +1,575 @@
+1
+00:00:00,000 --> 00:00:02,520
+¡Hola a todos! Bienvenidos a esta nueva explicación.
+
+2
+00:00:02,940 --> 00:00:06,040
+Hoy vamos a meternos de lleno en una cuenta atrás que, literalmente,
+
+3
+00:00:06,380 --> 00:00:08,820
+va a poner patas arriba el panorama empresarial en Chile.
+
+4
+00:00:09,380 --> 00:00:12,080
+Hablamos de la nueva Ley de Privacidad y Protección de Datos.
+
+5
+00:00:12,480 --> 00:00:15,320
+Vamos a desgranar toda esta normativa para entender, paso a paso,
+
+6
+00:00:15,740 --> 00:00:18,420
+cómo podemos proteger a las organizaciones frente a unos riesgos
+
+7
+00:00:18,420 --> 00:00:20,060
+que ya están a la vuelta de la esquina.
+
+8
+00:00:20,700 --> 00:00:23,080
+Para que nos hagamos una idea de la magnitud de este cambio,
+
+9
+00:00:23,540 --> 00:00:24,500
+quedaos con esta cifra.
+
+10
+00:00:24,900 --> 00:00:25,540
+20.000.
+
+11
+00:00:25,880 --> 00:00:28,560
+20.000 unidades tributarias mensuales.
+
+12
+00:00:28,560 --> 00:00:33,240
+Esa es la multa máxima por infracciones gravísimas bajo esta nueva legislación.
+
+13
+00:00:33,640 --> 00:00:37,560
+O sea, estamos hablando de sanciones que superan los 1.000 millones de pesos chilenos.
+
+14
+00:00:37,840 --> 00:00:38,620
+Es una barbaridad.
+
+15
+00:00:39,080 --> 00:00:41,780
+Es un nivel de castigo sin precedentes que deja clarísimo
+
+16
+00:00:41,780 --> 00:00:43,580
+que con esto de verdad no se juega.
+
+17
+00:00:44,200 --> 00:00:46,220
+A ver, profundicemos un poco más en esto.
+
+18
+00:00:46,640 --> 00:00:50,020
+Esta sanción tan enorme viene con la nueva Ley 21.719,
+
+19
+00:00:50,340 --> 00:00:53,260
+que entra en pleno vigor el 1 de diciembre de 2026.
+
+20
+00:00:53,880 --> 00:00:57,240
+Básicamente, tenemos un reloj en cuenta regresiva haciendo tic-tac.
+
+21
+00:00:57,240 --> 00:01:00,220
+Las empresas no pueden, o más bien no deben,
+
+22
+00:01:00,460 --> 00:01:03,640
+esperar hasta el último trimestre de 2026 para ponerse las pilas.
+
+23
+00:01:04,120 --> 00:01:08,520
+Es absolutamente crucial tener todo el sistema de cumplimiento operativo mucho antes,
+
+24
+00:01:08,960 --> 00:01:11,240
+porque la nueva Agencia de Protección de Datos Personales,
+
+25
+00:01:11,480 --> 00:01:15,680
+la famosa APDP, va a estar ahí lista para fiscalizar desde el minuto uno.
+
+26
+00:01:16,180 --> 00:01:19,160
+Bueno, nuestra hoja de ruta para hoy es súper clara.
+
+27
+00:01:19,700 --> 00:01:22,000
+Empezaremos viendo el nuevo estándar de privacidad.
+
+28
+00:01:22,580 --> 00:01:25,180
+Luego pasaremos a los DPAs y el artículo 15bis.
+
+29
+00:01:25,180 --> 00:01:27,180
+El tercer punto serán las transferencias,
+
+30
+00:01:27,240 --> 00:01:28,340
+las transferencias transfronterizas.
+
+31
+00:01:28,740 --> 00:01:30,880
+Después hablaremos del riesgo de la IA en la sombra
+
+32
+00:01:30,880 --> 00:01:33,100
+y cerraremos con la parte de gobernanza.
+
+33
+00:01:33,700 --> 00:01:36,440
+Comprender estos cinco pilares nos va a evitar verdaderos desastres,
+
+34
+00:01:36,580 --> 00:01:38,560
+tanto financieros como reputacionales.
+
+35
+00:01:39,040 --> 00:01:41,080
+Así que venga, vamos con el primer punto.
+
+36
+00:01:41,460 --> 00:01:42,940
+El nuevo estándar de privacidad.
+
+37
+00:01:43,480 --> 00:01:46,140
+El contraste entre lo que había y lo que viene es abismal.
+
+38
+00:01:46,300 --> 00:01:47,400
+Es como el día en la noche.
+
+39
+00:01:47,980 --> 00:01:51,940
+Fijaos, la antigua ley de 1999 permitía, de forma bastante laxa,
+
+40
+00:01:52,320 --> 00:01:53,440
+transmitir datos a terceros.
+
+41
+00:01:53,440 --> 00:01:56,620
+No tenía restricciones reales para sacar datos fuera del país.
+
+42
+00:01:57,020 --> 00:01:57,220
+Y bueno,
+
+43
+00:01:57,440 --> 00:01:58,560
+las multas eran mínimas.
+
+44
+00:01:58,980 --> 00:02:03,360
+Pero la nueva ley 21.719 cambia las reglas del juego por completo.
+
+45
+00:02:03,840 --> 00:02:07,660
+Básicamente alinea a Chile con el Reglamento General de Protección de Datos Europeo.
+
+46
+00:02:08,039 --> 00:02:10,360
+Y esto significa notificar brechas obligatoriamente,
+
+47
+00:02:10,780 --> 00:02:14,580
+tener bases legales súper estrictas que van mucho más allá del simple acepto
+
+48
+00:02:14,580 --> 00:02:18,060
+y sobre todo otorga un poder sancionador real a una autoridad central.
+
+49
+00:02:18,500 --> 00:02:19,540
+Pasamos al punto 2.
+
+50
+00:02:19,840 --> 00:02:22,180
+Los DPAs y el artículo 15bis.
+
+51
+00:02:22,400 --> 00:02:23,680
+Vale, ¿qué es un DPA?
+
+52
+00:02:24,040 --> 00:02:25,660
+O contrato de encargo de tratamiento.
+
+53
+00:02:26,320 --> 00:02:26,940
+Pues ahora mismo,
+
+54
+00:02:26,940 --> 00:02:30,220
+es un límite legal estricto y totalmente obligatorio.
+
+55
+00:02:30,620 --> 00:02:32,580
+Cualquier servicio externo, y digo cualquiera,
+
+56
+00:02:32,780 --> 00:02:36,040
+desde los típicos proveedores de la nube hasta la agencia de marketing digital
+
+57
+00:02:36,040 --> 00:02:38,820
+o la plataforma de recursos humanos necesita este contrato.
+
+58
+00:02:39,320 --> 00:02:42,560
+Ya no nos vale con un simple acuerdo de confidencialidad de toda la vida, no.
+
+59
+00:02:42,960 --> 00:02:45,400
+Ahora hay que detallar exactamente qué datos se procesan,
+
+60
+00:02:45,400 --> 00:02:49,620
+para qué y bajo qué medidas de seguridad súper rigurosas va a operar ese tercero.
+
+61
+00:02:50,160 --> 00:02:52,580
+Las zonas grises legales sencillamente desaparecen.
+
+62
+00:02:52,980 --> 00:02:56,780
+Y esto ilustra a la perfección lo rigurosa que es la nueva ley.
+
+63
+00:02:56,940 --> 00:03:01,420
+El artículo 15bis establece algo llamado responsabilidad solidaria.
+
+64
+00:03:01,960 --> 00:03:06,000
+A ver, en la práctica, esto significa que si una empresa contrata a un proveedor de software
+
+65
+00:03:06,000 --> 00:03:10,100
+y resulta que ese proveedor subcontrata a otro que tiene una fuga de datos,
+
+66
+00:03:10,560 --> 00:03:13,440
+la empresa original sigue siendo responsable, tal cual.
+
+67
+00:03:13,440 --> 00:03:16,260
+No vale lavarse las manos y echarle la culpa al proveedor.
+
+68
+00:03:16,800 --> 00:03:20,720
+Toda esta cadena de custodia de la información va a exigir una vigilancia absoluta
+
+69
+00:03:20,720 --> 00:03:22,620
+y, por supuesto, muy bien documentada.
+
+70
+00:03:23,120 --> 00:03:25,440
+Entonces, para evitar problemas con la nueva agencia fiscalizadora,
+
+71
+00:03:25,440 --> 00:03:29,760
+hay unos elementos clave que todo DPA tiene que incluir sí o sí.
+
+72
+00:03:30,180 --> 00:03:34,680
+Hay que dejar por escrito el objeto del mandato, su duración exacta, la finalidad
+
+73
+00:03:34,680 --> 00:03:37,120
+y qué tipo de datos y personas están implicadas.
+
+74
+00:03:37,640 --> 00:03:38,660
+Y ojo a esto, que es vital.
+
+75
+00:03:39,060 --> 00:03:42,860
+Tiene que haber reglas clarísimas de autorización por si el proveedor quiere usar subprocesadores.
+
+76
+00:03:43,460 --> 00:03:47,760
+Si nos saltamos alguno de estos puntos, el contrato, sintiéndolo mucho, es papel mojado ante la ley.
+
+77
+00:03:48,300 --> 00:03:49,320
+Vamos a por el tercer pilar.
+
+78
+00:03:49,700 --> 00:03:52,380
+Las transferencias transfronterizas de datos.
+
+79
+00:03:52,760 --> 00:03:54,320
+Aquí la cosa se pone seria.
+
+80
+00:03:54,320 --> 00:03:58,080
+Porque solo hay tres vías legales para que los datos personales salgan de Chile.
+
+81
+00:03:58,480 --> 00:04:01,900
+Primera opción, enviarlos a países con un nivel adecuado de protección.
+
+82
+00:04:02,320 --> 00:04:06,760
+Es decir, países que ya están preaprobados porque tienen unos estándares de privacidad altísimos.
+
+83
+00:04:07,180 --> 00:04:09,600
+Segunda opción, si el país de destino no tiene ese estatus,
+
+84
+00:04:09,900 --> 00:04:12,400
+las partes tienen que firmar cláusulas contractuales tipo.
+
+85
+00:04:12,880 --> 00:04:15,820
+Esto es para garantizar legalmente que los datos van a estar seguros allí.
+
+86
+00:04:16,300 --> 00:04:18,980
+Y la tercera, pensada sobre todo para las multinacionales,
+
+87
+00:04:18,980 --> 00:04:24,220
+es usar normas corporativas vinculantes que vienen a ser políticas internas súper estrictas a nivel global.
+
+88
+00:04:24,520 --> 00:04:29,060
+Si exportamos datos y no usamos uno de estos tres mecanismos, es una infracción inmediata.
+
+89
+00:04:29,380 --> 00:04:29,740
+Sin más.
+
+90
+00:04:30,340 --> 00:04:32,100
+Pasamos ahora al punto 4.
+
+91
+00:04:32,480 --> 00:04:33,580
+Y este es interesantísimo.
+
+92
+00:04:34,440 --> 00:04:37,300
+El riesgo de la IA en la sombra, o Shadow AI,
+
+93
+00:04:37,860 --> 00:04:40,960
+el Shadow AI, o la inteligencia artificial en la sombra,
+
+94
+00:04:41,420 --> 00:04:45,040
+es literalmente como poner una puerta blindada en la entrada de la oficina,
+
+95
+00:04:45,480 --> 00:04:48,100
+pero dejar la puerta de atrás abierta de par en par.
+
+96
+00:04:48,560 --> 00:04:52,900
+Hablamos del uso de inteligencias artificiales públicas por parte de los trabajadores
+
+97
+00:04:52,900 --> 00:04:55,280
+sin que el Departamento de Informática lo sepa.
+
+98
+00:04:55,680 --> 00:04:56,740
+Es una fuga invisible.
+
+99
+00:04:57,540 --> 00:05:00,020
+Imaginemos a un empleado que, con toda su buena intención,
+
+100
+00:05:00,420 --> 00:05:03,940
+mete datos de clientes en una IA pública para que le hagan un informe rápido.
+
+101
+00:05:04,620 --> 00:05:09,320
+Sin darse cuenta, está subiendo datos personales a servidores externos sin ningún control,
+
+102
+00:05:09,780 --> 00:05:13,080
+sin contratos de EPA y, por tanto, saltándose la ley a la torera.
+
+103
+00:05:13,620 --> 00:05:16,660
+Y ojo a la magnitud del problema porque es para preocuparse.
+
+104
+00:05:16,660 --> 00:05:22,180
+Hoy en día, un 20% de las organizaciones ya ha sufrido alguna brecha de seguridad
+
+105
+00:05:22,180 --> 00:05:22,860
+que viene disminuyendo.
+
+106
+00:05:22,900 --> 00:05:25,020
+Y esto no pasa directamente de esta IA en la sombra.
+
+107
+00:05:25,020 --> 00:05:30,140
+Pensadlo bien, los datos personales que usamos para alimentar esos grandes modelos de lenguaje
+
+108
+00:05:30,140 --> 00:05:35,660
+se quedan ahí, pueden ser memorizados y terminar expuestos a cualquier otro usuario de Internet.
+
+109
+00:05:35,660 --> 00:05:38,140
+Esto no es ciencia ficción ni un riesgo teórico,
+
+110
+00:05:38,140 --> 00:05:41,900
+es algo que pasa a diario y es tremendamente peligroso.
+
+111
+00:05:41,900 --> 00:05:45,260
+Además, el impacto económico ya se ha calculado.
+
+112
+00:05:45,260 --> 00:05:45,980
+Y duele.
+
+113
+00:05:45,980 --> 00:05:49,980
+Cuando hay una brecha de datos por culpa de usar una inteligencia artificial sin autorización,
+
+114
+00:05:49,980 --> 00:05:51,660
+el coste se dispara.
+
+115
+00:05:51,660 --> 00:05:52,740
+Cuesta de media unos...
+
+116
+00:05:52,740 --> 00:05:56,620
+670.000 dólares extras si lo comparamos con una brecha normal.
+
+117
+00:05:56,620 --> 00:05:59,580
+Es un sobrecoste brutal que viene, pura y llanamente,
+
+118
+00:05:59,580 --> 00:06:03,980
+de no tener bajo control las herramientas tecnológicas que la gente usa en la oficina todos los días.
+
+119
+00:06:03,980 --> 00:06:09,340
+Así que el quid de la cuestión aquí es la falta de preparación, que es alarmante.
+
+120
+00:06:09,340 --> 00:06:15,940
+El 63% de las empresas que sufren estos incidentes no tienen ninguna política de gobernanza para la IA.
+
+121
+00:06:15,940 --> 00:06:18,380
+Es decir, van completamente a ciegas.
+
+122
+00:06:18,380 --> 00:06:22,700
+Si tenemos en cuenta que la nueva ley 21.719 castiga muy duramente
+
+123
+00:06:22,700 --> 00:06:27,220
+entrenar algoritmos con datos personales sin anonimizar o sin pedir permiso explícito,
+
+124
+00:06:27,220 --> 00:06:31,860
+no tener políticas de IA es comprar todas las papeletas para llevarse una multa enorme.
+
+125
+00:06:31,860 --> 00:06:35,940
+Y llegamos al último punto, el 5. Gobernanza y cumplimiento.
+
+126
+00:06:35,940 --> 00:06:39,580
+Vale, ¿cómo ponemos la casa en orden antes de diciembre de 2026?
+
+127
+00:06:39,580 --> 00:06:40,940
+Pues hay que actuar ya.
+
+128
+00:06:40,940 --> 00:06:42,220
+Y esta es la hoja de ruta.
+
+129
+00:06:42,220 --> 00:06:48,380
+Paso 1. Mapear todos los datos, haciendo un registro de actividades de tratamiento y evaluaciones de impacto.
+
+130
+00:06:48,380 --> 00:06:49,620
+Paso 2. Súper importante.
+
+131
+00:06:49,620 --> 00:06:52,660
+Firmar absolutamente todos los contratos de encargo de datos.
+
+132
+00:06:52,660 --> 00:06:57,300
+Y, por último, el 4. Aplicar los datos de la IA en el área de tratamiento, los famosos DPA, con los proveedores.
+
+133
+00:06:57,300 --> 00:07:01,980
+Paso 3. Poner límites claros y controles técnicos para usar la IA en la empresa,
+
+134
+00:07:01,980 --> 00:07:04,460
+cortando de raíz el riesgo de la IA en la sombra.
+
+135
+00:07:04,460 --> 00:07:09,020
+Y el paso 4 es integrar la privacidad desde el diseño en cualquier proyecto nuevo que se arranque.
+
+136
+00:07:09,020 --> 00:07:15,460
+Haciendo esto, pasamos de tener un riesgo legal a conseguir una ventaja competitiva brutal basada en la confianza.
+
+137
+00:07:15,460 --> 00:07:19,740
+Y bueno, para ir cerrando esta explicación, creo que merece la pena dejar una pregunta en el aire.
+
+138
+00:07:19,740 --> 00:07:22,380
+Si alguien en la oficina le pasa datos a una IA pública hoy,
+
+139
+00:07:22,380 --> 00:07:24,380
+¿cuáles son los datos de ese cliente mañana?
+
+140
+00:07:24,380 --> 00:07:26,380
+La privacidad ha dejado de ser algo opcional.
+
+141
+00:07:26,380 --> 00:07:29,380
+Es la infraestructura básica para sobrevivir en el mundo digital.
+
+142
+00:07:29,380 --> 00:07:34,380
+Así que ser proactivos con la Ley 21.719 no es solo tachar una casilla legal,
+
+143
+00:07:34,380 --> 00:07:36,380
+es el seguro de vida para el futuro.
+
+144
+00:07:36,380 --> 00:07:42,380
+Muchísimas gracias por acompañarnos a desenredar este escenario legal y tecnológico tan complejo, pero fascinante.

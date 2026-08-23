@@ -1,0 +1,75 @@
+{
+  "playlist": {
+    "id": "PLe_vi6plvNRU",
+    "titulo": "Ley 21.719 - Protección de Datos Personales (Curso completo)",
+    "url": "https://www.youtube.com/playlist?list=PLe_vi6plvNRU",
+    "privacidad": "unlisted"
+  },
+  "canal": {
+    "handle": "@halconx.hermes",
+    "channel_id": "UCxdf0U0zUMjf4393aNFVuxg"
+  },
+  "embed_base": "https://www.youtube.com/embed/",
+  "videos": [
+    {
+      "archivo": "01-reloj-control-asistencia.mp4",
+      "video_id": "mrlj9vSB0EM",
+      "titulo": "¿Es ilegal el reloj de control de asistencia?",
+      "tema": "biometria-laboral"
+    },
+    {
+      "archivo": "02-algoritmo-rechaza-credito.mp4",
+      "video_id": "GM4ayufDF7s",
+      "titulo": "¿Qué pasa si un algoritmo rechaza tu crédito?",
+      "tema": "decisiones-automatizadas"
+    },
+    {
+      "archivo": "03-salud-fichas-eipd.mp4",
+      "video_id": "z4TGvt1jtlo",
+      "titulo": "Nuevas Leyes de Datos en Salud (21.719 + 21.663)",
+      "tema": "salud"
+    },
+    {
+      "archivo": "04-sector-publico-art20.mp4",
+      "video_id": "wULqitj6Khc",
+      "titulo": "Sector público: Art. 20, consentimiento y responsabilidad personal",
+      "tema": "sector-publico"
+    },
+    {
+      "archivo": "05-fin-ley-19628-arsop-apdp.mp4",
+      "video_id": "lNQVy8HoKKs",
+      "titulo": "Privacidad en Chile: adiós 19.628, ARSOP y APDP",
+      "tema": "introduccion"
+    },
+    {
+      "archivo": "06-cuenta-atras-dpas-transferencias-shadow-ai.mp4",
+      "video_id": "SLmCjv1MUBI",
+      "titulo": "Cuenta atrás: nuevo estándar, DPAs, transferencias y Shadow AI",
+      "tema": "transferencias"
+    },
+    {
+      "archivo": "07-logistica-gps-flotas-mdm-brechas.mp4",
+      "video_id": "5MZTuMFQVXk",
+      "titulo": "Logística última milla: GPS, flotas y MDM",
+      "tema": "logistica"
+    },
+    {
+      "archivo": "08-guia-empresas-6-pasos.mp4",
+      "video_id": "pA276XjRG7s",
+      "titulo": "Adaptación de plataformas web: checklist 5 puntos críticos",
+      "tema": "empresas"
+    },
+    {
+      "archivo": "09-datos-estudiantes-colegios.mp4",
+      "video_id": "-gk_XW3Fu_c",
+      "titulo": "¿Están seguros los datos de los estudiantes? (colegios)",
+      "tema": "educacion"
+    },
+    {
+      "archivo": "10-ecommerce-marketing-sernac.mp4",
+      "video_id": "bXuJhhaMmRA",
+      "titulo": "Navegando la Ley: diseño web, marketing y e-commerce",
+      "tema": "ecommerce"
+    }
+  ]
+}

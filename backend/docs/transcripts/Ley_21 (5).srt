@@ -1,0 +1,383 @@
+1
+00:00:00,000 --> 00:00:05,500
+Hola a todos, bienvenidos a este nuevo análisis. A ver, estamos en un momento fascinante y
+
+2
+00:00:05,500 --> 00:00:11,580
+francamente súper crítico para la logística de última milla en Chile. La nueva Ley 21.719
+
+3
+00:00:11,580 --> 00:00:16,660
+de Protección de Datos Personales, que entra en vigor en diciembre de 2026, va a marcar
+
+4
+00:00:16,660 --> 00:00:21,620
+un antes y un después absoluto. Es decir, podemos ir diciéndole adiós a los típicos
+
+5
+00:00:21,620 --> 00:00:26,200
+trámites burocráticos en papel porque lo que se nos viene encima es una reestructuración
+
+6
+00:00:26,200 --> 00:00:31,380
+profunda en cómo gestionamos el monitoreo por GPS, la seguridad de los móviles de los
+
+7
+00:00:31,380 --> 00:00:35,560
+conductores y la minimización de datos. Para que nos hagamos una idea de la magnitud
+
+8
+00:00:35,560 --> 00:00:40,740
+del cambio, fijaos en este número, 20.000 UTM. Esa es la multa máxima para infracciones
+
+9
+00:00:40,740 --> 00:00:45,000
+gravísimas bajo la nueva ley. Estamos hablando de una cifra que literalmente puede quebrar
+
+10
+00:00:45,000 --> 00:00:49,580
+la viabilidad financiera de cualquier operación logística. Y ojo, porque en caso de reincidencia
+
+11
+00:00:49,580 --> 00:00:53,560
+la broma puede costar entre un 2 y un 4% de los ingresos anuales de la empresa.
+
+12
+00:00:53,560 --> 00:00:55,620
+Las reglas del juego han cambiado drásticamente.
+
+13
+00:00:56,200 --> 00:01:02,160
+Y claro, esto nos lleva a una pregunta inevitable. ¿Están nuestras prácticas actuales de rastreo
+
+14
+00:01:02,160 --> 00:01:06,300
+de flotas creando riesgos financieros masivos sin que nos demos ni cuenta? Pensemos en esa
+
+15
+00:01:06,300 --> 00:01:10,480
+inercia de monitorear constantemente a los conductores en terreno, o en almacenar historiales
+
+16
+00:01:10,480 --> 00:01:14,440
+completos de rutas durante años y años. Bueno, pues resulta que toda esa información
+
+17
+00:01:14,440 --> 00:01:18,320
+ahora está estrictamente regulada. Así que para la gran mayoría de las operaciones
+
+18
+00:01:18,320 --> 00:01:21,200
+actuales, la respuesta a esa pregunta es un rotundo sí.
+
+19
+00:01:21,540 --> 00:01:25,600
+Bueno, para entender todo esto paso a paso, echémosle un vistazo rápido a nuestra hoja
+
+20
+00:01:25,600 --> 00:01:26,180
+de ruta de hoy.
+
+21
+00:01:26,200 --> 00:01:29,620
+Pasaremos por 1. La nueva ley y sus nuevas reglas.
+
+22
+00:01:29,960 --> 00:01:34,960
+2. Los límites de la geolocalización. 3. La minimización en la última milla.
+
+23
+00:01:35,280 --> 00:01:40,900
+4. La seguridad de endpoints móviles. Y finalmente 5. La evidencia operativa y las
+
+24
+00:01:40,900 --> 00:01:46,220
+sanciones. Arrancamos directamente con el primer punto. Nueva ley, nuevas reglas.
+
+25
+00:01:46,780 --> 00:01:53,640
+El impacto más brutal de la ley 21.719, con ese límite marcado a fuego del 1 de diciembre
+
+26
+00:01:53,640 --> 00:01:56,180
+de 2026, es que pasamos del parámetro de la ley 21.719 a la ley 21.719.
+
+27
+00:01:56,200 --> 00:02:00,740
+El papel a la práctica operativa real. Con la creación de la nueva agencia de protección
+
+28
+00:02:00,740 --> 00:02:05,300
+de datos, ya no bastará con sacar una política genérica de un cajón y decir, aquí está
+
+29
+00:02:05,300 --> 00:02:10,780
+todo en orden. ¡Qué va! Van a exigir evidencia operativa. Van a querer ver los registros
+
+30
+00:02:10,780 --> 00:02:15,660
+de los sistemas y comprobar que los controles técnicos están activos de verdad. Básicamente,
+
+31
+00:02:15,920 --> 00:02:20,020
+quien no pueda demostrar con evidencias técnicas cómo protege la información en su día a día,
+
+32
+00:02:20,420 --> 00:02:25,220
+se expone a sanciones inmediatas. Y esto nos conecta directamente con el segundo bloque.
+
+33
+00:02:25,220 --> 00:02:27,600
+Límites de la geolocalización.
+
+34
+00:02:55,220 --> 00:03:04,380
+Y ojo a esto, que es interesantísimo. Antes de capturar el primer dato de GPS,
+
+35
+00:03:04,380 --> 00:03:08,860
+la ley nos impone tres deberes de información explícitos. Primero, el titular tiene que saber
+
+36
+00:03:08,860 --> 00:03:13,980
+exactamente qué tipo de datos de geolocalización se están recopilando. Segundo, tiene que conocer
+
+37
+00:03:13,980 --> 00:03:18,140
+la finalidad y cuánto tiempo se van a guardar, por ejemplo, si es para optimizar rutas durante
+
+38
+00:03:18,140 --> 00:03:22,720
+un mes. Y tercero, y esto es vital, hay que informar si esa ubicación se va a acceder a
+
+39
+00:03:22,720 --> 00:03:25,200
+terceros, como aplicaciones externas. Sin esto, no se puede hacer nada.
+
+40
+00:03:25,220 --> 00:03:28,580
+Con estos tres pilares bien asentados, el monitoreo de nuestra flota es ilegal desde
+
+41
+00:03:28,580 --> 00:03:33,260
+el segundo cero. Pasamos al tercer punto de nuestro análisis, minimización en última
+
+42
+00:03:33,260 --> 00:03:39,180
+milla. A ver, seamos muy sinceros. Históricamente, en el mundo de la logística, hemos padecido
+
+43
+00:03:39,180 --> 00:03:43,960
+un poco de síndrome de diógenes digital, esa costumbre tan nuestra de guardarlo absolutamente
+
+44
+00:03:43,960 --> 00:03:49,160
+todo por si acaso. Pues bien, bajo esta nueva ley, ese hábito es una bomba de relojería.
+
+45
+00:03:49,680 --> 00:03:54,960
+El paradigma cambia totalmente hacia la minimización de datos. Es decir, ahora solo podemos
+
+46
+00:03:55,220 --> 00:04:00,540
+la información que sea estrictamente necesaria. Una vez que el conductor entrega el paquete y la
+
+47
+00:04:00,540 --> 00:04:05,080
+finalidad de ese dato se extingue, esa información tiene que anonimizarse o eliminarse de forma
+
+48
+00:04:05,080 --> 00:04:11,260
+segura sí o sí. Porque, literalmente, retener información sin un propósito válido, sin un
+
+49
+00:04:11,260 --> 00:04:16,380
+contrato en vigor o sin el consentimiento explícito es ahora mismo una infracción directa. Imaginemos
+
+50
+00:04:16,380 --> 00:04:20,600
+por un momento una base de datos llena de pings de ubicación fuera del horario laboral de nuestros
+
+51
+00:04:20,600 --> 00:04:25,200
+choferes, o historiales acumulados de conductores que ya ni trabajan con nosotros, bajo la lupa de
+
+52
+00:04:25,220 --> 00:04:29,860
+una auditoría, cada uno de esos registros que guardábamos por si acaso se convierte automáticamente
+
+53
+00:04:29,860 --> 00:04:35,780
+en una prueba irrefutable de negligencia operativa. Lo que nos yema de cabeza al cuarto punto y un
+
+54
+00:04:35,780 --> 00:04:41,940
+riesgo crítico para cualquier empresa, la seguridad de endpoints móviles. Fijaos en esta cita porque
+
+55
+00:04:41,940 --> 00:04:46,340
+dan el clavo totalmente. La mayoría de las infracciones gravísimas no hacen de un dispositivo
+
+56
+00:04:46,340 --> 00:04:51,680
+perdido sin cifrado o un log que nunca existió. Y es que el hardware que está moviéndose en la
+
+57
+00:04:51,680 --> 00:04:55,200
+calle todo el día es nuestra mayor superficie de ataque. Las multas millonarias, las multas
+
+58
+00:04:55,220 --> 00:04:58,840
+millonarias casi nunca vienen de hackers con pasamontañas asaltando nuestros servidores
+
+59
+00:04:58,840 --> 00:05:03,340
+corporativos, no. Vienen de un escenario aterradoramente cotidiano. Un móvil de empresa
+
+60
+00:05:03,340 --> 00:05:07,600
+que un conductor se deja olvidado en un asiento, que no tenía la memoria cifrada y del que no
+
+61
+00:05:07,600 --> 00:05:12,060
+tenemos ni un solo registro para saber qué datos contenía. Un dispositivo sin gestionar en
+
+62
+00:05:12,060 --> 00:05:17,060
+terreno es, a día de hoy, una multa andante. Pensemos en cómo debe ser el flujo de respuesta
+
+63
+00:05:17,060 --> 00:05:22,200
+ante incidentes. Ante la pérdida de un móvil, el reloj no perdona a nadie. En el momento en que
+
+64
+00:05:22,200 --> 00:05:25,200
+se detecta esa pérdida, hay que actuar inmediatamente para evitar que el reloj se
+
+65
+00:05:25,220 --> 00:05:30,540
+desvanezca, aplicando un bloqueo o un borrado remoto a través de un sistema MDM. A partir de
+
+66
+00:05:30,540 --> 00:05:35,740
+ahí, se abre una ventana temporal improrrogable de 72 horas para notificar formalmente la brecha
+
+67
+00:05:35,740 --> 00:05:39,940
+de seguridad a la agencia. Si fallamos en reaccionar rápido o nos saltamos el plazo,
+
+68
+00:05:40,300 --> 00:05:44,000
+un simple despiste logístico en la calle se convierte en un incumplimiento regulatorio
+
+69
+00:05:44,000 --> 00:05:49,980
+enorme. Y por eso mismo, para evitar ese desastre absoluto, tener controles mediante plataformas
+
+70
+00:05:49,980 --> 00:05:55,200
+MDM de gestión de dispositivos móviles es sencillamente innegociable. Necesita
+
+71
+00:05:55,200 --> 00:06:00,500
+poder certificar que el 100% de nuestra flota tiene el disco cifrado de forma activa, tener
+
+72
+00:06:00,500 --> 00:06:05,360
+una especie de botón del pánico o kill switch para borrar los datos a distancia de forma fulminante,
+
+73
+00:06:05,760 --> 00:06:09,980
+mantener un inventario de los dispositivos en tiempo real y, por supuesto, contar con registros
+
+74
+00:06:09,980 --> 00:06:14,760
+de actividad correlacionados. Sólo de esta manera podremos reconstruir qué pasó realmente
+
+75
+00:06:14,760 --> 00:06:18,680
+si las cosas se tuercen. Llegamos por fin al quinto y último bloque,
+
+76
+00:06:19,080 --> 00:06:24,280
+evidencia operativa y sanciones. Seamos muy claros aquí, la agencia de protección de datos no va a
+
+77
+00:06:24,280 --> 00:06:28,560
+asumir que actuamos de buena fe, van a exigir certezas y pruebas. Si el riesgo que nos están
+
+78
+00:06:28,560 --> 00:06:32,420
+auditando es la pérdida de un móvil, la empresa tiene que poner sobre la mesa los registros
+
+79
+00:06:32,420 --> 00:06:36,780
+técnicos que demuestren que el cifrado estaba activo y que el borrado remoto funcionó perfectamente.
+
+80
+00:06:36,980 --> 00:06:41,200
+Si lo que nos auditan es el monitoreo geográfico excesivo, el equipo legal tendrá que enseñar la
+
+81
+00:06:41,200 --> 00:06:46,100
+documentación que justifique ese interés legítimo. Así de simple, la evidencia técnica neutralita el
+
+82
+00:06:46,100 --> 00:06:50,480
+riesgo legal y si no la tienes, lo confirma de pleno. Y es crucial que todos calibremos el
+
+83
+00:06:50,480 --> 00:06:54,100
+sentido de urgencia con esto. Las multas escalan rapidísimo.
+
+84
+00:06:54,280 --> 00:07:00,260
+Hablamos de hasta 5.000 UTM para las infracciones leves, 10.000 para las graves y ese tremendo tope
+
+85
+00:07:00,260 --> 00:07:05,680
+de 20.000 para las gravísimas. Pero bueno, aquí entra en juego un salvavidas muy potente.
+
+86
+00:07:06,000 --> 00:07:11,540
+El modelo de prevención de infracciones, o MPI. Si podemos demostrar formalmente que ya teníamos
+
+87
+00:07:11,540 --> 00:07:15,200
+un sistema certificado y respaldado por la tecnología para prevenir fallos,
+
+88
+00:07:15,680 --> 00:07:19,880
+eso puede ser la gran diferencia entre una amonestación menor y un desastre financiero
+
+89
+00:07:19,880 --> 00:07:23,920
+total. Para terminar, dejemos en el aire una pregunta que quizá escueza un poco,
+
+90
+00:07:24,280 --> 00:07:28,380
+¿qué es necesaria? Si la agencia llamara a nuestra puerta para una auditoría mañana por la mañana,
+
+91
+00:07:28,700 --> 00:07:33,000
+¿podría nuestro equipo de TI demostrar de forma exacta qué dispositivos accedieron a datos
+
+92
+00:07:33,000 --> 00:07:37,660
+personales de ubicación en las últimas 24 horas? Conseguir ese nivel de trazabilidad lleva su
+
+93
+00:07:37,660 --> 00:07:42,040
+tiempo. Diciembre de 2026 puede parecer que queda muy lejos, pero dejar atrás las viejas
+
+94
+00:07:42,040 --> 00:07:45,660
+costumbres logísticas de las que hemos hablado requiere que nos pongamos las pilas hoy mismo.
+
+95
+00:07:46,040 --> 00:07:49,160
+Muchísimas gracias por acompañarnos en este análisis. El reloj para adaptar
+
+96
+00:07:49,160 --> 00:07:51,880
+nuestra logística al futuro de la privacidad ya ha empezado a correr.
