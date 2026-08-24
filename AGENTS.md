@@ -213,9 +213,12 @@ Key patterns:
 | Entorno | URL | Estado |
 |---------|-----|--------|
 | Local | `http://localhost:8000` | Desarrollo |
-| **Producción (hoy)** | Túnel Cloudflare efímero — ver `to =` en `netlify.toml` | ⚠️ Temporal: cambia en cada restart |
-| **Producción (destino)** | `https://ley21719-backend-ce8bed33-38b7-4dbe-bdc3-8738f5c4e991.fly.dev` | Tras crear volumen (`flyctl volumes create ley21719_data`) y redeploy |
+| **Producción** | `https://ley21719-backend-ce8bed33-38b7-4dbe-bdc3-8738f5c4e991.fly.dev` | ✅ Activo (InsForge Compute, región iad, puerto 8000) |
 
 **Regla**: la única configuración del redirect vive en `netlify.toml`.
 `frontend/src/lib/api.ts` usa solo rutas relativas `/api/v1`. Nada de IPs ni dominios hardcodeados en código.
-Cuando Fly.io quede activo con volumen persistente: actualizar `netlify.toml`, borrar esta nota y redeploy.
+
+> **Pendiente**: volumen persistente Fly.io (`ley21719_data`) NO creado aún — requiere token
+> `flyctl` del usuario. Mientras tanto, SQLite es efímero: el progreso de checklist/quiz se
+> pierde en cada restart/redeploy. El código ya está preparado (`LEY21719_DATA_DIR=/data`,
+> `[mounts]` en fly.toml): al crear el volumen, solo hace falta reiniciar el servicio.

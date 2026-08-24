@@ -6,10 +6,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirect /api/* to Cloudflare Tunnel (temporal mientras Fly.io se estabiliza)
+# Redirect /api/* al backend definitivo en Fly.io (vía InsForge Compute)
 [[redirects]]
   from = "/api/*"
-  to = "https://ordinance-restrictions-daniel-accepts.trycloudflare.com/api/:splat"
+  to = "https://ley21719-backend-ce8bed33-38b7-4dbe-bdc3-8738f5c4e991.fly.dev/api/:splat"
   status = 200
   force = true
 
