@@ -1,0 +1,361 @@
+{
+  "version": 1,
+  "title": "Mini Curso: Ley 21.719 de Protección de Datos Personales",
+  "subtitle": "De la ley al cumplimiento operativo en su empresa",
+  "modulos": [
+    {
+      "id": "m0",
+      "num": 0,
+      "tipo": "intro",
+      "titulo": "Bienvenida y cómo usar este curso",
+      "lead": "Bienvenido al mini curso sobre la Ley N° 21.719. En las próximas dos horas recorreremos los conceptos, instrumentos y obligaciones que toda empresa chilena debe dominar antes del 1° de diciembre de 2026.",
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Cómo está organizado el curso",
+          "html": "<p>El curso se divide en <strong>8 módulos temáticos</strong> + un <strong>examen final</strong> y una <strong>herramienta de auditoría</strong> de su sitio web. Cada módulo incluye:</p><ul><li><strong>Texto explicativo</strong> con los conceptos clave</li><li><strong>Un video</strong> de la colección de análisis disponibles</li><li><strong>Un quiz</strong> de 5 preguntas para fijar el aprendizaje</li></ul><p>Su progreso se guarda automáticamente en este navegador. Puede volver en cualquier momento y retomar donde quedó.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Por qué importa",
+          "html": "<p>El 1° de diciembre de 2026 la Ley 21.719 entra en plena vigencia, reemplazando la Ley 19.628. Las sanciones llegan hasta <strong>20.000 UTM</strong> (≈ US$ 1,5 millones) y hasta el <strong>4% de los ingresos anuales</strong> en caso de reincidencia. La Agencia de Protección de Datos Personales (Agencia PDP) tendrá poder real para fiscalizar y sancionar de oficio.</p><p>Este curso le entrega lo que necesita saber para tomar decisiones informadas en su directorio.</p>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "violet",
+          "h3": "Recomendación",
+          "html": "<p>Siga el orden sugerido la primera vez. Las próximas veces puede usar el menú lateral para saltar al tema que necesite repasar. Después de completar todos los módulos, haga el <strong>examen final</strong> y descargue su certificado.</p>"
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "num": 1,
+      "tipo": "modulo",
+      "titulo": "Por qué importa: la nueva era regulatoria",
+      "lead": "Todo cambia el 1° de diciembre de 2026. Conozca el riesgo financiero, operativo y reputacional concreto al que se expone su empresa si no se prepara.",
+      "video": {
+        "file": "../videos/Adaptación_Ley_N°_21.mp4",
+        "thumb": "../videos/thumbs/Adaptación_Ley_N°_21.jpg",
+        "titulo": "Auditoría web: los 5 puntos clave",
+        "duracion": "6:44"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Los tres niveles de impacto",
+          "html": "<p>El incumplimiento tiene tres dimensiones que pueden afectar la continuidad de su negocio:</p><ul><li><strong>Riesgo financiero:</strong> hasta 20.000 UTM (≈ US$ 1,5 millones) por infracciones gravísimas, o hasta el 4% de los ingresos anuales en caso de reincidencia.</li><li><strong>Riesgo operativo:</strong> la Agencia puede ordenar el cese temporal del tratamiento por hasta 30 días, paralizando remuneraciones, contratos y coordinación operativa.</li><li><strong>Riesgo reputacional:</strong> el Registro Nacional de Sanciones es público y permanece visible por 5 años, lo que puede bloquear licitaciones y afectar la confianza de clientes.</li></ul>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "red",
+          "h3": "Dato clave",
+          "html": "<p><strong>20.000 UTM</strong> es la multa máxima para infracciones gravísimas. Equivale aproximadamente a <strong>$1.300 millones de pesos chilenos</strong> o cerca de <strong>US$ 1,5 millones</strong>. Una sola sanción puede superar la utilidad anual de muchas PYMEs.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Sanciones escalonadas",
+          "html": "<p>El nuevo sistema clasifica las infracciones en tres niveles:</p><table class='curso-table'><thead><tr><th>Nivel</th><th>Multa máxima</th><th>Ejemplos</th></tr></thead><tbody><tr><td>Leves</td><td>5.000 UTM</td><td>Incumplimientos formales sin daño</td></tr><tr><td>Graves</td><td>10.000 UTM</td><td>Falta de RAT, DPIA, DPO cuando corresponde</td></tr><tr><td>Gravísimas</td><td>20.000 UTM</td><td>Tratamiento sin base de licitud, brechas no notificadas</td></tr></tbody></table><p>Las <strong>mitigaciones documentadas</strong> actúan como atenuantes formales. Un MPI certificado puede reducir significativamente la multa.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Qué cambia respecto a la Ley 19.628",
+          "html": "<p>La Ley 19.628 (vigente hasta el 1° dic 2026) era un marco <em>declarativo</em>: las empresas debían inscribirse y declarar, pero sin fiscalización efectiva ni sanciones reales. Las multas iban de 10 a 50 UTM y rara vez se aplicaban.</p><p>La Ley 21.719 introduce:</p><ul><li>Una <strong>Agencia especializada</strong> con poder real de fiscalización</li><li>El <strong>Registro Nacional de Sanciones</strong> público y persistente</li><li><strong>6 bases de licitud</strong> (no solo consentimiento) para tratar datos</li><li>El catálogo completo de derechos <strong>ARCOP+</strong> (acceso, rectificación, supresión, oposición, portabilidad)</li><li>Obligaciones de gestión concretas: RAT, DPIA, DPA, DPO, MPI</li></ul>"
+        }
+      ],
+      "quiz": ["m1-q1", "m1-q2", "m1-q3", "m1-q4", "m1-q5"]
+    },
+    {
+      "id": "m2",
+      "num": 2,
+      "tipo": "modulo",
+      "titulo": "De la Ley 19.628 a la 21.719: cambio de paradigma",
+      "lead": "De un marco declarativo a uno con poder sancionatorio real. Conozca las diferencias clave que impactan directamente su operación diaria.",
+      "video": {
+        "file": "../videos/Privacidad_en_Chile.mp4",
+        "thumb": "../videos/thumbs/Privacidad_en_Chile.jpg",
+        "titulo": "De la Ley 19.628 a la 21.719 y derechos ARCOP+",
+        "duracion": "7:13"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Comparación directa",
+          "html": "<table class='curso-table'><thead><tr><th>Aspecto</th><th>Ley 19.628 (anterior)</th><th>Ley 21.719 (nueva)</th></tr></thead><tbody><tr><td>Autoridad</td><td>Sin autoridad especializada</td><td><strong>Agencia de Protección de Datos Personales</strong></td></tr><tr><td>Sanciones</td><td>10-50 UTM, casi sin aplicación</td><td>Hasta <strong>20.000 UTM</strong> y 4% de ingresos</td></tr><tr><td>Bases para tratar</td><td>Solo consentimiento o autorización legal</td><td>Seis bases de licitud</td></tr><tr><td>Derechos del titular</td><td>4 derechos, solo vía tribunales</td><td>5 derechos ARCOP+ con reclamo directo</td></tr><tr><td>Obligaciones de gestión</td><td>No exigía</td><td>RAT, DPIA, DPO, contratos escritos</td></tr><tr><td>Seguridad y brechas</td><td>Deber implícito, sin aviso</td><td>Medidas obligatorias + notificación en 72 h</td></tr></tbody></table>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "El cambio cultural: de formal a operacional",
+          "html": "<p>El cambio más profundo no es legal, es <strong>operativo</strong>. Bajo la Ley 19.628 las empresas trataban datos de manera informal. Bajo la Ley 21.719 cada proceso de tratamiento debe estar documentado, justificado y trazable.</p><p>Esto significa que:</p><ul><li>Cada formulario de captura debe tener una <strong>base de licitud identificada</strong></li><li>Cada proveedor externo requiere un <strong>contrato de encargo (DPA)</strong> firmado</li><li>Cada nuevo tratamiento requiere una <strong>evaluación de impacto (DPIA)</strong> si es de alto riesgo</li><li>Cada incidente de seguridad debe notificarse a la Agencia en <strong>72 horas</strong></li></ul>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "cyan",
+          "h3": "Equivalencia internacional",
+          "html": "<p>La Ley 21.719 está alineada con el estándar europeo GDPR. Si su empresa ya cumple GDPR, está cerca del cumplimiento. Si no, este es el momento de alinearse.</p>"
+        }
+      ],
+      "quiz": ["m2-q1", "m2-q2", "m2-q3", "m2-q4", "m2-q5"]
+    },
+    {
+      "id": "m3",
+      "num": 3,
+      "tipo": "modulo",
+      "titulo": "Conceptos clave: titular, responsable, datos",
+      "lead": "Domine la nomenclatura. Sin esta base no podrá leer la ley ni contratar proveedores, ni defender a su empresa ante la Agencia.",
+      "video": {
+        "file": "../videos/Navegando_la_Ley_21.mp4",
+        "thumb": "../videos/thumbs/Navegando_la_Ley_21.jpg",
+        "titulo": "Diseño web, marketing y comercio electrónico",
+        "duracion": "8:10"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Los tres roles principales",
+          "html": "<ul><li><strong>Titular:</strong> persona natural a quien conciernen los datos. Es quien ejerce los derechos ARCOP+.</li><li><strong>Responsable (controlador):</strong> persona natural o jurídica que decide <em>acerca de los fines y medios</em> del tratamiento. Su empresa, casi siempre.</li><li><strong>Encargado (procesador):</strong> persona natural o jurídica que trata datos <em>por cuenta del responsable</em>. Su proveedor de nube, su CRM, su agencia de marketing.</li></ul><p>También existe la figura de <strong>corresponsables</strong>: dos o más responsables que deciden conjuntamente.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Tipos de datos",
+          "html": "<ul><li><strong>Dato personal:</strong> cualquier información vinculada a una persona identificada o identificable. Incluye RUT, nombre, correo, cookies, IP.</li><li><strong>Dato sensible:</strong> origen racial, afiliación política, convicciones, religión, salud, perfil biológico, datos biométricos, orientación sexual. Requiere <strong>base de licitud reforzada</strong>.</li><li><strong>Dato biométrico:</strong> huella dactilar, iris, voz. Siempre sensible.</li><li><strong>Dato anonimizado:</strong> sometido a procedimiento irreversible. <strong>Fuera del ámbito de la ley.</strong></li><li><strong>Dato seudonimizado:</strong> reversible con información adicional. <strong>Sí está en el ámbito de la ley.</strong></li></ul>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "orange",
+          "h3": "Las 6 bases de licitud",
+          "html": "<p>Usted solo puede tratar datos si tiene al menos una de estas bases:</p><ol><li><strong>Consentimiento</strong> del titular (libre, informado, específico, inequívoco)</li><li><strong>Ejecución de un contrato</strong> (datos necesarios para el servicio contratado)</li><li><strong>Obligación legal</strong> (lo que la ley le obliga a tratar)</li><li><strong>Interés legítimo</strong> (ponderado y documentado)</li><li><strong>Interés vital</strong> (proteger la vida del titular)</li><li><strong>Función pública</strong> (solo para el sector público)</li></ol><p>El consentimiento <strong>ya no es la única vía</strong>, y muchos casos de la empresa se cubren mejor con <em>ejecución de contrato</em> u <em>obligación legal</em>.</p>"
+        }
+      ],
+      "quiz": ["m3-q1", "m3-q2", "m3-q3", "m3-q4", "m3-q5"]
+    },
+    {
+      "id": "m4",
+      "num": 4,
+      "tipo": "modulo",
+      "titulo": "Los 7 instrumentos obligatorios",
+      "lead": "La Ley 21.719 exige 7 instrumentos de gestión concretos. Conózcalos y sepa qué evidencia debe poder mostrar ante la Agencia.",
+      "video": {
+        "file": "../videos/Ley_21 (4).mp4",
+        "thumb": "../videos/thumbs/Ley_21 (4).jpg",
+        "titulo": "Empresas: DPAs, transferencias, IA y gobernanza",
+        "duracion": "7:46"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "RAT — Registro de Actividades de Tratamiento",
+          "html": "<p>Inventario obligatorio de todos los flujos de datos: qué datos trata, con qué finalidad, bajo qué base de licitud, qué categoría de titulares, qué destinatarios, qué plazos de conservación, qué medidas de seguridad.</p><p><strong>Es la base de todo.</strong> Sin RAT no puede demostrar cumplimiento.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "DPIA — Evaluación de Impacto",
+          "html": "<p>Análisis técnico <strong>previo y obligatorio</strong> cuando el tratamiento sea de alto riesgo: biometría, geolocalización masiva, perfilamiento, decisiones automatizadas con efectos significativos, tratamiento de menores.</p><p>La DPIA debe acreditar que el tratamiento es <strong>proporcional y necesario</strong> frente a alternativas menos invasivas.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "DPA — Contrato de encargo",
+          "html": "<p>Contrato escrito con cada encargado (proveedor que procesa datos por usted): Google Analytics, Meta, hosting, CRM, Mailchimp, HubSpot, etc.</p><p>Debe incluir cláusulas de:</p><ul><li>Confidencialidad</li><li>Limitación de finalidad</li><li>Subencargados autorizados</li><li>Notificación de brechas</li><li>Devolución o supresión al término</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "DPO — Delegado de Protección de Datos",
+          "html": "<p>Persona designada para supervisar el cumplimiento. <strong>Puede ser interna o externa.</strong> Para MIPYMEs hay exención durante el período de gracia (1° dic 2026 al 1° dic 2027).</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "MPI — Modelo de Prevención de Infracciones",
+          "html": "<p>Programa de cumplimiento voluntario y certificable. Acredita diligencia y <strong>atenúa sanciones</strong>. Incluye: identificación de actividades de riesgo, protocolos, canal de denuncias, supervisión, capacitación.</p>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "orange",
+          "h3": "Notificación de brechas en 72 horas",
+          "html": "<p>Cualquier incidente de seguridad (destrucción, filtración, pérdida, alteración accidental o ilícita) debe notificarse a la Agencia PDP en <strong>72 horas</strong> como máximo. Si afecta a titulares, también a ellos.</p><p>El plazo es <strong>fatigoso</strong>: configure alertas internas y procedimientos automatizados.</p>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "violet",
+          "h3": "Gobernanza de Shadow AI",
+          "html": "<p>El <strong>97% de las empresas breachadas</strong> carecían de políticas formales de IA. El costo promedio de una brecha con IA involucrada es de <strong>US$ 670.000</strong>. Todo uso no declarado de chatbots, copilots o herramientas generativas por parte del personal debe ser levantado, evaluado y registrado en el RAT.</p>"
+        }
+      ],
+      "quiz": ["m4-q1", "m4-q2", "m4-q3", "m4-q4", "m4-q5"]
+    },
+    {
+      "id": "m5",
+      "num": 5,
+      "tipo": "modulo",
+      "titulo": "Derechos ARCOP+ y plazos críticos",
+      "lead": "Cualquier persona puede ejercer 5 derechos ante su empresa. Conozca los plazos, los procedimientos y las excepciones que debe aplicar.",
+      "video": {
+        "file": "../videos/Ley_21 (7).mp4",
+        "thumb": "../videos/thumbs/Ley_21 (7).jpg",
+        "titulo": "Datos financieros: crédito, prescripción y decisiones automatizadas",
+        "duracion": "6:51"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Los 5 derechos ARCOP+",
+          "html": "<table class='curso-table'><thead><tr><th>Derecho</th><th>Qué permite</th><th>Plazo</th></tr></thead><tbody><tr><td><strong>A</strong>cceso</td><td>Saber qué datos tiene la empresa sobre mí</td><td>30 días corridos</td></tr><tr><td><strong>R</strong>ectificación</td><td>Corregir datos inexactos o incompletos</td><td>30 días corridos</td></tr><tr><td><strong>S</strong>upresión</td><td>Borrar mis datos (cuando proceda)</td><td>30 días corridos</td></tr><tr><td><strong>O</strong>posición</td><td>Negarme a ciertos tratamientos (marketing)</td><td>30 días corridos</td></tr><tr><td><strong>P</strong>ortabilidad</td><td>Recibir mis datos en formato estructurado</td><td>30 días corridos</td></tr></tbody></table><p>El plazo se puede prorrogar por otros 30 días en casos complejos, debiendo fundamentar.</p>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "red",
+          "h3": "Plazo fatal: 2 días hábiles",
+          "html": "<p>Si el titular pide conjuntamente el <strong>bloqueo temporal</strong> del tratamiento, usted dispone de solo <strong>2 días hábiles</strong> para ejecutarlo. Distinto del plazo general de 30 días corridos.</p><p>Este plazo exige un SLA operativo interno corto. Configure alertas internas y procedimientos automatizados capaces de suspender el tratamiento en producción y respaldos en menos de 48 horas hábiles.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Excepciones que debe aplicar",
+          "html": "<p>No toda supresión procede. Hay excepciones legales que debe invocar fundadamente:</p><ul><li>Datos necesarios para <strong>cumplir una obligación legal</strong> (ej. documentación laboral 5 años, tributaria 6 años)</li><li>Datos necesarios para <strong>interés legítimo</strong> prevalente (ej. prevención de fraude)</li><li>Datos necesarios para <strong>defensa en juicio</strong></li></ul><p>Ante estas excepciones, debe <strong>denegar fundadamente</strong> la supresión explicando por qué.</p>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "cyan",
+          "h3": "Canal para derechos ARCOP",
+          "html": "<p>Su sitio web debe tener un canal visible (ej. <code>privacidad@empresa.cl</code>) desde donde cualquier titular pueda ejercer sus derechos. Ese canal debe estar enlazado desde el pie de página y desde cada formulario de captura.</p>"
+        }
+      ],
+      "quiz": ["m5-q1", "m5-q2", "m5-q3", "m5-q4", "m5-q5"]
+    },
+    {
+      "id": "m6",
+      "num": 6,
+      "tipo": "modulo",
+      "titulo": "Aplicación por industria",
+      "lead": "Cada industria tiene matices críticos. Identifique los aplicables a su empresa y enfóquese en ellos.",
+      "video": {
+        "file": "../videos/Ley_21 (5).mp4",
+        "thumb": "../videos/thumbs/Ley_21 (5).jpg",
+        "titulo": "Logística y última milla: GPS, móviles y minimización",
+        "duracion": "7:55"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Aseo industrial y servicios",
+          "html": "<p>Alta rotación de personal y uso masivo de <strong>biometría</strong> (huella dactilar, reconocimiento facial) para control de asistencia. Datos sensibles por accidentes laborales y entrega de EPP.</p><ul><li>Biometría requiere DPIA obligatoria</li><li>Datos de salud de accidentes son sensibles</li><li>Intercambio con mandantes: defina roles (responsable vs. encargado)</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Logística y última milla",
+          "html": "<p>Tratamiento constante de <strong>geolocalización</strong> de conductores y datos de destinatarios finales.</p><ul><li>Informar a los conductores la finalidad del monitoreo GPS</li><li>Minimizar datos de rutas a lo estrictamente necesario</li><li>Regula por contrato el flujo con subcontratistas</li><li>Apague el GPS fuera del horario laboral (Art. 16 sexies)</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Minería y construcción",
+          "html": "<p>Manejo de perfiles de salud complejos para autorizar ingreso a faena. Datos sensibles por naturaleza.</p><ul><li>Exámenes preocupacionales, licencias, accidentes: todos sensibles</li><li>Requiere acreditación de necesidad para salvaguardar vida</li><li>30 días de suspensión operativa puede paralizar faenas</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Tecnología y SaaS",
+          "html": "<p>Actúan principalmente como <strong>encargados</strong> para sus clientes.</p><ul><li>Firmar DPAs estrictos con todos sus clientes</li><li>Incluir subencargados (proveedores de nube)</li><li>Protección desde el diseño y por defecto</li><li>Acreditar garantías de transferencia internacional</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Financiera, contable y retail",
+          "html": "<p>Reglas estrictas sobre perfiles comerciales y datos de morosidad.</p><ul><li>Historial de pagos y deudas son datos críticos</li><li>Decisiones automatizadas de crédito: derecho a oponerse</li><li>Suprimir proactivamente obligaciones prescritas</li><li>Contable-tributario se conserva 6 años (Art. 200 Código Tributario)</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Salud y farmacéutica",
+          "html": "<p>Tratamiento habitual de datos sensibles: genéticos, biológicos y de salud.</p><ul><li>Fichas clínicas y resultados: siempre sensibles</li><li>Consentimiento expreso salvo emergencias</li><li>Anonimizar para investigación histórica</li><li>Brecha sobre datos de salud: infracción gravísima directa</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Educación y colegios",
+          "html": "<p>Tutela reforzada por tratarse de datos de <strong>menores</strong>.</p><ul><li>Tramos etarios: &lt;14, 14-15, ≥16 con reglas distintas</li><li>Historiales médicos, perfiles psicológicos: sensibles</li><li>Apoderado obligatorio para datos sensibles (14-15)</li><li>Prohibición absoluta de perfilamiento comercial de menores</li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Sector público",
+          "html": "<p>El Estado tiene un manual distinto.</p><ul><li>Excepción del consentimiento por mandato legal</li><li>Transparencia obligatoria: publicación mensual de cesiones</li><li>Jefe Superior responde personalmente (5-15 días de suspensión)</li><li>Prohibición de tratamiento masivo de registros de infracciones no firmes (Art. 25)</li></ul>"
+        }
+      ],
+      "quiz": ["m6-q1", "m6-q2", "m6-q3", "m6-q4", "m6-q5"]
+    },
+    {
+      "id": "m7",
+      "num": 7,
+      "tipo": "modulo",
+      "titulo": "Datos sensibles: menores, salud y biometría",
+      "lead": "Los datos sensibles tienen reglas reforzadas. Conozca los tramos etarios, las reglas de consentimiento y los datos de salud.",
+      "video": {
+        "file": "../videos/Ley_21.mp4",
+        "thumb": "../videos/thumbs/Ley_21.jpg",
+        "titulo": "Datos escolares: menores, historiales y biometría",
+        "duracion": "9:53"
+      },
+      "secciones": [
+        {
+          "tipo": "texto",
+          "h3": "Los 3 tramos etarios",
+          "html": "<table class='curso-table'><thead><tr><th>Edad</th><th>Regla</th></tr></thead><tbody><tr><td><strong>&lt; 14 años</strong></td><td>Solo el representante legal puede consentir. <strong>Prohibición absoluta</strong> de consentimiento propio del menor.</td></tr><tr><td><strong>14 - 15 años</strong></td><td>Consentimiento propio para datos estándar. <strong>Apoderado obligatorio</strong> para datos sensibles (salud, psicológicos, PIE, biometría).</td></tr><tr><td><strong>≥ 16 años</strong></td><td>Régimen general de adultos. Pueden consentir autónomamente.</td></tr></tbody></table>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "red",
+          "h3": "Prohibición absoluta",
+          "html": "<p>Queda prohibido el <strong>perfilamiento comercial</strong>, publicidad dirigida o marketing directo de bienes y servicios a menores. Toda captación debe justificarse por <strong>beneficio pedagógico</strong> o <strong>seguridad escolar</strong>.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Datos de salud",
+          "html": "<p>Son siempre <strong>datos sensibles</strong> y requieren base de licitud reforzada. La ley distingue:</p><ul><li><strong>Datos de salud física:</strong> fichas clínicas, diagnósticos, licencias médicas</li><li><strong>Datos de salud mental:</strong> perfiles psicológicos, atenciones PIE</li><li><strong>Datos genéticos y biológicos:</strong> perfil biológico, ADN</li><li><strong>Historiales médicos completos:</strong> acceso restringido</li></ul><p>Una brecha sobre datos de salud escala directamente a <strong>infracción gravísima</strong>.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Datos biométricos",
+          "html": "<p>La huella dactilar y el reconocimiento facial son datos biométricos, y por tanto <strong>sensibles</strong>. Su tratamiento requiere:</p><ul><li><strong>Base de licitud reforzada</strong> (no basta una cláusula genérica en el contrato)</li><li><strong>Evaluación de Impacto (DPIA)</strong> que acredite proporcionalidad</li><li><strong>Medidas de seguridad reforzadas</strong> (cifrado, control de acceso, trazabilidad)</li></ul><p>En empresas de aseo industrial, minería o con alta rotación, este es un punto crítico.</p>"
+        }
+      ],
+      "quiz": ["m7-q1", "m7-q2", "m7-q3", "m7-q4", "m7-q5"]
+    },
+    {
+      "id": "m8",
+      "num": 8,
+      "tipo": "modulo",
+      "titulo": "CCTV, geolocalización y Shadow AI",
+      "lead": "Las nuevas fronteras del tratamiento laboral y tecnológico. Conozca los límites y los riesgos concretos.",
+      "video": {
+        "file": "../videos/Ley_21 (3).mp4",
+        "thumb": "../videos/thumbs/Ley_21 (3).jpg",
+        "titulo": "Recorrido por la oficina: CCTV, asistencia y biometría",
+        "duracion": "9:02"
+      },
+      "secciones": [
+        {
+          "tipo": "callout",
+          "variant": "red",
+          "h3": "CCTV: zonas prohibidas",
+          "html": "<p>Está <strong>prohibido instalar cámaras</strong> en:</p><ul><li>Baños</li><li>Comedores</li><li>Vestidores</li><li>Zonas de descanso</li></ul><p>Las cámaras deben limitarse a <strong>zonas comunes y de circulación</strong>, con cartel visible que informe finalidad, base de licitud y plazo de conservación.</p>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Plazo de conservación recomendado: 30 días",
+          "html": "<p>Aunque la ley no fija un plazo único, la buena práctica y la jurisprudencia comparada recomiendan <strong>30 días</strong> como plazo máximo de conservación de grabaciones de CCTV, salvo que estén siendo usadas en una investigación activa.</p><p>Evite captar audio salvo necesidad justificada.</p>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "orange",
+          "h3": "Geolocalización: Art. 16 sexies",
+          "html": "<p>Para flotas vehiculares y personal en ruta:</p><ul><li>Informar previamente al trabajador la finalidad del monitoreo GPS</li><li>Apagar el dispositivo <strong>fuera del horario laboral</strong></li><li>Limitar el tracking a horarios y rutas autorizadas</li><li>No ceder los datos GPS a terceros sin base de licitud</li></ul>"
+        },
+        {
+          "tipo": "callout",
+          "variant": "violet",
+          "h3": "Shadow AI: la nueva frontera",
+          "html": "<p>El <strong>97% de las empresas breachadas</strong> carecían de políticas formales de IA. Costo promedio de una brecha con IA involucrada: <strong>US$ 670.000</strong>.</p><p>Todo uso no declarado de chatbots, copilots o herramientas generativas por parte del personal debe ser:</p><ul><li><strong>Levantado:</strong> encuesta al personal, análisis de logs</li><li><strong>Evaluado:</strong> qué datos salen de la empresa, qué datos entran al modelo</li><li><strong>Registrado en el RAT</strong></li><li><strong>Documentado en una política de IA</strong></li></ul>"
+        },
+        {
+          "tipo": "texto",
+          "h3": "Transferencias internacionales",
+          "html": "<p>Si sus datos salen de Chile (Google Analytics, Meta, AWS, etc.), debe acreditar garantías de transferencia internacional conforme al capítulo correspondiente de la ley.</p><p>Las garantías típicas son:</p><ul><li>País con nivel adecuado de protección (decisión de la Agencia)</li><li>Cláusulas contractuales tipo aprobadas</li><li>Normas corporativas vinculantes</li><li>Consentimiento expreso del titular</li></ul>"
+        }
+      ],
+      "quiz": ["m8-q1", "m8-q2", "m8-q3", "m8-q4", "m8-q5"]
+    }
+  ]
+}

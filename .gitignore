@@ -17,3 +17,19 @@ tools/youtube/oauth_state.json
 backend/.coverage
 backend/coverage.xml
 frontend/coverage/
+backend/app/data/app.db
+
+# InsForge & AI agent skills
+.insforge
+.agent
+.agents
+.augment
+.claude
+.cline
+.github/copilot*
+.kilocode
+.qoder
+.qwen
+.roo
+.trae
+.windsurf

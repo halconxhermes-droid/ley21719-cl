@@ -1,8 +1,10 @@
 /**
  * Cliente fetch tipado contra /api/v1 (design/api-contract.md).
- * En dev, Vite proxifica /api → http://localhost:8000.
- * En prod (Netlify), el request a "/api/v1" se redirige automáticamente
- * a http://82.239.175.215:9000/api/v1 gracias al [[redirects]] en netlify.toml.
+ * Usa SIEMPRE rutas relativas "/api/v1": el proxy depende del entorno.
+ *  - Dev:      Vite proxifica /api → http://localhost:8000 (vite.config.ts)
+ *  - Producción: Netlify redirige /api/* según [[redirects]] en netlify.toml
+ *    (hoy: túnel Cloudflare al backend local; destino final: Fly.io — ver AGENTS.md).
+ * No hay URLs absolutas ni IPs hardcodeadas en este archivo.
  */
 
 const API_BASE = "/api/v1";

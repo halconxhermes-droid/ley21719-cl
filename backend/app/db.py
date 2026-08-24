@@ -6,13 +6,15 @@ and is recreated from the JSON sources on init_db().
 from __future__ import annotations
 
 import json
+import os
 import re
 import sqlite3
 from pathlib import Path
 from typing import Dict, List, Optional
 
-DOCS_DIR = Path(__file__).resolve().parents[2].joinpath("docs")
-DATA_DIR = Path(__file__).resolve().parent.joinpath("data")
+DOCS_DIR = Path(__file__).resolve().parents[1].joinpath("docs")
+# DATA_DIR puede sobreescribirse vía env (p.ej. volumen persistente en Fly.io)
+DATA_DIR = Path(os.environ.get("LEY21719_DATA_DIR", Path(__file__).resolve().parent.joinpath("data")))
 DB_PATH = DATA_DIR / "app.db"
 FINAL_TEST_JSON = DATA_DIR / "final_test.json"
 
@@ -51,20 +53,21 @@ def get_conn() -> sqlite3.Connection:
 
 
 def init_db() -> None:
-    """Create tables and load from docs/*.json + final_test source."""
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    """Create tables (idempotente) and seed content from docs/*.json.
 
-    # Remove existing DB before recreate
-    if DB_PATH.exists():
-        DB_PATH.unlink()
+    PERSISTENCIA: la base NUNCA se borra en arranque. El contenido se
+    re-siembra solo si las tablas están vacías (INSERT OR REPLACE), y la
+    tabla checklist_progress (progreso de usuarios) jamás se toca aquí.
+    """
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     conn = get_conn()
     cur = conn.cursor()
 
-    # Create tables
+    # Create tables (IF NOT EXISTS: seguro en restart/redeploy)
     cur.executescript(
         """
-        CREATE TABLE modules (
+        CREATE TABLE IF NOT EXISTS modules (
             id TEXT PRIMARY KEY,
             title TEXT NOT NULL,
             slug TEXT NOT NULL,
@@ -72,11 +75,11 @@ def init_db() -> None:
             description TEXT NOT NULL,
             levels_json TEXT NOT NULL
         );
-        CREATE TABLE quizzes (
+        CREATE TABLE IF NOT EXISTS quizzes (
             module_id TEXT PRIMARY KEY,
             questions_json TEXT NOT NULL
         );
-        CREATE TABLE glossary (
+        CREATE TABLE IF NOT EXISTS glossary (
             id TEXT PRIMARY KEY,
             term TEXT NOT NULL,
             definition TEXT NOT NULL,
@@ -84,7 +87,7 @@ def init_db() -> None:
             legal_ref TEXT,
             related_terms_json TEXT
         );
-        CREATE TABLE checklist_items (
+        CREATE TABLE IF NOT EXISTS checklist_items (
             role TEXT NOT NULL,
             section_id TEXT NOT NULL,
             item_id TEXT NOT NULL,
@@ -94,18 +97,18 @@ def init_db() -> None:
             guide_url TEXT,
             PRIMARY KEY (role, item_id)
         );
-        CREATE TABLE checklist_progress (
+        CREATE TABLE IF NOT EXISTS checklist_progress (
             role TEXT NOT NULL,
             item_id TEXT NOT NULL,
             completed INTEGER NOT NULL DEFAULT 0,
             PRIMARY KEY (role, item_id)
         );
-        CREATE TABLE glossary_search (
+        CREATE TABLE IF NOT EXISTS glossary_search (
             id TEXT PRIMARY KEY,
             category TEXT,
             letter TEXT
         );
-        CREATE TABLE final_test (
+        CREATE TABLE IF NOT EXISTS final_test (
             question_id TEXT PRIMARY KEY,
             module_id TEXT NOT NULL,
             text TEXT NOT NULL,
@@ -132,11 +135,13 @@ def init_db() -> None:
         lines = [l.strip() for l in contenido_md.split("\n") if l.strip() and not l.strip().startswith("#")]
         description = lines[0][:200] if lines else titulo
         # Build bullets from markdown headers/content
+        # FIX: lstrip("-* ") se comía los ** de apertura del markdown emphasis.
+        # Usar regex para quitar SOLO el marcador de viñeta y el espacio.
         bullets = []
         for line in contenido_md.split("\n"):
             line = line.strip()
             if line.startswith("-") or line.startswith("*"):
-                bullets.append(line.lstrip("-* ").strip())
+                bullets.append(re.sub(r"^[\-\*]+\s+", "", line))
         if not bullets:
             for line in lines[:3]:
                 bullets.append(line[:120])
@@ -220,7 +225,7 @@ def init_db() -> None:
         # Store levels_json + meta in levels_json
         payload = {"levels": levels, "meta": meta}
         cur.execute(
-            "INSERT INTO modules (id, title, slug, ordering, description, levels_json) VALUES (?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO modules (id, title, slug, ordering, description, levels_json) VALUES (?,?,?,?,?,?)",
             (m_id, titulo, slug, idx, description, json.dumps(payload, ensure_ascii=False)),
         )
 
@@ -241,7 +246,7 @@ def init_db() -> None:
                 }
             )
         cur.execute(
-            "INSERT INTO quizzes (module_id, questions_json) VALUES (?,?)",
+            "INSERT OR REPLACE INTO quizzes (module_id, questions_json) VALUES (?,?)",
             (mod_id, json.dumps(q_rows, ensure_ascii=False)),
         )
 
@@ -266,7 +271,7 @@ def init_db() -> None:
         legal_ref = legal_ref or None
         category = category or "general"
         cur.execute(
-            "INSERT INTO glossary (id, term, definition, category, legal_ref, related_terms_json) VALUES (?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO glossary (id, term, definition, category, legal_ref, related_terms_json) VALUES (?,?,?,?,?,?)",
             (t_id, term, definition, category, legal_ref, json.dumps(related or [])),
         )
 
@@ -283,7 +288,7 @@ def init_db() -> None:
             sec = section_ids[idx % len(section_ids)]
             item_id = f"{role}-{sec}-{idx+1}"
             cur.execute(
-                "INSERT INTO checklist_items (role, section_id, item_id, item_order, text, legal_ref, guide_url) VALUES (?,?,?,?,?,?,?)",
+                "INSERT OR REPLACE INTO checklist_items (role, section_id, item_id, item_order, text, legal_ref, guide_url) VALUES (?,?,?,?,?,?,?)",
                 (
                     role,
                     sec,
@@ -336,7 +341,7 @@ def init_db() -> None:
 
     for it in final_items:
         cur.execute(
-            "INSERT INTO final_test (question_id, module_id, text, options_json, correct_index, explanation) VALUES (?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO final_test (question_id, module_id, text, options_json, correct_index, explanation) VALUES (?,?,?,?,?,?)",
             (
                 it["question_id"],
                 it["module_id"],
