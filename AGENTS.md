@@ -212,13 +212,14 @@ Key patterns:
 
 | Entorno | URL | Estado |
 |---------|-----|--------|
-| Local | `http://localhost:8000` | Desarrollo |
-| **Producción** | `https://ley21719-backend-ce8bed33-38b7-4dbe-bdc3-8738f5c4e991.fly.dev` | ✅ Activo (InsForge Compute, región iad, puerto 8000) |
+| Local | `http://localhost:8000` | Desarrollo (SQLite) |
+| **Producción** | `https://ley21719-backend-ce8bed33-38b7-4dbe-bdc3-8738f5c4e991.fly.dev` | ✅ Activo (InsForge Compute, región iad, puerto 8000, **PostgreSQL**) |
 
 **Regla**: la única configuración del redirect vive en `netlify.toml`.
 `frontend/src/lib/api.ts` usa solo rutas relativas `/api/v1`. Nada de IPs ni dominios hardcodeados en código.
 
-> **Pendiente**: volumen persistente Fly.io (`ley21719_data`) NO creado aún — requiere token
-> `flyctl` del usuario. Mientras tanto, SQLite es efímero: el progreso de checklist/quiz se
-> pierde en cada restart/redeploy. El código ya está preparado (`LEY21719_DATA_DIR=/data`,
-> `[mounts]` en fly.toml): al crear el volumen, solo hace falta reiniciar el servicio.
+> **Persistencia (desde 2026-08-24)**: producción usa **PostgreSQL gestionado de InsForge**
+> (`7cn2ezja.us-east.database.insforge.app`) vía env var `DATABASE_URL`. Sin `DATABASE_URL`
+> → fallback automático a SQLite (dev). Esquema + seed idempotente en `backend/pg_schema.sql`
+> y `backend/seed_postgres.py`. El progreso de checklist sobrevive restarts/redeploys
+> (verificado: POST → stop → start → GET mantiene estado). El volumen Fly.io ya NO es necesario.
