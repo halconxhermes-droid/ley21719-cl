@@ -78,7 +78,7 @@ async function handle(path: string, method: string, body: any) {
   if (path === "api/v1/modules") {
     const rows = await records("modules");
     const modules = rows.map((r: any) => {
-      const levels = JSON.parse(r.levels_json || "{}");
+      const levels = JSON.parse(r.levels_json || "{}").levels ?? JSON.parse(r.levels_json || "{}");
       return {
         id: r.id,
         title: r.title,
@@ -101,7 +101,7 @@ async function handle(path: string, method: string, body: any) {
     const rows = await records("modules", `id=eq.${modId}`);
     if (!rows.length) return json(200, { module: null });
     const r = rows[0];
-    const levels = JSON.parse(r.levels_json || "{}");
+    const levels = JSON.parse(r.levels_json || "{}").levels ?? JSON.parse(r.levels_json || "{}");
     const module = {
       id: r.id,
       title: r.title,
