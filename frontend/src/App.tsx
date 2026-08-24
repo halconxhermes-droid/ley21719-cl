@@ -3,6 +3,7 @@ import { NavigationProvider, useNavigation } from "./context/NavigationContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./views/Home";
+import Portal from "./views/Portal";
 import LectorModulo from "./views/LectorModulo";
 import QuizView from "./views/Quiz";
 import ChecklistView from "./views/Checklist";
@@ -14,6 +15,8 @@ function ViewRouter() {
   const { view } = useNavigation();
 
   switch (view) {
+    case "portal":
+      return <Portal />;
     case "home":
       return <Home />;
     case "lector":

@@ -1,7 +1,8 @@
 import { useNavigation, type ViewId } from "../context/NavigationContext";
 
 const LINKS: { view: ViewId; label: string }[] = [
-  { view: "home", label: "Inicio y selector de rol" },
+  { view: "portal", label: "Portal de la ley" },
+  { view: "home", label: "Inicio del curso y selector de rol" },
   { view: "lector", label: "Lectura de módulos" },
   { view: "quiz", label: "Quiz del módulo" },
   { view: "checklist", label: "Checklist «¿Estoy listo?»" },

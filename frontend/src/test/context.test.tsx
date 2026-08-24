@@ -43,7 +43,7 @@ describe("Context providers", () => {
       );
     }
     render(<TestWrapper><Test /></TestWrapper>);
-    expect(screen.getByTestId("view")).toHaveTextContent("home");
+    expect(screen.getByTestId("view")).toHaveTextContent("portal");
     expect(screen.getByTestId("module")).toHaveTextContent("empresa");
     fireEvent.click(screen.getByText("Go"));
     expect(screen.getByTestId("view")).toHaveTextContent("lector");
@@ -62,7 +62,7 @@ describe("Header component", () => {
     expect(screen.getByLabelText(/Cuenta regresiva a vigencia plena/i)).toBeInTheDocument();
   });
 
-  it("navega a home al hacer clic en el logo", () => {
+  it("navega al portal al hacer clic en el logo", () => {
     function Test() {
       const { view } = useNavigation();
       return (
@@ -73,8 +73,22 @@ describe("Header component", () => {
       );
     }
     render(<TestWrapper><Test /></TestWrapper>);
-    fireEvent.click(screen.getByLabelText(/Ley 21\.719 - Inicio/i));
-    expect(screen.getByTestId("view")).toHaveTextContent("home");
+    fireEvent.click(screen.getByLabelText(/Ley 21\.719 - Portal/i));
+    expect(screen.getByTestId("view")).toHaveTextContent("portal");
+  });
+
+  it("muestra navegación Portal/Curso y marca la vista activa", () => {
+    function Test() {
+      return (
+        <div>
+          <Header />
+        </div>
+      );
+    }
+    render(<TestWrapper><Test /></TestWrapper>);
+    expect(screen.getByRole("navigation", { name: /Navegación principal/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Portal" })).toHaveAttribute("aria-current", "page");
+    expect(screen.getByRole("button", { name: "Curso" })).not.toHaveAttribute("aria-current");
   });
 
   it("muestra RoleIndicator cuando hay rol seleccionado y lo oculta sin rol", () => {

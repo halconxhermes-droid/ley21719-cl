@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useMemo, useState } from "react
 import type { ReactNode } from "react";
 
 export type ViewId =
+  | "portal"
   | "home"
   | "lector"
   | "quiz"
@@ -17,13 +18,13 @@ interface NavigationContextValue {
 }
 
 const NavigationContext = createContext<NavigationContextValue>({
-  view: "home",
+  view: "portal",
   moduleId: "empresa",
   navigate: () => {},
 });
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
-  const [view, setView] = useState<ViewId>("home");
+  const [view, setView] = useState<ViewId>("portal");
   const [moduleId, setModuleId] = useState("empresa");
 
   const navigate = useCallback((v: ViewId, opts?: { moduleId?: string }) => {
