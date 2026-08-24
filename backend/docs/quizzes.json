@@ -808,12 +808,12 @@
         "pregunta": "¿En qué plazo debe notificarse una brecha de seguridad a la Agencia?",
         "opciones": [
           "24 horas",
-          "48 horas",
           "72 horas",
-          "7 días"
+          "7 días",
+          "Sin dilaciones indebidas"
         ],
-        "correcta": 2,
-        "explicacion_al_fallar": "Toda brecha de seguridad debe notificarse a la Agencia PDP en un plazo máximo de 72 horas.",
+        "correcta": 3,
+        "explicacion_al_fallar": "Art. 14 sexies: el responsable debe reportar a la Agencia 'por los medios más expeditos posibles y sin dilaciones indebidas'. La Ley 21.719 no fija un plazo de 72 horas (ese es el estándar RGPD, no el chileno).",
         "articulos": [
           "Art. 14",
           "Art. 14 sexies"
@@ -1286,12 +1286,12 @@
       "pregunta": "¿En qué plazo debe notificarse una brecha de seguridad a la Agencia?",
       "opciones": [
         "24 horas",
-        "48 horas",
         "72 horas",
-        "7 días"
+        "7 días",
+        "Sin dilaciones indebidas"
       ],
-      "correcta": 2,
-      "explicacion_al_fallar": "Toda brecha de seguridad debe notificarse a la Agencia PDP en un plazo máximo de 72 horas.",
+      "correcta": 3,
+      "explicacion_al_fallar": "Art. 14 sexies: el responsable debe reportar a la Agencia 'por los medios más expeditos posibles y sin dilaciones indebidas'. La Ley 21.719 no fija un plazo de 72 horas (ese es el estándar RGPD, no el chileno).",
       "articulos": [
         "Art. 14",
         "Art. 14 sexies"
