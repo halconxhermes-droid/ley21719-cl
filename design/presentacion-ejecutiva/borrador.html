@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ley 21.719 - Presentación Ejecutiva</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --emerald: #047857;
+      --wine: #991B1B;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --border-radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-700);
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Slide container */
+    .slide {
+      display: none;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    /* Navigation buttons */
+    .nav-btn {
+      position: fixed;
+      z-index: 100;
+      background: var(--emerald);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(4,120,87,0.3);
+      transition: background 0.2s;
+    }
+
+    .nav-btn:hover {
+      background: #065f46;
+    }
+
+    .nav-btn.prev {
+      left: 2rem;
+      top: calc(50% - 22px);
+    }
+
+    .nav-btn.next {
+      right: 2rem;
+      top: calc(50% - 22px);
+    }
+
+    /* Pagination */
+    .pagination {
+      position: fixed;
+      z-index: 100;
+      left: 50%;
+      bottom: 2rem;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .page-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--slate-600);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .page-dot.active {
+      background: var(--wine);
+      transform: scale(1.25);
+    }
+
+    .page-dot:hover {
+      background: var(--emerald);
+    }
+
+    /* Content styles */
+    .h1 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .h2 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; }
+    .p { font-size: 1rem; line-height: 1.6; margin: 0; }
+
+    .section-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(4,120,87,0.15);
+      color: var(--emerald);
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 4px;
+      margin-right: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .risk-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(153,27,27,0.15);
+      color: var(--wine);
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 4px;
+      margin-right: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-tag {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: var(--wine);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 2rem;
+      background: white;
+      border-top: 1px solid var(--slate-100);
+      font-size: 0.75rem;
+      color: var(--slate-600);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 50;
+    }
+
+    .footer .logo-legal {
+      color: var(--slate-600);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .slide-number {
+      color: var(--emerald);
+      font-weight: 600;
+    }
+
+    /* Specific slide backgrounds/accents */
+    .slide-1 { background: white; }
+    .slide-2 { background: white; }
+    .slide-3 { background: white; }
+    .slide-4 { background: white; }
+    .slide-5 { background: white; }
+    .slide-6 { background: white; }
+    .slide-7 { background: white; }
+    .slide-8 { background: white; }
+    .slide-9 { background: white; }
+    .slide-10 { background: white; }
+    .slide-11 { background: white; }
+    .slide-12 { background: white; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .nav-btn, .page-dot { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <button class="nav-btn prev" id="prevBtn" aria-label="Diapositiva anterior">←</button>
+  <button class="nav-btn next" id="nextBtn" aria-label="Diapositiva siguiente">→</button>
+
+  <!-- Pagination dots -->
+  <div class="pagination" id="pagination"></div>
+
+  <!-- Slides -->
+  <div id="slides">
+
+    <!-- S1: Portada -->
+    <div class="slide slide-1">
+      <div>
+        <h1 class="h1">Ley 21.719</h1>
+        <h2 class="h2">Protección de Datos Personales</h2>
+        <p class="p">Normativa que regula el tratamiento de información personal en Chile</p>
+        <span class="hero-tag">Vigencia plena: 1° diciembre 2026</span>
+      </div>
+    </div>
+
+    <!-- S2: Por qué le importa a su empresa -->
+    <div class="slide slide-2">
+      <h2 class="h2">¿Por qué le importa a su empresa?</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div>
+          <p class="h3 risk-text"><span class="risk-tag">Riesgo Legal</span></p>
+          <p class="p mult-line">Multas y sanciones administrativas</p>
+        </div>
+        <div>
+          <p class="h3 risk-text"><span class="risk-tag">Riesgo Reputacional</span></p>
+          <p class="p mult-line">Daño a marca y confianza</p>
+        </div>
+        <div>
+          <p class="h3 risk-text"><span class="risk-tag">Riesgo Económico</span></p>
+          <p class="p mult-line">Impacto en operatividad y costo</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- S3: Qué cambia con la nueva ley -->
+    <div class="slide slide-3">
+      <h2 class="h2">Qué cambia con la nueva ley</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div>
+          <p class="h4"><span class="section-tag">Anterior</span></p>
+          <p class="p">Autovoluntaria, pocos requisitos</p>
+        </div>
+        <div>
+          <p class="h4"><span class="section-tag">Nueva Ley</span></p>
+          <p class="p">Obligatorio para responsables y encargados</p>
+        </div>
+        <div>
+          <p class="h4"><span class="section-tag">Derechos ARCO+</span></p>
+          <p class="p">Portabilidad incl. y respuesta en plazo</p>
+        </div>
+        <div>
+          <p class="h4"><span class="section-tag">Brechas de seguridad</span></p>
+          <p class="p">Notificación "sin dilaciones indebidas"</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- S4: Línea de tiempo -->
+    <div class="slide slide-4">
+      <h2 class="h2">Línea de tiempo</h2>
+      <div style="position: relative; margin: 2rem 0;">
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--emerald);"></div>
+        <div style="padding-left: 2rem; max-width: 800px;">
+          <div style="display: flex; justify-content: space-between; margin: 2rem 0; color: var(--slate-600);">
+            <span>13 dic 2024</span>
+            <span>Publicación en D.O.</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin: 2rem 0; color: var(--slate-600);">
+            <span>1° ene 2025</span>
+            <span>Regulaciones preliminares</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin: 2rem 0; color: var(--emerald);">
+            <strong>1° dic 2026</strong>
+            <span>Vigencia plena</span>
+          </div>
+        </div>
+      </div>
+      <p class="p" style="margin-top: 3rem; color: var(--slate-600); font-size: 0.875rem;">* plazos pueden variar por reglamentación</p>
+    </div>
+
+    <!-- S5: Quién debe cumplir -->
+    <div class="slide slide-5">
+      <h2 class="h2">Quién debe cumplir</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 2rem;">
+        <div>
+          <p class="h4"><span class="section-tag">Responsables de tratamiento</span></p>
+          <p class="p">Definen propósitos y medio del tratamiento</p>
+        </div>
+        <div>
+          <p class="h4"><span class="section-tag">Encargados de tratamiento</span></p>
+          <p class="p">Tratan datos por cuenta del responsable</p>
+        </div>
+        <div>
+          <p class="h4"><span class="section-tag">MIPYMEs</span></p>
+          <p class="p">Régimen atenuado: amonestación posible</p>
+        </div>
+        <div>
+          <p class="h4"><span class="section-tag">Extranjeros</span></p>
+          <p class="p">Si ofrecen servicios a personas en Chile</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- S6: Derechos de las personas (ARCO+) -->
+    <div class="slide slide-6">
+      <h2 class="h2">Derechos de las personas (ARCO+)</h2>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem;">
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--emerald);">📄</div>
+          <p class="p" style="margin: 0.5rem 0 0 0; font-weight: 600;">Acceso</p>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--emerald);">✏️</div>
+          <p class="p" style="margin: 0.5rem 0 0 0; font-weight: 600;">Rectificación</p>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--emerald);">🗑️</div>
+          <p class="p" style="margin: 0.5rem 0 0 0; font-weight: 600;">Cancelación</p>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--wine);">❎</div>
+          <p class="p" style="margin: 0.5rem 0 0 0; font-weight: 600;">Oposición</p>
+        </div>
+      </div>
+      <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--slate-100);">
+        <p class="p" style="color: var(--slate-600); font-size: 0.875rem;">+ Portabilidad de datos a otro responsable</p>
+      </div>
+    </div>
+
+    <!-- S7: Obligaciones clave de la empresa -->
+    <div class="slide slide-7">
+      <h2 class="h2">Obligaciones clave de la empresa</h2>
+      <ul style="margin: 2rem 0 0 1.5rem; line-height: 1.8;">
+        <li><span class="risk-text">Registro de actividades de tratamiento:</span> Documentación completa y actualizada</li>
+        <li><span class="risk-text">Medidas de seguridad:</span> Técnicas y organizativas adecuadas al riesgo</li>
+        <li><span class="risk-text">DPIA (Evaluación de Impacto):</span> Obligatoria para tratamientos de alto riesgo</li>
+        <li><span class="risk-text">Notificación de brechas:</span> "Por los medios más expeditos posibles y sin dilaciones indebidas"</li>
+        <li><span class="risk-text">Respuesta ARCO:</span> Plazo máximo 30 días, gratuita</li>
+      </ul>
+    </div>
+
+    <!-- S8: Brechas de seguridad -->
+    <div class="slide slide-8">
+      <h2 class="h2">Brechas de seguridad: qué hacer</h2>
+      <div style="background: #f0fdf4; border: 1px solid #d1fae5; padding: 1.5rem; border-radius: var(--border-radius); margin: 1.5rem 0;">
+        <p class="p" style="margin: 0; color: var(--slate-700); line-height: 1.6;">
+          <strong>Art. 14 sexies:</strong> Notificar a la Agencia por los medios más expeditos posibles y sin dilaciones indebidas.
+        </p>
+        <p class="p" style="margin: 0.75rem 0 0 0; color: var(--slate-600); font-size: 0.875rem;">
+          ⚠️ <strong>Prohibido usar "72 horas"</strong>: ese plazo no existe en la ley.
+        </p>
+      </div>
+      <div style="margin: 2rem 0;">
+        <ol style="margin: 0; padding-left: 1.5rem; line-height: 1.8;">
+          <li>Identificar el alcance y afectados</li>
+          <li>Evaluar riesgo a derechos de titulares</li>
+          <li>Notificar a la Agencia de Protección de Datos</li>
+          <li>Informar a titulares afectados cuando corresponda</li>
+          <li>Adoptar medidas correctivas</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- S9: Sanciones -->
+    <div class="slide slide-9">
+      <h2 class="h2">Sanciones por gravedad</h2>
+      <div style="width: 100%; overflow-x: auto; margin: 1.5rem 0;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--emerald);">
+              <th style="padding: 0.5rem 0.75rem; text-align: left;">Gravedad</th>
+              <th style="padding: 0.5rem 0.75rem; text-align: left;">Multa (UTM)</th>
+              <th style="padding: 0.5rem 0.75rem; text-align: left;">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--slate-100);">
+              <td style="padding: 0.5rem 0.75rem;">Leve</td>
+              <td style="padding: 0.5rem 0.75rem;">1-5 UTM</td>
+              <td style="padding: 0.5rem 0.75rem;">Incumplimientos técnicos menores</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--slate-100);">
+              <td style="padding: 0.5rem 0.75rem;">Gravedad Media</td>
+              <td style="padding: 0.5rem 0.75rem;">6-30 UTM</td>
+              <td style="padding: 0.5rem 0.75rem;">Incumplimientos a deberes de seguridad</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--wine);">
+              <td style="padding: 0.5rem 0.75rem;">Grave</td>
+              <td style="padding: 0.5rem 0.75rem;">31-100+ UTM</td>
+              <td style="padding: 0.5rem 0.75rem;">Incumplimientos a derechos ARCO o transferencias ilícitas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top: 1rem;">
+        <p class="p" style="color: var(--slate-600); font-size: 0.875rem;">
+          <strong>MIPYME:</strong> Régimen atenuado; se puede sustituir multa por amonestación (Art. 6° transitorio)
+        </p>
+      </div>
+    </div>
+
+    <!-- S10: Rol del delegado/DPO -->
+    <div class="slide slide-10">
+      <h2 class="h2">Rol del delegado / DPO</h2>
+      <ul style="margin: 2rem 0 0 1.5rem; line-height: 1.8;">
+        <li><span class="section-tag">Voluntario:</span> "Podrá designar" (Art. 50)</li>
+        <li>Designación interna o externa</li>
+        <li>Independencia funcional frente al responsable</li>
+        <li>Vigilancia del cumplimiento de la ley</li>
+        <li>Punto de contacto con la Agencia</li>
+      </ul>
+      <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--slate-100);">
+        <p class="p" style="color: var(--slate-600); font-size: 0.875rem;">
+          No es obligatorio para todas las empresas, pero conveniente para aquellas con tratamiento sistemático o sensible de datos.
+        </p>
+      </div>
+    </div>
+
+    <!-- S11: Plan de acción 90 días -->
+    <div class="slide slide-11">
+      <h2 class="h2">Plan de acción 90 días</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem;">
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--emerald); margin-bottom: 0.5rem;">Día 1-15</div>
+          <ul style="margin: 0.5rem 0 0 1rem; line-height: 1.4;">
+            <li>Inventario de datos personales</li>
+            <li>Actualizar políticas de privacidad</li>
+            <li>Designar responsable/trato de protección</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--emerald); margin-bottom: 0.5rem;">Día 16-45</div>
+          <ul style="margin: 0.5rem 0 0 1rem; line-height: 1.4;">
+            <li>Implementar medidas de seguridad básicas</li>
+            <li>Capacitación básica al equipo</li>
+            <li>Establecer procedimiento brechas</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700; color: var(--emerald); margin-bottom: 0.5rem;">Día 46-90</div>
+          <ul style="margin: 0.5rem 0 0 1rem; line-height: 1.4;">
+            <li>DPIA si es aplicable</li>
+            <li>Evaluación de cumplimiento</li>
+            <li>Certificación de acciones</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- S12: Cierre -->
+    <div class="slide slide-12">
+      <h2 class="h2">Siguientes pasos</h2>
+      <div style="margin: 2rem 0;">
+        <a href="https://proteccion-datoscursos.netlify.app" target="_blank" style="color: var(--emerald); text-decoration: underline; font-weight: 600;">
+          Curso de capacitación en protección de datos
+        </a>
+      </div>
+      <p class="p" style="margin: 1rem 0 0 0; color: var(--slate-600); font-size: 0.875rem;">
+        Solicite una demo personalizada para su organización
+      </p>
+      <p class="p" style="margin: 0.5rem 0 0 0; color: var(--slate-500); font-size: 0.75rem;">
+        Fuente: BCN idNorma=1209272 · Ley 21.719 publicada 13 dic 2024 · Vigencia plena 1 dic 2026
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="#" class="footer-logo" id="footerLink">Ley 21.719 · BCN idNorma=1209272</a>
+    <div style="display: flex; gap: 1rem;">
+      <span class="slide-number" id="pageNum">1</span> / <span class="slide-number" id="totalPages">12</span>
+    </div>
+  </footer>
+
+  <!-- Navigation script -->
+  <script>
+    // Inicializar
+    let currentSlide = 1;
+    const totalSlides = 12;
+
+    // Elements
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const paginationDots = document.getElementById('pagination');
+    const pageNum = document.getElementById('pageNum');
+    const footerLink = document.getElementById('footerLink');
+
+    // Mostrar slide
+    function showSlide(n) {
+      // Clamp
+      if (n < 1) n = totalSlides;
+      if (n > totalSlides) n = 1;
+      currentSlide = n;
+
+      // Hide all slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      // Show current
+      const activeSlide = document.querySelector(`.slide-${n}`);
+      if (activeSlide) activeSlide.classList.add('active');
+
+      // Update pagination
+      updatePagination();
+
+      // Update footer link text
+      footerLink.textContent = `Ley 21.719 · BCN idNorma=1209272 - Diapositiva ${n} de ${totalSlides}`;
+    }
+
+    // Actualizar puntos de paginación
+    function updatePagination() {
+      // Limpiar
+      paginationDots.innerHTML = '';
+
+      for (let i = 1; i <= totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'page-dot' + (i === currentSlide ? ' active' : '');
+        dot.setAttribute('aria-label', `Ir a diapositiva ${i}`);
+        dot.onclick = () => showSlide(i);
+        paginationDots.appendChild(dot);
+      }
+
+      pageNum.textContent = currentSlide;
+    }
+
+    // Event listeners
+    prevBtn.onclick = () => showSlide(currentSlide - 1);
+    nextBtn.onclick = () => showSlide(currentSlide + 1);
+
+    // Teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+      if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
+      if (e.key === 'Escape') showSlide(1); // ir a portada
+    });
+
+    // Inicializar
+    showSlide(1);
+  </script>
+</body>
+</html>
