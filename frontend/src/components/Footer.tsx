@@ -100,9 +100,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <p className="m-0 border-t border-slate-800 pt-6 text-sm text-slate-500">
-          Ley 21.719 · Vigencia plena: 1-dic-2026
-        </p>
+        <div className="border-t border-slate-800 pt-6 text-[12px] leading-relaxed text-slate-400">
+          <p className="m-0">
+            Contenido educativo basado en la Ley N° 21.719 de Protección de Datos
+            Personales de Chile (publicada en el Diario Oficial el 13 de diciembre
+            de 2024). Material validado contra el texto oficial de la Biblioteca
+            del Congreso Nacional (BCN, idNorma=1209272).
+         </p>
+          <p className="mt-2 m-0">
+            Plena vigencia: 1 de diciembre de 2026. Documento informativo; no
+            constituye asesoría legal. Para decisiones empresariales consulte a
+            un abogado especializado.
+         </p>
+       </div>
       </div>
     </footer>
   );
