@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react";
 import { RolProvider } from "./context/RolContext";
 import { NavigationProvider, useNavigation } from "./context/NavigationContext";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import AccessGate from "./components/AccessGate";
 import Home from "./views/Home";
 import Portal from "./views/Portal";
 import LectorModulo from "./views/LectorModulo";
@@ -37,6 +39,35 @@ function ViewRouter() {
 }
 
 export default function App() {
+  const [unlocked, setUnlocked] = useState<boolean | null>(null); // null = verificando
+
+  useEffect(() => {
+    // ¿Hay token guardado? Si sí, asumir desbloqueado (la API validará igual)
+    const stored = localStorage.getItem("ley21719_access_token");
+    setUnlocked(Boolean(stored));
+  }, []);
+
+  /* Mientras se verifica, evitar flash de contenido */
+  if (unlocked === null) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-slate-50">
+        <div
+          className="h-8 w-8 animate-spin rounded-full border-2 border-emerald-700 border-t-transparent"
+          role="status"
+          aria-label="Cargando"
+        />
+     </div>
+    );
+  }
+
+  if (!unlocked) {
+    return (
+      <div className="min-h-screen bg-slate-50">
+        <AccessGate onUnlock={() => setUnlocked(true)} />
+     </div>
+    );
+  }
+
   return (
     <RolProvider>
       <NavigationProvider>

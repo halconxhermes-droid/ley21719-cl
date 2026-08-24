@@ -7,6 +7,8 @@
  * No hay URLs absolutas ni IPs hardcodeadas en este archivo.
  */
 
+import { getStoredToken, clearToken } from "./access";
+
 const API_BASE = "/api/v1";
 
 /* ============================================================
@@ -251,14 +253,26 @@ export class ApiError extends Error {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  // Gate: adjuntar token de acceso si existe
+  const token = getStoredToken();
+  const headers: Record<string, string> = { Accept: "application/json" };
+  if (token) headers["X-Access-Token"] = token;
+
   let res: Response;
   try {
     res = await fetch(`${API_BASE}${path}`, {
-      headers: { Accept: "application/json" },
+      headers,
       ...init,
     });
   } catch {
     throw new ApiError(0, "NETWORK_ERROR", "No se pudo conectar con el servidor.");
+  }
+
+  /* Si el gate rechaza (401), limpiar y recargar para mostrar la pantalla de acceso */
+  if (res.status === 401 && !path.startsWith("/access/")) {
+    clearToken();
+    if (typeof window !== "undefined") window.location.reload();
+    throw new ApiError(401, "UNAUTHORIZED", "Sesión expirada.");
   }
 
   if (!res.ok) {

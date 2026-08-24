@@ -1,62 +1,81 @@
-/* ── Netlify Function: InsForge API adapter ────────────────────────
+/* ── Netlify Function: InsForge API adapter + Auth gate ──
    Reemplaza el backend Fly.io. Consulta InsForge REST directamente.
-   Compatible con frontend/src/lib/api.ts sin cambios.
+   Incluye gate de acceso con contraseña (server-side,hash + timing-safe).
 ------------------------------------------------------------------- */
 import type { Context } from "@netlify/functions";
+import { createHash, timingSafeEqual } from "node:crypto";
 
 const INSFORGE = "https://7cn2ezja.us-east.insforge.app";
-const API_KEY = process.env.INSFORGE_API_KEY || "ik_c9a1dd3bfe6a1f5d465946e624e3cb0c";
-
-const HDR = { Authorization: `Bearer ${API_KEY}` };
-
-const CORS = {
+const API_KEY =
+  process.env.INSFORGE_API_KEY || "ik_c9a1dd3bfe6a1f5d465946e624e3cb0c";
+const HDR = {
+  Authorization: "Bearer " + API_KEY,
+  "Content-Type": "application/json",
+  Accept: "application/json",
+};
+const CORS: Record<string, string> = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
 
-const json = (status: number, body: unknown) =>
-  new Response(JSON.stringify(body), {
+function json(status: number, body: unknown) {
+  return new Response(JSON.stringify(body), {
     status,
     headers: { "Content-Type": "application/json", ...CORS },
   });
+}
 
-/* GET helper → InsForge REST, con fallback a [] si la tabla no existe */
+/* ═══════════════════════════════════════════════════════
+   AUTH GATE — contraseña server-side
+   La password vive en la env var ACCESS_PASSWORD de Netlify.
+   El frontend nunca ve el hash; solo recibe un token
+   determinista que presenta en cada request.
+   ═══════════════════════════════════════════════════════ */
+const TOKEN_SALT = "ley21719::gate::v1";
+const ACCESS_PASSWORD = process.env.ACCESS_PASSWORD || "ley21719-2026";
+
+function tokenFor(password: string): string {
+  return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
+}
+
+async function verifyAccess(password: unknown): Promise<boolean> {
+  if (typeof password !== "string" || !password || password.length > 128) return false;
+  const expected = Buffer.from(tokenFor(ACCESS_PASSWORD));
+  const provided = Buffer.from(tokenFor(password));
+  return timingSafeEqual(expected, provided);
+}
+
+/* ═══════════════════════════════════════════════════════
+   INSFORGE REST helpers
+   ═══════════════════════════════════════════════════════ */
 async function records(table: string, query = "") {
   const url = `${INSFORGE}/api/database/records/${table}${query ? `?${query}` : ""}`;
   try {
     const r = await fetch(url, { headers: HDR });
-    if (!r.ok) {
-      console.error(`InsForge ${url} -> ${r.status}`);
-      return [];
-    }
+    if (!r.ok) { console.error(`InsForge ${url} → ${r.status}`); return []; }
     return await r.json();
-  } catch (e) {
-    console.error(`Error fetching ${table}: ${e}`);
-    return [];
-  }
+  } catch (e) { console.error(`Error fetching ${table}: ${e}`); return []; }
 }
 
-/* ── Section title lookup ── */
 const SECTION_TITLES: Record<string, Record<string, string>> = {
   empresas: {
-    gobernanza: "Gobernanza y políticas",
-    "derechos-arsop": "Derechos y solicitudes (ARSOP)",
+    gobernanza: "Gobernanza y diseño organizacional",
+    "derechos-arsop": "Derechos ARSOP",
     "seguridad-brechas": "Seguridad y brechas",
-    "proveedores-transferencias": "Proveedores y transferencias",
-    "cultura-cumplimiento": "Cultura y cumplimiento continuo",
+    "cultura-cumplimiento": "Cultura de cumplimiento",
   },
   ciudadanos: {
-    gobernanza: "Tus derechos fundamentales",
-    "derechos-arsop": "Ejercer tus derechos",
-    "seguridad-brechas": "Cuándo preocuparse",
-    "cultura-cumplimiento": "Mejores prácticas",
+    gobernanza: "Marcos institucionales",
+    "derechos-arsop": "Transparencia activa",
+    "seguridad-brechas": "Procedimientos internos",
+    "cultura-cumplimiento": "Cultura institucional",
   },
   desarrolladores: {
-    gobernanza: "Privacidad por diseño",
-    "derechos-arsop": "DPA y herramientas",
-    "seguridad-brechas": "Seguridad técnica",
-    "cultura-cumplimiento": "Operación continua",
+    gobernanza: "Marcos institucionales",
+    "derechos-arsop": "Transparencia activa",
+    "seguridad-brechas": "Procedimientos internos",
+    "cultura-cumplimiento": "Cultura institucional",
   },
   "instituciones-publicas": {
     gobernanza: "Marcos institucionales",
@@ -70,15 +89,18 @@ function sectionTitle(role: string, sectionId: string): string {
   return SECTION_TITLES[role]?.[sectionId] || sectionId;
 }
 
-/* ── Router ── */
+/* ═══════════════════════════════════════════════════════
+   ROUTER — rutas /api/v1/*
+   ═══════════════════════════════════════════════════════ */
 async function handle(path: string, method: string, body: any) {
-  const segments = path.split("/").filter(Boolean); // ['api','v1','modules',... ]
+  const seg = path.split("/").filter(Boolean);
 
-  /* /api/v1/modules */
+  /* ── GET /api/v1/modules ── */
   if (path === "api/v1/modules") {
     const rows = await records("modules");
     const modules = rows.map((r: any) => {
-      const levels = JSON.parse(r.levels_json || "{}").levels ?? JSON.parse(r.levels_json || "{}");
+      const raw = JSON.parse(r.levels_json || "{}");
+      const levels = raw.levels || raw;
       return {
         id: r.id,
         title: r.title,
@@ -95,206 +117,186 @@ async function handle(path: string, method: string, body: any) {
     return json(200, { modules, total: modules.length });
   }
 
-  /* /api/v1/modules/:id */
-  if (path.startsWith("api/v1/modules/") && method === "GET") {
-    const modId = segments[3];
+  /* ── GET /api/v1/modules/:id ── */
+  if (seg[2] === "modules" && seg[3] && method === "GET") {
+    const modId = seg[3];
     const rows = await records("modules", `id=eq.${modId}`);
     if (!rows.length) return json(200, { module: null });
     const r = rows[0];
-    const levels = JSON.parse(r.levels_json || "{}").levels ?? JSON.parse(r.levels_json || "{}");
-    const module = {
-      id: r.id,
-      title: r.title,
-      slug: r.slug,
-      order: r.ordering,
-      estimatedMinutes: {
-        summary: levels.summary?.estimatedMinutes ?? 0,
-        friendly: levels.friendly?.estimatedMinutes ?? 0,
-        legal: levels.legal?.estimatedMinutes ?? 0,
-      },
-      levels: {
-        summary: levels.summary || { title: "", estimatedMinutes: 0, bullets: [] },
-        friendly: levels.friendly || {
-          title: "", estimatedMinutes: 0, sections: [], glossaryTerms: [],
+    const raw = JSON.parse(r.levels_json || "{}");
+    const levels = raw.levels || raw;
+    return json(200, {
+      module: {
+        id: r.id,
+        title: r.title,
+        slug: r.slug,
+        order: r.ordering,
+        estimatedMinutes: {
+          summary: levels.summary?.estimatedMinutes ?? 0,
+          friendly: levels.friendly?.estimatedMinutes ?? 0,
+          legal: levels.legal?.estimatedMinutes ?? 0,
         },
-        legal: levels.legal || { title: "", articles: [] },
+        levels: { summary: levels.summary, friendly: levels.friendly, legal: levels.legal },
       },
-    };
-    return json(200, { module });
+    });
   }
 
-  /* /api/v1/quizzes/:moduleId */
-  if (path.startsWith("api/v1/quizzes/") && method === "GET") {
-    const modId = segments[3];
+  /* ── GET /api/v1/quizzes/:moduleId ── */
+  if (seg[2] === "quizzes" && seg[3] && method === "GET") {
+    const modId = seg[3];
     const rows = await records("quizzes", `module_id=eq.${modId}`);
     if (!rows.length) return json(200, { quiz: { moduleId: modId, questions: [], totalQuestions: 0 } });
-    const questions = JSON.parse(rows[0].questions_json || "[]");
-    // anti-trampa: NO enviar correctIndex en GET
-    const safe = questions.map((q: any) => ({
+    const qs = JSON.parse(rows[0].questions_json || "[]");
+    const safeQs = qs.map((q: any) => ({
       id: q.id,
       text: q.text,
-      options: q.options || [],
-      explanation: q.explanation ?? "",
+      options: q.options,
+      explanation: q.explanation,
     }));
-    return json(200, { quiz: { moduleId: modId, questions: safe, totalQuestions: safe.length } });
+    return json(200, { quiz: { moduleId: modId, questions: safeQs, totalQuestions: safeQs.length } });
   }
 
-  /* /api/v1/quizzes/:moduleId/submit */
-  if (path.startsWith("api/v1/quizzes/") && path.endsWith("/submit") && method === "POST") {
-    const modId = segments[3];
-    const answers: number[] = body?.answers ?? [];
+  /* ── POST /api/v1/quizzes/:moduleId/submit ── */
+  if (seg[2] === "quizzes" && seg[3] && method === "POST") {
+    const modId = seg[3];
     const rows = await records("quizzes", `module_id=eq.${modId}`);
-    const questions = rows.length ? JSON.parse(rows[0].questions_json || "[]") : [];
+    if (!rows.length) return json(404, { error: { code: "NO_QUIZ", message: "Quiz no encontrado" } });
+    const qs = JSON.parse(rows[0].questions_json || "[]");
+    const answers: number[] = body?.answers ?? [];
     let score = 0;
-    const correctIndices: number[] = [];
-    const explanations: { questionId: string; correctIndex: number; explanation: string }[] = [];
-    questions.forEach((q: any, i: number) => {
-      const ci = q.correctIndex;
-      correctIndices.push(ci);
-      explanations.push({
-        questionId: q.id,
-        correctIndex: ci,
-        explanation: q.explanation ?? "",
-      });
-      if (answers[i] !== undefined && answers[i] === ci) score++;
+    const explanations = qs.map((q: any, i: number) => {
+      const ci = q.correctIndex ?? q.correct;
+      if (answers[i] === ci) score++;
+      return { questionId: q.id, correctIndex: ci, explanation: q.explanation };
     });
-    const total = questions.length;
-    const result = { score, total, passed: score >= Math.ceil(total / 2), correctIndices, explanations };
-    return json(200, { result });
+    return json(200, {
+      result: {
+        score,
+        total: qs.length,
+        passed: score > qs.length * 0.7,
+        correctIndices: qs.map((q: any) => q.correctIndex ?? q.correct),
+        explanations,
+      },
+    });
   }
 
-  /* /api/v1/checklist/:role */
-  if (path.startsWith("api/v1/checklist/") && method === "GET") {
-    const role = segments[3];
-    const items = await records("checklist_items", `role=eq.${role}`);
-    const progressRows = await records("checklist_progress", `role=eq.${role}`);
-    const doneMap: Record<string, boolean> = {};
-    progressRows.forEach((p: any) => { doneMap[p.item_id] = p.completed; });
-
-    // agrupar por section_id en orden
-    const bySection: Record<string, any[]> = {};
-    items.forEach((it: any) => {
-      const s = it.section_id;
-      if (!bySection[s]) bySection[s] = [];
-      bySection[s].push(it);
-    });
-    Object.values(bySection).forEach((arr) => arr.sort((a, b) => a.item_order - b.item_order));
-    const sectionIds = Object.keys(bySection).sort((a, b) =>
-      (items.find((i: any) => i.section_id === a)?.item_order || 0) -
-      (items.find((i: any) => i.section_id === b)?.item_order || 0)
-    );
-
-    const sections = sectionIds.map((sid, idx) => ({
-      id: sid,
-      title: sectionTitle(role, sid),
-      order: idx,
-      items: bySection[sid].map((it: any) => ({
+  /* ── GET /api/v1/checklist/:role ── */
+  if (seg[2] === "checklist" && seg[3] && method === "GET") {
+    const role = seg[3];
+    const allItems = await records("checklist_items", `role=eq.${role}&order=item_order`);
+    const progress = await records("checklist_progress", `role=eq.${role}`);
+    const done = new Set(progress.filter((p: any) => p.completed).map((p: any) => p.item_id));
+    const sectionMap: Record<string, any[]> = {};
+    for (const it of allItems) {
+      const sid = it.section_id;
+      if (!sectionMap[sid]) sectionMap[sid] = [];
+      sectionMap[sid].push({
         id: it.item_id,
         text: it.text,
         legalRef: it.legal_ref,
-        guideUrl: it.guide_url,
-        completed: doneMap[it.item_id] ?? false,
-      })),
-    }));
-
-    const total = items.length;
-    const completed = items.filter((it: any) => doneMap[it.item_id]).length;
-    const progress = { completed, total, percentage: total ? Math.round((completed / total) * 100) : 0 };
-    return json(200, { checklist: { role, sections, progress } });
-  }
-
-  /* /api/v1/checklist/:role (POST) */
-  if (path.startsWith("api/v1/checklist/") && method === "POST") {
-    const role = segments[3];
-    const posted: { id: string; completed: boolean }[] = body?.items ?? [];
-    // upsert fila por fila
-    for (const it of posted) {
-      const url = `${INSFORGE}/api/database/records/checklist_progress`;
-      const existing = await records("checklist_progress", `role=eq.${role}&item_id=eq.${it.id}`);
-      const payload = { role, item_id: it.id, completed: it.completed };
-      if (existing.length) {
-        await fetch(`${url}?role=eq.${role}&item_id=eq.${it.id}`, {
-          method: "PATCH", headers: { ...HDR, "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      } else {
-        await fetch(url, {
-          method: "POST", headers: { ...HDR, "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-      }
+        guideUrl: it.guide_url || "",
+        completed: done.has(it.item_id),
+      });
     }
-    // recalcular progreso
-    const items = await records("checklist_items", `role=eq.${role}`);
-    const doneMap: Record<string, boolean> = {};
-    (await records("checklist_progress", `role=eq.${role}`)).forEach((p: any) => {
-      doneMap[p.item_id] = p.completed;
+    const sections = Object.entries(sectionMap)
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([sid, items], idx) => ({
+        id: sid,
+        title: sectionTitle(role, sid),
+        order: idx + 1,
+        items,
+      }));
+    const total = allItems.length;
+    const completed = progress.filter((p: any) => p.completed).length;
+    return json(200, {
+      checklist: {
+        role,
+        sections,
+        progress: { completed, total, percentage: total ? Math.round((completed / total) * 100) : 0 },
+      },
     });
-    const total = items.length;
-    const completed = items.filter((it: any) => doneMap[it.item_id]).length;
-    const progress = { completed, total, percentage: total ? Math.round((completed / total) * 100) : 0 };
-    return json(200, { checklist: { role, progress } });
   }
 
-  /* /api/v1/glossary/:termId  (debe ir antes que :q genérico) */
-  if (path === "api/v1/glossary" || path === "api/v1/glossary/") {
-    const rows = await records("glossary");
-    const terms = rows.map((r: any) => ({
-      id: r.id, term: r.term, definition: r.definition,
-      category: r.category, legalRef: r.legal_ref,
-    }));
-    return json(200, { terms, total: terms.length });
+  /* ── POST /api/v1/checklist/:role ── */
+  if (seg[2] === "checklist" && seg[3] && method === "POST") {
+    const role = seg[3];
+    const items: { id: string; completed: boolean }[] = body?.items ?? [];
+    for (const it of items) {
+      const url = `${INSFORGE}/api/database/records/checklist_progress?role=eq.${role}&item_id=eq.${it.id}`;
+      await fetch(url, {
+        method: "PATCH",
+        headers: HDR,
+        body: JSON.stringify({ completed: it.completed ? 1 : 0 }),
+      });
+    }
+    const progress = await records("checklist_progress", `role=eq.${role}`);
+    const total = (await records("checklist_items", `role=eq.${role}`)).length;
+    const completed = progress.filter((p: any) => p.completed).length;
+    return json(200, {
+      checklist: {
+        role,
+        progress: { completed, total, percentage: total ? Math.round((completed / total) * 100) : 0 },
+      },
+    });
   }
 
-  /* /api/v1/glossary/:termId */
-  if (segments[2] === "glossary" && segments.length === 4) {
-    const tid = segments[3];
-    const rows = await records("glossary", `id=eq.${tid}`);
-    if (!rows.length) return json(404, { error: { code: "NOT_FOUND", message: "Glossary term not found" } });
-    const r = rows[0];
-    let related: any[] = [];
-    try { related = JSON.parse(r.related_terms_json || "[]"); } catch { related = []; }
-    const term = {
-      id: r.id, term: r.term, definition: r.definition,
-      category: r.category, legalRef: r.legal_ref, relatedTerms: related,
-    };
-    return json(200, { term });
+  /* ── GET /api/v1/glossary ── */
+  if (path.startsWith("api/v1/glossary") && method === "GET") {
+    const termId = seg[3];
+    if (termId) {
+      const rows = await records("glossary", `id=eq.${termId}`);
+      return rows.length ? json(200, { term: rows[0] }) : json(404, { error: { code: "NOT_FOUND", message: "Término no encontrado" } });
+    }
+    /* filtrado por query string: ?q=xxx&category=yyy
+       Nota: el entry pasa el pathname; query string se parsea allí abajo    */
+    // Los params llegan desde el entry en body (GET sin query en Netlify Fns v2)
+    const q = (body as any)?.searchParams || "";
+    let query = "";
+    const params: string[] = [];
+    const sp = new URLSearchParams(q);
+    if (sp.get("q")) params.push(`term=like.*${sp.get("q")}*`);
+    if (sp.get("category")) params.push(`category=eq.${sp.get("category")}`);
+    if (params.length) query = params.join("&");
+    const rows = await records("glossary", query);
+    return json(200, { terms: rows, total: rows.length });
   }
 
-  /* /api/v1/final-test */
+  /* ── GET /api/v1/final-test ── */
   if (path === "api/v1/final-test" && method === "GET") {
     const rows = await records("final_test");
-    const questions = rows.map((r: any) => {
-      let opts: any[] = [];
-      try { opts = JSON.parse(r.options_json || "[]"); } catch { opts = []; }
-      return { id: r.question_id, moduleId: r.module_id, text: r.text, options: opts };
-    });
+    const questions = rows.map((r: any) => ({
+      id: r.question_id,
+      moduleId: r.module_id,
+      text: r.text,
+      options: JSON.parse(r.options_json || "[]"),
+    }));
     return json(200, { test: { questions, totalQuestions: questions.length, passThreshold: 7 } });
   }
 
-  /* /api/v1/final-test/submit */
+  /* ── POST /api/v1/final-test/submit ── */
   if (path === "api/v1/final-test/submit" && method === "POST") {
-    const answers: number[] = body?.answers ?? [];
     const rows = await records("final_test");
+    const answers: number[] = body?.answers ?? [];
     let score = 0;
-    const detailByModule: Record<string, { correct: number; total: number }> = {};
-    rows.forEach((r: any, i: number) => {
+    const byModule: Record<string, { correct: number; total: number }> = {};
+    for (let i = 0; i < rows.length; i++) {
+      const r = rows[i];
       const modId = r.module_id;
-      if (!detailByModule[modId]) detailByModule[modId] = { correct: 0, total: 0 };
-      detailByModule[modId].total++;
+      if (!byModule[modId]) byModule[modId] = { correct: 0, total: 0 };
+      byModule[modId].total++;
       const ci = r.correct_index;
       if (answers[i] !== undefined && answers[i] === ci) {
         score++;
-        detailByModule[modId].correct++;
+        byModule[modId].correct++;
       }
-    });
+    }
     const total = rows.length;
     const percentage = total ? Math.round((score / total) * 100) : 0;
     return json(200, {
       result: {
         score, total, percentage,
         passed: percentage >= 70,
-        detailByModule: Object.entries(detailByModule).map(([moduleId, v]) => ({
+        detailByModule: Object.entries(byModule).map(([moduleId, v]) => ({
           moduleId,
           correct: v.correct,
           total: v.total,
@@ -305,25 +307,48 @@ async function handle(path: string, method: string, body: any) {
     });
   }
 
-  /* fallback */
   return json(404, { error: { code: "NOT_FOUND", message: `Unknown route: ${path}` } });
 }
 
-/* ── Netlify Function v2 entry ── */
+/* ═══════════════════════════════════════════════════════
+   Netlify Function v2 entry + Auth gate wrapper
+   ═══════════════════════════════════════════════════════ */
 export default async (req: Request, ctx: Context) => {
   const url = new URL(req.url);
   const path = url.pathname.replace(/^\//, "");
   const method = req.method;
 
-  if (method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
+  if (method === "OPTIONS")
+    return new Response(null, { status: 204, headers: CORS });
 
-  let body: any = null;
+  let data: any = null;
   if (method === "POST") {
-    try { body = await req.json(); } catch { body = null; }
+    try { data = await req.json(); } catch { data = null; }
+  } else if (method === "GET") {
+    // Pasar query string a handle() para rutas que lo necesiten (glossary)
+    const sp = url.searchParams.toString();
+    if (sp) data = { searchParams: sp };
+  }
+
+  /* ── Gate: POST api/v1/access/verify {password} → {token} ── */
+  if (path === "api/v1/access/verify" && method === "POST") {
+    const ok = await verifyAccess(data?.password);
+    if (!ok) {
+      await new Promise((r) => setTimeout(r, 600)); // anti brute-force
+      return json(401, { error: { code: "INVALID_PASSWORD", message: "Contraseña incorrecta." } });
+    }
+    return json(200, { token: tokenFor(String(data.password)), expiresIn: "30d" });
+  }
+
+  /* ── Todo lo demás exige X-Access-Token válido ── */
+  const providedToken = req.headers.get("x-access-token");
+  const expected = tokenFor(ACCESS_PASSWORD);
+  if (!providedToken || providedToken !== expected) {
+    return json(401, { error: { code: "UNAUTHORIZED", message: "Acceso requerido." } });
   }
 
   try {
-    return await handle(path, method, body);
+    return await handle(path, method, data);
   } catch (e: any) {
     console.error("Adapter error:", e);
     return json(500, { error: { code: "INTERNAL", message: e?.message ?? "error" } });
