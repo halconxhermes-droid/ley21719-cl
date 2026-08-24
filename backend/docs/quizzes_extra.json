@@ -740,7 +740,7 @@
     "id": "manual-m1-q6",
     "modulo": 1,
     "tipo": "multiple_choice",
-    "pregunta": "¿Hasta qué fecha se extiende el período de gracia sin multas pecuniarias para MIPYMEs?",
+    "pregunta": "¿Hasta qué fecha se extiende el período de gracia con sanciones atenuadas para MIPYMEs?",
     "opciones": [
       "1 de diciembre de 2026",
       "1 de junio de 2027",
@@ -748,7 +748,7 @@
       "1 de diciembre de 2028"
     ],
     "correcta": 2,
-    "explicacion": "El período de gracia va del 1 dic 2026 al 1 dic 2027, durante el cual la Agencia aplicará amonestaciones y planes de subsanación sin multas pecuniarias para MIPYMEs (ventas hasta 100.000 UF).",
+    "explicacion": "El período de gracia va del 1 dic 2026 al 1 dic 2027. Durante ese año la Agencia podrá aplicar como sanción una amonestación por escrito en lugar de multa (Art. 6° transitorio, facultad discrecional) para empresas de menor tamaño según Ley 20.416 (ventas hasta 100.000 UF).",
     "articulos": [
       "Prólogo Art. 1 / Transitorio"
     ],
