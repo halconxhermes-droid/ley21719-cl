@@ -63,7 +63,7 @@ const AFECTADOS = [
   {
     icon: "M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 8v8M8 12h8",
     titulo: "Ciudadanos",
-    desc: "Titulares de datos: nuevos derechos exigibles ante empresas y Estado, con acción de tutela rápida y gratuita.",
+    desc: "Titulares de datos: nuevos derechos exigibles ante empresas y Estado, con tutela ante la Agencia (procedimiento administrativo gratuito).",
   },
   {
     icon: "M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6",
@@ -80,8 +80,7 @@ const AFECTADOS = [
 const CALENDARIO = [
   { fecha: "13 dic 2024", evento: "Publicación en Diario Oficial", detalle: "Inicio del cuenta regresiva legal.", pasado: true },
   { fecha: "13 jun 2025", evento: "Plazo reglamento general (Art. 2° transitorio)", detalle: "6 meses para dictar el reglamento.", pasado: true },
-  { fecha: "1 dic 2026", evento: "Entrada en vigencia", detalle: "Comienzan a aplicarse derechos y obligaciones.", pasado: false },
-  { fecha: "17 dic 2026", evento: "Vigencia plena", detalle: "Agencia operativa plenamente; fin de periodos de gracia.", pasado: false },
+  { fecha: "1 dic 2026", evento: "Entrada en vigencia", detalle: "Comienzan a aplicarse derechos y obligaciones; Agencia operativa plenamente.", pasado: false },
 ];
 
 export default function Portal() {
@@ -123,7 +122,7 @@ export default function Portal() {
         </h1>
         <p className="mx-auto mb-6 max-w-2xl text-lg opacity-95">
           Reemplaza a la Ley 19.628 y crea la Agencia de Protección de Datos Personales.{" "}
-          <strong>En vigencia plena desde el 17&nbsp;de diciembre de 2026.</strong>
+          <strong>Entra en vigencia plena el 1&nbsp;de diciembre de 2026</strong>
         </p>
 
         <div className="mx-auto mb-6 max-w-md rounded-xl bg-white/10 px-6 py-4">

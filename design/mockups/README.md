@@ -12,7 +12,7 @@ Mockup navegable autocontenido: `mockups/index.html`.
 7. **Resultados** — puntaje global, detalle por módulo, acciones.
 
 ## Interacciones implementadas
-- Cuenta regresiva en vivo a la vigencia plena (17-dic-2026 00:00 CLST) en el header, actualizada cada segundo.
+- Cuenta regresiva en vivo a la entrada en vigencia (1-dic-2026 00:00 CLST) en el header, actualizada cada segundo.
 - Selector de rol persistente que personaliza checklist y textos.
 - Glosario emergente: click en `<button class="term">` abre modal con definición.
 - Quiz: selección → responder → feedback explicativo → siguiente; resultado final.
