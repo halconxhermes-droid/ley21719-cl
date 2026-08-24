@@ -15,11 +15,11 @@ const CORS = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
 
-const json = (status: number, body: unknown) => ({
-  statusCode: status,
-  headers: { "Content-Type": "application/json", ...CORS },
-  body: JSON.stringify(body),
-});
+const json = (status: number, body: unknown) =>
+  new Response(JSON.stringify(body), {
+    status,
+    headers: { "Content-Type": "application/json", ...CORS },
+  });
 
 /* GET helper → InsForge REST, con fallback a [] si la tabla no existe */
 async function records(table: string, query = "") {
@@ -315,7 +315,7 @@ export default async (req: Request, ctx: Context) => {
   const path = url.pathname.replace(/^\//, "");
   const method = req.method;
 
-  if (method === "OPTIONS") return json(204, null as any);
+  if (method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
 
   let body: any = null;
   if (method === "POST") {
