@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Countdown from "../components/Countdown";
 import { useNavigation } from "../context/NavigationContext";
 import { getModules } from "../lib/api";
+import { SeccionCincoPuntos, SeccionRiesgos, SeccionIndustrias } from "./PortalSections";
 
 /**
  * VISTA: Portal global de la Ley 21.719.
@@ -201,6 +202,11 @@ export default function Portal() {
           ))}
         </div>
       </div>
+
+      {/* 5 PUNTOS WEB · RIESGOS · INDUSTRIAS */}
+      <SeccionCincoPuntos />
+      <SeccionRiesgos />
+      <SeccionIndustrias />
 
       {/* CALENDARIO */}
       <div className="mt-14">
