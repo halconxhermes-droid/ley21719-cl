@@ -6,18 +6,19 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# Netlify Function que sirve /api/v1/* directo desde InsForge (sin Fly.io)
+# ─── Netlify Functions ───
 [functions]
-  directory = "frontend/netlify/functions"
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
-# Capturar todas las rutas /api/* con la función adapter (bypass backend Fly.io caído)
+# Redirigir /api/* a la función adapter (force=true captura antes de SPA fallback)
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
   force = true
 
-# SPA fallback
+# SPA fallback — DEBE ir al final
 [[redirects]]
   from = "/*"
   to = "/index.html"

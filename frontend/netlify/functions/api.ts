@@ -127,7 +127,7 @@ async function handle(path: string, method: string, body: any) {
   if (path.startsWith("api/v1/quizzes/") && method === "GET") {
     const modId = segments[3];
     const rows = await records("quizzes", `module_id=eq.${modId}`);
-    if (!rows.length) return json(200, { quiz: { moduleId, questions: [], totalQuestions: 0 } });
+    if (!rows.length) return json(200, { quiz: { moduleId: modId, questions: [], totalQuestions: 0 } });
     const questions = JSON.parse(rows[0].questions_json || "[]");
     // anti-trampa: NO enviar correctIndex en GET
     const safe = questions.map((q: any) => ({
@@ -210,10 +210,10 @@ async function handle(path: string, method: string, body: any) {
     // upsert fila por fila
     for (const it of posted) {
       const url = `${INSFORGE}/api/database/records/checklist_progress`;
-      const existing = await records("checklist_progress", `role=eq.${role}&item_id=eq.${it.item_id}`);
-      const payload = { role, item_id: it.item_id, completed: it.completed };
+      const existing = await records("checklist_progress", `role=eq.${role}&item_id=eq.${it.id}`);
+      const payload = { role, item_id: it.id, completed: it.completed };
       if (existing.length) {
-        await fetch(`${url}?role=eq.${role}&item_id=eq.${it.item_id}`, {
+        await fetch(`${url}?role=eq.${role}&item_id=eq.${it.id}`, {
           method: "PATCH", headers: { ...HDR, "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
