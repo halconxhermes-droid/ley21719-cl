@@ -50,7 +50,7 @@ Fecha de acceso: **2026-08-23** (UTC)
 ## 5. Agencia de Protección de Datos Personales (AGEPRODAT)
 - **Sitio oficial esperado:** `https://www.agprodat.gob.cl/` — **❌ DNS no resuelve** (al 2026-08-23)
 - **Sitio alternativo buscado:** `https://www.datospersonales.cl/` — **❌ Redirige a sitio personal de abogado** (no oficial)
-- **Estado:** ⚠️ **PENDIENTE** — No hay sitio web oficial accesible de la Agencia al momento de la consulta. La Agencia se crea por Art. 30 y sus consejeros se designan 6 meses antes de la vigencia (Art. 4° transitorio). Verificar cuando la Agencia esté operativa (vigencia plena 17-dic-2026).
+- **Estado:** ⚠️ **PENDIENTE** — No hay sitio web oficial accesible de la Agencia al momento de la consulta. La Agencia se crea por Art. 30 y sus consejeros se designan 6 meses antes de la vigencia (Art. 4° transitorio). Verificar cuando la Agencia esté operativa (entrada en vigencia 1-dic-2026).
 
 ## 6. Documentación complementaria del proyecto (carpeta local `/docs/fuentes-notebooklm/`)
 - 10 informes sectoriales y guías del Consejo para la Transparencia (CPLT) procesados vía NotebookLM
