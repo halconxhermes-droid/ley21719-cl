@@ -249,7 +249,7 @@ export default function Portal() {
             <figure key={v.id} className="m-0 overflow-hidden rounded-xl border border-solid border-slate-200 bg-white shadow-sm">
               <div className="aspect-video w-full">
                 <iframe
-                  src={`https://www.youtube.com/embed/${v.id}`}
+                  src={`https://www.youtube-nocookie.com/embed/${v.id}`}
                   title={v.titulo}
                   loading="lazy"
                   allowFullScreen

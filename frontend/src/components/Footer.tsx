@@ -112,6 +112,10 @@ export default function Footer() {
             constituye asesoría legal. Para decisiones empresariales consulte a
             un abogado especializado.
          </p>
+          <p className="mt-2 m-0">
+            Este sitio no utiliza cookies de seguimiento ni herramientas de
+            analítica. Videos servidos vía youtube-nocookie.com (modo privacidad).
+         </p>
        </div>
       </div>
     </footer>

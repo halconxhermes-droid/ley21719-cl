@@ -94,5 +94,7 @@ export function videosForModule(moduleId: string): VideoEntry[] {
 }
 
 export function embedUrl(videoId: string): string {
-  return `https://www.youtube.com/embed/${videoId}`;
+  // youtube-nocookie.com: YouTube solo instala cookies si el usuario interactúa
+  // con el reproductor (privacy-enhanced / GDPR-friendly).
+  return `https://www.youtube-nocookie.com/embed/${videoId}`;
 }

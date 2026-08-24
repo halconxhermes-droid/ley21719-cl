@@ -120,7 +120,7 @@ describe("LectorModulo view", () => {
       expect(screen.getAllByTitle(/reloj de control de asistencia/i)).toHaveLength(1),
     );
     const iframe = screen.getByTitle(/reloj de control de asistencia/i);
-    expect(iframe.getAttribute("src")).toContain("youtube.com/embed/mrlj9vSB0EM");
+    expect(iframe.getAttribute("src")).toContain("youtube-nocookie.com/embed/mrlj9vSB0EM");
   });
 });
 

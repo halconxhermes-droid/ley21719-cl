@@ -21,7 +21,7 @@ export default function ModuleVideos({ moduleId }: { moduleId: string }) {
           <figure key={v.videoId} className="m-0">
             <div className="relative w-full overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-sm" style={{ aspectRatio: "16 / 9" }}>
               <iframe
-                src={`https://www.youtube.com/embed/${v.videoId}`}
+                src={`https://www.youtube-nocookie.com/embed/${v.videoId}`}
                 title={v.titulo}
                 loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
