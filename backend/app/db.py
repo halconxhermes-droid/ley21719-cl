@@ -66,6 +66,19 @@ def _slug(s: str) -> str:
     return s
 
 
+def _vf_options(correcta: bool) -> tuple:
+    """Return (options, correct_index) for V/F questions with empty opciones.
+
+    When a quiz question has ``opciones: []`` and ``correcta: <bool>``,
+    generate the standard Verdadero/Falso pair.  Verdadero is always
+    id 0; Falso is id 1.  ``correcta: True`` → index 0 (Verdadero),
+    ``correcta: False`` → index 1 (Falso).
+    """
+    options = [{"id": 0, "text": "Verdadero"}, {"id": 1, "text": "Falso"}]
+    correct_index = 0 if correcta else 1
+    return options, correct_index
+
+
 # ── Conexión y helpers comunes ──────────────────────────────────────────────
 if USE_PG:
     import psycopg
@@ -336,12 +349,19 @@ def init_db() -> None:
     for mod_id, questions in (quizzes_doc.get("quizzes_por_modulo") or {}).items():
         q_rows = []
         for idx, q in enumerate(questions):
+            raw_opts = q.get("opciones", [])
+            raw_correcta = q.get("correcta", 0)
+            if not raw_opts and isinstance(raw_correcta, bool):
+                opts, cidx = _vf_options(raw_correcta)
+            else:
+                opts = [{"id": i, "text": t} for i, t in enumerate(raw_opts)]
+                cidx = int(raw_correcta)
             q_rows.append(
                 {
                     "id": f"{mod_id}-q{idx + 1}",
                     "text": q.get("pregunta", ""),
-                    "options": [{"id": i, "text": t} for i, t in enumerate(q.get("opciones", []))],
-                    "correctIndex": int(q.get("correcta", 0)),
+                    "options": opts,
+                    "correctIndex": cidx,
                     "explanation": q.get("explicacion_al_fallar", "") or q.get("explicacion", ""),
                 }
             )
@@ -410,13 +430,20 @@ def init_db() -> None:
     mod_ids = [m["id"] for m in modulos]
     for idx, q in enumerate(test_final_raw):
         mod_id = mod_ids[idx % len(mod_ids)]
+        raw_opts = q.get("opciones", [])
+        raw_correcta = q.get("correcta", 0)
+        if not raw_opts and isinstance(raw_correcta, bool):
+            opts, cidx = _vf_options(raw_correcta)
+        else:
+            opts = [{"id": i, "text": t} for i, t in enumerate(raw_opts)]
+            cidx = int(raw_correcta)
         final_items.append(
             {
                 "question_id": f"ft-{idx + 1}",
                 "module_id": mod_id,
                 "text": q.get("pregunta", ""),
-                "options": [{"id": i, "text": t} for i, t in enumerate(q.get("opciones", []))],
-                "correct_index": int(q.get("correcta", 0)),
+                "options": opts,
+                "correct_index": cidx,
                 "explanation": q.get("explicacion_al_fallar", "") or "",
             }
         )
@@ -425,13 +452,20 @@ def init_db() -> None:
             for qi, q in enumerate(questions):
                 if len(final_items) >= 10:
                     break
+                raw_opts = q.get("opciones", [])
+                raw_correcta = q.get("correcta", 0)
+                if not raw_opts and isinstance(raw_correcta, bool):
+                    opts, cidx = _vf_options(raw_correcta)
+                else:
+                    opts = [{"id": i, "text": t} for i, t in enumerate(raw_opts)]
+                    cidx = int(raw_correcta)
                 final_items.append(
                     {
                         "question_id": f"ft-{len(final_items) + 1}",
                         "module_id": mod_id,
                         "text": q.get("pregunta", ""),
-                        "options": [{"id": i, "text": t} for i, t in enumerate(q.get("opciones", []))],
-                        "correct_index": int(q.get("correcta", 0)),
+                        "options": opts,
+                        "correct_index": cidx,
                         "explanation": q.get("explicacion_al_fallar", "") or "",
                     }
                 )
