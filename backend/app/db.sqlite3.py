@@ -1,47 +1,25 @@
-"""SQLite / PostgreSQL dual-driver data layer for Ley 21.719 API.
+"""SQLite-backed data layer loaded from docs/*.json at startup.
 
-Detecta automáticamente el motor a usar:
-- Si DATABASE_URL está definido → PostgreSQL (InsForge prod)
-- Si no → SQLite (desarrollo/local)
-
-Mantiene la misma firma de funciones que el original para compatibilidad total
-con tests y routers existentes.
-
-Funciones críticas preservadas:
-- init_db() → idempotente, no destruye checklist_progress
-- get_conn() → retorna conexión abierta
-- _modules_all, _quiz_by_module, etc. → mismas retornos
-- Todo el contenido (módulos, quizzes, glosario, checklist) sigue siendo
-  inyectado desde docs/*.json
-
-Variables de entorno soportadas:
-  DATABASE_URL           → postgresql://user:pass@host:port/db  (InsForge prod)
-  LEY21719_DATA_DIR      → /data o ./data (override ruta SQLite default)
+Keeps a single global Store instance. SQLite DB lives at app/data/app.db
+and is recreated from the JSON sources on init_db().
 """
 from __future__ import annotations
 
 import json
 import os
 import re
+import sqlite3
 from pathlib import Path
 from typing import Dict, List, Optional
 
-# ── Determinar motor de base de datos ──────────────────────────────────────
-DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
-USE_PG = bool(DATABASE_URL and DATABASE_URL.startswith("postgresql://"))
-
-# Config paths
 DOCS_DIR = Path(__file__).resolve().parents[1].joinpath("docs")
-docs_dir_env = os.environ.get("LEY21719_DOCS_DIR")
-if docs_dir_env:
-    DOCS_DIR = Path(docs_dir_env)
-
+# DATA_DIR puede sobreescribirse vía env (p.ej. volumen persistente en Fly.io)
 DATA_DIR = Path(os.environ.get("LEY21719_DATA_DIR", Path(__file__).resolve().parent.joinpath("data")))
 DB_PATH = DATA_DIR / "app.db"
 FINAL_TEST_JSON = DATA_DIR / "final_test.json"
 
 VALID_ROLES = ["empresas", "ciudadanos", "desarrolladores", "instituciones-publicas"]
-
+# Map docs checklist keys -> API role slugs
 CHECKLIST_KEY_TO_ROLE = {
     "empresa": "empresas",
     "ciudadano": "ciudadanos",
@@ -49,6 +27,8 @@ CHECKLIST_KEY_TO_ROLE = {
     "institucion": "instituciones-publicas",
 }
 
+# Map internal empresa/... IDs to the API contract slug module IDs if needed
+# Use the raw IDs from contenido.json
 SECTION_DEFAULTS: Dict[str, dict] = {
     "empresas": {
         "gobernanza": "Gobernanza y políticas",
@@ -66,88 +46,26 @@ def _slug(s: str) -> str:
     return s
 
 
-# ── Conexión y helpers comunes ──────────────────────────────────────────────
-if USE_PG:
-    import psycopg
-    from psycopg.rows import dict_row
-
-    _pg_conn = None
-
-    def get_conn():
-        global _pg_conn
-        if _pg_conn is None or _pg_conn.closed:
-            _pg_conn = psycopg.connect(DATABASE_URL, autocommit=True, row_factory=dict_row)
-        return _pg_conn
-
-else:
-    import sqlite3
-
-    def get_conn():
-        conn = sqlite3.connect(DB_PATH)
-        conn.row_factory = sqlite3.Row
-        return conn
+def get_conn() -> sqlite3.Connection:
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 
-def _exec(sql: str, params: tuple = ()):
-    """Execute SQL (same interface for both backends)."""
-    conn = get_conn()
-    cur = conn.cursor()
-    if USE_PG:
-        # psycopg uses %s placeholders — convert ? → %s
-        pg_sql = sql.replace("?", "%s")
-        cur.execute(pg_sql, params)
-    else:
-        cur.execute(sql, params)
-    if not USE_PG:
-        conn.commit()
-    return cur
-
-
-def _upsert(table: str, columns: List[str], values: tuple, conflict_cols: List[str]) -> None:
-    """INSERT OR REPLACE compatible con ambos backends.
-
-    SQLite: INSERT OR REPLACE INTO ... VALUES (...)
-    Postgres: INSERT INTO ... VALUES (...) ON CONFLICT (...) DO UPDATE SET ...
-    """
-    if USE_PG:
-        col_list = ", ".join(columns)
-        val_ph = ", ".join(["%s"] * len(columns))
-        set_clause = ", ".join([f"{c}=EXCLUDED.{c}" for c in columns if c not in conflict_cols])
-        sql = (
-            f"INSERT INTO {table} ({col_list}) VALUES ({val_ph}) "
-            f"ON CONFLICT ({', '.join(conflict_cols)}) DO UPDATE SET {set_clause}"
-        )
-        _exec(sql, values)
-    else:
-        col_list = ", ".join(columns)
-        val_ph = ", ".join(["?"] * len(columns))
-        sql = f"INSERT OR REPLACE INTO {table} ({col_list}) VALUES ({val_ph})"
-        _exec(sql, values)
-
-
-def _fetchall(sql: str, params: tuple = ()):
-    cur = _exec(sql, params)
-    return cur.fetchall()
-
-
-def _fetchone(sql: str, params: tuple = ()):
-    cur = _exec(sql, params)
-    return cur.fetchone()
-
-
-# ── Init DB (idempotent schema + seed) ──────────────────────────────────────
 def init_db() -> None:
-    """Create tables (IF NOT EXISTS) and seed content from docs/*.json.
+    """Create tables (idempotente) and seed content from docs/*.json.
 
     PERSISTENCIA: la base NUNCA se borra en arranque. El contenido se
     re-siembra solo si las tablas están vacías (INSERT OR REPLACE), y la
     tabla checklist_progress (progreso de usuarios) jamás se toca aquí.
     """
-    if not USE_PG:
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # ── Create tables (IF NOT EXISTS: safe on restart/redeploy) ────────────
-    _exec(
+    conn = get_conn()
+    cur = conn.cursor()
+
+    # Create tables (IF NOT EXISTS: seguro en restart/redeploy)
+    cur.executescript(
         """
         CREATE TABLE IF NOT EXISTS modules (
             id TEXT PRIMARY KEY,
@@ -156,19 +74,11 @@ def init_db() -> None:
             ordering INTEGER NOT NULL,
             description TEXT NOT NULL,
             levels_json TEXT NOT NULL
-        )
-    """
-    )
-    _exec(
-        """
+        );
         CREATE TABLE IF NOT EXISTS quizzes (
             module_id TEXT PRIMARY KEY,
             questions_json TEXT NOT NULL
-        )
-    """
-    )
-    _exec(
-        """
+        );
         CREATE TABLE IF NOT EXISTS glossary (
             id TEXT PRIMARY KEY,
             term TEXT NOT NULL,
@@ -176,11 +86,7 @@ def init_db() -> None:
             category TEXT,
             legal_ref TEXT,
             related_terms_json TEXT
-        )
-    """
-    )
-    _exec(
-        """
+        );
         CREATE TABLE IF NOT EXISTS checklist_items (
             role TEXT NOT NULL,
             section_id TEXT NOT NULL,
@@ -190,30 +96,18 @@ def init_db() -> None:
             legal_ref TEXT,
             guide_url TEXT,
             PRIMARY KEY (role, item_id)
-        )
-    """
-    )
-    _exec(
-        """
+        );
         CREATE TABLE IF NOT EXISTS checklist_progress (
             role TEXT NOT NULL,
             item_id TEXT NOT NULL,
             completed INTEGER NOT NULL DEFAULT 0,
             PRIMARY KEY (role, item_id)
-        )
-    """
-    )
-    _exec(
-        """
+        );
         CREATE TABLE IF NOT EXISTS glossary_search (
             id TEXT PRIMARY KEY,
             category TEXT,
             letter TEXT
-        )
-    """
-    )
-    _exec(
-        """
+        );
         CREATE TABLE IF NOT EXISTS final_test (
             question_id TEXT PRIMARY KEY,
             module_id TEXT NOT NULL,
@@ -221,11 +115,11 @@ def init_db() -> None:
             options_json TEXT NOT NULL,
             correct_index INTEGER NOT NULL,
             explanation TEXT NOT NULL
-        )
-    """
+        );
+        """
     )
 
-    # ── Load modules from docs/contenido.json ──────────────────────────────
+    # ---- Load modules from docs/contenido.json ----
     with open(DOCS_DIR / "contenido.json", "r", encoding="utf-8") as f:
         contenido = json.load(f)
 
@@ -237,22 +131,23 @@ def init_db() -> None:
         nivel = m.get("nivel", "amigable")
         minutos = int(m.get("tiempo_lectura_min", 10))
         slug = _slug(titulo)
-
+        # Build description: first non-header line of contenido_md
         lines = [l.strip() for l in contenido_md.split("\n") if l.strip() and not l.strip().startswith("#")]
         description = lines[0][:200] if lines else titulo
-
+        # Build bullets from markdown headers/content
+        # FIX: lstrip("-* ") se comía los ** de apertura del markdown emphasis.
+        # Usar regex para quitar SOLO el marcador de viñeta y el espacio.
         bullets = []
         for line in contenido_md.split("\n"):
             line = line.strip()
             if line.startswith("-") or line.startswith("*"):
-                bullets.append(re.sub(r"^[-\*]+\\s+", "", line))
+                bullets.append(re.sub(r"^[\-\*]+\s+", "", line))
         if not bullets:
             for line in lines[:3]:
                 bullets.append(line[:120])
-
         key_terms = m.get("terminos_glosario", [])
         escenario = m.get("escenario", "")
-
+        # Build legal articles: split markdown by section headings
         articles = []
         current_title = ""
         current_text = []
@@ -262,7 +157,7 @@ def init_db() -> None:
                 if current_title:
                     articles.append(
                         {
-                            "number": f"Sección {len(articles) + 1}",
+                            "number": f"Sección {len(articles)+1}",
                             "title": current_title,
                             "text": "\n".join(current_text).strip(),
                         }
@@ -274,7 +169,7 @@ def init_db() -> None:
         if current_title:
             articles.append(
                 {
-                    "number": f"Sección {len(articles) + 1}",
+                    "number": f"Sección {len(articles)+1}",
                     "title": current_title,
                     "text": "\n".join(current_text).strip(),
                 }
@@ -287,7 +182,7 @@ def init_db() -> None:
                     "text": contenido_md[:1200],
                 }
             ]
-
+        # Build levels object
         levels = {
             "summary": {
                 "title": "Resumen ejecutivo",
@@ -303,10 +198,14 @@ def init_db() -> None:
                         "heading": "¿Qué debes saber?",
                         "content": contenido_md[:1200],
                         "scenarios": (
-                            [{"title": "Escenario destacado", "content": escenario}] if escenario else []
+                            [{"title": "Escenario destacado", "content": escenario}]
+                            if escenario
+                            else []
                         ),
                         "keyFacts": (
-                            [{"icon": "pin", "text": f"Tiempo estimado: {minutos} min"}] if minutos else []
+                            [{"icon": "pin", "text": f"Tiempo estimado: {minutos} min"}]
+                            if minutos
+                            else []
                         ),
                     }
                 ],
@@ -317,19 +216,20 @@ def init_db() -> None:
                 "articles": articles,
             },
         }
-
+        # estimatedMinutes bundle for summary card
         estimated_bundle = {"summary": 3, "friendly": minutos, "legal": max(20, minutos * 2)}
-        meta = {"estimatedMinutes": estimated_bundle, "level_hint": nivel}
+        meta = {
+            "estimatedMinutes": estimated_bundle,
+            "level_hint": nivel,
+        }
+        # Store levels_json + meta in levels_json
         payload = {"levels": levels, "meta": meta}
-
-        _upsert(
-            "modules",
-            ["id", "title", "slug", "ordering", "description", "levels_json"],
+        cur.execute(
+            "INSERT OR REPLACE INTO modules (id, title, slug, ordering, description, levels_json) VALUES (?,?,?,?,?,?)",
             (m_id, titulo, slug, idx, description, json.dumps(payload, ensure_ascii=False)),
-            ["id"],
         )
 
-    # ── Load quizzes from docs/quizzes.json ─────────────────────────────────
+    # ---- Load quizzes from docs/quizzes.json ----
     with open(DOCS_DIR / "quizzes.json", "r", encoding="utf-8") as f:
         quizzes_doc = json.load(f)
 
@@ -338,24 +238,21 @@ def init_db() -> None:
         for idx, q in enumerate(questions):
             q_rows.append(
                 {
-                    "id": f"{mod_id}-q{idx + 1}",
+                    "id": f"{mod_id}-q{idx+1}",
                     "text": q.get("pregunta", ""),
                     "options": [{"id": i, "text": t} for i, t in enumerate(q.get("opciones", []))],
                     "correctIndex": int(q.get("correcta", 0)),
                     "explanation": q.get("explicacion_al_fallar", "") or q.get("explicacion", ""),
                 }
             )
-        _upsert(
-            "quizzes",
-            ["module_id", "questions_json"],
+        cur.execute(
+            "INSERT OR REPLACE INTO quizzes (module_id, questions_json) VALUES (?,?)",
             (mod_id, json.dumps(q_rows, ensure_ascii=False)),
-            ["module_id"],
         )
 
-    # ── Load glossary from docs/glosario.json ───────────────────────────────
+    # ---- Load glossary from docs/glosario.json ----
     with open(DOCS_DIR / "glosario.json", "r", encoding="utf-8") as f:
         glosario_doc = json.load(f)
-
     terminos = glosario_doc.get("terminos", [])
     for t in terminos:
         t_id = t.get("id", "")
@@ -366,32 +263,32 @@ def init_db() -> None:
         related = t.get("relatedTerms") or t.get("related_terms") or []
         if isinstance(related, list) and related and isinstance(related[0], dict):
             related = [r.get("id", "") for r in related]
+        # Infer category heuristically if missing
         if not category:
             category = "juridica"
+        # Infer letter
         letter = (term.strip()[0].upper() if term else "") or (t_id[0].upper() if t_id else "")
         legal_ref = legal_ref or None
         category = category or "general"
-        _upsert(
-            "glossary",
-            ["id", "term", "definition", "category", "legal_ref", "related_terms_json"],
+        cur.execute(
+            "INSERT OR REPLACE INTO glossary (id, term, definition, category, legal_ref, related_terms_json) VALUES (?,?,?,?,?,?)",
             (t_id, term, definition, category, legal_ref, json.dumps(related or [])),
-            ["id"],
         )
 
-    # ── Load checklist from docs/checklist.json ─────────────────────────────
+    # ---- Load checklist from docs/checklist.json ----
     with open(DOCS_DIR / "checklist.json", "r", encoding="utf-8") as f:
         checklist_doc = json.load(f)
-
     checklists = checklist_doc.get("checklists", {})
     for src_key, items in checklists.items():
         role = CHECKLIST_KEY_TO_ROLE.get(src_key, src_key)
+        # Group items into sections: assign to a default section per role
+        # Spread items across sections for richer UX
         section_ids = ["gobernanza", "derechos-arsop", "seguridad-brechas", "cultura-cumplimiento"]
         for idx, it in enumerate(items or []):
             sec = section_ids[idx % len(section_ids)]
-            item_id = f"{role}-{sec}-{idx + 1}"
-            _upsert(
-                "checklist_items",
-                ["role", "section_id", "item_id", "item_order", "text", "legal_ref", "guide_url"],
+            item_id = f"{role}-{sec}-{idx+1}"
+            cur.execute(
+                "INSERT OR REPLACE INTO checklist_items (role, section_id, item_id, item_order, text, legal_ref, guide_url) VALUES (?,?,?,?,?,?,?)",
                 (
                     role,
                     sec,
@@ -401,18 +298,19 @@ def init_db() -> None:
                     it.get("referencia_modulo") or "",
                     None,
                 ),
-                ["role", "item_id"],
             )
 
-    # ── Build final_test ────────────────────────────────────────────────────
+    # ---- Build final_test: 10 questions from quizzes + docs test_final ----
     final_items: List[dict] = []
+    # Load raw test_final if present (10 questions already)
     test_final_raw = quizzes_doc.get("test_final") or []
+    # Map raw items to module assignment round-robin if no module info
     mod_ids = [m["id"] for m in modulos]
     for idx, q in enumerate(test_final_raw):
         mod_id = mod_ids[idx % len(mod_ids)]
         final_items.append(
             {
-                "question_id": f"ft-{idx + 1}",
+                "question_id": f"ft-{idx+1}",
                 "module_id": mod_id,
                 "text": q.get("pregunta", ""),
                 "options": [{"id": i, "text": t} for i, t in enumerate(q.get("opciones", []))],
@@ -420,14 +318,16 @@ def init_db() -> None:
                 "explanation": q.get("explicacion_al_fallar", "") or "",
             }
         )
+    # Ensure exactly 10 by borrowing from quizzes if needed (already 10 here, keep as-is)
     if len(final_items) < 10:
+        # Fill from quiz pool
         for mod_id, questions in (quizzes_doc.get("quizzes_por_modulo") or {}).items():
             for qi, q in enumerate(questions):
                 if len(final_items) >= 10:
                     break
                 final_items.append(
                     {
-                        "question_id": f"ft-{len(final_items) + 1}",
+                        "question_id": f"ft-{len(final_items)+1}",
                         "module_id": mod_id,
                         "text": q.get("pregunta", ""),
                         "options": [{"id": i, "text": t} for i, t in enumerate(q.get("opciones", []))],
@@ -440,9 +340,8 @@ def init_db() -> None:
     final_items = final_items[:10]
 
     for it in final_items:
-        _upsert(
-            "final_test",
-            ["question_id", "module_id", "text", "options_json", "correct_index", "explanation"],
+        cur.execute(
+            "INSERT OR REPLACE INTO final_test (question_id, module_id, text, options_json, correct_index, explanation) VALUES (?,?,?,?,?,?)",
             (
                 it["question_id"],
                 it["module_id"],
@@ -451,10 +350,9 @@ def init_db() -> None:
                 it["correct_index"],
                 it["explanation"],
             ),
-            ["question_id"],
         )
 
-    # Export final_test JSON (required by task spec)
+    # Persist backend/app/data/final_test.json (required by task spec)
     final_export = [
         {
             "id": it["question_id"],
@@ -469,58 +367,87 @@ def init_db() -> None:
     with open(FINAL_TEST_JSON, "w", encoding="utf-8") as f:
         json.dump(final_export, f, ensure_ascii=False, indent=2)
 
+    conn.commit()
+    conn.close()
 
-# ── Lightweight accessors (same names & return types as original) ──────────
+
+# ---------------------------------------------------------------------------
+# Lightweight accessors (used by routers)
+# ---------------------------------------------------------------------------
 def _modules_all():
-    return _fetchall("SELECT * FROM modules ORDER BY ordering")
+    conn = get_conn()
+    rows = conn.execute("SELECT * FROM modules ORDER BY ordering").fetchall()
+    conn.close()
+    return rows
 
 
 def _module_by_id(mid: str):
-    return _fetchone("SELECT * FROM modules WHERE id = ?", (mid,))
+    conn = get_conn()
+    row = conn.execute("SELECT * FROM modules WHERE id = ?", (mid,)).fetchone()
+    conn.close()
+    return row
 
 
 def _quiz_by_module(mid: str):
-    return _fetchone("SELECT * FROM quizzes WHERE module_id = ?", (mid,))
+    conn = get_conn()
+    row = conn.execute("SELECT * FROM quizzes WHERE module_id = ?", (mid,)).fetchone()
+    conn.close()
+    return row
 
 
 def _glossary_all():
-    if USE_PG:
-        return _fetchall("SELECT * FROM glossary ORDER BY term")
-    return _fetchall("SELECT * FROM glossary ORDER BY term COLLATE NOCASE")
+    conn = get_conn()
+    rows = conn.execute("SELECT * FROM glossary ORDER BY term COLLATE NOCASE").fetchall()
+    conn.close()
+    return rows
 
 
 def _glossary_by_id(tid: str):
-    return _fetchone("SELECT * FROM glossary WHERE id = ?", (tid,))
+    conn = get_conn()
+    row = conn.execute("SELECT * FROM glossary WHERE id = ?", (tid,)).fetchone()
+    conn.close()
+    return row
 
 
 def _checklist_items(role: str):
-    return _fetchall(
+    conn = get_conn()
+    rows = conn.execute(
         "SELECT * FROM checklist_items WHERE role = ? ORDER BY item_order",
         (role,),
-    )
+    ).fetchall()
+    conn.close()
+    return rows
 
 
 def _checklist_progress(role: str) -> Dict[str, int]:
-    rows = _fetchall(
+    conn = get_conn()
+    rows = conn.execute(
         "SELECT item_id, completed FROM checklist_progress WHERE role = ?", (role,)
-    )
+    ).fetchall()
+    conn.close()
     return {r["item_id"]: int(r["completed"]) for r in rows}
 
 
 def _upsert_checklist_progress(role: str, items: List[dict]) -> None:
+    conn = get_conn()
     for it in items:
-        _exec(
+        conn.execute(
             "INSERT INTO checklist_progress (role, item_id, completed) VALUES (?,?,?) "
             "ON CONFLICT(role, item_id) DO UPDATE SET completed=excluded.completed",
             (role, it["id"], 1 if it.get("completed") else 0),
         )
+    conn.commit()
+    conn.close()
 
 
 def _final_test_questions():
-    return _fetchall("SELECT * FROM final_test ORDER BY question_id")
+    conn = get_conn()
+    rows = conn.execute("SELECT * FROM final_test ORDER BY question_id").fetchall()
+    conn.close()
+    return rows
 
 
-# ── Export ──────────────────────────────────────────────────────────────────
+# Avoid tight import coupling — routers import these symbols directly
 __all__ = [
     "VALID_ROLES",
     "SECTION_DEFAULTS",
