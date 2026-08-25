@@ -1,0 +1,282 @@
+[
+ {
+  "num": 1,
+  "archivo": "01-que-es-la-ley.mp4",
+  "titulo": "¿Qué es la Ley 21.719?",
+  "evidencia": "GDPR + escudos de seguridad",
+  "nota": "OK"
+ },
+ {
+  "num": 2,
+  "archivo": "02-fechas-clave.mp4",
+  "titulo": "Fechas clave de vigencia",
+  "evidencia": "Calendario con fechas",
+  "nota": "OK"
+ },
+ {
+  "num": 3,
+  "archivo": "03-a-quienes-aplica.mp4",
+  "titulo": "¿A quiénes aplica?",
+  "evidencia": "PYME / corporativo / Estado",
+  "nota": "OK"
+ },
+ {
+  "num": 4,
+  "archivo": "04-extraterritorialidad.mp4",
+  "titulo": "Extraterritorialidad",
+  "evidencia": "Mapa mundial + conexiones",
+  "nota": "OK"
+ },
+ {
+  "num": 5,
+  "archivo": "05-agencia-apdp.mp4",
+  "titulo": "La Agencia APDP",
+  "evidencia": "Edificio institucional APDP",
+  "nota": "OK"
+ },
+ {
+  "num": 6,
+  "archivo": "06-facultades-agencia.mp4",
+  "titulo": "Facultades de la Agencia",
+  "evidencia": "Lupa + 'auditar empresas'",
+  "nota": "OK"
+ },
+ {
+  "num": 7,
+  "archivo": "07-medidas-conservativas.mp4",
+  "titulo": "Medidas conservativas",
+  "evidencia": "Botón OFF sobre servidor",
+  "nota": "OK"
+ },
+ {
+  "num": 8,
+  "archivo": "08-licitud-finalidad.mp4",
+  "titulo": "Licitud y finalidad",
+  "evidencia": "Formulario consentimiento (texto corrupto)",
+  "nota": "VIDEO_REPARAR"
+ },
+ {
+  "num": 9,
+  "archivo": "09-minimizacion.mp4",
+  "titulo": "Minimización de datos",
+  "evidencia": "Embudo filtra tarjetas",
+  "nota": "OK"
+ },
+ {
+  "num": 10,
+  "archivo": "10-calidad-seguridad.mp4",
+  "titulo": "Calidad y seguridad",
+  "evidencia": "FILE SECURED + candado + binario",
+  "nota": "OK"
+ },
+ {
+  "num": 11,
+  "archivo": "11-accountability.mp4",
+  "titulo": "Responsabilidad proactiva",
+  "evidencia": "Red de nodos + checklist",
+  "nota": "OK"
+ },
+ {
+  "num": 12,
+  "archivo": "12-derechos-arsop.mp4",
+  "titulo": "Derechos ARSOP",
+  "evidencia": "Círculos A-R-S-O-P",
+  "nota": "OK"
+ },
+ {
+  "num": 13,
+  "archivo": "13-acceso-rectificacion.mp4",
+  "titulo": "Acceso y rectificación",
+  "evidencia": "Formulario de Edición / VER MIS DATOS",
+  "nota": "OK"
+ },
+ {
+  "num": 14,
+  "archivo": "14-supresion-oposicion.mp4",
+  "titulo": "Supresión y oposición",
+  "evidencia": "BLOCKED sobre BEST DEAL (oposición marketing)",
+  "nota": "OK"
+ },
+ {
+  "num": 15,
+  "archivo": "15-portabilidad.mp4",
+  "titulo": "Portabilidad",
+  "evidencia": "Servidor Origen → Destino",
+  "nota": "OK"
+ },
+ {
+  "num": 16,
+  "archivo": "16-bloqueo-temporal.mp4",
+  "titulo": "Bloqueo temporal",
+  "evidencia": "Ventana browser (sin texto claro)",
+  "nota": "DUDA"
+ },
+ {
+  "num": 17,
+  "archivo": "17-plazos-respuesta.mp4",
+  "titulo": "Plazos de respuesta",
+  "evidencia": "30 Días / 2 Días bloqueo",
+  "nota": "OK"
+ },
+ {
+  "num": 18,
+  "archivo": "18-consentimiento-tacito.mp4",
+  "titulo": "Adiós al consentimiento tácito",
+  "evidencia": "Cookies sin casillas marcadas",
+  "nota": "OK"
+ },
+ {
+  "num": 19,
+  "archivo": "19-clausulas-ocultas.mp4",
+  "titulo": "Prohibición de cláusulas ocultas",
+  "evidencia": "Prohibición cláusulas ocultas",
+  "nota": "OK"
+ },
+ {
+  "num": 20,
+  "archivo": "20-revocacion.mp4",
+  "titulo": "Revocación del permiso",
+  "evidencia": "Botón 'Revocar autorización'",
+  "nota": "OK"
+ },
+ {
+  "num": 21,
+  "archivo": "21-datos-sensibles.mp4",
+  "titulo": "Datos sensibles",
+  "evidencia": "Neón: RELIGIÓN/BIOMETRÍA/OPINIONES",
+  "nota": "OK"
+ },
+ {
+  "num": 22,
+  "archivo": "22-tratamiento-sensibles.mp4",
+  "titulo": "Tratamiento de datos sensibles",
+  "evidencia": "AUTORIZACIÓN DE DATOS SENSIBLES + firma",
+  "nota": "OK"
+ },
+ {
+  "num": 23,
+  "archivo": "23-proteccion-nna.mp4",
+  "titulo": "Protección de menores NNA",
+  "evidencia": "Escudo con niños/familia",
+  "nota": "OK"
+ },
+ {
+  "num": 24,
+  "archivo": "24-consentimiento-parental.mp4",
+  "titulo": "Consentimiento parental",
+  "evidencia": "Barra amarilla (texto ilegible)",
+  "nota": "DUDA"
+ },
+ {
+  "num": 25,
+  "archivo": "25-privacidad-diseno.mp4",
+  "titulo": "Privacidad desde el diseño",
+  "evidencia": "ARQUITECTURA DE SEGURIDAD INTEGRADA",
+  "nota": "OK"
+ },
+ {
+  "num": 26,
+  "archivo": "26-registro-rat.mp4",
+  "titulo": "Registro RAT",
+  "evidencia": "RAT Spreadsheet",
+  "nota": "OK"
+ },
+ {
+  "num": 27,
+  "archivo": "27-dpia.mp4",
+  "titulo": "Evaluación de impacto DPIA",
+  "evidencia": "Evaluación de Impacto DPIA",
+  "nota": "OK"
+ },
+ {
+  "num": 28,
+  "archivo": "28-brechas.mp4",
+  "titulo": "Notificación de brechas",
+  "evidencia": "CRITICAL SECURITY BREACH + AUTO-REPORTING",
+  "nota": "OK"
+ },
+ {
+  "num": 29,
+  "archivo": "29-ia-automatizada.mp4",
+  "titulo": "IA y decisiones automatizadas",
+  "evidencia": "AUTOMATED SYSTEM / DECISION POINT",
+  "nota": "OK"
+ },
+ {
+  "num": 30,
+  "archivo": "30-dpo.mp4",
+  "titulo": "El DPO",
+  "evidencia": "Organigrama Delegado Protección Datos",
+  "nota": "OK"
+ },
+ {
+  "num": 31,
+  "archivo": "31-cookies.mp4",
+  "titulo": "Banners de cookies",
+  "evidencia": "INFORMACIÓN SOBRE COOKIES",
+  "nota": "OK"
+ },
+ {
+  "num": 32,
+  "archivo": "32-mpi.mp4",
+  "titulo": "Modelo de Prevención MPI",
+  "evidencia": "MODELO PREVENCIÓN CERTIFICADO ISO 37301",
+  "nota": "OK"
+ },
+ {
+  "num": 33,
+  "archivo": "33-leves-5000.mp4",
+  "titulo": "Infracciones leves",
+  "evidencia": "Infracción Leve 5.000 UTM",
+  "nota": "OK"
+ },
+ {
+  "num": 34,
+  "archivo": "34-graves-10000.mp4",
+  "titulo": "Infracciones graves",
+  "evidencia": "INFRACCIÓN GRAVE 10.000 UTM",
+  "nota": "OK"
+ },
+ {
+  "num": 35,
+  "archivo": "35-gravisimas-20000.mp4",
+  "titulo": "Infracciones gravísimas",
+  "evidencia": "GRAVÍSIMA 20.000 UTM (lista corrupta)",
+  "nota": "VIDEO_REPARAR"
+ },
+ {
+  "num": 36,
+  "archivo": "36-reincidencia.mp4",
+  "titulo": "Reincidencia 2-4%",
+  "evidencia": "PENALIZACIÓN REINCIDENCIA gráfico",
+  "nota": "OK"
+ },
+ {
+  "num": 37,
+  "archivo": "37-recargo-50.mp4",
+  "titulo": "Recargo 50%",
+  "evidencia": "MULTA ORIGINAL + 50% RECARGO",
+  "nota": "OK"
+ },
+ {
+  "num": 38,
+  "archivo": "38-diagnostico.mp4",
+  "titulo": "Diagnóstico días 1-30",
+  "evidencia": "Diagnóstico e Inventario + servidores",
+  "nota": "OK"
+ },
+ {
+  "num": 39,
+  "archivo": "39-politicas.mp4",
+  "titulo": "Políticas días 31-60",
+  "evidencia": "Política Privacidad + Acuerdos DPA",
+  "nota": "OK"
+ },
+ {
+  "num": 40,
+  "archivo": "40-cultura.mp4",
+  "titulo": "Cultura días 61-90",
+  "evidencia": "CIFRADO DE DATOS (cultura seguridad)",
+  "nota": "OK"
+ }
+]

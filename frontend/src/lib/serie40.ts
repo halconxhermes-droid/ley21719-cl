@@ -6,7 +6,7 @@
 
 export const SERIE40_PLAYLIST: { num: number; titulo: string; videoId: string | null }[] = [
   { num: 1,  titulo: "¿Qué es la Ley 21.719?",              videoId: "D2licsH7DQ8" },
-  { num: 2,  titulo: "Fechas clave de vigencia",            videoId: null },
+  { num: 2,  titulo: "Fechas clave de vigencia",            videoId: "jRLE-Y6fqi8" },
   { num: 3,  titulo: "¿A quiénes aplica?",                  videoId: null },
   { num: 4,  titulo: "Extraterritorialidad",                videoId: null },
   { num: 5,  titulo: "La Agencia APDP",                     videoId: null },

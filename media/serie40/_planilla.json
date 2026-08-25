@@ -1,0 +1,282 @@
+[
+ {
+  "num": 1,
+  "archivo": "01-que-es-la-ley.mp4",
+  "titulo": "¿Qué es la Ley 21.719?",
+  "origen": "video_a4b753139952.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 2,
+  "archivo": "02-fechas-clave.mp4",
+  "titulo": "Fechas clave de vigencia",
+  "origen": "video_3cb79de49793.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 3,
+  "archivo": "03-a-quienes-aplica.mp4",
+  "titulo": "¿A quiénes aplica?",
+  "origen": "video_1f02e9492461.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 4,
+  "archivo": "04-extraterritorialidad.mp4",
+  "titulo": "Extraterritorialidad",
+  "origen": "video_460ff9a324ac.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 5,
+  "archivo": "05-agencia-apdp.mp4",
+  "titulo": "La Agencia APDP",
+  "origen": "video_0f4e7c16ab6a.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 6,
+  "archivo": "06-facultades-agencia.mp4",
+  "titulo": "Facultades de la Agencia",
+  "origen": "video_378c416f5bed.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 7,
+  "archivo": "07-medidas-conservativas.mp4",
+  "titulo": "Medidas conservativas",
+  "origen": "video_5730d91c2dac.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 8,
+  "archivo": "08-licitud-finalidad.mp4",
+  "titulo": "Licitud y finalidad",
+  "origen": "video_bff24bb1690c.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 9,
+  "archivo": "09-minimizacion.mp4",
+  "titulo": "Minimización de datos",
+  "origen": "video_470f992ffc1c.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 10,
+  "archivo": "10-calidad-seguridad.mp4",
+  "titulo": "Calidad y seguridad",
+  "origen": "video_4c089a2ec369.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 11,
+  "archivo": "11-accountability.mp4",
+  "titulo": "Responsabilidad proactiva",
+  "origen": "video_83138fe7e1e0.mp4",
+  "mapeo": "confirmado"
+ },
+ {
+  "num": 12,
+  "archivo": "12-derechos-arsop.mp4",
+  "titulo": "Derechos ARSOP",
+  "origen": "video_ec28c70c4334.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 13,
+  "archivo": "13-acceso-rectificacion.mp4",
+  "titulo": "Acceso y rectificación",
+  "origen": "video_75cd1f31dbca.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 14,
+  "archivo": "14-supresion-oposicion.mp4",
+  "titulo": "Supresión y oposición",
+  "origen": "video_838347ab903e.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 15,
+  "archivo": "15-portabilidad.mp4",
+  "titulo": "Portabilidad",
+  "origen": "video_b99c68398f96.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 16,
+  "archivo": "16-bloqueo-temporal.mp4",
+  "titulo": "Bloqueo temporal",
+  "origen": "video_091743f02aee.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 17,
+  "archivo": "17-plazos-respuesta.mp4",
+  "titulo": "Plazos de respuesta",
+  "origen": "video_04c39df2c26c.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 18,
+  "archivo": "18-consentimiento-tacito.mp4",
+  "titulo": "Adiós al consentimiento tácito",
+  "origen": "video_15253624374d.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 19,
+  "archivo": "19-clausulas-ocultas.mp4",
+  "titulo": "Prohibición de cláusulas ocultas",
+  "origen": "video_fdae768ef6bd.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 20,
+  "archivo": "20-revocacion.mp4",
+  "titulo": "Revocación del permiso",
+  "origen": "video_4b2e659be052.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 21,
+  "archivo": "21-datos-sensibles.mp4",
+  "titulo": "Datos sensibles",
+  "origen": "video_9bdcf8c66d6b.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 22,
+  "archivo": "22-tratamiento-sensibles.mp4",
+  "titulo": "Tratamiento de datos sensibles",
+  "origen": "video_25c205359922.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 23,
+  "archivo": "23-proteccion-nna.mp4",
+  "titulo": "Protección de menores NNA",
+  "origen": "video_73b2c333f3dd.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 24,
+  "archivo": "24-consentimiento-parental.mp4",
+  "titulo": "Consentimiento parental",
+  "origen": "video_609e9a78c640.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 25,
+  "archivo": "25-privacidad-diseno.mp4",
+  "titulo": "Privacidad desde el diseño",
+  "origen": "video_188ff2d4b5d0.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 26,
+  "archivo": "26-registro-rat.mp4",
+  "titulo": "Registro RAT",
+  "origen": "video_59f3ab151a40.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 27,
+  "archivo": "27-dpia.mp4",
+  "titulo": "Evaluación de impacto DPIA",
+  "origen": "video_60a70c10ab79.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 28,
+  "archivo": "28-brechas.mp4",
+  "titulo": "Notificación de brechas",
+  "origen": "video_0f403248a9cd.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 29,
+  "archivo": "29-ia-automatizada.mp4",
+  "titulo": "IA y decisiones automatizadas",
+  "origen": "video_69088c090c6f.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 30,
+  "archivo": "30-dpo.mp4",
+  "titulo": "El DPO",
+  "origen": "video_0086d765bca8.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 31,
+  "archivo": "31-cookies.mp4",
+  "titulo": "Banners de cookies",
+  "origen": "video_3a7af19730cd.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 32,
+  "archivo": "32-mpi.mp4",
+  "titulo": "Modelo de Prevención MPI",
+  "origen": "video_c10579d9fa72.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 33,
+  "archivo": "33-leves-5000.mp4",
+  "titulo": "Infracciones leves",
+  "origen": "video_7abdd8adf786.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 34,
+  "archivo": "34-graves-10000.mp4",
+  "titulo": "Infracciones graves",
+  "origen": "video_60e2458ca831.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 35,
+  "archivo": "35-gravísimas-20000.mp4",
+  "titulo": "Infracciones gravísimas",
+  "origen": "video_04b8c1ddbb09.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 36,
+  "archivo": "36-reincidencia.mp4",
+  "titulo": "Reincidencia 2-4%",
+  "origen": "video_661565549618.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 37,
+  "archivo": "37-recargo-50.mp4",
+  "titulo": "Recargo 50%",
+  "origen": "video_063ac2d0a31f.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 38,
+  "archivo": "38-diagnostico.mp4",
+  "titulo": "Diagnóstico días 1-30",
+  "origen": "video_2c77cd820358.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 39,
+  "archivo": "39-politicas.mp4",
+  "titulo": "Políticas días 31-60",
+  "origen": "video_4edb77b5c38c.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ },
+ {
+  "num": 40,
+  "archivo": "40-cultura.mp4",
+  "titulo": "Cultura días 61-90",
+  "origen": "video_8db287ff4ac0.mp4",
+  "mapeo": "PROVISIONAL-verificar"
+ }
+]
