@@ -288,7 +288,7 @@ def generar(nombre, puntaje, total, salida: Path, url_verif="https://proteccion-
     c.setFillColor(EMERALD)
     c.drawCentredString(CX, y, "Ley N° 21.719 sobre Protección de Datos Personales de Chile")
 
-    # ── Caja de detalles con íconos ──
+    # ── Caja de detalles: 3 celdas IGUALES, contenido CENTRADO en cada celda ──
     y -= 15*mm
     bw, bh = 196*mm, 27*mm
     bx, by = CX-bw/2, y-bh
@@ -298,24 +298,34 @@ def generar(nombre, puntaje, total, salida: Path, url_verif="https://proteccion-
     c.setStrokeColor(GOLD); c.setLineWidth(0.6)
     c.roundRect(bx+1.4*mm, by+1.4*mm, bw-2.8*mm, bh-2.8*mm, 2.6*mm, stroke=1, fill=0)
 
-    cols_x = [bx+27*mm, bx+bw*0.47, bx+bw-33*mm]
     etiqs  = ["PUNTAJE OBTENIDO", "FECHA DE EMISIÓN", "VIGENCIA DE LA LEY"]
     vals   = [f"{puntaje} / {total}", ftxt, "Plena desde 01-12-2026"]
     icons  = [icono_medalla, icono_calendario, icono_escudo]
 
-    for xx, etiq, val, ic in zip(cols_x, etiqs, vals, icons):
-        ic(c, xx, by+bh-7.8*mm, 4.8)          # ícono más grande
-        c.setFont("Helvetica-Bold", 7.4)
-        c.setFillColor(SLATE_5)
-        c.drawString(xx+7.5*mm, by+bh-9.2*mm, etiq)
-        c.setFont("Helvetica-Bold", 11.8)
-        c.setFillColor(INK)
-        c.drawString(xx+7.5*mm, by+bh-17*mm, val)
+    cell_w = bw / 3.0
+    for i, (etiq, val, ic) in enumerate(zip(etiqs, vals, icons)):
+        ccx = bx + cell_w * (i + 0.5)          # centro de la celda
 
-    # separadores verticales finos
+        # ícono centrado arriba
+        ic(c, ccx, by + bh - 7.0*mm, 4.2)
+
+        # etiqueta centrada bajo el ícono
+        c.setFont("Helvetica-Bold", 7.4)
+        ew = c.stringWidth(etiq, "Helvetica-Bold", 7.4)
+        c.setFillColor(SLATE_5)
+        c.drawString(ccx - ew/2, by + bh - 14.0*mm, etiq)
+
+        # valor centrado, con auto-ajuste para que JAMÁS salga de su celda
+        vsz = fit(c, val, "Helvetica-Bold", 11.8, 8.0, cell_w - 10*mm)
+        vw = c.stringWidth(val, "Helvetica-Bold", vsz)
+        c.setFont("Helvetica-Bold", vsz)
+        c.setFillColor(INK)
+        c.drawString(ccx - vw/2, by + bh - 21.5*mm, val)
+
+    # separadores verticales en los tercios EXACTOS
     c.setStrokeColor(HexColor("#dbe7e2")); c.setLineWidth(0.7)
-    for xx in (bx+bw*0.335, bx+bw*0.66):
-        c.line(xx, by+4*mm, xx, by+bh-4*mm)
+    for xx in (bx + cell_w, bx + 2*cell_w):
+        c.line(xx, by + 4*mm, xx, by + bh - 4*mm)
 
     # ── QR + código + firmas + pie ──
     qr_data = f"{url_verif}?cod={codigo}"
