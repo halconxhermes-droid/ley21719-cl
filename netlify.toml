@@ -23,3 +23,11 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Ruta pública de verificación de certificados (QR) — captura ANTES del SPA
+# (el SPA también la maneja, pero esto asegura que /verificar?cod=X sirva index.html)
+[[redirects]]
+  from = "/verificar"
+  to = "/index.html"
+  status = 200
+  force = false

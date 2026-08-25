@@ -9,7 +9,8 @@ export type ViewId =
   | "checklist"
   | "glosario"
   | "testfinal"
-  | "resultados";
+  | "resultados"
+  | "verificar";
 
 interface NavigationContextValue {
   view: ViewId;

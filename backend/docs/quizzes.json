@@ -89,14 +89,18 @@
       },
       {
         "pregunta": "Las sanciones de la Ley 21.719 son prácticamente inaplicables, como ocurría con la Ley 19.628.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. La Ley 21.719 crea la Agencia de Protección de Datos Personales con poder real de fiscalización y sanción, y las multas llegan hasta 20.000 UTM con reincidencia hasta el 4% de ingresos.",
         "articulos": [
           "Art. 30",
           "Art. 35"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuánto tiempo permanecen visibles las sanciones en el Registro Nacional?",
@@ -115,13 +119,17 @@
       },
       {
         "pregunta": "Empareje cada nivel de infracción con su multa máxima:",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Infracciones leves: hasta 5.000 UTM. Graves: hasta 10.000 UTM. Gravísimas: hasta 20.000 UTM. En reincidencia, hasta el 4% de ingresos anuales.",
         "articulos": [
           "Art. 35"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuál es el plazo general para responder una solicitud ARCOP?",
@@ -156,14 +164,18 @@
       },
       {
         "pregunta": "Toda solicitud de supresión debe ser aceptada sin excepciones.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. Existen excepciones legales: obligación legal (ej. documentación laboral 5 años, tributaria 6 años), interés legítimo prevalente, defensa en juicio. En esos casos debe denegar fundadamente.",
         "articulos": [
           "Art. 7",
           "Art. 16"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Qué derecho permite al titular recibir sus datos en formato estructurado para llevarlos a otro proveedor?",
@@ -182,8 +194,11 @@
       },
       {
         "pregunta": "Empareje cada derecho ARCOP+ con su descripción:",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "A-R-S-O-P: Acceso, Rectificación, Supresión, Oposición, Portabilidad. Los plazos generales son 30 días corridos, salvo bloqueo temporal que es 2 días hábiles.",
         "articulos": [
           "Art. 5",
@@ -193,7 +208,8 @@
           "Art. 9",
           "Art. 10"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Hasta qué fecha se extiende el período de gracia con sanciones atenuadas para MIPYMEs?",
@@ -212,13 +228,17 @@
       },
       {
         "pregunta": "Las MIPYMEs quedan completamente exentas de toda obligación bajo la Ley 21.719 durante el período de gracia.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. Durante el período de gracia las MIPYMEs tienen simplificación documental del RAT y exención de DPO externo, pero siguen obligadas a las demás obligaciones (consentimiento, ARCOP+, seguridad, breach notification).",
         "articulos": [
           "Art. 33"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuál es el plazo máximo para responder a una solicitud de derechos ARCOP+?",
@@ -237,13 +257,17 @@
       },
       {
         "pregunta": "La portabilidad de datos es un derecho que permite al titular recibir sus datos en un formato estructurado y de uso común.",
-        "opciones": [],
-        "correcta": true,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
         "explicacion_al_fallar": "Verdadero. La portabilidad es uno de los derechos ARCOP+ y permite al titular recibir y transmitir sus datos a otro responsable en un formato estructurado, de uso común y legible por máquina.",
         "articulos": [
           "Art. 9"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 0
       }
     ],
     "ciudadano": [
@@ -308,14 +332,18 @@
       },
       {
         "pregunta": "La Ley 19.628 ya contemplaba la obligatoriedad de mantener un RAT, DPIA y designar un DPO.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. La Ley 19.628 no exigía instrumentos de gestión concretos. La Ley 21.719 introduce RAT, DPIA, DPO y contrato escrito con cada encargado.",
         "articulos": [
           "Art. 50",
           "Art. 49"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuántas bases de licitud reconoce la Ley 21.719?",
@@ -403,13 +431,17 @@
       },
       {
         "pregunta": "Las empresas SaaS que procesan datos por sus clientes son típicamente responsables (controladores).",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. Las empresas SaaS son típicamente encargadas (procesadores) para sus clientes. Tratan datos por cuenta del responsable (el cliente), siguiendo sus instrucciones. Firmar DPAs estrictos con todos sus clientes.",
         "articulos": [
           "Art. 21"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "En el sector salud, una brecha de seguridad escala a:",
@@ -460,13 +492,17 @@
       },
       {
         "pregunta": "La Ley 21.719 exige que cada empresa tenga una autorización firmada por el titular antes de cualquier tratamiento.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. La nueva ley establece 6 bases de licitud: consentimiento, ejecución de contrato, obligación legal, interés público, interés legítimo y mandato. El consentimiento es solo una de ellas, no la única.",
         "articulos": [
           "Art. 13"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuál es la base de licitud típica para el tratamiento de datos del trabajador con fines de remuneración?",
@@ -485,14 +521,18 @@
       },
       {
         "pregunta": "Una dirección IP combinada con la geolocalización puede considerarse dato personal identificable.",
-        "opciones": [],
-        "correcta": true,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
         "explicacion_al_fallar": "Verdadero. La dirección IP, cookies persistentes y datos de geolocalización precisa pueden identificar a una persona cuando se combinan con otros datos, por lo que califican como datos personales bajo la ley.",
         "articulos": [
           "Art. 4",
           "Art. 16"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 0
       }
     ],
     "desarrollador": [
@@ -572,13 +612,17 @@
       },
       {
         "pregunta": "Un dato anonimizado sigue dentro del ámbito de aplicación de la Ley 21.719.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. El dato anonimizado, sometido a procedimiento irreversible, queda fuera del ámbito de la ley. Distinto del dato seudonimizado, que sí está dentro del ámbito.",
         "articulos": [
           "Art. 23"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "Su proveedor de nube que procesa datos por usted es:",
@@ -597,14 +641,18 @@
       },
       {
         "pregunta": "Empareje cada rol con su definición:",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Titular: persona natural. Responsable: decide fines/medios. Encargado: trata por cuenta del responsable. Corresponsable: decide junto con otro responsable.",
         "articulos": [
           "Art. 3",
           "Art. 16"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿En cuáles de estos espacios está PROHIBIDO instalar cámaras de CCTV?",
@@ -640,14 +688,18 @@
       },
       {
         "pregunta": "Las herramientas de IA generativa usadas por el personal sin política formal constituyen un riesgo material para la empresa.",
-        "opciones": [],
-        "correcta": true,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 0,
         "explicacion_al_fallar": "Verdadero. El 97% de las empresas breachadas carecían de políticas formales de IA. El costo promedio de una brecha con IA involucrada es US$ 670.000. El Shadow AI debe ser levantado, evaluado y registrado en el RAT.",
         "articulos": [
           "Art. 17",
           "Guía ANPD"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 0
       },
       {
         "pregunta": "Para flotas vehiculares con GPS, ¿qué medida es exigida por el Art. 16 sexies?",
@@ -732,15 +784,19 @@
       },
       {
         "pregunta": "Empareje cada tecnología de monitoreo con su base de licitud típica:",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "CCTV usa interés legítimo con señalética visible. Geolocalización de flota se basa en ejecución del contrato. Biometría requiere consentimiento expreso porque es dato sensible. Shadow AI requiere política interna documentada y registro en el RAT.",
         "articulos": [
           "Art. 14",
           "Art. 16",
           "Art. 16 sexies"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       }
     ],
     "institucion": [
@@ -822,13 +878,17 @@
       },
       {
         "pregunta": "El MPI (Modelo de Prevención de Infracciones) es obligatorio para todas las empresas.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. El MPI es voluntario y certificable. Acredita diligencia y atenúa sanciones, pero no es obligatorio. Es una decisión estratégica de la empresa.",
         "articulos": [
           "Art. 49"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuándo es obligatoria una DPIA?",
@@ -897,14 +957,18 @@
       },
       {
         "pregunta": "Está permitido el perfilamiento comercial y la publicidad dirigida a menores de edad.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. Queda prohibido el perfilamiento comercial, publicidad dirigida o marketing directo de bienes y servicios a menores. Toda captación debe justificarse por beneficio pedagógico o seguridad escolar.",
         "articulos": [
           "Art. 14",
           "Art. 14 bis"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "La huella dactilar y el reconocimiento facial son:",
@@ -924,14 +988,18 @@
       },
       {
         "pregunta": "Empareje cada tramo etario con su regla de consentimiento:",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Menores de 14: solo representante legal. De 14-15: consentimiento propio para datos estándar, pero apoderado obligatorio para sensibles. De 16 en adelante: régimen general.",
         "articulos": [
           "Art. 16",
           "Art. 16 quáter"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "¿Cuáles de estos son instrumentos exigidos por la ley? (marque todos los correctos)",
@@ -954,13 +1022,17 @@
       },
       {
         "pregunta": "El RAT debe estar disponible públicamente en el sitio web del responsable.",
-        "opciones": [],
-        "correcta": false,
+        "opciones": [
+          "Verdadero",
+          "Falso"
+        ],
+        "correcta": 1,
         "explicacion_al_fallar": "Falso. El RAT es un documento interno que el responsable debe mantener actualizado y presentar a la Agencia cuando lo requiera, pero no necesita estar publicado. Lo que sí debe ser público es el aviso de privacidad al titular.",
         "articulos": [
           "Art. 45"
         ],
-        "fuente": "Proyecto manual (verificado contra Ley 21.719)"
+        "fuente": "Proyecto manual (verificado contra Ley 21.719)",
+        "correctIndex": 1
       },
       {
         "pregunta": "Para tratar datos de menores de 14 años, ¿qué condiciones son exigidas? (marque todos los correctos)",

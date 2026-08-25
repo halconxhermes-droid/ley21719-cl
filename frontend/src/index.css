@@ -25,6 +25,21 @@
   /* Tipografía */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Paleta institucional (páginas manuales) — acento positivo / riesgo */
+  --color-exito-50: #ecfdf5;
+  --color-exito-100: #d1fae5;
+  --color-exito-200: #a7f3d0;
+  --color-exito-600: #059669;
+  --color-exito-700: #047857;
+  --color-exito-800: #065f46;
+
+  --color-riesgo-50: #fef2f2;
+  --color-riesgo-100: #fee2e2;
+  --color-riesgo-200: #fecaca;
+  --color-riesgo-600: #dc2626;
+  --color-riesgo-700: #991b1b;
+  --color-riesgo-800: #7f1d1d;
 }
 
 /* ==========================================================

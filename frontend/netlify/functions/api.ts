@@ -330,6 +330,30 @@ export default async (req: Request, ctx: Context) => {
     if (sp) data = { searchParams: sp };
   }
 
+  /* ── GET /api/v1/verify-certificate?cod=XXXXXXXX — PÚBLICO (sin gate) ──
+     Verificación anti-fraude de certificados. No expone datos personales:
+     solo confirma si el código existe y devuelve fecha/puntaje. */
+  if (path === "api/v1/verify-certificate" && method === "GET") {
+    const raw = (data?.searchParams || "");
+    const cod = (new URLSearchParams(raw).get("cod") || "").trim().toUpperCase();
+    if (!/^[A-F0-9]{8}$/.test(cod)) {
+      return json(400, { error: { code: "BAD_CODE", message: "Formato de código inválido (se esperan 8 caracteres hex)." } });
+    }
+    const rows = await records("certificados", `codigo=eq.${cod}`);
+    if (!rows.length) {
+      return json(404, { valid: false, code: cod, message: "Certificado no encontrado en el registro oficial." });
+    }
+    const r = rows[0];
+    return json(200, {
+      valid: true,
+      code: r.codigo,
+      issuedAt: r.fecha_emision?.slice(0, 10) ?? null,
+      score: { obtained: r.puntaje, total: r.total },
+      course: "Ley N° 21.719 sobre Protección de Datos Personales de Chile",
+      issuer: "Plataforma Educativa Ley 21.719",
+    });
+  }
+
   /* ── Gate: POST api/v1/access/verify {password} → {token} ── */
   if (path === "api/v1/access/verify" && method === "POST") {
     const ok = await verifyAccess(data?.password);
