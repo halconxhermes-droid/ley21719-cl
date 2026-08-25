@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley 21.719 - Presentación Ejecutiva Mejorada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --emerald: #047857;
+            --wine: #991B1B;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --border-radius: 8px;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--slate-50);
+            color: var(--slate-700);
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .slide {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--slate-800);
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--slate-800);
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--emerald);
+            margin-bottom: 1rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .badge-emerald {
+            background-color: var(--emerald);
+            color: white;
+        }
+        
+        .badge-wine {
+            background-color: var(--wine);
+            color: white;
+        }
+        
+        .badge-slate {
+            background-color: var(--slate-200);
+            color: var(--slate-700);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--emerald);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--slate-600);
+            margin-top: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--slate-200);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 1rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--emerald);
+            border-radius: 50%;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -6px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -6px;
+        }
+        
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .industry-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+        }
+        
+        .industry-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--wine);
+            margin-bottom: 1rem;
+        }
+        
+        .risk-level {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .risk-low {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        
+        .risk-medium {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .risk-high {
+            background-color: #fecaca;
+            color: #991b1b;
+        }
+        
+        .nav-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--slate-300);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: var(--emerald);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--slate-200);
+            font-size: 0.875rem;
+            color: var(--slate-500);
+        }
+        
+        .footer a {
+            color: var(--emerald);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                margin: 1.5rem auto;
+            }
+            
+            .timeline::before {
+                left: 0;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 2rem;
+                border-left: 2px solid var(--slate-200);
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+                text-align: left;
+            }
+            
+            .timeline-item::after {
+                left: -8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container" id="slides-container">
+            <!-- Slide 1: Portada -->
+            <div class="slide" id="slide-1" data-slide="1">
+                <div class="text-center">
+                    <h1>Ley N° 21.719 de Protección de Datos Personales</h1>
+                    <p class="text-xl text-slate-600 mb-6">Qué exige la ley y cómo prepararse</p>
+                    <div class="flex justify-center space-x-4">
+                        <span class="badge badge-emerald">Publicada: 13 dic 2024</span>
+                        <span class="badge badge-wine">Vigencia plena: 1 dic 2026</span>
+                        <span class="badge badge-slate">BCN idNorma=1209272</span>
+                    </div>
+                    <p class="mt-4 text-slate-500 max-w-xl">Presentación ejecutiva para directores y gerentes</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Glosario esencial -->
+            <div class="slide" id="slide-2" data-slide="2">
+                <h2>Glosario de conceptos clave</h2>
+                <div class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="text-wine">Titular</h3>
+                            <p class="text-slate-600">Persona natural dueña de los datos</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Responsable</h3>
+                            <p class="text-slate-600">Quién decide fines y medios del tratamiento</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Encargado</h3>
+                            <p class="text-slate-600">Quién trata datos por cuenta del responsable</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Dato sensible</h3>
+                            <p class="text-slate-600">Salud, sindicato, biometría, esfera íntima</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">UTM</h3>
+                            <p class="text-slate-600">Base de cálculo de las multas</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">RAT</h3>
+                            <p class="text-slate-600">Registro de Actividades de Tratamiento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3: Contexto regulatorio -->
+            <div class="slide" id="slide-3" data-slide="3">
+                <h2>Contexto regulatorio: La cuenta regresiva ya empezó</h2>
+                <div class="space-y-8">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">13</span>
+                            <span class="stat-label">dic 2024<br>Publicación en Diario Oficial</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">~5</span>
+                            <span class="stat-label">meses restantes<br>para vigencia plena</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">1</span>
+                            <span class="stat-label">dic 2026<br>Entrada en plena vigencia</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <h3 class="text-wine mb-4">Cambios estructurales vs. Ley 19.628</h3>
+                        <div class="space-y-4">
+                            <p><span class="font-semibold">Antes:</span> Control difuso en tribunales civiles, sanciones mínimas (10-50 UTM)</p>
+                            <p><span class="font-semibold">Ahora:</span> Agencia especializada con poder real, multas hasta 20.000 UTM o 4% ingresos</p>
+                            <p><span class="font-semibold">Bases de licitud:</span> Se ampliaron de 2 (consentimiento/autorización) a 6</p>
+                            <p><span class="font-semibold">Derechos ARCO+:</span> Se ampliaron de 4 a 6 (añadió portabilidad y oposición a decisiones automatizadas)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4: Qué se arriesga (riesgos) -->
+            <div class="slide" id="slide-4" data-slide="4">
+                <h2>Qué se arriesga: Los tres pilares del riesgo</h2>
+                <div class="space-y-8">
+                    <h3 class="text-wine">1. RIESGO FINANCIERO</h3>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <p class="mb-2"><span class="font-semibold">Infracciones leves:</span> Hasta 5.000 UTM</p>
+                        <p class="mb-2"><span class="font-semibold">Infracciones graves:</span> Hasta 10.000 UTM</p>
+                        <p class="mb-2"><span class="font-semibold">Infracciones gravísimas:</span> Hasta 20.000 UTM</p>
+                        <p><span class="font-semibold">Reincidencia:</span> Hasta 4% de ingresos anuales</p>
+                    </div>
+                    
+                    <h3 class="text-wine mt-6">2. RIESGO OPERACIONAL</h3>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <p><span class="font-semibold">Suspensión temporal:</span> Hasta 30 días de tratamiento de datos</p>
+                        <p class="mt-2"><span class="font-semibold">Impacto:</span> Apagado inmediato de procesos clave (remuneraciones, contratos, coordinación operativa)</p>
+                    </div>
+                    
+                    <h3 class="text-wine mt-6">3. RIESGO REPUTACIONAL Y COMERCIAL</h3>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                        <p><span class="font-semibold">Registro Nacional de Sanciones:</span> Público por 5 años</p>
+                        <p class="mt-2"><span class="font-semibold">Bloqueo inmediato:</span> Oportunidades de negocio, licitaciones corporativas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 5: Marcos de cumplimiento esenciales -->
+            <div class="slide" id="slide-5" data-slide="5">
+                <h2>Marcos de cumplimiento que debe conocer</h2>
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-wine">RAT</h3>
+                            <p class="text-slate-600">Registro de Actividades de Tratamiento</p>
+                            <p class="mt-2 text-xs text-slate-500">Inventario de todos los tratamientos de datos personales</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-wine">DPIA / EIPD</h3>
+                            <p class="text-slate-600">Evaluación de Impacto en Protección de Datos</p>
+                            <p class="mt-2 text-xs text-slate-500">Obligatoria en tratamientos de alto riesgo</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-wine">DPA</h3>
+                            <p class="text-slate-600">Contrato de Tratamiento</p>
+                            <p class="mt-2 text-xs text-slate-500">Entre responsable y encargado</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-wine">Delegado de Protección de Datos (DPO)</h3>
+                        <div class="bg-slate-50 p-4 rounded-lg">
+                            <p class="mb-2"><span class="font-semibold">Voluntario:</span> "Podrá designar" (Art. 50)</p>
+                            <p class="mb-2"><span class="font-semibold">Funciones:</span> Asesoría, monitoreo, punto de contacto con la Agencia</p>
+                            <p><span class="font-semibold">Requisitos:</span> Idoneidad, autonomía, recursos, sin conflicto de intereses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 6: Bases de licitud y derechos -->
+            <div class="slide" id="slide-6" data-slide="6">
+                <h2>Bases de licitud y derechos ARCO+</h2>
+                <div class="space-y-8">
+                    <h3 class="text-wine">Seis bases para tratar datos (Art. 6)</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p><span class="font-semibold">•</span> Consentimiento</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Contrato</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Obligación legal</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Interés legítimo</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Interés vital</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Función pública</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-wine mt-6">Derechos ARCO+ del titular</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="text-wine font-semibold">Acceso</p>
+                            <p class="text-slate-600">Conocer qué datos se tienen</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-wine font-semibold">Rectificación</p>
+                            <p class="text-slate-600">Corregir datos inexactos</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-wine font-semibold">Supresión</p>
+                            <p class="text-slate-600">Eliminar datos cuando ya no sean necesarios</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-wine font-semibold">Oposición</p>
+                            <p class="text-slate-600">Oponerse al tratamiento en ciertos casos</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-wine font-semibold">Portabilidad</p>
+                            <p class="text-slate-600">Recibir los datos en formato estructurado</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-wine font-semibold">Oposición a decisiones automatizadas</p>
+                            <p class="text-slate-600">Cuando se produzcan efectos jurídicos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 7: Principios de protección de datos -->
+            <div class="slide" id="slide-7" data-slide="7">
+                <h2>Principios rectores de protección de datos</h2>
+                <div class="space-y-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-wine">Finalidad y minimización</h3>
+                            <p class="text-slate-600">Usar solo los datos necesarios y para lo informado inicialmente</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Licitud y lealtad</h3>
+                            <p class="text-slate-600">Tratamiento basado en una de las seis bases y de buena fe</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Limitación del plazo</h3>
+                            <p class="text-slate-600">Los datos no se conservan indefinidamente</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Integridad y confidencialidad</h3>
+                            <p class="text-slate-600">Medidas de seguridad adecuadas contra riesgos</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Responsabilidad proactiva</h3>
+                            <p class="text-slate-600">Accountability: demostrar cumplimiento con evidencia</p>
+                        </div>
+                        <div>
+                            <h3 class="text-wine">Transparencia</hp>
+                            <p class="text-slate-600">Informar clara y previamente sobre el tratamiento</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-wine">Transferencias internacionales</h3>
+                        <div class="bg-slate-50 p-4 rounded-lg">
+                            <p class="mb-2"><span class="font-semibold">Requisito:</span> Países con nivel adecuado de protección o garantías</p>
+                            <p><span class="font-semibold">Ejemplo:</span> Cláusulas contractuales estándar, normas corporativas vinculantes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 8: Operación diaria y solicitudes -->
+            <div class="slide" id="slide-8" data-slide="8">
+                <h2>Operación diaria: Qué cambia en la práctica</h2>
+                <div class="space-y-8">
+                    <h3 class="text-wine">Solicitudes de los titulares</h3>
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <p class="mb-2"><span class="font-semibold">Plazo ampliado:</span> De 2 días hábiles (Ley 19.628) a <span class="font-semibold">30 días corridos</span></p>
+                        <p class="mb-2"><span class="font-semibold">Prorrogable:</span> Otros 30 días con aviso fundado al titular</p>
+                        <p class="mb-2"><span class="font-semibold">Respuesta documentada:</span> Trazable y verificable</p>
+                        <p><span class="font-semibold">Canal único:</span> Definir una vía formal de ingreso para toda la organización</p>
+                    </div>
+                    
+                    <h3 class="text-wine mt-6">Qué debe contener la respuesta</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p><span class="font-semibold">•</span> Identificación del solicitante</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Área involucrada</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Decisión fundamentada</p>
+                        </div>
+                        <div>
+                            <p><span class="font-semibold">•</span> Plazo de respuesta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 9: Mitigación y atenuantes -->
+            <div class="slide" id="slide-9" data-slide="9">
+                <h2>Mitigación y atenuantes: El MPI como defensa</h2>
+                <div class="space-y-8">
+                    <h3 class="text-wine">Modelo de Prevención de Infracciones (MPI)</h3>
+                    <div class="bg-slate-50 p-6 rounded-lg">
+                        <p class="mb-2"><span class="font-semibold">Voluntario:</span> Artículos 49 a 53 de la Ley 21.719 + Decreto Supremo N° 662/2025</p>
+                        <p class="mb-2"><span class="font-semibold">Beneficio clave:</span> Opera como atenuante formal frente a multas</p>
+                        <p><span class="font-semibold">Reducción posible:</span> Sanción menor y documenta diligencia del gobierno corporativo</p>
+                    </div>
+                    
+                    <h3 class="text-wine mt-6">Los 9 elementos mínimos del MPI</h3>
+                    <div class="space-y-4">
+                        <p><span class="font-semibold">1.</span> Política de protección de datos aprobada por la alta dirección</p>
+                        <p><span class="font-semibold">2.</span> Asignación de responsabilidades y recursos</p>
+                        <p><span class="font-semibold">3.</span> Evaluación de riesgos de protección de datos</p>
+                        <p><span class="font-semibold">4.</span> Capacitación y concientización periódica</p>
+                        <p><span class="font-semibold">5.</span> Canales de comunicación y reporte de incidentes</p>
+                        <p><span class="font-semibold">6.</span> Monitoreo y medición del desempeño</p>
+                        <p><span class="font-semibold">7.</span> Auditorías internas periódicas</p>
+                        <p><span class="font-semibold">8.</span> Acciones correctivas y preventivas</p>
+                        <p><span class="font-semibold">9.</span> Revisión por la alta dirección y mejora continua</p>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-wine">Cuándo el MPI es especialmente valioso</h3>
+                        <div class="bg-slate-50 p-4 rounded-lg">
+                            <p><span class="font-semibold">Multas gravísimas:</span> Hasta 20.000 UTM</p>
+                            <p><span class="font-semibold">Reincidencia:</span> Hasta 4% de ingresos anuales</p>
+                            <p><span class="font-semibold">Registro Nacional de Sanciones:</span> Público por 5 años</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 10: Directrices por industria (resumen ejecutivo) -->
+            <div class="slide" id="slide-10" data-slide="10">
+                <h2>Directrices por industria: Enfoque práctico</h2>
+                <div class="space-y-8">
+                    <h3 class="text-wine">Industrias de alto riesgo y acciones clave</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-wine">Aseo industrial</h4>
+                            <p class="text-slate-600">Biometría para control de asistencia → DPIA obligatoria</p>
+                            <p class="text-slate-500 text-xs">Riesgo principal: Biometría sin DPIA</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-wine">Transporte y logística</h4>
+                            <p class="text-slate-600">Geolocalización de conductores en tiempo real</p>
+                            <p class="text-slate-500 text-xs">Riesgo principal: Pérdida o filtración de datos de rutas</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-wine">Minería y construcción</h4>
+                            <p class="text-slate-600">Datos de salud ocupacional y exámenes preocupacionales</p>
+                            <p class="text-slate-500 text-xs">Riesgo principal: Salud sin base de licitud reforzada</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-wine">Tecnología y SaaS</h4>
+                            <p class="text-slate-600">Datos en la nube, logs de acceso, credenciales</p>
+                            <p class="text-slate-500 text-xs">Riesgo principal: Transferencias internacionales sin garantías</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-wine">Finanzas y retail</h4>
+                            <p class="text-slate-600">Historial de pagos, perfiles de comportamiento</p>
+                            <p class="text-slate-500 text-xs">Riesgo principal: Tratamiento de datos de morosidad</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h4 class="text-wine">Salud</h4>
+                            <p class="text-slate-600">Fichas clínicas, genéticos, datos biológicos</p>
+                            <p class="text-slate-500 text-xs">Riesgo principal: Tratamiento de datos sensibles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-wine">Acciones transversales para todas las industrias</h3>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">•</span> Implementar RAT como punto de partida</p>
+                            <p><span class="font-semibold">•</span> Revisar y actualizar todos los contratos (DPA)</p>
+                            <p><span class="font-semibold">•</span> Designar o capacitar al DPO</p>
+                            <p><span class="font-semibold">•</span> Establecer canal único para solicitudes de titulares</p>
+                            <p><span class="font-semibold">•</span> Capacitación periódica al personal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 11: Plan de acción 90 días -->
+            <div class="slide" id="slide-11" data-slide="11">
+                <h2>Plan de acción: Los primeros 90 días</h2>
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-wine">Días 1-15: Diagnóstico y fundación</h3>
+                            <ul class="list-disc list-inside mt-4 space-y-2 text-slate-600">
+                                <li>Designar responsable del proyecto de cumplimiento</li>
+                                <li>Iniciar el Registro de Actividades de Tratamiento (RAT)</li>
+                                <li>Realizar inventario inicial de tratamientos de datos</p>
+                                <li>Identificar tratamientos de alto riesgo (para DPIA)</p>
+                                <li>Revisar contratos con terceros (buscar oportunidades de DPA)</p>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-wine">Días 16-45: Implementación core</h3>
+                            <ul class="list-disc list-inside mt-4 space-y-2 text-slate-600">
+                                <li>Completar RAT y clasificarlo por riesgo</p>
+                                <li>Realizar DPIA en tratamientos de alto riesgo</p>
+                                <li>Establecer políticas de protección de datos</p>
+                                <li>Definir canal único para solicitudes de titulares</p>
+                                <li>Capacitación inicial al personal clave</p>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg">
+                            <h3 class="text-wine">Días 46-90: Operación y mejora</h3>
+                            <ul class="list-disc list-inside mt-4 space-y-2 text-slate-600">
+                                <li>Implementar medidas de seguridad técnicas y organizativas</p>
+                                <li>Establecer procedimientos para brechas de datos</p>
+                                <li>Capacitación continua y refrescos</p>
+                                <li>Monitoreo y reportes periódicos de cumplimiento</p>
+                                <li>Revisión y ajuste basado en métricas y feedback</p>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-wine">Indicadores de éxito a los 90 días</h3>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">•</span> RAT completado y actualizado</p>
+                            <p><span class="font-semibold">•</span> DPIA realizadas en tratamientos de alto riesgo</p>
+                            <p><span class="font-semibold">•</span> Políticas de protección de datos aprobadas</p>
+                            <p><span class="font-semibold">•</span> Canal de solicitudes operativo y documentado</p>
+                            <p><span class="font-semibold">•</span> Capacitación del 80% del personal completada</p>
+                            <p><span class="font-semibold">•</span> Primer reporte de cumplimiento interno entregado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 12: Cierre y llamado a la acción -->
+            <div class="slide" id="slide-12" data-slide="12">
+                <h2>Próximos pasos: De la conformidad a la ventaja competitiva</h2>
+                <div class="space-y-8">
+                    <div class="bg-slate-50 p-8 rounded-lg text-center">
+                        <h3 class="text-wine mb-4">La protección de datos como activo estratégico</h3>
+                        <p class="mb-6 text-slate-600 max-w-xl">
+                            Cumplir con la Ley 21.719 no es solo evitar sanciones. Es construir confianza con clientes, trabajadores y socios. Las empresas que integren la protección de datos en su cultura operativa ganarán en reputación, reducirán riesgos operacionales y estarán mejor posicionadas para oportunidades de negocio en un mundo cada vez más consciente de la privacidad.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                            <a href="https://proteccion-datoscursos.netlify.app" 
+                               class="bg-emerald hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                Acceder al curso educativo completo
+                            </a>
+                            <a href="#" 
+                               class="border border-emerald hover:bg-emerald-50 text-emerald font-semibold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                                Descargar checklist de inicio rápido
+                            </a>
+                        </div>
+                        
+                        <p class="mt-6 text-slate-500">
+                            <strong>Plena vigencia:</strong> 1 de diciembre de 2026<br>
+                            <strong>Fuente oficial:</strong> Biblioteca del Congreso Nacional de Chile · idNorma=1209272<br>
+                            <strong>Documento informativo:</strong> No constituye asesoría legal. Para decisiones empresariales consulte a su abogado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-dots" id="nav-dots"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const navDots = document.getElementById('nav-dots');
+            let currentSlide = 1;
+            
+            // Crear dots de navegación
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => showSlide(index + 1));
+                navDots.appendChild(dot);
+            });
+            
+            const dots = document.querySelectorAll('.dot');
+            
+            function showSlide(slideNumber) {
+                // Ocultar todas las slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Mostrar la slide solicitada
+                const slideToShow = document.getElementById(`slide-${slideNumber}`);
+                if (slideToShow) {
+                    slideToShow.classList.add('active');
+                    currentSlide = slideNumber;
+                    
+                    // Actualizar dots activos
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === slideNumber - 1);
+                    });
+                }
+                
+                // Actualizar URL hash para permitir navegación con botones del navegador
+                window.location.hash = `slide-${slideNumber}`;
+            }
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    const nextSlide = currentSlide + 1;
+                    if (nextSlide <= slides.length) {
+                        showSlide(nextSlide);
+                    }
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const prevSlide = currentSlide - 1;
+                    if (prevSlide >= 1) {
+                        showSlide(prevSlide);
+                    }
+                }
+            });
+            
+            // Navegación con hash (para botones adelante/atrás del navegador)
+            window.addEventListener('hashchange', function() {
+                const hash = window.location.hash.substring(1); // Quitar el '#'
+                if (hash.startsWith('slide-')) {
+                    const slideNumber = parseInt(hash.split('-')[1]);
+                    if (!isNaN(slideNumber) && slideNumber >= 1 && slideNumber <= slides.length) {
+                        showSlide(slideNumber);
+                    }
+                }
+            });
+            
+            // Mostrar la slide inicial basada en el hash o la primera
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash.startsWith('slide-')) {
+                const slideNumber = parseInt(initialHash.split('-')[1]);
+                if (!isNaN(slideNumber) && slideNumber >= 1 && slideNumber <= slides.length) {
+                    showSlide(slideNumber);
+                }
+            } else {
+                showSlide(1);
+            }
+        });
+    </script>
+</body>
+</html>

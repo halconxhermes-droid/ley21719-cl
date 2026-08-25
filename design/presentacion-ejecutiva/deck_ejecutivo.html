@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ley N° 21.719 — Presentación Ejecutiva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --emerald:#047857; --emerald-dark:#065f46; --emerald-light:#d1fae5;
+  --wine:#991B1B; --wine-dark:#7f1d1d;
+  --amber:#b45309; --amber-bg:#fef3c7;
+  --ink:#0f172a; --slate-700:#334155; --slate-600:#475569; --slate-400:#94a3b8;
+  --line:#e2e8f0; --bg:#f8fafc; --card:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:var(--ink);overflow:hidden}
+
+/* ===== deck frame ===== */
+#deck{position:relative;width:100vw;height:100vh}
+.slide{
+  position:absolute;inset:0;display:none;flex-direction:column;
+  background:var(--bg);padding:56px 72px 84px;overflow:hidden;
+}
+.slide.active{display:flex}
+.slide .body{flex:1;display:flex;flex-direction:column;min-height:0}
+
+/* kicker + h1 */
+.kicker{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--emerald);margin-bottom:10px}
+.kicker.red{color:var(--wine)}
+h1.title{font-size:40px;font-weight:800;line-height:1.12;color:var(--ink);letter-spacing:-.02em;margin-bottom:6px}
+p.sub{font-size:17px;color:var(--slate-600);margin-bottom:26px;max-width:900px}
+
+/* footer */
+.foot{
+  position:absolute;left:72px;right:72px;bottom:26px;display:flex;justify-content:space-between;align-items:center;
+  font-size:11.5px;color:var(--slate-400);
+}
+.foot .brand{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--slate-600)}
+.foot .dotsep{width:4px;height:4px;border-radius:50%;background:#cbd5e1}
+.footnote{position:absolute;left:72px;right:72px;bottom:46px;font-size:10.5px;color:var(--slate-400);line-height:1.45}
+
+/* progress bar */
+#bar{position:absolute;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--emerald),#34d399);z-index:50;transition:width .25s ease}
+
+/* nav */
+#nav{position:absolute;right:28px;bottom:20px;display:flex;gap:8px;z-index:60}
+.navbtn{width:38px;height:38px;border-radius:10px;border:1px solid #334155;background:rgba(15,23,42,.85);color:#e2e8f0;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.navbtn:hover{background:var(--emerald);border-color:var(--emerald)}
+#counter{position:absolute;left:28px;bottom:24px;z-index:60;font-size:13px;font-weight:600;color:#94a3b8;font-variant-numeric:tabular-nums}
+
+/* generic components */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+.card.accent{border-top:4px solid var(--emerald)}
+.card.risk{border-top:4px solid var(--wine)}
+.card.warn{border-top:4px solid var(--amber)}
+.card h3{font-size:15.5px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.card p{font-size:13px;line-height:1.55;color:var(--slate-600)}
+
+.statband{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:auto}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.stat b{display:block;font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--wine);line-height:1}
+.stat.ok b{color:var(--emerald)}
+.stat span{display:block;font-size:11.5px;font-weight:600;color:var(--slate-600);margin-top:6px;line-height:1.35}
+
+.chip{display:inline-flex;align-items:center;padding:7px 14px;border-radius:999px;background:var(--emerald-light);color:var(--emerald-dark);font-size:13px;font-weight:700}
+.chip.red{background:#fee2e2;color:var(--wine-dark)}
+.chip.gray{background:#f1f5f9;color:var(--slate-700)}
+
+ul.ticks{list-style:none}
+ul.ticks li{position:relative;padding-left:24px;font-size:13.5px;line-height:1.5;color:var(--slate-700);margin-bottom:9px}
+ul.ticks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--emerald);font-weight:800}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:13px}
+table.cmp th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:10px 14px;border-bottom:2px solid var(--line)}
+table.cmp th.old{color:var(--slate-400)} table.cmp th.new{color:var(--emerald)}
+table.cmp td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45;color:var(--slate-600)}
+table.cmp td:first-child{font-weight:700;color:var(--ink);width:190px}
+table.cmp tr td:nth-child(2){color:#94a3b8;width:340px}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:10px;position:relative}
+.timeline::before{content:"";position:absolute;top:22px;left:6%;right:6%;height:3px;background:var(--line)}
+.tl-item{position:relative;padding:0 14px;text-align:center}
+.tl-item::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--emerald);border:3px solid #fff;box-shadow:0 0 0 2px var(--emerald);margin:16px auto 14px;position:relative;z-index:2}
+.tl-item.final::before{background:var(--wine);box-shadow:0 0 0 2px var(--wine)}
+.tl-date{font-size:12px;font-weight:800;color:var(--emerald);text-transform:uppercase;letter-spacing:.06em}
+.tl-item.final .tl-date{color:var(--wine)}
+.tl-title{font-size:14.5px;font-weight:700;color:var(--ink);margin:4px 0 8px}
+.tl-item ul{list-style:none;text-align:left}
+.tl-item ul li{font-size:11.5px;color:var(--slate-600);line-height:1.45;padding-left:12px;position:relative;margin-bottom:5px}
+.tl-item ul li::before{content:"•";position:absolute;left:0;color:var(--emerald)}
+
+/* numbered decisions */
+.decisions{counter-reset:d;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.decision{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 18px 64px}
+.decision::before{
+  counter-increment:d;content:counter(d);
+  position:absolute;left:18px;top:16px;width:32px;height:32px;border-radius:10px;
+  background:var(--emerald);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center;
+}
+.decision h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.decision p{font-size:12.5px;line-height:1.5;color:var(--slate-600)}
+
+/* cover */
+.cover{background:radial-gradient(1200px 700px at 80% -10%,rgba(4,120,87,.55),transparent 60%),linear-gradient(135deg,#0b1220 0%,#10231d 55%,#047857 130%)}
+.cover .body{justify-content:center}
+.cover .eyebrow{color:#6ee7b7;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}
+.cover h1{font-size:62px;font-weight:900;line-height:1.05;letter-spacing:-.03em;color:#fff;max-width:900px}
+.cover h1 em{font-style:normal;color:#34d399}
+.cover p.tag{font-size:20px;color:#cbd5e1;margin-top:20px;max-width:720px;line-height:1.5}
+.cover .meta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.cover .meta span{padding:9px 18px;border-radius:999px;font-size:13.5px;font-weight:700}
+.cover .meta .vig{background:#fee2e2;color:#fecaca}
+.cover .meta .pub{background:rgba(255,255,255,.1);color:#e2e8f0}
+.cover .meta .bcn{background:rgba(52,211,153,.15);color:#6ee7b7}
+.cover .audience{margin-top:26px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#64748b;font-weight:700}
+
+/* closing */
+.closing{background:radial-gradient(1000px 600px at 20% 110%,rgba(4,120,87,.5),transparent 60%),linear-gradient(160deg,#0b1220,#047857 140%)}
+.closing .body{justify-content:center;align-items:center;text-align:center}
+.closing h1{font-size:44px;font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.15;max-width:850px}
+.closing p{font-size:17px;color:#cbd5e1;max-width:700px;line-height:1.6;margin-top:18px}
+.closing .cta{display:inline-block;margin-top:34px;background:#fff;color:var(--emerald-dark);font-weight:800;font-size:16px;padding:16px 34px;border-radius:12px;text-decoration:none}
+.closing .legal{margin-top:44px;font-size:11.5px;color:#94a3b8;line-height:1.7}
+
+/* industry mini-cards */
+.ind{border-left:4px solid var(--emerald)}
+.ind h3 small{display:block;font-size:11px;font-weight:600;color:var(--slate-400);margin-top:2px}
+.ind .riskline{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--wine);font-weight:600}
+
+@media (max-width:1100px){
+  .slide{padding:36px 36px 76px}
+  h1.title{font-size:30px}
+  .g4,.statband{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:1fr}
+  .cover h1{font-size:40px}
+  .foot{left:36px;right:36px}
+  .footnote{left:36px;right:36px}
+}
+</style>
+</head>
+<body>
+<div id="deck">
+<div id="bar"></div>
+
+<!-- ═══════════ S1 PORTADA ═══════════ -->
+<section class="slide cover active">
+  <div class="body">
+    <div class="eyebrow">Documento informativo · Confidencial</div>
+    <h1>Ley N° 21.719<br>de <em>Protección de Datos</em> Personales</h1>
+    <p class="tag">Qué exige la nueva ley, qué se arriesga y las decisiones que su organización debe tomar antes de la vigencia plena.</p>
+    <div class="meta">
+      <span class="pub">Publicada · 13 dic 2024</span>
+      <span class="vig">Vigencia plena · 1 dic 2026</span>
+      <span class="bcn">BCN idNorma=1209272</span>
+    </div>
+    <div class="audience">Para directores, gerencias y altos cargos</div>
+  </div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> Presentación Ejecutiva</div><div>01 / 16</div></div>
+</section>
+
+<!-- ═══════════ S2 GLOSARIO ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Glosario</div>
+    <h1 class="title">Los términos que el directorio debe dominar</h1>
+    <p class="sub">Definiciones conforme al Art. 2 de la Ley N° 21.719.</p>
+    <div class="grid g3" style="flex:1">
+      <div class="card accent"><h3>Titular</h3><p>Persona natural dueña de los datos: trabajador, cliente o proveedor.</p></div>
+      <div class="card accent"><h3>Responsable <small>(controlador)</small></h3><p>Quien decide los fines y medios del tratamiento. Responde ante la Agencia.</p></div>
+      <div class="card accent"><h3>Encargado <small>(procesador)</small></h3><p>Quien trata datos por cuenta del responsable, sin decidir finalidades.</p></div>
+      <div class="card"><h3>Dato personal</h3><p>Información de persona identificada o identificable — incluye cookies, IPs e IDs de dispositivos.</p></div>
+      <div class="card risk"><h3>Dato sensible</h3><p>Salud, biometría, afiliación sindical, origen étnico: esfera íntima con reglas reforzadas.</p></div>
+      <div class="card"><h3>RAT</h3><p>Registro de Actividades de Tratamiento: el inventario obligatorio de tratamientos.</p></div>
+      <div class="card warn"><h3>Multas en UTM</h3><p>Hasta 5.000 (leves), 10.000 (graves) y 20.000 UTM (gravísimas). Base Art. 35.</p></div>
+      <div class="card risk"><h3>Registro Nacional de Sanciones</h3><p>Listado público por 5 años. Estar en él bloquea licitaciones y negocios.</p></div>
+      <div class="card"><h3>MPI</h3><p>Modelo de Prevención de Infracciones: programa de cumplimiento certificable que atenúa sanciones.</p></div>
+    </div>
+  </div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>02 / 16</div></div>
+</section>
+
+<!-- ═══════════ S3 CONTEXTO ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker red">Contexto regulatorio</div>
+    <h1 class="title">La cuenta regresiva ya empezó</h1>
+    <p class="sub">La Agencia de Protección de Datos ya opera y fiscalizará con evidencia, no con buenas intenciones.</p>
+    <div class="statband" style="margin:20px 0 26px">
+      <div class="stat ok"><b>13·dic·24</b><span>Publicación Diario Oficial</span></div>
+      <div class="stat"><b>~5 meses</b><span>de plazo restante para adecuarse</span></div>
+      <div class="stat"><b>1·dic·26</b><span>Vigencia plena · fiscalización efectiva</span></div>
+      <div class="stat ok"><b>GDPR+</b><span>Marco alineado a estándares europeos</span></div>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Reemplaza la Ley 19.628</h3><p>Pasa de un marco declarativo, casi sin aplicación efectiva, a uno con poder sancionatorio real.</p></div>
+      <div class="card"><h3>Autoridad con dientes</h3><p>La Agencia fiscaliza de oficio, sanciona y ordena medidas correctivas.</p></div>
+      <div class="card risk"><h3>Multas que impactan</h3><p>Hasta 20.000 UTM (~US$ 1,5 MM) por infracción gravísima; hasta 4% de ingresos por reincidencia.</p></div>
+    </div>
+  </div>
+  <div class="footnote">Fuente: Ley N° 21.719, disposición transitoria primera. Texto oficial: BCN LeyChile idNorma=1209272.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>03 / 16</div></div>
+</section>
+
+<!-- ═══════════ S4 COMPARATIVA ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Comparativa normativa</div>
+    <h1 class="title">De la Ley 19.628 a la Ley 21.719: qué cambia</h1>
+    <table class="cmp" style="margin-top:14px">
+      <tr><th></th><th class="old">Ley 19.628 (antes)</th><th class="new">Ley 21.719 (ahora)</th></tr>
+      <tr><td>Fiscalización</td><td>Sin autoridad especializada; control difuso en tribunales civiles</td><td><b>Agencia PDP</b>: fiscaliza de oficio, sanciona y dicta normas</td></tr>
+      <tr><td>Sanciones</td><td>10–50 UTM, casi sin aplicación efectiva</td><td>Hasta <b>20.000 UTM</b> y hasta <b>4%</b> de ingresos por reincidencia; registro público</td></tr>
+      <tr><td>Bases de licitud</td><td>Solo consentimiento o autorización legal</td><td><b>6 bases</b>: consentimiento, contrato, obligación legal, interés legítimo, interés vital, función pública</td></tr>
+      <tr><td>Derechos del titular</td><td>Cuatro derechos, reclamables solo en tribunales</td><td>ARCO+ ampliado + oposición a decisiones automatizadas, con reclamo ante la Agencia</td></tr>
+      <tr><td>Gestión</td><td>No exigía instrumentos de gestión</td><td>Obliga <b>RAT</b>, DPIA, delegado y contrato escrito con encargados</td></tr>
+      <tr><td>Brechas y transferencias</td><td>Seguridad implícita; no había que avisar incidentes</td><td>Medidas obligatorias, <b>notificación de brechas</b> y garantías para transferir al extranjero</td></tr>
+    </table>
+  </div>
+  <div class="footnote">La Ley N° 21.719 reforma íntegramente la Ley N° 19.628, que pasa a llamarse Ley sobre Protección de los Datos Personales.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>04 / 16</div></div>
+</section>
+
+<!-- ═══════════ S5 RIESGO ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker red">Exposición al riesgo</div>
+    <h1 class="title">¿Qué se arriesga?</h1>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card risk"><h3>1 · Riesgo financiero</h3><p>Multas de hasta 5.000 UTM (leves), 10.000 (graves) y 20.000 UTM (gravísimas) — ~$1.300 MM CLP. Hasta <b>4% de ingresos anuales</b> por reincidencia. Las mitigaciones documentadas actúan como atenuantes.</p></div>
+      <div class="card risk"><h3>2 · Riesgo operacional</h3><p>La Agencia puede ordenar la <b>suspensión temporal del tratamiento por hasta 30 días</b>: apagado inmediato de remuneraciones, contratos con clientes y proveedores, y coordinación operativa.</p></div>
+      <div class="card risk"><h3>3 · Riesgo reputacional</h3><p><b>Registro Nacional de Sanciones público por 5 años</b>. Estar listados bloquea licitaciones corporativas y oportunidades de negocio de forma inmediata.</p></div>
+    </div>
+    <div class="statband">
+      <div class="stat"><b>20.000 UTM</b><span>multa máxima por gravísimo</span></div>
+      <div class="stat"><b>4%</b><span>ingresos anuales (reincidencia)</span></div>
+      <div class="stat"><b>30 días</b><span>suspensión posible del tratamiento</span></div>
+      <div class="stat"><b>5 años</b><span>en el Registro Público de Sanciones</span></div>
+    </div>
+  </div>
+  <div class="footnote">Régimen sancionatorio: Ley N° 21.719, Art. 35 y concordantes.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>05 / 16</div></div>
+</section>
+
+<!-- ═══════════ S6 INDUSTRIAS ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Impacto sectorial</div>
+    <h1 class="title">Cómo afecta a cada industria</h1>
+    <div class="grid g3" style="flex:1;margin-top:8px">
+      <div class="card ind"><h3>Aseo industrial<small>Biometría de asistencia</small></h3><p>Huella y reconocimiento facial en faenas + datos de salud (EPP, accidentes).</p><div class="riskline">⚠ Biometría sin DPIA ni base de licitud = infracción de alto impacto</div></div>
+      <div class="card ind"><h3>Transporte y logística<small>Geolocalización</small></h3><p>GPS de conductores y datos de destinatarios; subcontratistas como encargados.</p><div class="riskline">⚠ Filtración de rutas/clientes = infracción grave + impacto contractual</div></div>
+      <div class="card ind"><h3>Minería y construcción<small>Salud ocupacional</small></h3><p>Preocupacionales, aptitud de altura, licencias médicas: todos sensibles.</p><div class="riskline">⚠ Suspensión de 30 días paraliza el acceso a faenas</div></div>
+      <div class="card ind"><h3>Tecnología y SaaS<small>Encargados masivos</small></h3><p>Nube, logs, credenciales y respaldos, muchas veces fuera de Chile.</p><div class="riskline">⚠ Transferencias internacionales sin garantías = exposición a sanción</div></div>
+      <div class="card ind"><h3>Finanzas, contabilidad y retail<small>Datos económicos</small></h3><p>Historial de pagos, morosidad y perfiles de compra de personas naturales.</p><div class="riskline">⚠ Conservación contable 6 años (art. 200 Cód. Tributario) limita supresiones</div></div>
+      <div class="card ind"><h3>Salud y farmacéutica<small>Datos sensibles máximos</small></h3><p>Fichas clínicas, genéticos y biológicos con consentimiento expreso.</p><div class="riskline">⚠ Brecha de salud escala directo a gravísimo (20.000 UTM)</div></div>
+    </div>
+  </div>
+  <div class="footnote">Directrices por industria conforme a la Ley N° 21.719; DPIA obligatoria en tratamientos de alto riesgo. Plazos de conservación: Dirección del Trabajo y SII.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>06 / 16</div></div>
+</section>
+
+<!-- ═══════════ S7 CONCEPTOS ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Marco normativo</div>
+    <h1 class="title">Conceptos que cambian la lectura de la ley</h1>
+    <div class="grid g2" style="margin-top:8px">
+      <div class="card accent"><h3>Dato personal — también digital</h3><p>RUT, nombres y correos… pero críticamente también <b>cookies, IPs e IDs de dispositivos móviles</b>, incluso si están encriptados. Su web y apps quedan alcanzadas.</p></div>
+      <div class="card risk"><h3>Dato sensible — regla reforzada</h3><p>Salud, orientación sexual, afiliación política o sindical, biometría. Exigen base de licitud especial, proporcionalidad y seguridad reforzada. No basta una cláusula genérica.</p></div>
+      <div class="card"><h3>Dato anonimizado — fuera de la ley</h3><p>Solo si el procedimiento es <b>irreversible</b>: sin posibilidad de vincularlo a una persona identificable. La anonimización mal hecha no exime.</p></div>
+      <div class="card"><h3>Accountability — demostrar, no prometer</h3><p>Responsabilidad proactiva: la organización debe poder <b>evidenciar el cumplimiento de forma documental y auditable</b> ante clientes, auditorías y la Agencia.</p></div>
+    </div>
+    <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+      <span class="chip">Licitud</span><span class="chip">Lealtad</span><span class="chip">Transparencia</span><span class="chip">Finalidad</span><span class="chip">Minimización</span><span class="chip">Plazo de conservación</span><span class="chip">Seguridad</span>
+    </div>
+  </div>
+  <div class="footnote">Principios conforme a la Ley N° 21.719 (Art. 2 y normas sobre tratamiento lícito).</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>07 / 16</div></div>
+</section>
+
+<!-- ═══════════ S8 OBLIGACIONES ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Marco normativo</div>
+    <h1 class="title">Qué exige la ley a una empresa como la suya</h1>
+    <div class="grid g3" style="flex:1;margin-top:8px">
+      <div class="card accent"><h3>RAT — Gobernanza</h3><p>Inventario de todos los tratamientos: clientes, trabajadores, proveedores y personal administrativo. Sin RAT no hay forma de acreditar cumplimiento.</p></div>
+      <div class="card accent"><h3>DPA con terceros</h3><p>Contrato escrito responsable–encargado: objeto, finalidad, duración, tipos de datos, confidencialidad, seguridad, subencargados y eliminación al terminar.</p></div>
+      <div class="card accent"><h3>DPIA</h3><p>Evaluación de impacto preventiva y obligatoria ante tratamientos de alto riesgo: biometría, geolocalización, perfiles de salud, profiling.</p></div>
+      <div class="card"><h3>Cultura de cumplimiento</h3><p>Capacitación periódica, preparación para generar evidencia y capacidad de mitigar riesgos regulatorios y contractuales.</p></div>
+      <div class="card"><h3>Canal de derechos</h3><p>Vía formal habilitada para que titulares ejerzan sus derechos, con registro trazable de cada solicitud y respuesta.</p></div>
+      <div class="card risk"><h3>Notificación de brechas</h3><p>Aviso obligatorio a la Agencia PDP <b>"por los medios más expeditos posibles y sin dilaciones indebidas"</b> (Art. 14 sexies) y, si corresponde, a los afectados.</p></div>
+    </div>
+  </div>
+  <div class="footnote">Nota de precisión legal: la ley NO fija plazo de 72 horas para brechas — exige medios expeditos y sin dilaciones indebidas (Art. 14 sexies). Fuente: texto oficial BCN idNorma=1209272.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>08 / 16</div></div>
+</section>
+
+<!-- ═══════════ S9 BASES + LABORAL ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Tratamiento lícito</div>
+    <h1 class="title">Cuándo se puede tratar datos (y el caso laboral)</h1>
+    <div style="margin:14px 0 22px;display:flex;gap:10px;flex-wrap:wrap">
+      <span class="chip">Consentimiento</span><span class="chip">Ejecución de contrato</span><span class="chip">Obligación legal</span><span class="chip">Interés legítimo</span><span class="chip">Interés vital</span><span class="chip">Función pública</span>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h3>Datos laborales: el consentimiento no es la base habitual</h3><ul class="ticks">
+        <li>El tratamiento se apoya en la <b>ejecución del contrato</b> y en obligaciones legales del empleador (remuneraciones, AFP/Previred, salud, Mutual, SII).</li>
+        <li>Datos sensibles laborales (licencias, sindicato, biometría) exigen <b>justificación reforzada y proporcionalidad</b>.</li>
+        <li>Terminado el vínculo: conservar solo lo exigido por ley y suprimir el resto.</li>
+      </ul></div>
+      <div class="card warn"><h3>Plazos mínimos de conservación</h3><ul class="ticks">
+        <li>Documentación laboral: <b>5 años</b> tras el término del vínculo (Dirección del Trabajo, ORD. 834/2021).</li>
+        <li>Contable-tributaria: <b>6 años</b> (Código Tributario, art. 200).</li>
+        <li>Estas obligaciones <b>limitan el derecho de supresión</b>: la negativa debe ser fundada y por escrito.</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="footnote">Fuentes: Dirección del Trabajo (ORD. N°834/2021) y Servicio de Impuestos Internos (Código Tributario art. 200); bases de licitud conforme a la Ley N° 21.719.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>09 / 16</div></div>
+</section>
+
+<!-- ═══════════ S10 DERECHOS ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Operación diaria</div>
+    <h1 class="title">Solicitudes de los titulares: qué cambia en la práctica</h1>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card accent"><h3>Derechos ARCO+</h3><p>Acceso, rectificación, cancelación/supresión, oposición y portabilidad, más la oposición a <b>decisiones automatizadas</b>. Sin costo para el titular.</p></div>
+      <div class="card accent"><h3>Plazo nuevo</h3><p>De 2 días hábiles (19.628) a <b>30 días corridos</b>, prorrogables +30 con aviso fundado. Respuesta documentada y trazable.</p></div>
+      <div class="card accent"><h3>Canal único + identidad</h3><p>Una vía formal de ingreso con registro (fecha, solicitante, área, respuesta). Verificar identidad: entregar datos a un tercero es en sí una infracción.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card warn"><h3>Cuándo se puede denegar</h3><p>La supresión no procede si hay obligación legal de conservar (laboral 5 años, contable 6 años). La negativa siempre <b>fundada y por escrito</b>.</p></div>
+      <div class="card risk"><h3>Si el titular reclama</h3><p>Reclama ante la <b>Agencia</b>, no ante tribunales. El expediente interno de la empresa es la evidencia con que se defiende el caso.</p></div>
+    </div>
+  </div>
+  <div class="footnote">Derechos y plazos conforme a la Ley N° 21.719; tutela como procedimiento administrativo gratuito ante la Agencia.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>10 / 16</div></div>
+</section>
+
+<!-- ═══════════ S11 ROLES ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Gobernanza</div>
+    <h1 class="title">Roles: quién es quién en el tratamiento de datos</h1>
+    <div class="grid g2" style="margin-top:8px">
+      <div class="card accent"><h3>Titular</h3><p>La persona natural dueña de los datos. Ejerce ARCO+: acceso, rectificación, supresión, oposición y portabilidad.</p></div>
+      <div class="card accent"><h3>Responsable (controlador)</h3><p>Decide fines y medios. Es el sujeto principal ante la Agencia. Cada empresa lo es respecto de los datos cuyo uso decide.</p></div>
+      <div class="card"><h3>Encargado (procesador)</h3><p>Trata por cuenta del responsable, según sus instrucciones. Ej.: nóminas, TI en nube, contabilidad de terceros.</p></div>
+      <div class="card warn"><h3>Corresponsables y rol "híbrido"</h3><p>Si dos deciden en conjunto son corresponsables. Una sociedad puede ser responsable en unos tratamientos y encargada en otros: hay que mapear <b>tratamiento por tratamiento</b>.</p></div>
+      <div class="card"><h3>DPA — contrato obligatorio</h3><p>Escrito entre responsable y encargado: objeto, finalidad, duración, datos, confidencialidad, seguridad, subencargados y devolución/eliminación final.</p></div>
+      <div class="card risk"><h3>Responsabilidad solidaria</h3><p>En cesiones, el cesionario pasa a ser responsable, pero <b>la responsabilidad no se traspasa</b>: el responsable responde por toda la cadena.</p></div>
+    </div>
+  </div>
+  <div class="footnote">Nomenclatura conforme a la Ley N° 21.719 (definiciones del Art. 2).</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>11 / 16</div></div>
+</section>
+
+<!-- ═══════════ S12 DPO ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Gobernanza</div>
+    <h1 class="title">Delegado de Protección de Datos: perfil y funciones</h1>
+    <p class="sub">Su designación es <b>voluntaria</b> ("podrá designarse", Art. 50) pero conviene cuando hay volumen, sensibilidad o flujos complejos. En empresas menores, puede asumirlo el dueño o máxima autoridad.</p>
+    <div class="grid g3">
+      <div class="card accent"><h3>Idoneidad</h3><p>Capacidad y conocimientos específicos en protección de datos.</p></div>
+      <div class="card accent"><h3>Autonomía y recursos</h3><p>Designado por la máxima autoridad, independiente de la administración, con medios acordes al tamaño de la empresa.</p></div>
+      <div class="card accent"><h3>Sin conflicto de intereses</h3><p>Puede tener otras funciones, siempre que no comprometan su supervisión.</p></div>
+      <div class="card"><h3>Asesoría y formación</h3><p>Informa obligaciones a responsables y trabajadores; mantiene capacitación permanente.</p></div>
+      <div class="card"><h3>Enlace oficial</h3><p>Punto de contacto con la Agencia y gestor de solicitudes ARCOP+ de trabajadores, clientes y proveedores.</p></div>
+      <div class="card"><h3>Plan anual y reporte</h3><p>Identifica riesgos, propone mitigaciones y rinde cuenta periódica a la alta dirección.</p></div>
+    </div>
+  </div>
+  <div class="footnote">Perfil y funciones del delegado conforme a la Ley N° 21.719 (Art. 50): designación facultativa.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>12 / 16</div></div>
+</section>
+
+<!-- ═══════════ S13 MPI ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker red">Mitigación y atenuantes</div>
+    <h1 class="title">MPI: la defensa formal de la empresa</h1>
+    <p class="sub">Modelo de Prevención de Infracciones — Arts. 49–53 Ley 21.719 y D.S. N° 662/2025. Voluntario y certificable ante la Agencia.</p>
+    <div class="grid g2">
+      <div class="card accent"><h3>Los 9 elementos mínimos</h3><ul class="ticks">
+        <li>Delegado de Protección de Datos</li><li>Registro de Actividades (RAT)</li><li>Matriz de riesgos</li>
+        <li>Protocolos y controles</li><li>Canal de reportes</li><li>Régimen sancionatorio interno</li>
+        <li>Cláusulas contractuales</li><li>Capacitación</li><li>Supervisión periódica del modelo</li>
+      </ul></div>
+      <div>
+        <div class="card warn" style="margin-bottom:16px"><h3>Otras atenuantes</h3><p>Autodenuncia, colaboración en la investigación, reparación del daño y medidas correctivas documentadas reducen la sanción.</p></div>
+        <div class="card risk" style="margin-bottom:16px"><h3>Agravantes a evitar</h3><p>Reincidencia, obstrucción, ausencia de seguridad u omitir el aviso de brechas elevan la infracción de leve a grave o gravísima.</p></div>
+        <div class="card"><h3>Certificación</h3><p>La certifica solo la Agencia; queda inscrita en registro público (señal comercial en licitaciones), vigencia <b>3 años</b>, renovable. Implementación realista: <b>6–12 meses</b>.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="footnote">Un MPI certificado opera como atenuante formal frente a multas de hasta 20.000 UTM o 4% de ingresos: condiciona sanción menor y documenta diligencia del gobierno corporativo.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> Arts. 49–53 · D.S. 662/2025</div><div>13 / 16</div></div>
+</section>
+
+<!-- ═══════════ S14 HOJA DE RUTA ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker">Hoja de ruta</div>
+    <h1 class="title">Plan de adecuación a diciembre 2026</h1>
+    <div class="timeline" style="flex:1">
+      <div class="tl-item">
+        <div class="tl-date">Ago 2026</div><div class="tl-title">Diagnóstico</div>
+        <ul><li>Inventario RAT + flujos</li><li>Mapa responsables/encargados</li><li>Proveedores críticos</li><li>Capacitación alta gerencia</li></ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Sep 2026</div><div class="tl-title">Implementación</div>
+        <ul><li>Matriz de riesgos</li><li>DPIA alto impacto</li><li>Adecuación contractual (DPA)</li><li>Políticas y canal de derechos</li></ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Q4 2026</div><div class="tl-title">Validación</div>
+        <ul><li>Controles implementados</li><li>Simulación de fiscalización</li><li>Cierre de brechas</li><li>Evidencia documental</li></ul>
+      </div>
+      <div class="tl-item final">
+        <div class="tl-date">1 dic 2026</div><div class="tl-title">Go Live</div>
+        <ul><li>Programa operativo</li><li>Evidencia disponible</li><li>Listos para fiscalización</li></ul>
+      </div>
+    </div>
+    <div class="statband">
+      <div class="stat ok"><b>RAT</b><span>completo y clasificado por riesgo</span></div>
+      <div class="stat ok"><b>DPIA</b><span>en tratamientos de alto impacto</span></div>
+      <div class="stat ok"><b>DPA</b><span>firmados con encargados críticos</span></div>
+      <div class="stat ok"><b>MPI</b><span>decisión tomada (6–12 meses)</span></div>
+    </div>
+  </div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>14 / 16</div></div>
+</section>
+
+<!-- ═══════════ S15 DECISIONES ═══════════ -->
+<section class="slide">
+  <div class="body">
+    <div class="kicker red">Decisiones requeridas</div>
+    <h1 class="title">Lo que pedimos aprobar hoy</h1>
+    <div class="decisions" style="margin-top:14px">
+      <div class="decision"><h3>Aprobar el programa</h3><p>Mandato formal para ejecutar el plan de adecuación, registrado en acta como evidencia de diligencia del directorio.</p></div>
+      <div class="decision"><h3>Designar al responsable</h3><p>Nombrar al Delegado de Protección de Datos, definir autonomía y dedicación, más un comité que reporte periódicamente.</p></div>
+      <div class="decision"><h3>Asignar presupuesto</h3><p>Recursos para levantamiento, asesoría legal y técnica, herramientas de seguridad, capacitación y eventual certificación del MPI.</p></div>
+      <div class="decision"><h3>Definir alcance y roles</h3><p>Validar mapa responsable/encargado/corresponsable entre sociedades y la regla de intercambio de datos dentro del grupo.</p></div>
+      <div class="decision"><h3>Optar por el MPI</h3><p>Decidir si se implementa y certifica el Modelo de Prevención considerando su plazo realista de 6 a 12 meses.</p></div>
+      <div class="decision"><h3>Fijar el reporte de avance</h3><p>Tablero trimestral: indicadores de cumplimiento, brechas abiertas, incidentes y estado contractual con proveedores.</p></div>
+    </div>
+  </div>
+  <div class="footnote">Decisiones propuestas para la adecuación; el plazo legal de plena vigencia es el 1 de diciembre de 2026.</div>
+  <div class="foot"><div class="brand">Ley 21.719 <i class="dotsep"></i> BCN idNorma=1209272</div><div>15 / 16</div></div>
+</section>
+
+<!-- ═══════════ S16 CIERRE ═══════════ -->
+<section class="slide closing">
+  <div class="body">
+    <h1>Del cumplimiento a la ventaja competitiva</h1>
+    <p>Las empresas que demuestren diligencia documentada ganarán licitaciones, confianza y tranquilidad operativa. Capacite a su equipo hoy.</p>
+    <a class="cta" href="https://proteccion-datoscursos.netlify.app">Acceder al curso de capacitación → </a>
+    <div class="legal">
+      Documento informativo; no constituye asesoría legal.<br>
+      Fuente oficial: Biblioteca del Congreso Nacional de Chile · idNorma=1209272 · Vigencia plena: 1 de diciembre de 2026.
+    </div>
+  </div>
+  <div class="foot" style="color:#64748b"><div class="brand" style="color:#cbd5e1">Ley 21.719 <i class="dotsep"></i> Presentación Ejecutiva</div><div>16 / 16</div></div>
+</section>
+
+<div id="counter">1 / 16</div>
+<div id="nav">
+  <button class="navbtn" onclick="go(-1)">←</button>
+  <button class="navbtn" onclick="go(1)">→</button>
+</div>
+</div>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];let i=0;
+function show(n){
+  i=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+  document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
+  document.getElementById('counter').textContent=(i+1)+' / '+slides.length;
+  location.hash='s'+(i+1);
+}
+function go(d){show(i+d)}
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(1)}
+  if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(-1)}
+  if(e.key==='Home')show(0); if(e.key==='End')show(slides.length-1);
+});
+const h=parseInt((location.hash.match(/s(\d+)/)||[])[1]);show(isNaN(h)?0:h-1);
+</script>
+</body>
+</html>
