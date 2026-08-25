@@ -1,52 +1,66 @@
 /**
  * Registro de URLs de la serie 40 cápsulas (canal @FantasyTalesUniverse).
- * El usuario sube manualmente; aquí se anota cada videoId confirmado.
- * Fuente de títulos: media/serie40/_planilla_verificada.json
+ * Fuente: hoja de cálculo del usuario + planilla visual verificada.
  */
 
-export const SERIE40_PLAYLIST: { num: number; titulo: string; videoId: string | null }[] = [
+export interface Serie40Entry {
+  num: number;
+  titulo: string;
+  videoId: string | null;
+}
+
+export const SERIE40_PLAYLIST_ID = "PLMcVju-R6P88";
+
+export const SERIE40_PLAYLIST: Serie40Entry[] = [
   { num: 1,  titulo: "¿Qué es la Ley 21.719?",              videoId: "D2licsH7DQ8" },
-  { num: 2,  titulo: "Fechas clave de vigencia",            videoId: "jRLE-Y6fqi8" },
-  { num: 3,  titulo: "¿A quiénes aplica?",                  videoId: null },
-  { num: 4,  titulo: "Extraterritorialidad",                videoId: null },
-  { num: 5,  titulo: "La Agencia APDP",                     videoId: null },
-  { num: 6,  titulo: "Facultades de la Agencia",            videoId: null },
-  { num: 7,  titulo: "Medidas conservativas",               videoId: null },
-  { num: 8,  titulo: "Licitud y finalidad",                 videoId: null },
-  { num: 9,  titulo: "Minimización de datos",               videoId: null },
-  { num: 10, titulo: "Calidad y seguridad",                 videoId: null },
-  { num: 11, titulo: "Responsabilidad proactiva",           videoId: null },
-  { num: 12, titulo: "Derechos ARSOP",                      videoId: null },
-  { num: 13, titulo: "Acceso y rectificación",              videoId: null },
-  { num: 14, titulo: "Supresión y oposición",               videoId: null },
-  { num: 15, titulo: "Portabilidad",                        videoId: null },
-  { num: 16, titulo: "Bloqueo temporal",                    videoId: null },
-  { num: 17, titulo: "Plazos de respuesta",                 videoId: null },
-  { num: 18, titulo: "Adiós al consentimiento tácito",      videoId: null },
-  { num: 19, titulo: "Prohibición de cláusulas ocultas",    videoId: null },
-  { num: 20, titulo: "Revocación del permiso",              videoId: null },
-  { num: 21, titulo: "Datos sensibles",                     videoId: null },
-  { num: 22, titulo: "Tratamiento de datos sensibles",      videoId: null },
-  { num: 23, titulo: "Protección de menores NNA",           videoId: null },
-  { num: 24, titulo: "Consentimiento parental",             videoId: null },
-  { num: 25, titulo: "Privacidad desde el diseño",          videoId: null },
-  { num: 26, titulo: "Registro RAT",                        videoId: null },
-  { num: 27, titulo: "Evaluación de impacto DPIA",          videoId: null },
-  { num: 28, titulo: "Notificación de brechas",             videoId: null },
-  { num: 29, titulo: "IA y decisiones automatizadas",       videoId: null },
-  { num: 30, titulo: "El DPO",                              videoId: null },
-  { num: 31, titulo: "Banners de cookies",                  videoId: null },
-  { num: 32, titulo: "Modelo de Prevención MPI",            videoId: null },
-  { num: 33, titulo: "Infracciones leves",                  videoId: null },
-  { num: 34, titulo: "Infracciones graves",                 videoId: null },
-  { num: 35, titulo: "Infracciones gravísimas",             videoId: null },
-  { num: 36, titulo: "Reincidencia 2-4%",                   videoId: null },
-  { num: 37, titulo: "Recargo 50%",                         videoId: null },
-  { num: 38, titulo: "Diagnóstico días 1-30",               videoId: null },
-  { num: 39, titulo: "Políticas días 31-60",                videoId: null },
-  { num: 40, titulo: "Cultura días 61-90",                  videoId: null },
+  { num: 2,  titulo: "Fechas clave de vigencia",            videoId: "JRlE_d7cg8" },
+  { num: 3,  titulo: "¿A quiénes aplica?",                  videoId: "HJely9r1wN" },
+  { num: 4,  titulo: "Extraterritorialidad",                videoId: "tbkdZ8Z0ZY" },
+  { num: 5,  titulo: "La Agencia APDP",                     videoId: "tJKgS5dehN" },
+  { num: 6,  titulo: "Facultades de la Agencia",            videoId: "NVzFRpFcZA" },
+  { num: 7,  titulo: "Medidas conservativas",               videoId: "NqupIoTvzA" },
+  { num: 8,  titulo: "Licitud y finalidad",                 videoId: "NtyFe971aK" },
+  { num: 9,  titulo: "Minimización de datos",               videoId: "3va450Zg1o" },
+  { num: 10, titulo: "Calidad y seguridad",                 videoId: "ZLBYuAB8e" },
+  { num: 11, titulo: "Responsabilidad proactiva",           videoId: "GFQ7xszYw9" },
+  { num: 12, titulo: "Derechos ARSOP",                      videoId: "EPu_Jjsq2g" },
+  { num: 13, titulo: "Acceso y rectificación",              videoId: "GC1XpkOtz3" },
+  { num: 14, titulo: "Supresión y oposición",               videoId: "A4kn33SmDa" },
+  { num: 15, titulo: "Portabilidad",                        videoId: "n6m3a78xJE" },
+  { num: 16, titulo: "Bloqueo temporal",                    videoId: "Bk8wPmdzgMg" },
+  { num: 17, titulo: "Plazos de respuesta",                 videoId: "uWvD3p4Htk" },
+  { num: 18, titulo: "Adiós al consentimiento tácito",      videoId: "ESI8UBG0z4" },
+  { num: 19, titulo: "Prohibición de cláusulas ocultas",    videoId: "c_o8t1OFQ0c" },
+  { num: 20, titulo: "Revocación del permiso",              videoId: "b70mp8C2pAs" },
+  { num: 21, titulo: "Datos sensibles",                     videoId: "0ri_o0coOA" },
+  { num: 22, titulo: "Tratamiento de datos sensibles",      videoId: "uN5H1F4Rk1" },
+  { num: 23, titulo: "Protección de menores NNA",           videoId: "AZo7OkOiZp" },
+  { num: 24, titulo: "Consentimiento parental",             videoId: "PKd1CNvkFY" },
+  { num: 25, titulo: "Privacidad desde el diseño",          videoId: "XmXT11NsM1g" },
+  { num: 26, titulo: "Registro RAT",                        videoId: "rOFEuYA9aB" },
+  { num: 27, titulo: "Evaluación de impacto DPIA",          videoId: "9Op74CK-VU" },
+  { num: 28, titulo: "Notificación de brechas",             videoId: "E-yFvzsqqn" },
+  { num: 29, titulo: "IA y decisiones automatizadas",       videoId: "OQUGNEyggel" },
+  { num: 30, titulo: "El DPO",                              videoId: "shT11G8tba" },
+  { num: 31, titulo: "Banners de cookies",                  videoId: "AhaUe60RBQ" },
+  { num: 32, titulo: "Modelo de Prevención MPI",            videoId: "2R5p4wUgLuz" },
+  { num: 33, titulo: "Infracciones leves",                  videoId: "f9olkH0ws8" },
+  { num: 34, titulo: "Infracciones graves",                 videoId: "Uni1UYJAkx" },
+  { num: 35, titulo: "Infracciones gravísimas",             videoId: "Kk3fN5EcLl" },
+  { num: 36, titulo: "Reincidencia 2-4%",                   videoId: "FmqJj8rcsE" },
+  { num: 37, titulo: "Recargo 50%",                         videoId: "_Q_X5Hn554" },
+  { num: 38, titulo: "Diagnóstico días 1-30",               videoId: "gNPaDTuBIM" },
+  { num: 39, titulo: "Políticas días 31-60",                videoId: "B13aaahNsv" },
+  { num: 40, titulo: "Cultura días 61-90",                  videoId: "gBjMp_duv_Y" },
 ];
 
+/** Videos con ID confirmado */
 export function serie40Completados(): number {
   return SERIE40_PLAYLIST.filter((v) => v.videoId !== null).length;
 }
+
+/** Busca video por número */
+export function serie40PorNumero(num: number): Serie40Entry | undefined {
+  return SERIE40_PLAYLIST.find((v) => v.num === num);
+}
+
