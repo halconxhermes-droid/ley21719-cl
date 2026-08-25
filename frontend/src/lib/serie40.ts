@@ -58,3 +58,17 @@ export const SERIE40_PLAYLIST: Serie40Entry[] = [
 export function serie40PorNumero(num: number): Serie40Entry | undefined {
   return SERIE40_PLAYLIST.find((v) => v.num === num);
 }
+
+/** Rol del curso → números de cápsulas de la serie 40 que le corresponden */
+const CAPSULAS_POR_ROL: Record<string, number[]> = {
+  empresa:       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40],
+  ciudadano:     [1, 3, 4, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 29],
+  desarrollador: [1, 3, 5, 6, 7, 8, 9, 10, 11, 25, 26, 27, 28, 29, 30, 31],
+  institucion:   [1, 3, 5, 6, 7, 8, 9, 10, 11, 21, 22, 23, 24, 26, 27, 28, 32, 33, 34, 35, 36, 37],
+};
+
+/** Cápsulas de la serie 40 filtradas por rol del curso */
+export function capsulasForRol(rol: string): Serie40Entry[] {
+  const nums = new Set(CAPSULAS_POR_ROL[rol] ?? []);
+  return SERIE40_PLAYLIST.filter((v) => nums.has(v.num));
+}

@@ -11,6 +11,7 @@ import {
 import { mdToHtml, linkifyTerms } from "../lib/markdown";
 import { Loading, ErrorPanel } from "../components/Feedback";
 import ModuleVideos from "../components/ModuleVideos";
+import CapsulasRol from "../components/CapsulasRol";
 
 type LevelTab = "resumen" | "amigable" | "legal";
 
@@ -201,6 +202,9 @@ export default function LectorModulo() {
 
         {/* Videos YouTube del curso para este módulo */}
         <ModuleVideos moduleId={moduleId} />
+
+        {/* Cápsulas serie 40 (canal @FantasyTalesUniverse) */}
+        <CapsulasRol moduleId={moduleId} />
       </article>
 
       {/* Navegación inferior */}
