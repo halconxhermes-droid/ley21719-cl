@@ -106,8 +106,8 @@ def _exec(sql: str, params: tuple = ()):
     conn = get_conn()
     cur = conn.cursor()
     if USE_PG:
-        # psycopg uses %s placeholders — convert ? → %s
-        pg_sql = sql.replace("?", "%s")
+        # psycopg uses ? placeholders — convert ? → ?
+        pg_sql = sql.replace("?", "?")
         cur.execute(pg_sql, params)
     else:
         cur.execute(sql, params)
@@ -124,7 +124,7 @@ def _upsert(table: str, columns: List[str], values: tuple, conflict_cols: List[s
     """
     if USE_PG:
         col_list = ", ".join(columns)
-        val_ph = ", ".join(["%s"] * len(columns))
+        val_ph = ", ".join(["?"] * len(columns))
         set_clause = ", ".join([f"{c}=EXCLUDED.{c}" for c in columns if c not in conflict_cols])
         sql = (
             f"INSERT INTO {table} ({col_list}) VALUES ({val_ph}) "
@@ -237,6 +237,84 @@ def init_db() -> None:
         )
     """
     )
+
+    # ── Tablas sistema contraseñas temporales (admin) - compatibilidad SQLite/Postgres ────────────
+    _exec(
+        """
+        CREATE TABLE IF NOT EXISTS passwords (
+            code VARCHAR(32) PRIMARY KEY,
+            user_email VARCHAR(255),
+            start_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            end_date TIMESTAMP NOT NULL,
+            status VARCHAR(20) NOT NULL DEFAULT 'active',
+            total_sessions INTEGER NOT NULL DEFAULT 0,
+            last_connection TIMESTAMP,
+            courses_accessed TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            expires_notification_sent INTEGER NOT NULL DEFAULT 0
+        )
+    """
+    )
+    _exec(
+        """
+        CREATE TABLE IF NOT EXISTS password_usage (
+            id INTEGER PRIMARY KEY,
+            password_code VARCHAR(32) NOT NULL REFERENCES passwords(code) ON DELETE CASCADE,
+            user_email VARCHAR(255) NOT NULL,
+            session_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            session_end TIMESTAMP,
+            modules_viewed TEXT NOT NULL DEFAULT '[]',
+            quiz_score INTEGER,
+            completed INTEGER NOT NULL DEFAULT 0,
+            created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+    """
+    )
+    _exec(
+        "CREATE INDEX IF NOT EXISTS idx_passwords_end_date ON passwords(end_date)"
+    )
+    # ── Tablas sistema contraseñas temporales (admin) ────────────────────
+    _exec(
+        """
+        CREATE TABLE IF NOT EXISTS passwords (
+            code VARCHAR(32) PRIMARY KEY,
+            user_email VARCHAR(255),
+            start_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            end_date TIMESTAMP NOT NULL,
+            status VARCHAR(20) NOT NULL DEFAULT 'active',
+            total_sessions INTEGER NOT NULL DEFAULT 0,
+            last_connection TIMESTAMP,
+            courses_accessed TEXT NOT NULL DEFAULT '[]',
+            created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            expires_notification_sent INTEGER NOT NULL DEFAULT 0
+        )
+    """
+    )
+    _exec(
+        """
+        CREATE TABLE IF NOT EXISTS password_usage (
+            id INTEGER PRIMARY KEY,
+            password_code VARCHAR(32) NOT NULL REFERENCES passwords(code) ON DELETE CASCADE,
+            user_email VARCHAR(255) NOT NULL,
+            session_start TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            session_end TIMESTAMP,
+            modules_viewed TEXT NOT NULL DEFAULT '[]',
+            quiz_score INTEGER,
+            completed INTEGER NOT NULL DEFAULT 0,
+            created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        )
+    """
+    )
+    # Índices para SQLite - usando expresiones simples
+    # (Postgres acepta estos, SQLite los ignora si ya existen)
+    _exec(
+        "CREATE INDEX IF NOT EXISTS idx_passwords_end_date ON passwords(end_date)"
+    )
+    # Para SQLite, el índice compuesto requiere creación manual distinta; omitimos para compatibilidad
+    # _exec(
+    #     "CREATE INDEX IF NOT EXISTS idx_passwords_status_active ON passwords(status, end_date)"
+    # )
+
 
     # ── Load modules from docs/contenido.json ──────────────────────────────
     with open(DOCS_DIR / "contenido.json", "r", encoding="utf-8") as f:
@@ -573,3 +651,90 @@ __all__ = [
     "_upsert_checklist_progress",
     "_final_test_questions",
 ]
+
+# ======================================================================
+# FUNCIONES PARA SISTEMA DE CONTRASEÑAS TEMPORALES / LICENCIAS
+# ======================================================================
+
+def create_password(code: str, user_email: Optional[str] = None, end_date: Optional[str] = None) -> dict:
+    """Crear nueva contraseña (licencia individual). Si ya existe, actualiza fecha/estado."""
+    # Usamos INSERT OR REPLACE: si el código ya existe (conflicto PK), SQLite reemplaza toda la fila.
+    # En Postgres usamos ON CONFLICT ... DO UPDATE RETURNING; en SQLite hacemos INSERT OR REPLACE + SELECT.
+    _exec(
+        "INSERT OR REPLACE INTO passwords (code, user_email, end_date, status, total_sessions, courses_accessed, created_at) VALUES (?, ?, ?, 'active', 0, '[]', CURRENT_TIMESTAMP)",
+        (code, user_email, end_date),
+    )
+    # Ahora leer el registro actualizado
+    return get_password(code)
+    if row:
+        return {
+            "code": row["code"],
+            "user_email": row["user_email"],
+            "start_date": str(row["start_date"]) if row["start_date"] else None,
+            "end_date": str(row["end_date"]) if row["end_date"] else None,
+            "status": row["status"],
+            "total_sessions": row["total_sessions"],
+            "courses_accessed": row["courses_accessed"] if isinstance(row["courses_accessed"], list) else [],
+        }
+    return {"error": "No se pudo crear/actualizar la contraseña"}
+
+def get_password(code: str) -> Optional[dict]:
+    """Obtener datos de una contraseña por su código."""
+    sql = "SELECT code, user_email, start_date, end_date, status, total_sessions, last_connection, courses_accessed, created_at, expires_notification_sent FROM passwords WHERE code = ?"
+    row = _fetchone(sql, (code,))
+    if not row:
+        return None
+    return {
+        "code": row["code"],
+        "user_email": row["user_email"],
+        "start_date": str(row["start_date"]) if row["start_date"] else None,
+        "end_date": str(row["end_date"]) if row["end_date"] else None,
+        "status": row["status"],
+        "total_sessions": row["total_sessions"],
+        "last_connection": str(row["last_connection"]) if row["last_connection"] else None,
+        "courses_accessed": row["courses_accessed"] if isinstance(row["courses_accessed"], list) else [],
+        "created_at": str(row["created_at"]) if row["created_at"] else None,
+        "expires_notification_sent": row["expires_notification_sent"],
+    }
+
+def update_password_usage(code: str, user_email: str, module_id: str, quiz_score: Optional[int] = None) -> dict:
+    """Registrar uso de contraseña: incrementar sesiones, registrar módulo visto, opcional score."""
+    # 1. Incrementar total_sessions en 1
+    sql1 = "UPDATE passwords SET total_sessions = total_sessions + 1, last_connection = CURRENT_TIMESTAMP WHERE code = ?"
+    _exec(sql1, (code,))
+    # 2. Registrar este uso específico en password_usage
+    sql2 = """
+        INSERT INTO password_usage (password_code, user_email, session_start, modules_viewed, quiz_score, completed)
+        VALUES (?, ?, CURRENT_TIMESTAMP, ?, ?, ?)
+    """
+    modules_viewed_json = '[' + module_id + ']'
+    completed_flag = False
+    _exec(sql2, (code, user_email, modules_viewed_json, quiz_score, completed_flag))
+    # 3. Devolver estado actualizado
+    return get_password(code)
+
+def expire_password(code: str) -> dict:
+    """Marca contraseña como vencida/usada."""
+    sql = "UPDATE passwords SET status = 'expired' WHERE code = ?"
+    _exec(sql, (code,))
+    return get_password(code)
+
+def get_active_passwords_near_expiry(days: int = 7) -> list:
+    """Obtener contraseñas que vencen en los próximos N días (para notificaciones)."""
+    from datetime import datetime, timedelta
+    cutoff = (datetime.now() + timedelta(days=days)).strftime('%Y-%m-%d %H:%M:%S')
+    sql = "SELECT code, user_email, end_date, status FROM passwords WHERE status = 'active' AND end_date <= ? ORDER BY end_date ASC"
+    rows = _fetchall(sql, (cutoff,))
+    result = []
+    for row in rows:
+        result.append({
+            "code": row["code"],
+            "user_email": row["user_email"],
+            "end_date": str(row["end_date"]) if row["end_date"] else None,
+            "status": row["status"],
+        })
+    return result
+
+# ======================================================================
+# FIN FUNCIONES SISTEMA CONTRASEÑAS
+# ======================================================================

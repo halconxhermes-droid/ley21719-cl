@@ -358,6 +358,111 @@ Roles válidos: `empresas`, `ciudadanos`, `desarrolladores`, `instituciones-publ
 
 ---
 
+
+
+## 8. Panel de Administración de Contraseñas (nueva sección)
+
+El panel admin controla el sistema de licencias individuales y métricas de curso.
+Todas las rutas comienzan con `/api/v1/admin/`.
+
+### POST `/api/v1/admin/passwords`
+
+**Crear o actualizar una contraseña (licencia individual).**
+
+- **Request body:**
+  ```json
+  {
+    "code": "ABC-1234",
+    "user_email": "usuario@ejemplo.com",
+    "end_date": "2026-12-31 23:59:59"
+  }
+  ```
+- **end_date es opcional:** si no se envía, vence en 30 días.
+- **Respuesta 200:**
+  ```json
+  {
+    "code": "ABC-1234",
+    "user_email": "usuario@ejemplo.com",
+    "start_date": "2026-08-26 22:10:50",
+    "end_date": "2026-09-25 22:10:50",
+    "status": "active",
+    "total_sessions": 0,
+    "courses_accessed": [],
+    "created_at": "2026-08-26 22:10:50"
+  }
+  ```
+- **Respuesta 400:** `code` ya existe pero con error de validación.
+
+### GET `/api/v1/admin/passwords/{code}`
+
+**Obtener datos completos de una contraseña.**
+
+- **Respuesta 200:** estructura completa de PasswordResponse
+- **Respuesta 404:** `{"error": {"code": "NOT_FOUND", "message": "Contraseña no encontrada"}}`
+
+### POST `/api/v1/admin/passwords/generate`
+
+**Auto-generar una contraseña aleatoria de 8 caracteres.**
+
+- **Query params opcionales:**
+  - `user_email` — email para asociar a la contraseña
+  - `days_valid` — días de validez (default: 30)
+- **Respuesta 200:** objeto PasswordResponse con código auto-generado
+
+### POST `/api/v1/admin/passwords/{code}/expire`
+
+**Marcar contraseña como vencida manualmente.**
+
+- **Respuesta 200:** `{"success": true, "password": {...}}`
+- **Respuesta 404:** contraseña no encontrada
+
+### POST `/api/v1/admin/passwords/{code}/usage`
+
+**Registrar uso de una contraseña (incrementa sesiones, registra módulo visto).**
+
+- **Query params:**
+  - `user_email` — email del usuario que usó la contraseña
+  - `module_id` — ID del módulo que se vio (ej. "modulo-1")
+  - `quiz_score` — score opcional del quiz (0-100)
+- **Respuesta 200:** `{"success": true, "password": {...}}`
+
+### GET `/api/v1/admin/alerts/near-expiry`
+
+**Lista de contraseñas activas que vencen en los próximos N días.**
+
+- **Query params:**
+  - `days` — horizonte en días (default: 7)
+- **Respuesta 200:**
+  ```json
+  {
+    "count": 5,
+    "days_horizon": 7,
+    "passwords": [
+      {"code": "ABC-001", "user_email": "user@test.com", "end_date": "2026-09-01 00:00:00", "status": "active"},
+      ...
+    ]
+  }
+  ```
+
+### GET `/api/v1/admin/metrics/summary`
+
+**Resumen de métricas generales del sistema.**
+
+- **Respuesta 200:**
+  ```json
+  {
+    "total_passwords_created": 128,
+    "active_passwords": 97,
+    "expired_passwords": 31,
+    "total_sessions_recorded": 423,
+    "unique_users": 89,
+    "near_expiry": 12
+  }
+  ```
+- **NOTA:** Esta es una estructura placeholder. Los cálculos reales se implementarán
+  cuando haya datos en producción. El frontend puede diseñar UI contra este contrato.
+  
+
 ## 8. Autenticación (Futuro)
 
 Actualmente abierto (público). Para progreso persistente por usuario:

@@ -56,3 +56,39 @@ CREATE TABLE IF NOT EXISTS final_test (
     correct_index INTEGER NOT NULL,
     explanation TEXT NOT NULL
 );
+
+-- ============================================================
+-- TABLAS PARA SISTEMA DE CONTRASEÑAS TEMPORALES / LICENCIAS
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS passwords (
+    code VARCHAR(32) PRIMARY KEY,
+    user_email VARCHAR(255),
+    start_date TIMESTAMP NOT NULL DEFAULT now(),
+    end_date TIMESTAMP NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'active',
+    -- Metricas de uso
+    total_sessions INTEGER NOT NULL DEFAULT 0,
+    last_connection TIMESTAMP,
+    courses_accessed JSONB NOT NULL DEFAULT '[]'::jsonb,
+    -- Metadata
+    created_at TIMESTAMP NOT NULL DEFAULT now(),
+    expires_notification_sent BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+CREATE TABLE IF NOT EXISTS password_usage (
+    id SERIAL PRIMARY KEY,
+    password_code VARCHAR(32) NOT NULL REFERENCES passwords(code) ON DELETE CASCADE,
+    user_email VARCHAR(255) NOT NULL,
+    session_start TIMESTAMP NOT NULL DEFAULT now(),
+    session_end TIMESTAMP,
+    modules_viewed JSONB NOT NULL DEFAULT '[]'::jsonb,
+    quiz_score INTEGER,
+    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP NOT NULL DEFAULT now()
+);
+
+-- Índice para búsquedas por fecha de vencimiento
+CREATE INDEX IF NOT EXISTS idx_passwords_end_date ON passwords(end_date);
+-- Índice para validación rápida de contraseña activa
+CREATE INDEX IF NOT EXISTS idx_passwords_status_active ON passwords(status, end_date);

@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 export type ViewId =
   | "portal"
   | "home"
+  | "admin"
   | "lector"
   | "quiz"
   | "checklist"
@@ -19,7 +20,7 @@ interface NavigationContextValue {
 }
 
 const NavigationContext = createContext<NavigationContextValue>({
-  view: "portal",
+  view: "admin",
   moduleId: "empresa",
   navigate: () => {},
 });

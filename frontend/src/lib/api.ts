@@ -236,6 +236,112 @@ export interface ApiErrorBody {
   };
 }
 
+
+
+/* ============================================================
+   ADMIN PANEL — Endpoints para gestión de contraseñas
+   ============================================================ */
+
+export interface PasswordResponse {
+  code: string;
+  user_email: string | null;
+  start_date: string | null;
+  end_date: string | null;
+  status: string;
+  total_sessions: number;
+  last_connection: string | null;
+  courses_accessed: string[];
+  created_at: string | null;
+  expires_notification_sent: boolean;
+}
+
+export interface PasswordCreate {
+  code: string;
+  user_email?: string | null;
+  end_date?: string | null;
+}
+
+export interface PasswordPreview {
+  code: string;
+  user_email: string | null;
+  end_date: string | null;
+  status: string;
+}
+
+export interface AdminMetricsSummary {
+  total_passwords_created: number;
+  active_passwords: number;
+  expired_passwords: number;
+  total_sessions_recorded: number;
+  unique_users: number;
+  near_expiry: number;
+}
+
+/** GET /api/v1/admin/passwords/{code} */
+export function adminGetPassword(code: string): Promise<PasswordResponse> {
+  return request<PasswordResponse>(`/admin/passwords/${encodeURIComponent(code)}`);
+}
+
+/** POST /api/v1/admin/passwords */
+export function adminCreatePassword(body: PasswordCreate): Promise<PasswordResponse> {
+  return request<PasswordResponse>("/admin/passwords", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+}
+
+/** POST /api/v1/admin/passwords/generate */
+export function adminGeneratePassword(
+  user_email?: string,
+  daysValid: number = 30,
+): Promise<PasswordResponse> {
+  const params = new URLSearchParams();
+  if (user_email) params.set("user_email", user_email);
+  params.set("days_valid", String(daysValid));
+  return request<PasswordResponse>("/admin/passwords/generate?" + params.toString());
+}
+
+/** POST /api/v1/admin/passwords/{code}/expire */
+export function adminExpirePassword(code: string): Promise<{ success: boolean; password: PasswordResponse }> {
+  return request<{ success: boolean; password: PasswordResponse }>(
+    `/admin/passwords/${encodeURIComponent(code)}/expire`,
+    { method: "POST" },
+  );
+}
+
+/** POST /api/v1/admin/passwords/{code}/usage */
+export function adminRecordUsage(
+  code: string,
+  user_email: string,
+  module_id: string,
+  quiz_score?: number,
+): Promise<{ success: boolean; password: PasswordResponse }> {
+  const params = new URLSearchParams();
+  params.set("user_email", user_email);
+  params.set("module_id", module_id);
+  if (quiz_score !== undefined) params.set("quiz_score", String(quiz_score));
+  return request<{ success: boolean; password: PasswordResponse }>(
+    `/admin/passwords/${encodeURIComponent(code)}/usage?${params.toString()}`,
+    { method: "POST" },
+  );
+}
+
+/** GET /api/v1/admin/alerts/near-expiry */
+export function adminAlertsNearExpiry(days: number = 7): Promise<{ count: number; days_horizon: number; passwords: PasswordPreview[] }> {
+  const params = new URLSearchParams();
+  params.set("days", String(days));
+  return request<{ count: number; days_horizon: number; passwords: PasswordPreview[] }>(
+    "/admin/alerts/near-expiry?" + params.toString(),
+  );
+}
+
+/** GET /api/v1/admin/metrics/summary */
+export function adminMetricsSummary(): Promise<AdminMetricsSummary> {
+  return request<AdminMetricsSummary>("/admin/metrics/summary");
+}
+
+
 /* ============================================================
    Errores
    ============================================================ */

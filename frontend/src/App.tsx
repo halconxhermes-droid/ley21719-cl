@@ -13,6 +13,7 @@ import GlosarioView from "./views/Glosario";
 import TestFinalView from "./views/TestFinal";
 import ResultadosView from "./views/Resultados";
 import VerificarCertificado from "./views/VerificarCertificado";
+import Admin from "./views/Admin";
 
 function ViewRouter() {
   const { view } = useNavigation();
@@ -34,6 +35,8 @@ function ViewRouter() {
       return <TestFinalView />;
     case "resultados":
       return <ResultadosView />;
+    case "admin":
+      return <Admin />;
     case "verificar":
       return <VerificarCertificado />;
     default:

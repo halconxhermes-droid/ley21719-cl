@@ -291,3 +291,70 @@ class FinalTestSubmitResult(BaseModel):
 
 class FinalTestSubmitResponse(BaseModel):
     result: FinalTestSubmitResult
+
+
+# ======================================================================
+# SISTEMA DE CONTRASEÑAS TEMPORALES / LICENCIAS
+# ======================================================================
+
+class PasswordCode(BaseModel):
+    """Código de la contraseña (ej. 'ABC-1234', 'LEY-2024-001')."""
+    code: str
+
+
+class PasswordCreate(BaseModel):
+    """Parámetros para crear una nueva contraseña."""
+    code: str
+    user_email: Optional[str] = None
+    end_date: Optional[str] = None  # YYYY-MM-DD o ISO timestamp
+
+
+class PasswordResponse(BaseModel):
+    """Respuesta completa de una contraseña."""
+    code: str
+    user_email: Optional[str] = None
+    start_date: Optional[str] = None
+    end_date: Optional[str] = None
+    status: str  # 'active', 'expired'
+    total_sessions: int = 0
+    last_connection: Optional[str] = None
+    courses_accessed: List[str] = Field(default_factory=list)
+    created_at: Optional[str] = None
+    expires_notification_sent: bool = False
+
+
+class PasswordUsage(BaseModel):
+    """Registro de uso individual de una contraseña."""
+    id: int
+    password_code: str
+    user_email: str
+    session_start: Optional[str] = None
+    session_end: Optional[str] = None
+    modules_viewed: List[str] = Field(default_factory=list)
+    quiz_score: Optional[int] = None
+    completed: bool = False
+    created_at: Optional[str] = None
+
+
+class PasswordUsageCreate(BaseModel):
+    """Parámetros para registrar uso de contraseña."""
+    password_code: str
+    user_email: str
+    module_id: str
+    quiz_score: Optional[int] = None
+
+
+class ActivePasswordsNearExpiry(BaseModel):
+    """Lista de contraseñas activas que vencen pronto."""
+    code: str
+    user_email: Optional[str] = None
+    end_date: Optional[str] = None
+    status: str
+
+
+class ModuleCompletion(BaseModel):
+    """Progreso de módulos por usuario con contraseña."""
+    module_id: str
+    completed: bool = False
+    last_visited: Optional[str] = None
+    quiz_score: Optional[int] = None
