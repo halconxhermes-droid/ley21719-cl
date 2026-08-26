@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Propuestas paleta — Informes Ley 21.719</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:#f1f5f9; padding:40px 20px; }
+  .wrap { max-width:1200px; margin:0 auto; }
+  h1 { text-align:center; color:#0f172a; font-size:28px; margin-bottom:8px; }
+  .sub { text-align:center; color:#64748b; margin-bottom:40px; font-size:15px; }
+
+  .propuesta { background:#fff; border-radius:16px; overflow:hidden; margin-bottom:48px;
+               box-shadow:0 4px 20px rgba(15,23,42,.08); }
+  .prop-head { padding:20px 28px; display:flex; justify-content:space-between; align-items:center; }
+  .prop-head h2 { font-size:20px; }
+  .prop-head .tag { font-size:12px; padding:6px 14px; border-radius:20px; font-weight:600; }
+
+  /* ====== A: ESMERALDA CONSULTORÍA (identidad del curso) ====== */
+  .pa { background:#064e3b; } .pa h2, .pa .tag { color:#d1fae5; } .pa .tag { background:#047857; }
+  .pa-body { display:flex; min-height:420px; }
+  .pa-side { width:64px; background:#047857; display:flex; flex-direction:column; align-items:center;
+             padding-top:24px; gap:18px; }
+  .pa-side span { width:34px; height:34px; border-radius:9px; background:#065f46; display:flex;
+                  align-items:center; justify-content:center; color:#a7f3d0; font-size:14px; font-weight:700; }
+  .pa-main { flex:1; padding:36px 44px; }
+  .kicker { font-size:11px; letter-spacing:.22em; color:#047857; font-weight:700; text-transform:uppercase; }
+  .pa-main h3 { font-size:30px; color:#0f172a; margin:10px 0 6px; line-height:1.15; }
+  .pa-main .sector { color:#047857; font-size:17px; font-weight:600; }
+  .lead { color:#475569; font-size:14.5px; line-height:1.65; margin-top:16px; max-width:640px; }
+  .cards { display:flex; gap:16px; margin-top:28px; }
+  .card { flex:1; border-radius:12px; padding:18px; }
+  .c1 { background:#ecfdf5; border:1px solid #a7f3d0; }
+  .c2 { background:#fef2f2; border:1px solid #fecaca; }
+  .c3 { background:#fffbeb; border:1px solid #fde68a; }
+  .card .num { font-size:26px; font-weight:800; }
+  .c1 .num{color:#047857} .c2 .num{color:#991b1b} .c3 .num{color:#b45309}
+  .card p { font-size:12.5px; color:#334155; margin-top:4px; line-height:1.45; }
+  .pa-foot { padding:14px 44px; background:#f8fafc; border-top:1px solid #e2e8f0; display:flex;
+             justify-content:space-between; font-size:11.5px; color:#94a3b8; }
+
+  /* ====== B: VINO INSTITUCIONAL (formal, gubernamental) ====== */
+  .pb { background:#450a0a; } .pb h2, .pb .tag { color:#fee2e2; } .pb .tag { background:#991b1b; }
+  .pb-hero { background:linear-gradient(135deg,#450a0a 0%,#7f1d1d 55%,#991b1b 100%); color:#fff;
+             padding:52px 56px; position:relative; }
+  .pb-hero::after { content:''; position:absolute; right:-60px; top:-60px; width:280px; height:280px;
+             border-radius:50%; background:rgba(255,255,255,.05); }
+  .pb-hero .kicker { color:#fca5a5; }
+  .pb-hero h3 { font-size:32px; margin-top:8px; line-height:1.2; }
+  .pb-hero p { margin-top:12px; color:#fecaca; max-width:600px; font-size:14.5px; line-height:1.6; }
+  .pb-body { padding:36px 56px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .stat { border-left:4px solid #991b1b; padding:14px 18px; background:#faf5f5; border-radius:0 10px 10px 0; }
+  .stat b { display:block; font-size:22px; color:#991b1b; }
+  .stat span { font-size:12.5px; color:#57534e; }
+  .pb-foot { padding:14px 56px; background:#faf5f5; font-size:11.5px; color:#a8a29e;
+             border-top:1px solid #e7e5e4; }
+
+  /* ====== C: SLATE + ÁMBAR MODERNO (tech, neutro) ====== */
+  .pc { background:#0f172a; } .pc h2, .pc .tag { color:#e2e8f0; } .pc .tag { background:#334155; }
+  .pc-body { padding:44px 52px; }
+  .pc .kicker { color:#f59e0b; }
+  .pc h3 { font-size:30px; color:#f8fafc; margin:8px 0 4px; }
+  .pc .sector { color:#94a3b8; font-size:16px; }
+  .chips { display:flex; gap:10px; margin-top:24px; flex-wrap:wrap; }
+  .chip { padding:9px 18px; border-radius:999px; font-size:13px; font-weight:600; }
+  .ch1 { background:rgba(245,158,11,.12); color:#fbbf24; border:1px solid rgba(245,158,11,.3); }
+  .ch2 { background:rgba(52,211,153,.1); color:#34d399; border:1px solid rgba(52,211,153,.25); }
+  .ch3 { background:rgba(148,163,184,.12); color:#cbd5e1; border:1px solid rgba(148,163,184,.3); }
+  .pc-table { margin-top:30px; border-radius:12px; overflow:hidden; border:1px solid #1e293b; }
+  .pc-row { display:flex; padding:13px 20px; font-size:13.5px; color:#cbd5e1; border-top:1px solid #1e293b; }
+  .pc-row:first-child { background:#1e293b; color:#f8fafc; font-weight:600; border-top:none; }
+  .pc-row span:first-child { flex:1; }
+  .pc-row span:last-child { width:150px; text-align:right; font-weight:700; }
+  .v-ambar { color:#fbbf24; } .v-esm { color:#34d399; } .v-rojo { color:#f87171; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Propuestas de identidad visual — Serie de informes Ley 21.719</h1>
+  <p class="sub">Elige la base: la aplicaré a los 8 PDFs unificando portada, secciones, tablas y footer</p>
+
+  <!-- PROPUESTA A -->
+  <div class="propuesta">
+    <div class="prop-head pa"><h2>Propuesta A — Esmeralda Consultoría</h2><span class="tag">Identidad del curso</span></div>
+    <div class="pa-body">
+      <div class="pa-side"><span>§</span><span>⚖</span><span>✓</span><span>▦</span></div>
+      <div class="pa-main">
+        <div class="kicker">Guía técnica sectorial · Ley 21.719</div>
+        <h3>Retail &amp; E-commerce</h3>
+        <div class="sector">Adecuación operativa al nuevo marco de datos personales</div>
+        <p class="lead">Bases legales, plazos y sanciones del nuevo régimen aplicadas al e-commerce:
+        consentimiento explícito, derechos ARSOP, notificación de brechas sin dilaciones indebidas
+        y modelo sancionatorio de hasta 20.000 UTM.</p>
+        <div class="cards">
+          <div class="card c1"><div class="num">01·12·2026</div><p>Vigencia plena del nuevo régimen sancionatorio</p></div>
+          <div class="card c2"><div class="num">20.000 UTM</div><p>Techo multa gravísima (~$1.400 millones)</p></div>
+          <div class="card c3"><div class="num">+50%</div><p>Recargo si no subsana en 60 días</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="pa-foot"><span>Fuente: BCN — Ley 21.719 (idNorma 1209272)</span><span>Página 1 · Confidential Work Draft</span></div>
+    <div style="padding:14px 28px;background:#f8fafc;border-top:1px solid #e2e8f0;color:#475569;font-size:13px">
+      ✔ Misma identidad esmeralda del curso web · franja lateral con índice · cards semáforo (verde/vino/ámbar) · moderno y coherente con lo ya construido
+    </div>
+  </div>
+
+  <!-- PROPUESTA B -->
+  <div class="propuesta">
+    <div class="prop-head pb"><h2>Propuesta B — Vino Institucional</h2><span class="tag">Formal / gubernamental</span></div>
+    <div class="pb-hero">
+      <div class="kicker" style="color:#fca5a5">Informe de cumplimiento sectorial</div>
+      <h3>Servicios Generales &amp; Facilities</h3>
+      <p>Ley N° 21.719 — Nuevo régimen de protección de datos personales. Guía de adecuación
+      para empresas de servicios: contratos de tratamiento, videovigilancia y deber de confidencialidad.</p>
+    </div>
+    <div class="pb-body">
+      <div class="grid2">
+        <div class="stat"><b>Hasta 5.000 UTM</b><span>Infracciones leves</span></div>
+        <div class="stat"><b>Hasta 10.000 UTM</b><span>Infracciones graves</span></div>
+        <div class="stat"><b>Hasta 20.000 UTM</b><span>Infracciones gravísimas (~$1.400M)</span></div>
+        <div class="stat"><b>2–4% ingresos</b><span>Reincidencia en grandes empresas</span></div>
+      </div>
+    </div>
+    <div class="pb-foot">Fuente oficial: Biblioteca del Congreso Nacional de Chile · Ley 21.719</div>
+    <div style="padding:14px 28px;background:#faf5f5;border-top:1px solid #e7e5e4;color:#57534e;font-size:13px">
+      ✔ Look serio tipo ministerio/estudio jurídico · hero con gradiente vino · stats en columna · transmite autoridad normativa
+    </div>
+  </div>
+
+  <!-- PROPUESTA C -->
+  <div class="propuesta">
+    <div class="prop-head pc"><h2>Propuesta C — Slate Oscuro Tech</h2><span class="tag">Moderno / SaaS</span></div>
+    <div class="pc-body">
+      <div class="kicker">Compliance briefing · Data Protection Chile</div>
+      <h3>Fintech &amp; Banca</h3>
+      <div class="sector">Tratamiento de datos financieros bajo la Ley 21.719</div>
+      <div class="chips">
+        <span class="chip ch1">Vigencia 01-12-2026</span>
+        <span class="chip ch2">DPO voluntario Art.50</span>
+        <span class="chip ch3">Notificación sin dilaciones indebidas</span>
+      </div>
+      <div class="pc-table">
+        <div class="pc-row"><span>Categoría de infracción</span><span>Sanción máxima</span></div>
+        <div class="pc-row"><span>Leve</span><span class="v-esm">5.000 UTM</span></div>
+        <div class="pc-row"><span>Grave</span><span class="v-ambar">10.000 UTM</span></div>
+        <div class="pc-row"><span>Gravísima</span><span class="v-rojo">20.000 UTM</span></div>
+      </div>
+    </div>
+    <div class="pc-foot" style="padding:14px 52px;background:#0b1220;font-size:11.5px;color:#64748b;border-top:1px solid #1e293b">
+      Fuente: BCN idNorma=1209272 · Documento técnico de trabajo
+    </div>
+    <div style="padding:14px 28px;background:#0b1220;border-top:1px solid #1e293b;color:#94a3b8;font-size:13px">
+      ✔ Fondo oscuro estilo informe tech · chips de estado · tabla con semáforo · impactante pero menos apto para impresión
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
