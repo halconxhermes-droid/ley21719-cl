@@ -98,7 +98,24 @@ build_pdf(
         ("Protocolo de brechas", "Definir flujo de notificación a la APDP y ciudadanos."),
         ("Canales ARSOP", "Habilitar formulario de derechos en el sitio institucional."),
     ],
-    "Ley 21.719 — Biblioteca del Congreso Nacional (BCN), idNorma=1209272.",
+    casos=[
+        ("Publicar datos personales de beneficiarios de subsidios sin base legal", "Gravísima"),
+        ("Reconocimiento facial en accesos de edificios públicos sin evaluación de impacto", "Grave"),
+        ("Ceder bases de datos entre organismos sin convenio ni aviso al titular", "Grave"),
+        ("No responder una solicitud ARSOP de un ciudadano", "Leve"),
+    ],
+    faq_items=[
+        ("¿Se necesita consentimiento para tratar datos en un trámite público?",
+         "Generalmente no: el ejercicio de funciones legales constituye base legal propia del régimen "
+         "público. Pero debe informarse al ciudadano la finalidad y sus derechos."),
+        ("¿Puede un municipio compartir datos con un ministerio?",
+         "Solo bajo convenio que documente finalidad, alcances y medidas de seguridad, y cuando la ley "
+         "autoriza la comunicación o existe competencia compartida."),
+        ("¿Dónde se publica el registro de tratamiento público?",
+         "El RAT y las políticas deben estar disponibles para la ciudadanía, reforzando la transparencia "
+         "activa exigible al Estado."),
+    ],
+    footer_texto="Ley 21.719 — Biblioteca del Congreso Nacional (BCN), idNorma=1209272.",
 )
 
 # 2. RETAIL-ECOMMERCE
@@ -127,7 +144,25 @@ build_pdf(
         ("Protocolo de brechas", "Definir responsable y comunicación a clientes."),
         ("Canales ARSOP", "Habilitar autogestión de datos en la cuenta de cliente."),
     ],
-    "Ley 21.719 — BCN idNorma=1209272.",
+    casos=[
+        ("Vender bases de clientes a otra empresa sin consentimiento", "Gravísima"),
+        ("Casillas de cookies pre-marcadas en el sitio web", "Grave"),
+        ("Emails promocionales sin opción de baja visible", "Grave"),
+        ("Perfilamiento publicitario sin informar al titular", "Grave"),
+        ("Conservar datos de tarjeta más allá de lo necesario", "Grave"),
+        ("No responder solicitud de borrado de un cliente", "Leve"),
+    ],
+    faq_items=[
+        ("¿Puedo enviar campañas a clientes que compraron antes?",
+         "Solo si obtuviste consentimiento para fines comerciales o si existe relación comercial vigente "
+         "y la campaña trata de productos/servicios similares, con opción de baja siempre disponible."),
+        ("¿Qué pasa si un tercero me vende una base de datos?",
+         "Usarla es riesgoso: el vendedor debió contar con autorización para ceder. Si no, ambos incurren "
+         "en infracción. Exige respaldo del origen del consentimiento."),
+        ("¿Las cámaras en tienda necesitan aviso?",
+         "Sí: carteles visibles en accesos, finalidad de seguridad, sin audio y plazos cortos de borrado."),
+    ],
+    footer_texto="Ley 21.719 — BCN idNorma=1209272.",
 )
 
 # 3. FINTECH-BANCA
@@ -157,7 +192,25 @@ build_pdf(
         ("Protocolo de brechas", "Definir responsable y comunicación a clientes afectados."),
         ("Canales ARSOP", "Habilitar portal de derechos del cliente."),
     ],
-    "Ley 21.719 — BCN idNorma=1209272.",
+    casos=[
+        ("Scoring crediticio automático sin revisión humana posible", "Gravísima"),
+        ("Fuga de base de datos de clientes con movimientos financieros", "Gravísima"),
+        ("Compartir datos con aseguradoras sin consentimiento específico", "Grave"),
+        ("KYC almacenado sin cifrado reforzado", "Grave"),
+        ("No informar al cliente el uso de sus datos para cross-selling", "Leve"),
+    ],
+    faq_items=[
+        ("¿Puedo negar un crédito solo con un algoritmo?",
+         "El titular tiene derecho a obtener intervención humana y a conocer la lógica aplicada cuando la "
+         "decisión le produce efectos jurídicos significativos. Documenta el proceso."),
+        ("¿Los datos de transacciones pueden usarse para marketing?",
+         "Solo con consentimiento explícito para esa finalidad. El uso del producto no autoriza per se "
+         "el perfilamiento comercial."),
+        ("¿Qué aplica si opero como fintech y uso proveedores cloud extranjeros?",
+         "Debes firmar DPA, evaluar garantías equivalentes y documentar la transferencia internacional "
+         "conforme a la ley y su reglamento."),
+    ],
+    footer_texto="Ley 21.719 — BCN idNorma=1209272.",
 )
 
 # 4. SAAS-TECNOLOGÍA
@@ -185,7 +238,25 @@ build_pdf(
         ("Protocolo de brechas", "Definir flujo de escalamiento al cliente responsable."),
         ("Canales ARSOP", "Habilitar portal de derechos para el responsable."),
     ],
-    "Ley 21.719 — BCN idNorma=1209272.",
+    casos=[
+        ("Usar datos de usuarios finales del cliente para entrenar IA sin autorización", "Gravísima"),
+        ("Vender estadísticas que identifican a titulares de un cliente", "Gravísima"),
+        ("Operar sin DPA firmado con clientes responsables", "Grave"),
+        ("Subprocesar en proveedores cloud sin autorización del cliente", "Grave"),
+        ("Logs de aplicación con datos personales sin control de acceso", "Leve"),
+    ],
+    faq_items=[
+        ("¿Puedo usar los datos que procesa mi plataforma para mejorar el producto?",
+         "Solo si está pactado en el DPA o hay base legal propia, idealmente en forma agregada y "
+         "anonimizada. Nunca para fines propios sin autorización del responsable."),
+        ("¿Quién notifica la brecha al titular, el cliente SaaS o el proveedor?",
+         "El responsable (cliente) es quien notifica; el encargado debe avisarle sin dilaciones "
+         "indebidas apenas detecte el incidente y colaborar con la gestión."),
+        ("¿Qué cláusulas no pueden faltar en mi DPA plantilla?",
+         "Objeto y finalidad, duración, medidas de seguridad, subencargados autorizados, asistencia "
+         "con derechos ARSOP, notificación de brechas y borrado/devolución al término."),
+    ],
+    footer_texto="Ley 21.719 — BCN idNorma=1209272.",
 )
 
 # 5. TRANSPORTE-LOGÍSTICA
@@ -214,7 +285,26 @@ build_pdf(
         ("Protocolo de brechas", "Definir responsable y comunicación a afectados."),
         ("Canales ARSOP", "Habilitar portal de derechos para clientes."),
     ],
-    "Ley 21.719 — BCN idNorma=1209272.",
+    casos=[
+        ("Vender base de clientes con direcciones a otra empresa", "Gravísima"),
+        ("GPS activo fuera de jornada sin informar ni justificar", "Grave"),
+        ("Reconocimiento facial de conductores sin evaluación de impacto", "Grave"),
+        ("Compartir datos de envíos con subcontratistas sin DPA", "Grave"),
+        ("Conservar historial de destinos indefinidamente", "Leve"),
+        ("No responder solicitud ARSOP de un conductor", "Leve"),
+    ],
+    faq_items=[
+        ("¿Puedo rastrear el vehículo del conductor las 24 horas?",
+         "No: el rastreo debe limitarse a la jornada y finalidad laboral, con política interna informada. "
+         "El seguimiento continuo fuera de horario carece de proporcionalidad."),
+        ("¿Las cámaras en bodega necesitan aviso?",
+         "Sí: carteles visibles, finalidad de seguridad, sin audio y borrado periódico. Igual que en "
+         "oficinas o locales."),
+        ("¿Puedo compartir la dirección de un cliente con el repartidor externo?",
+         "Sí, es necesario para la entrega (ejecución de contrato), pero el transportista debe operar "
+         "bajo DPA y usar los datos solo para ese envío."),
+    ],
+    footer_texto="Ley 21.719 — BCN idNorma=1209272.",
 )
 
 # 6. COMPLETO (RESUMEN GENERAL)
@@ -242,5 +332,24 @@ build_pdf(
         ("DPO", "Evaluar designación voluntaria (Art. 50)."),
         ("MPI", "Implementar Modelo de Prevención como atenuante."),
     ],
-    "Ley 21.719 — BCN idNorma=1209272. Resumen ejecutivo.",
+    casos=[
+        ("Tratar datos sensibles sin base legal ni consentimiento", "Gravísima"),
+        ("Notificar brecha a la APDP semanas después del incidente", "Grave"),
+        ("Operar sin RAT en empresa mediana", "Grave"),
+        ("Banners de cookies sin opción de rechazo equivalente", "Grave"),
+        ("No responder solicitudes ARSOP en tiempo razonable", "Leve"),
+    ],
+    faq_items=[
+        ("¿La ley me obliga a tener un Delegado de Protección de Datos?",
+         "No en general: la designación es voluntaria (Art. 50), salvo que una norma especial la exija "
+         "(ej. ciertos establecimientos financieros). Aun así, es buena práctica en organizaciones con "
+         "tratamientos masivos o sensibles."),
+        ("¿Qué significa exactamente notificar 'sin dilaciones indebidas'?",
+         "Significa sin demoras injustificadas: la ley no fija 72 horas ni otro plazo horario; la Agencia "
+         "evaluará cada caso según gravedad y capacidad técnica. El estándar interno debe apuntar a horas."),
+        ("¿El MPI es obligatorio?",
+         "No es obligatorio, pero implementarlo bien puede atenuar sanciones y demuestra responsabilidad "
+         "proactiva ante la Agencia."),
+    ],
+    footer_texto="Ley 21.719 — BCN idNorma=1209272. Resumen ejecutivo.",
 )
