@@ -98,7 +98,7 @@ flow.append(Paragraph(
     "ingresos brutos anuales</b>. Si la infracción ordenada no se subsana en plazo, aplica un "
     "<b>recargo del 50%</b> sobre la multa.", styles['body']))
 flow.append(Spacer(1, 4*mm))
-flow.append(caja_datos_clave(styles))
+flow.append(KeepTogether(caja_datos_clave(styles)))
 flow.append(PageBreak())
 
 # === SECCIÓN 6: CHECKLIST ===

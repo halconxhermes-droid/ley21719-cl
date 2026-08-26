@@ -48,13 +48,12 @@ flow.append(Paragraph(
 
 # Tabla de sanciones idéntica
 flow.append(tabla_sanciones(styles))
-
 flow.append(Spacer(1, 6*mm))
 flow.append(Paragraph(
     "Si la empresa no corrige la falla ordenada por la Agencia dentro de 60 días, la multa recibe un "
     "<b>recargo del 50%</b>.", styles['body']))
 
-flow.append(caja_datos_clave(styles))
+flow.append(KeepTogether(caja_datos_clave(styles)))
 
 flow.append(PageBreak())
 

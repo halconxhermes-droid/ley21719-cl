@@ -13,8 +13,9 @@ import os, json
 OUT = "/opt/data/ley21719-cl/media/informes_v3"
 os.makedirs(OUT, exist_ok=True)
 
-def build_pdf(filename, titulo_sector, resumen, kpis, secciones, checklist, footer_texto):
-    """Construye PDF estándar con estructura esmeralda"""
+def build_pdf(filename, titulo_sector, resumen, kpis, secciones, checklist, footer_texto,
+              casos=None, faq_items=None):
+    """Construye PDF estándar con estructura esmeralda + secciones ampliadas"""
     PDF_PATH = f"{OUT}/{filename}"
     doc = SimpleDocTemplate(PDF_PATH, pagesize=letter,
                             leftMargin=24*mm, rightMargin=18*mm,
@@ -31,13 +32,28 @@ def build_pdf(filename, titulo_sector, resumen, kpis, secciones, checklist, foot
         "Si la empresa no corrige la falla ordenada por la Agencia dentro de 60 días, la multa recibe un "
         "<b>recargo del 50%</b>. En grandes empresas que reinciden, las multas pueden alcanzar hasta el "
         "<b>4% de los ingresos brutos anuales</b>.", styles['body']))
-    flow.append(caja_datos_clave(styles))
+    flow.append(KeepTogether(caja_datos_clave(styles)))
+    if casos:
+        flow.append(Spacer(1, 4*mm))
+        flow.append(seccion_casos(styles, casos))
     flow.append(PageBreak())
+    flow.append(Paragraph("Equivalencia de multas en pesos", styles['h2']))
+    flow.append(tabla_sanciones_pesos(styles))
+    flow.append(Spacer(1, 6*mm))
     flow.append(Paragraph("Checklist de adecuación", styles['h2']))
     for i, (t_, d_) in enumerate(checklist, 1):
-        flow.append(Paragraph(f"<b>{i}. {t_}</b>", ParagraphStyle('ck', parent=styles['body'], spaceAfter=1)))
-        flow.append(Paragraph(d_, styles['body_tight']))
-        flow.append(Spacer(1, 2.5*mm))
+        flow.append(KeepTogether([
+            Paragraph(f"<b>{i}. {t_}</b>", ParagraphStyle('ck', parent=styles['body'], spaceAfter=1)),
+            Paragraph(d_, styles['body_tight']),
+            Spacer(1, 2.5*mm),
+        ]))
+    flow.append(Spacer(1, 4*mm))
+    flow.append(hoja_ruta(styles))
+    if faq_items:
+        flow.append(Spacer(1, 6*mm))
+        flow.append(faq(styles, faq_items))
+    flow.append(Spacer(1, 6*mm))
+    flow.append(glosario(styles))
     flow.append(caja_alerta(
         titulo="Fuente oficial", texto=footer_texto,
         color_fondo=SLATE_50, color_borde=SLATE_300, color_texto=SLATE_700))

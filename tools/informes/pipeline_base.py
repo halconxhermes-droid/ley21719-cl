@@ -245,6 +245,139 @@ def caja_alerta(titulo, texto, color_fondo, color_borde, color_texto):
     return inner
 
 # === CONSTRUCTOR DE PORTADA ===
+def tabla_sanciones_pesos(styles):
+    """Tabla equivalencia multas UTM → pesos aproximados"""
+    data = [
+        [Paragraph('<b>Infracción</b>', styles['body']),
+         Paragraph('<b>Techo en UTM</b>', styles['body']),
+         Paragraph('<b>Equivalencia aprox.*</b>', styles['body'])],
+        [Paragraph('Leve', styles['cell_verde']),
+         Paragraph('5.000 UTM', styles['cell_verde']),
+         Paragraph('~ $345 millones', styles['body_tight'])],
+        [Paragraph('Grave', styles['cell_ambar']),
+         Paragraph('10.000 UTM', styles['cell_ambar']),
+         Paragraph('~ $690 millones', styles['body_tight'])],
+        [Paragraph('Gravísima', styles['cell_vino']),
+         Paragraph('20.000 UTM', styles['cell_vino']),
+         Paragraph('~ $1.400 millones', styles['body_tight'])],
+    ]
+    t = Table(data, colWidths=[45*mm, 40*mm, 75*mm])
+    t.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,0), ESMERALDA_800),
+        ('TEXTCOLOR', (0,0), (-1,0), colors.white),
+        ('FONTNAME', (0,0), (-1,0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0,0), (-1,0), 10),
+        ('BACKGROUND', (0,1), (-1,1), ESMERALDA_50),
+        ('BACKGROUND', (0,2), (-1,2), AMBAR_50),
+        ('BACKGROUND', (0,3), (-1,3), VINO_50),
+        ('GRID', (0,0), (-1,-1), 0.5, SLATE_300),
+        ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ('LEFTPADDING', (0,0), (-1,-1), 8),
+        ('TOPPADDING', (0,0), (-1,-1), 6),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 6),
+    ]))
+    nota = Paragraph(
+        '*Valores referenciales con UTM de agosto 2026 (~$69.000). El valor de la UTM se reajusta '
+        'mensualmente según IPC.', ParagraphStyle('nota', parent=styles['footer'], alignment=TA_LEFT))
+    return KeepTogether([t, Spacer(1, 2*mm), nota])
+
+def seccion_casos(styles, casos):
+    """Casos típicos de infracción del sector con sanción esperada"""
+    flow = [Paragraph("Casos típicos de infracción en el sector", styles['h2'])]
+    rows = [[Paragraph('<b>Situación</b>', styles['body']),
+             Paragraph('<b>Gravedad probable</b>', styles['body'])]]
+    for situacion, gravedad in casos:
+        color_cls = {'leve':'cell_verde','grave':'cell_ambar','gravísima':'cell_vino'}.get(gravedad.lower(), 'cell_ambar')
+        rows.append([Paragraph(situacion, styles['body_tight']),
+                     Paragraph(gravedad, styles[color_cls])])
+    t = Table(rows, colWidths=[110*mm, 50*mm])
+    estilo_extra = [('BACKGROUND',(0,0),(-1,0), ESMERALDA_800),
+                    ('TEXTCOLOR',(0,0),(-1,0), colors.white),
+                    ('GRID',(0,0),(-1,-1),0.5,SLATE_300),
+                    ('VALIGN',(0,0),(-1,-1),'TOP'),
+                    ('LEFTPADDING',(0,0),(-1,-1),8),
+                    ('TOPPADDING',(0,0),(-1,-1),6),
+                    ('BOTTOMPADDING',(0,0),(-1,-1),6)]
+    for i in range(1,len(rows)):
+        bg = SLATE_50 if i%2 else colors.white
+        estilo_extra.append(('BACKGROUND',(0,i),(-1,i), bg))
+    t.setStyle(TableStyle(estilo_extra))
+    flow.append(t)
+    return KeepTogether(flow)
+
+def hoja_ruta(styles, hitos=None):
+    """Hoja de ruta 30/60/90 días"""
+    if hitos is None:
+        hitos = [
+            ("Días 1–30", "Diagnóstico", "Inventario RAT, mapa de flujos de datos y brecha frente a la ley."),
+            ("Días 31–60", "Adecuación", "Políticas actualizadas, contratos DPA, canales ARSOP y banners de consentimiento."),
+            ("Días 61–90", "Cultura y pruebas", "Capacitación, simulacro de brecha, revisión final y designación DPO si corresponde."),
+        ]
+    flow = [Paragraph("Hoja de ruta sugerida de implementación", styles['h2'])]
+    inner = []
+    for periodo, titulo, desc in hitos:
+        inner.append([Paragraph(f'<b><font color="#047857">{periodo} · {titulo}</font></b>',
+                                ParagraphStyle('hr', parent=styles['body'], spaceAfter=1))])
+        inner.append([Paragraph(desc, styles['body_tight'])])
+        inner.append([Spacer(1, 3*mm)])
+    t = Table(inner[:-1], colWidths=[160*mm])
+    estilos = [
+        ('BACKGROUND', (0,0), (-1,-1), ESMERALDA_50),
+        ('BOX', (0,0), (-1,-1), 0.8, ESMERALDA_700),
+        ('LEFTPADDING', (0,0), (-1,-1), 12),
+        ('RIGHTPADDING', (0,0), (-1,-1), 12),
+        ('TOPPADDING', (0,0), (-1,-1), 3),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+    ]
+    # separadores entre hitos
+    for r in range(2, len(inner)-1, 3):
+        estilos.append(('LINEABOVE', (0,r), (-1,r), 0.3, ESMERALDA_200))
+    t.setStyle(TableStyle(estilos))
+    flow.append(t)
+    return KeepTogether(flow)
+
+def faq(styles, items):
+    """Preguntas frecuentes"""
+    flow = [Paragraph("Preguntas frecuentes", styles['h2'])]
+    for q, a in items:
+        flow.append(Paragraph(f"<b>{q}</b>", ParagraphStyle('fq', parent=styles['body'], textColor=ESMERALDA_900, spaceAfter=1)))
+        flow.append(Paragraph(a, styles['body_tight']))
+        flow.append(Spacer(1, 3*mm))
+    return KeepTogether(flow)
+
+GLOSARIO_TERMINOS = [
+    ("ARSOP", "Derechos de Acceso, Rectificación, Supresión, Oposición y Portabilidad que todo titular puede ejercer."),
+    ("APDP", "Agencia de Protección de Datos Personales: organismo fiscalizador del nuevo régimen."),
+    ("RAT", "Registro de Actividades de Tratamiento: inventario interno obligatorio de qué datos se tratan, para qué y con quién."),
+    ("DPA", "Data Processing Agreement o contrato de encargo de tratamiento entre responsable y encargado."),
+    ("DPO", "Delegado de Protección de Datos (Art. 50): figura generalmente voluntaria, obligatoria solo por excepción legal."),
+    ("Brecha de seguridad", "Pérdida, robo o acceso no autorizado a datos personales; debe notificarse sin dilaciones indebidas."),
+    ("MPI", "Modelo de Prevención de Infracciones: programa interno de cumplimiento que atenúa sanciones."),
+    ("UTM", "Unidad Tributaria Mensual, unidad monetaria indexada usada para calificar multas (reajustada por IPC)."),
+]
+
+def glosario(styles, terminos=None):
+    """Glosario común del régimen"""
+    flow = [Paragraph("Glosario esencial", styles['h2'])]
+    terminos = terminos or GLOSARIO_TERMINOS
+    inner = []
+    for term, defi in terminos:
+        inner.append([Paragraph(f'<b><font color="#047857">{term}</font></b>',
+                                ParagraphStyle('gt', parent=styles['body_tight'], spaceAfter=1))])
+        inner.append([Paragraph(defi, styles['body_tight'])])
+        inner.append([Spacer(1, 2*mm)])
+    t = Table(inner, colWidths=[160*mm])
+    t.setStyle(TableStyle([
+        ('LEFTPADDING', (0,0), (-1,-1), 10),
+        ('RIGHTPADDING', (0,0), (-1,-1), 10),
+        ('TOPPADDING', (0,0), (-1,-1), 2),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 2),
+        ('BOX', (0,0), (-1,-1), 0.6, ESMERALDA_200),
+        ('BACKGROUND', (0,0), (-1,-1), colors.white),
+    ]))
+    flow.append(t)
+    return KeepTogether(flow)
+
 def portada(stitulo_sector, resumen_ejecutivo, kpi_data, doc_title=""):
     """Retorna lista de flowables para la portada"""
     styles = get_styles()
@@ -263,6 +396,6 @@ def portada(stitulo_sector, resumen_ejecutivo, kpi_data, doc_title=""):
     flow.append(Table([cards_row], colWidths=[c._colWidths[0] for c in cards_row]))
     flow.append(Spacer(1, 12*mm))
     flow.append(Paragraph("Datos clave del nuevo régimen", styles['h2']))
-    flow.append(caja_datos_clave(styles))
+    flow.append(KeepTogether(caja_datos_clave(styles)))
     flow.append(PageBreak())
     return flow
