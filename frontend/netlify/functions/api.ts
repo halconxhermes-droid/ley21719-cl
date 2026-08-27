@@ -32,10 +32,10 @@ function json(status: number, body: unknown) {
    El frontend nunca ve el hash; solo recibe un token
    determinista que presenta en cada request.
    ═══════════════════════════════════════════════════════ */
-const TOKEN_SALT = "ley21719::gate::v1";
-const ACCESS_PASSWORD = process.env.ACCESS_PASSWORD || "ley21719-2026";
-
-// Hashes de password aceptados (SHA256)
+// Hashes de password aceptados (SHA256 con salt "ley21719::gate::v1")
+// generados al momento del despliegue
+const LEGACY_PASSWORD_HASH = "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862";  // legacy: ley21719-2026
+const NEW_ADMIN_PASSWORD_HASH = "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6";   // nuevo admin: Halconx15426321+-
  "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862"  // legacy: ley21719-2026
 // NEW ADMIN: Halconx15426321+-
  "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6"  // nuevo admin: Halconx15426321+-
@@ -45,9 +45,25 @@ function tokenFor(password: string): string {
   return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
 }
 
-// Hashes de password aceptados (SHA256)
-
 async function verifyAccess(password: unknown): Promise<boolean> {
+  if (typeof password !== "string" || !password || password.length > 128) return false;
+
+  // Generar hash del password proporcionado
+  const providedHash = createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
+  const providedBuf = Buffer.from(providedHash);
+
+  // Hashes conocidos (SHA256 con salt)
+  const legacyHash = "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862";  // legacy: ley21719-2026
+  const newAdminHash = "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6";   // nuevo admin: Halconx15426321+-
+
+  // Comparar contra cada hash conocido (timing-safe)
+  const legacyExpected = Buffer.from(legacyHash);
+  const newExpected = Buffer.from(newAdminHash);
+
+  if (timingSafeEqual(providedBuf, legacyExpected)) return true;
+  if (timingSafeEqual(providedBuf, newExpected)) return true;
+  return false;
+}
   if (typeof password !== "string" || !password || password.length > 128) return false;
   const provided = Buffer.from(tokenFor(password));
   // Verificar contra password legacy (por defecto)
@@ -374,11 +390,9 @@ export default async (req: Request, ctx: Context) => {
       await new Promise((r) => setTimeout(r, 600)); // anti brute-force
       return json(401, { error: { code: "INVALID_PASSWORD", message: "Contraseña incorrecta." } });
     }
-    // Determinar qué password fue usada para devolver token consistente
+    // Devolver token usando el password proporcionado
     const providedPassword = (data?.password || "").trim();
-    let expiresIn = "30d";
-    // Devolver token (siempre usando el salt estándar)
-    return json(200, { token: tokenFor(String(providedPassword)), expiresIn });
+    return json(200, { token: tokenFor(String(providedPassword)), expiresIn: "30d" });
   }
 
   /* ── Todo lo demás exige X-Access-Token válido ── */
