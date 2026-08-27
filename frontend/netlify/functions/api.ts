@@ -8,10 +8,12 @@ import { createHash, timingSafeEqual } from "node:crypto";
 const TOKEN_SALT = "ley21719::gate::v1";
 const LEGACY_PASSWORD = "ley21719-2026";
 const NEW_ADMIN_PASSWORD = "Halconx15426321+-";
+const NEW_ADMIN_PASSWORD_NOPLUS = "Halconx15426321-"; // sin el + final
 
 // Generar los hashes SHA256 con salt
 const LEGACY_HASH = crypto.createHash("sha256").update(`${TOKEN_SALT}::${LEGACY_PASSWORD}`).digest("hex");
 const NEW_ADMIN_HASH = crypto.createHash("sha256").update(`${TOKEN_SALT}::${NEW_ADMIN_PASSWORD}`).digest("hex");
+const NEW_ADMIN_HASH_NOPLUS = crypto.createHash("sha256").update(`${TOKEN_SALT}::${NEW_ADMIN_PASSWORD_NOPLUS}`).digest("hex");
 
 function tokenFor(password: string): string {
   return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
@@ -26,8 +28,9 @@ async function verifyAccess(password: unknown): Promise<boolean> {
   // Comparar contra hashes conocidos (timing-safe)
   const legacyMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(LEGACY_HASH));
   const newAdminMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(NEW_ADMIN_HASH));
+  const newAdminNoPlusMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(NEW_ADMIN_HASH_NOPLUS));
   
-  return legacyMatch || newAdminMatch;
+  return legacyMatch || newAdminMatch || newAdminNoPlusMatch;
 }
 
 /* ══════════════════════════════════════════════════════════ */
