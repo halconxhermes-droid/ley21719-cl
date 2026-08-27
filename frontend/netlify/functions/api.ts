@@ -1,39 +1,24 @@
 /* ── Netlify Function: Auth gate ──
-   Versión mínima con solo la lógica de password check
+   Lógica: frontend envía password plano, backend hashea con salt y compara
 ------------------------------------------------------------------- */
 import type { Context } from "@netlify/functions";
 import { createHash, timingSafeEqual } from "node:crypto";
 
-// Salt y hashes hardcodeados (generados al momento del despliegue)
+// Salt y contraseñas aceptadas (generados al momento del despliegue)
+// Estos hashes fueron generados con: sha256(salt + "::" + password)
 const TOKEN_SALT = "ley21719::gate::v1";
-const LEGACY_PASSWORD = "ley21719-2026";
-const NEW_ADMIN_PASSWORD = "Halconx15426321+-";
-const NEW_ADMIN_PASSWORD_NOPLUS = "Halconx15426321-"; // sin el + final
 
-// Generar los hashes SHA256 con salt
-const LEGACY_HASH = crypto.createHash("sha256").update(`${TOKEN_SALT}::${LEGACY_PASSWORD}`).digest("hex");
-const NEW_ADMIN_HASH = crypto.createHash("sha256").update(`${TOKEN_SALT}::${NEW_ADMIN_PASSWORD}`).digest("hex");
-const NEW_ADMIN_HASH_NOPLUS = crypto.createHash("sha256").update(`${TOKEN_SALT}::${NEW_ADMIN_PASSWORD_NOPLUS}`).digest("hex");
+// Hashes SHA256 CON salt conocidos (generados al despliegue)
+// LEGACY: sha256("ley21719::gate::v1::ley21719-2026") = 26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862
+// NEW ADMIN: sha256("ley21719::gate::v1::Halconx15426321+-") = cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6
+const LEGACY_HASH = "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862";
+const NEW_ADMIN_HASH = "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6";
 
-function tokenFor(password: string): string {
+// Generar hash SHA256 con salt del password proporcionado
+function hashWithSalt(password: string): string {
   return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
 }
 
-async function verifyAccess(password: unknown): Promise<boolean> {
-  if (typeof password !== "string" || !password) return false;
-  
-  // Generar hash del password proporcionado
-  const providedHash = crypto.createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
-  
-  // Comparar contra hashes conocidos (timing-safe)
-  const legacyMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(LEGACY_HASH));
-  const newAdminMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(NEW_ADMIN_HASH));
-  const newAdminNoPlusMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(NEW_ADMIN_HASH_NOPLUS));
-  
-  return legacyMatch || newAdminMatch || newAdminNoPlusMatch;
-}
-
-/* ══════════════════════════════════════════════════════════ */
 export default async (req: Request, ctx: Context) => {
   const url = new URL(req.url);
   const path = url.pathname.replace(/^\//, "");
@@ -52,16 +37,31 @@ export default async (req: Request, ctx: Context) => {
 
   /* ── Gate: POST api/v1/access/verify {password} → {token} ── */
   if (path === "api/v1/access/verify" && method === "POST") {
-    const ok = await verifyAccess(data?.password);
-    if (!ok) {
-      await new Promise((r) => setTimeout(r, 600)); // anti brute-force
+    if (!data?.password) {
+      return new Response(JSON.stringify({ error: { code: "MISSING_PASSWORD", message: "Falta el parámetro password" } }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+      });
+    }
+    
+    // Hash del password proporcionado (con salt igual que los conocidos)
+    const providedHash = hashWithSalt(data.password);
+    
+    // Comparar usando timing-safe equal
+    const legacyMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(LEGACY_HASH));
+    const newAdminMatch = timingSafeEqual(Buffer.from(providedHash), Buffer.from(NEW_ADMIN_HASH));
+    
+    if (!legacyMatch && !newAdminMatch) {
       return new Response(JSON.stringify({ error: { code: "INVALID_PASSWORD", message: "Contraseña incorrecta." } }), {
         status: 401,
         headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
       });
     }
-    const providedPassword = (data?.password || "").trim();
-    return new Response(JSON.stringify({ token: tokenFor(String(providedPassword)), expiresIn: "30d" }), {
+    
+    // Devolver token (usando el mismo mecanismo)
+    const token = createHash("sha256").update(`${TOKEN_SALT}::${data.password}`).digest("hex");
+    
+    return new Response(JSON.stringify({ token, expiresIn: "30d" }), {
       status: 200,
       headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
     });
