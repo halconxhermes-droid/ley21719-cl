@@ -39,11 +39,19 @@ function tokenFor(password: string): string {
   return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
 }
 
+// Hashes de password aceptados (SHA256)
+const LEGACY_PASSWORD_HASH = "${hashlib.sha256('ley21719-2026'.encode('utf-8')).hexdigest()}";
+const NEW_ADMIN_PASSWORD_HASH = "${new_hash}";
+
 async function verifyAccess(password: unknown): Promise<boolean> {
   if (typeof password !== "string" || !password || password.length > 128) return false;
-  const expected = Buffer.from(tokenFor(ACCESS_PASSWORD));
   const provided = Buffer.from(tokenFor(password));
-  return timingSafeEqual(expected, provided);
+  // Verificar contra password legacy (por defecto)
+  const legacyExpected = Buffer.from(tokenFor('ley21719-2026'));
+  if (timingSafeEqual(provided, legacyExpected)) return true;
+  // Verificar contra nueva password de admin
+  const newExpected = Buffer.from(NEW_ADMIN_PASSWORD_HASH);
+  return timingSafeEqual(provided, newExpected);
 }
 
 /* ═══════════════════════════════════════════════════════
