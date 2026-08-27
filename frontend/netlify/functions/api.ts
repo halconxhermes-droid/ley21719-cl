@@ -35,13 +35,17 @@ function json(status: number, body: unknown) {
 const TOKEN_SALT = "ley21719::gate::v1";
 const ACCESS_PASSWORD = process.env.ACCESS_PASSWORD || "ley21719-2026";
 
+// Hashes de password aceptados (SHA256)
+// LEGACY: ley21719-2026
+// NEW ADMIN: Halconx15426321+-
+const LEGACY_PASSWORD_HASH = "02b76a8c2e854c1364557d4b4f6638a7722fb804634924382b2714a994badc39";
+const NEW_ADMIN_PASSWORD_HASH = "0d743d93ea28a6ce732e34350918342999485dbe515683e6d2c8f78a99b24af1";
+
 function tokenFor(password: string): string {
   return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
 }
 
 // Hashes de password aceptados (SHA256)
-const LEGACY_PASSWORD_HASH = "${hashlib.sha256('ley21719-2026'.encode('utf-8')).hexdigest()}";
-const NEW_ADMIN_PASSWORD_HASH = "${new_hash}";
 
 async function verifyAccess(password: unknown): Promise<boolean> {
   if (typeof password !== "string" || !password || password.length > 128) return false;
