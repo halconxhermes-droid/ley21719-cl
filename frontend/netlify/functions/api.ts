@@ -368,16 +368,17 @@ export default async (req: Request, ctx: Context) => {
 
   /* ── Gate: POST api/v1/access/verify {password} → {token} ── */
   if (path === "api/v1/access/verify" && method === "POST") {
-    // Modo legacy: solo password usando hash SHA256 server-side
-    // La password correcta es la que está configurada en ACCESS_PASSWORD
-    // (por defecto: "ley21719-2026"). El usuario admin ahora usa: halconx.hermes@gmail.com / Halconx15426321+
-    // Para compatibilidad, también aceptamos el password legacy
-    const ok = await verifyAccess(data?.password || "");
+    // Verificar password contra lista blanca
+    const ok = await verifyAccess(data?.password);
     if (!ok) {
       await new Promise((r) => setTimeout(r, 600)); // anti brute-force
       return json(401, { error: { code: "INVALID_PASSWORD", message: "Contraseña incorrecta." } });
     }
-    return json(200, { token: tokenFor(String(data.password || data?.code)), expiresIn: "30d" });
+    // Determinar qué password fue usada para devolver token consistente
+    const providedPassword = (data?.password || "").trim();
+    let expiresIn = "30d";
+    // Devolver token (siempre usando el salt estándar)
+    return json(200, { token: tokenFor(String(providedPassword)), expiresIn });
   }
 
   /* ── Todo lo demás exige X-Access-Token válido ── */
