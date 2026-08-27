@@ -36,9 +36,9 @@ const TOKEN_SALT = "ley21719::gate::v1";
 const ACCESS_PASSWORD = process.env.ACCESS_PASSWORD || "ley21719-2026";
 
 // Hashes de password aceptados (SHA256)
-// LEGACY: ley21719-2026
+ "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862"  // legacy: ley21719-2026
 // NEW ADMIN: Halconx15426321+-
-const LEGACY_PASSWORD_HASH = "02b76a8c2e854c1364557d4b4f6638a7722fb804634924382b2714a994badc39";
+ "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6"  // nuevo admin: Halconx15426321+-
 const NEW_ADMIN_PASSWORD_HASH = "0d743d93ea28a6ce732e34350918342999485dbe515683e6d2c8f78a99b24af1";
 
 function tokenFor(password: string): string {
