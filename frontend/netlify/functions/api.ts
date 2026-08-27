@@ -28,18 +28,22 @@ function json(status: number, body: unknown) {
 
 /* ═══════════════════════════════════════════════════════
    AUTH GATE — contraseña server-side
-   La password vive en la env var ACCESS_PASSWORD de Netlify.
-   El frontend nunca ve el hash; solo recibe un token
-   determinista que presenta en cada request.
+   Passwords aceptados (SHA256 con salt "ley21719::gate::v1"):
+   - LEGACY: ley21719-2026  (hash: 26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862)
+   - NEW ADMIN: Halconx15426321+- (hash: cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6)
+   El frontend nunca ve los hashes; solo recibe un token determinista
+   que presenta en cada request.
    ═══════════════════════════════════════════════════════ */
-// Hashes de password aceptados (SHA256 con salt "ley21719::gate::v1")
-// generados al momento del despliegue
-const LEGACY_PASSWORD_HASH = "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862";  // legacy: ley21719-2026
-const NEW_ADMIN_PASSWORD_HASH = "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6";   // nuevo admin: Halconx15426321+-
- "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862"  // legacy: ley21719-2026
-// NEW ADMIN: Halconx15426321+-
- "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6"  // nuevo admin: Halconx15426321+-
-const NEW_ADMIN_PASSWORD_HASH = "0d743d93ea28a6ce732e34350918342999485dbe515683e6d2c8f78a99b24af1";
+const TOKEN_SALT = "ley21719::gate::v1";
+
+// Hashes de password aceptados (SHA256 con salt)
+const ACCEPTED_PASSWORDS: { [key: string]: string } = {
+  "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862": "ley21719-2026",
+  "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6": "Halconx15426321+-",
+};
+
+// Hash legacy (para compatibilidad con token antiguo)
+const LEGACY_HASH = "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862";
 
 function tokenFor(password: string): string {
   return createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
@@ -52,26 +56,13 @@ async function verifyAccess(password: unknown): Promise<boolean> {
   const providedHash = createHash("sha256").update(`${TOKEN_SALT}::${password}`).digest("hex");
   const providedBuf = Buffer.from(providedHash);
 
-  // Hashes conocidos (SHA256 con salt)
-  const legacyHash = "26553e2a23c8a7b0c97c53267140eacf936c43b013b2609cac01b63c7b1d1862";  // legacy: ley21719-2026
-  const newAdminHash = "cf7cd6cdbb836faf4adc82941b02598bd1264f9b8ac8b736787e82fa7932b4c6";   // nuevo admin: Halconx15426321+-
+  // Comparar contra cada hash aceptado (timing-safe)
+  for (const acceptedHash of Object.keys(ACCEPTED_PASSWORDS)) {
+    const expectedBuf = Buffer.from(acceptedHash);
+    if (timingSafeEqual(providedBuf, expectedBuf)) return true;
+  }
 
-  // Comparar contra cada hash conocido (timing-safe)
-  const legacyExpected = Buffer.from(legacyHash);
-  const newExpected = Buffer.from(newAdminHash);
-
-  if (timingSafeEqual(providedBuf, legacyExpected)) return true;
-  if (timingSafeEqual(providedBuf, newExpected)) return true;
   return false;
-}
-  if (typeof password !== "string" || !password || password.length > 128) return false;
-  const provided = Buffer.from(tokenFor(password));
-  // Verificar contra password legacy (por defecto)
-  const legacyExpected = Buffer.from(tokenFor('ley21719-2026'));
-  if (timingSafeEqual(provided, legacyExpected)) return true;
-  // Verificar contra nueva password de admin
-  const newExpected = Buffer.from(NEW_ADMIN_PASSWORD_HASH);
-  return timingSafeEqual(provided, newExpected);
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -397,7 +388,7 @@ export default async (req: Request, ctx: Context) => {
 
   /* ── Todo lo demás exige X-Access-Token válido ── */
   const providedToken = req.headers.get("x-access-token");
-  const expected = tokenFor(ACCESS_PASSWORD);
+  const expected = LEGACY_HASH;
   if (!providedToken || providedToken !== expected) {
     return json(401, { error: { code: "UNAUTHORIZED", message: "Acceso requerido." } });
   }
