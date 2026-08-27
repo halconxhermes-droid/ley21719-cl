@@ -1,19 +1,12 @@
-/* ── Netlify Function: Auth gate (mínimo) ──
-   Compara hash SHA256 del password tal como llega.
-   Acepta: ley21719-2026 y Halconx15426321+- (según como se haga el hash)
+/* ── Netlify Function: Auth gate (mínimo y definitivo) ──
+   Login: email + password "ley21719-2026"
+   Un solo password aceptado, sin complejidades
 ------------------------------------------------------------------- */
 import type { Context } from "@netlify/functions";
 import { createHash } from "node:crypto";
 
-// Hashes SHA256puros (sin salt) generados al momento del despliegue:
-// sha256("ley21719-2026") = 02b76a8c2e854c1364557d4b4f6638a7722fb804634924382b2714a994badc39
-// sha256("Halconx15426321+-") = 0d743d93ea28a6ce732e34350918342999485dbe515683e6d2c8f78a99b24af1
-const ACCEPTED_PURE_HASHES = [
-  "02b76a8c2e854c1364557d4b4f6638a7722fb804634924382b2714a994badc39",  // ley21719-2026
-  "0d743d93ea28a6ce732e34350918342999485dbe515683e6d2c8f78a99b24af1",   // Halconx15426321+-
-  "25619b29d27de2296c0772541cf16b8aac5b796e1c3a4ceca5675747d19468b4",     // Halconx15426321- (sin +)
-  "61cd02c0e1f76d2c5c9fe8f9f507a5ae71790fb3dff32589e0bcd13016d2394b",     // Halconx15426321 (sin + al final)
-];
+// Único password aceptado (SHA256 puro generado al despliegue)
+const ACCEPTED_PURE_HASH = "02b76a8c2e854c1364557d4b4f6638a7722fb804634924382b2714a994badc39";  // sha256("ley21719-2026")
 
 function hashPasswordPure(password: string): string {
   return createHash("sha256").update(password).digest("hex");
@@ -44,11 +37,11 @@ export default async (req: Request, ctx: Context) => {
       });
     }
     
-    // Hash puro del password proporcionado (sin salt)
+    // Hash puro del password proporcionado
     const providedHash = hashPasswordPure(data.password);
     
-    // Verificar contra hashes aceptados
-    const isValid = ACCEPTED_PURE_HASHES.includes(providedHash);
+    // Comparar contra el hash aceptado conocido
+    const isValid = providedHash === ACCEPTED_PURE_HASH;
     
     if (!isValid) {
       return new Response(JSON.stringify({ error: { code: "INVALID_PASSWORD", message: "Contraseña incorrecta." } }), {
@@ -57,7 +50,7 @@ export default async (req: Request, ctx: Context) => {
       });
     }
     
-    // Devolver token (misma función de hash)
+    // Devolver token (misma función de hash para consistencia)
     const token = createHash("sha256").update(data.password).digest("hex");
     
     return new Response(JSON.stringify({ token, expiresIn: "30d" }), {
