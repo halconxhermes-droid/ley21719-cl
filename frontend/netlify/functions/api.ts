@@ -354,29 +354,12 @@ export default async (req: Request, ctx: Context) => {
     });
   }
 
-  /* ── Gate: POST api/v1/access/verify {email?, code?} → {token} ── */
+  /* ── Gate: POST api/v1/access/verify {password} → {token} ── */
   if (path === "api/v1/access/verify" && method === "POST") {
-    const email = (data?.email || "").trim().toLowerCase();
-    const code = (data?.code || data?.password || "").trim().toUpperCase();
-
-    // Modo nuevo: email + code
-    if (email && code && code !== "LEY21719-2026") {
-      // Llamar al backend Python real vía InsForge
-      const insforgeRes = await fetch(`${INSFORGE}/api/v1/access/verify`, {
-        method: "POST",
-        headers: HDR,
-        body: JSON.stringify({ email, code }),
-      });
-      const backendData = await insforgeRes.json();
-      if (insforgeRes.ok && backendData.token) {
-        return json(200, { token: backendData.token, expiresIn: "30d" });
-      }
-      // Si falla el backend, continuar con validación local legacy
-      await new Promise((r) => setTimeout(r, 600));
-      return json(401, { error: { code: "INVALID_CREDENTIALS", message: "Correo o contraseña incorrectos." } });
-    }
-
-    // Modo legacy: solo password (compatibilidad con password hasheado)
+    // Modo legacy: solo password usando hash SHA256 server-side
+    // La password correcta es la que está configurada en ACCESS_PASSWORD
+    // (por defecto: "ley21719-2026"). El usuario admin ahora usa: halconx.hermes@gmail.com / Halconx15426321+
+    // Para compatibilidad, también aceptamos el password legacy
     const ok = await verifyAccess(data?.password || "");
     if (!ok) {
       await new Promise((r) => setTimeout(r, 600)); // anti brute-force
