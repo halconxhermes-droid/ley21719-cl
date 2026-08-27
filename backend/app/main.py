@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.db import init_db
-from app.routers import admin, checklist, final_test, glossary, modules, quizzes
+from app.routers import admin, access, checklist, final_test, glossary, modules, quizzes
 
 logger = logging.getLogger("ley21719")
 
@@ -43,6 +43,7 @@ app.add_middleware(
 # Register routers under /api/v1
 API_PREFIX = "/api/v1"
 app.include_router(admin.router, prefix=API_PREFIX)
+app.include_router(access.router, prefix=API_PREFIX)
 app.include_router(modules.router, prefix=API_PREFIX)
 app.include_router(quizzes.router, prefix=API_PREFIX)
 app.include_router(checklist.router, prefix=API_PREFIX)

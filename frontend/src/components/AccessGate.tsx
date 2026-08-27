@@ -6,6 +6,7 @@ interface Props {
 }
 
 export default function AccessGate({ onUnlock }: Props) {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,10 @@ export default function AccessGate({ onUnlock }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!email.trim()) {
+      setError("Ingresa tu correo electrónico.");
+      return;
+    }
     if (!password.trim()) {
       setError("Ingresa la contraseña de acceso.");
       return;
@@ -24,10 +29,11 @@ export default function AccessGate({ onUnlock }: Props) {
     setError(null);
     setLoading(true);
     try {
-      await verifyPassword(password);
+      await verifyPassword(email, password);
       onUnlock?.();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Contraseña incorrecta.");
+      setEmail("");
       setPassword("");
     } finally {
       setLoading(false);
@@ -50,23 +56,42 @@ export default function AccessGate({ onUnlock }: Props) {
             >
               <rect x="3" y="11" width="18" height="11" rx="2" />
               <path d="M7 11V7a5 5 0 0110 0v4" />
-           </svg>
-         </div>
-       </div>
+            </svg>
+          </div>
+        </div>
 
         <h1 className="mb-2 text-center text-2xl font-semibold text-slate-900">
           Acceso restringido
-       </h1>
+        </h1>
         <p className="mb-6 text-center text-sm text-slate-600">
-          Esta plataforma es privada. Ingresa la contraseña proporcionada para
-          acceder al contenido sobre la Ley N° 21.719.
-       </p>
+          Esta plataforma es privada. Ingresa el correo y la contraseña proporcionados para
+          acceder al contenido sobre la Ley 21719.
+        </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
+            <label htmlFor="access-email" className="sr-only">
+              Correo electrónico
+            </label>
+            <input
+              id="access-email"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError(null);
+              }}
+              placeholder="Correo electrónico"
+              disabled={loading}
+              className="w-full rounded-lg border border-slate-300 px-4 py-3 text-base focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100 disabled:bg-slate-50"
+            />
+          </div>
+
+          <div>
             <label htmlFor="access-password" className="sr-only">
               Contraseña
-           </label>
+            </label>
             <input
               id="access-password"
               type="password"
@@ -79,9 +104,8 @@ export default function AccessGate({ onUnlock }: Props) {
               placeholder="Contraseña de acceso"
               disabled={loading}
               className="w-full rounded-lg border border-slate-300 px-4 py-3 text-base focus:border-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-100 disabled:bg-slate-50"
-              autoFocus
             />
-         </div>
+          </div>
 
           {error && (
             <div
@@ -89,7 +113,7 @@ export default function AccessGate({ onUnlock }: Props) {
               className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700"
             >
               {error}
-           </div>
+            </div>
           )}
 
           <button
@@ -98,13 +122,13 @@ export default function AccessGate({ onUnlock }: Props) {
             className="w-full rounded-lg bg-emerald-700 px-4 py-3 text-base font-semibold text-white transition hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-300 disabled:cursor-not-allowed disabled:bg-slate-400"
           >
             {loading ? "Verificando…" : "Acceder"}
-         </button>
-       </form>
+          </button>
+        </form>
 
         <p className="mt-6 text-center text-xs text-slate-500">
           ¿No tienes acceso? Contacta al administrador del sitio.
-       </p>
-     </div>
-   </div>
+        </p>
+      </div>
+    </div>
   );
 }

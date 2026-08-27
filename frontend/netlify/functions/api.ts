@@ -354,14 +354,35 @@ export default async (req: Request, ctx: Context) => {
     });
   }
 
-  /* ── Gate: POST api/v1/access/verify {password} → {token} ── */
+  /* ── Gate: POST api/v1/access/verify {email?, code?} → {token} ── */
   if (path === "api/v1/access/verify" && method === "POST") {
-    const ok = await verifyAccess(data?.password);
+    const email = (data?.email || "").trim().toLowerCase();
+    const code = (data?.code || data?.password || "").trim().toUpperCase();
+
+    // Modo nuevo: email + code
+    if (email && code && code !== "LEY21719-2026") {
+      // Llamar al backend Python real vía InsForge
+      const insforgeRes = await fetch(`${INSFORGE}/api/v1/access/verify`, {
+        method: "POST",
+        headers: HDR,
+        body: JSON.stringify({ email, code }),
+      });
+      const backendData = await insforgeRes.json();
+      if (insforgeRes.ok && backendData.token) {
+        return json(200, { token: backendData.token, expiresIn: "30d" });
+      }
+      // Si falla el backend, continuar con validación local legacy
+      await new Promise((r) => setTimeout(r, 600));
+      return json(401, { error: { code: "INVALID_CREDENTIALS", message: "Correo o contraseña incorrectos." } });
+    }
+
+    // Modo legacy: solo password (compatibilidad con password hasheado)
+    const ok = await verifyAccess(data?.password || "");
     if (!ok) {
       await new Promise((r) => setTimeout(r, 600)); // anti brute-force
       return json(401, { error: { code: "INVALID_PASSWORD", message: "Contraseña incorrecta." } });
     }
-    return json(200, { token: tokenFor(String(data.password)), expiresIn: "30d" });
+    return json(200, { token: tokenFor(String(data.password || data?.code)), expiresIn: "30d" });
   }
 
   /* ── Todo lo demás exige X-Access-Token válido ── */
