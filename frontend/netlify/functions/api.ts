@@ -12,6 +12,7 @@ const ACCEPTED_PURE_HASHES = [
   "02b76a8c2e854c1364557d4b4f6638a7722fb804634924382b2714a994badc39",  // ley21719-2026
   "0d743d93ea28a6ce732e34350918342999485dbe515683e6d2c8f78a99b24af1",   // Halconx15426321+-
   "25619b29d27de2296c0772541cf16b8aac5b796e1c3a4ceca5675747d19468b4",     // Halconx15426321- (sin +)
+  "61cd02c0e1f76d2c5c9fe8f9f507a5ae71790fb3dff32589e0bcd13016d2394b",     // Halconx15426321 (sin + al final)
 ];
 
 function hashPasswordPure(password: string): string {
