@@ -171,6 +171,18 @@ export async function sendOtp(email: string): Promise<void> {
 }
 
 /**
+ * Solicita un enlace de verificacion al email del usuario.
+ * El servidor envia un email con un link que el usuario debe abrir.
+ * Usado cuando verify_email_method = "link" en InsForge.
+ */
+export async function sendVerificationLink(email: string): Promise<void> {
+  await request("/api/auth/email/send-verification", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}
+
+/**
  * Verifica el email del usuario con el código recibido.
  */
 export async function verifyEmail(email: string, otp: string): Promise<AuthResponse> {

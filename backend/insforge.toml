@@ -1,7 +1,7 @@
 [auth]
 allowed_redirect_urls = ["http://localhost:5173", "https://ley21719-cl.netlify.app"]
 require_email_verification = true
-verify_email_method = "code"
+verify_email_method = "link"
 reset_password_method = "code"
 disable_signup = false
 
