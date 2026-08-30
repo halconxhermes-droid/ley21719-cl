@@ -45,6 +45,8 @@ function ViewRouter() {
 }
 
 export default function App() {
+  // MODO ACCESO: "password" = requiere clave | "open" = acceso libre
+  const ACCESS_MODE: "password" | "open" = "open";
   const [unlocked, setUnlocked] = useState<boolean | null>(null); // null = verificando
   const [publicVerify, setPublicVerify] = useState(false); // ruta /verificar?cod=... es pública
 
@@ -52,6 +54,11 @@ export default function App() {
     // Ruta pública: /verificar (QR de certificados) — accesible SIN gate
     if (window.location.pathname.startsWith("/verificar")) {
       setPublicVerify(true);
+      setUnlocked(true);
+      return;
+    }
+    if (ACCESS_MODE === "open") {
+      // Acceso libre: marcar como desbloqueado de inmediato
       setUnlocked(true);
       return;
     }
@@ -70,6 +77,24 @@ export default function App() {
           aria-label="Cargando"
         />
      </div>
+    );
+  }
+
+  // MODO ACCESO LIBRE: saltar el gate, ir directo al contenido
+  if (ACCESS_MODE === "open" && !publicVerify) {
+    return (
+      <RolProvider>
+        <NavigationProvider>
+          <a href="#main-content" className="skip-link">
+            Saltar al contenido principal
+          </a>
+          <Header />
+          <main id="main-content" role="main" className="mx-auto w-full max-w-5xl flex-1 p-4 sm:p-6">
+            <ViewRouter />
+          </main>
+          <Footer />
+        </NavigationProvider>
+      </RolProvider>
     );
   }
 
