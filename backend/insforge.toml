@@ -1,5 +1,5 @@
 [auth]
-allowed_redirect_urls = []
+allowed_redirect_urls = ["http://localhost:5173", "https://ley21719-cl.netlify.app"]
 require_email_verification = true
 verify_email_method = "code"
 reset_password_method = "code"
@@ -12,13 +12,16 @@ require_lowercase = false
 require_uppercase = false
 require_special_char = false
 
+# Resend SMTP configuration
+# Password uses InsForge secret: SMTP_PASSWORD (created via `insforge secrets add`)
 [auth.smtp]
-enabled = false
-host = ""
+enabled = true
+host = "smtp.resend.com"
 port = 465
-username = ""
-sender_email = ""
-sender_name = ""
+username = "resend"
+password = "env(SMTP_PASSWORD)"
+sender_email = "onboarding@resend.dev"
+sender_name = "Plataforma Ley 21.719"
 min_interval_seconds = 60
 
 [storage]

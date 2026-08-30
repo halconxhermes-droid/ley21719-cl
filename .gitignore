@@ -19,6 +19,15 @@ backend/coverage.xml
 frontend/coverage/
 backend/app/data/app.db
 
+# Secrets - NEVER commit
+backend/secrets/
+**/*.env
+!frontend/.env.example
+!backend/.env.example
+
+# InsForge TOML with secrets
+backend/insforge.toml.bak
+
 # InsForge & AI agent skills
 .insforge
 .agent

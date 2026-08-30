@@ -2,8 +2,13 @@ import { useNavigation } from "../context/NavigationContext";
 import Countdown from "./Countdown";
 import RoleIndicator from "./RoleIndicator";
 
-/** Header sticky con logo, nav Portal/Curso, cuenta regresiva viva e indicador de rol. */
-export default function Header() {
+interface HeaderProps {
+  user?: { email: string } | null;
+  onSignOut?: () => void;
+}
+
+/** Header sticky con logo, nav Portal/Curso, cuenta regresiva viva, indicador de rol y logout opcional. */
+export default function Header({ user, onSignOut }: HeaderProps) {
   const { view, navigate } = useNavigation();
 
   const navBtn = (target: "portal" | "home", label: string) => {
@@ -57,6 +62,23 @@ export default function Header() {
         <div className="flex flex-wrap items-center gap-3">
           <RoleIndicator />
           <Countdown />
+          {user && (
+            <div className="flex items-center gap-2">
+              <span className="hidden text-xs text-slate-500 sm:inline" title={user.email}>
+                {user.email.split("@")[0]}
+              </span>
+              {onSignOut && (
+                <button
+                  type="button"
+                  onClick={onSignOut}
+                  className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
+                  title="Cerrar sesión"
+                >
+                  Salir
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </header>
