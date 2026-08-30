@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AccessGate from "./components/AccessGate";
 import InsForgeAuth from "./components/InsForgeAuth";
+import VerifyStatusBanner from "./components/VerifyStatusBanner";
 import Home from "./views/Home";
 import Portal from "./views/Portal";
 import LectorModulo from "./views/LectorModulo";
@@ -58,8 +59,37 @@ export default function App() {
   const [unlocked, setUnlocked] = useState<boolean | null>(null);
   const [publicVerify, setPublicVerify] = useState(false);
   const [user, setUser] = useState<InsForgeUser | null>(null);
+  const [verifyStatus, setVerifyStatus] = useState<
+    | { kind: "idle" }
+    | { kind: "success" }
+    | { kind: "error"; message: string }
+  >({ kind: "idle" });
 
   useEffect(() => {
+    // Detectar redireccion de InsForge tras click en link de verificacion
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get("insforge_status");
+    const type = params.get("insforge_type");
+    const errorMsg = params.get("insforge_error");
+
+    if (status && type) {
+      if (status === "success") {
+        setVerifyStatus({ kind: "success" });
+        // Limpiar URL
+        window.history.replaceState({}, "", window.location.pathname);
+        // Forzar login automatico si la cuenta quedo verificada
+        if (ACCESS_MODE === "insforge") {
+          setUnlocked(true);
+        }
+      } else if (status === "error") {
+        setVerifyStatus({
+          kind: "error",
+          message: errorMsg || "El enlace de verificacion expiro o es invalido.",
+        });
+        window.history.replaceState({}, "", window.location.pathname);
+      }
+    }
+
     if (window.location.pathname.startsWith("/verificar")) {
       setPublicVerify(true);
       setUnlocked(true);
@@ -95,6 +125,15 @@ export default function App() {
     setUnlocked(false);
   }
 
+  // Banner de estado de verificacion (success/error) que se muestra
+  // cuando el usuario regresa del flujo de email link de InsForge.
+  const statusBanner = verifyStatus.kind !== "idle" ? (
+    <VerifyStatusBanner
+      status={verifyStatus}
+      onDismiss={() => setVerifyStatus({ kind: "idle" })}
+    />
+  ) : null;
+
   if (unlocked === null) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-50">
@@ -107,6 +146,7 @@ export default function App() {
   if (ACCESS_MODE === "insforge" && !unlocked) {
     return (
       <div className="min-h-screen bg-slate-50">
+        {statusBanner}
         <InsForgeAuth
           onSuccess={handleInsForgeSuccess}
           onCancel={() => setUnlocked(true)}
@@ -120,6 +160,7 @@ export default function App() {
     return (
       <RolProvider>
         <NavigationProvider>
+          {statusBanner}
           <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
           <Header user={user} onSignOut={handleSignOut} />
           <main id="main-content" role="main" className="mx-auto w-full max-w-5xl flex-1 p-4 sm:p-6">
