@@ -29,9 +29,17 @@ export default function VerificarCertificado() {
     setLoading(true);
     setResult(null);
     try {
-      const res = await fetch(`/api/v1/verify-certificate?cod=${encodeURIComponent(cod)}`);
+      const res = await fetch(`/api/v1/certificates/verify?cod=${encodeURIComponent(cod)}`);
       const data = await res.json();
-      setResult(data);
+      setResult({
+        valid: Boolean(data.valido),
+        message: data.valido ? undefined : "El certificado fue revocado.",
+        code: data.codigo,
+        issuedAt: data.fecha_emision,
+        score: { obtained: data.nota_final, total: 7 },
+        course: data.curso,
+        issuer: data.instructor,
+      });
     } catch {
       setResult({ valid: false, message: "Error de red al verificar." });
     } finally {
@@ -42,8 +50,8 @@ export default function VerificarCertificado() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const cod = code.trim().toUpperCase();
-    if (!/^[A-F0-9]{8}$/.test(cod)) {
-      setResult({ valid: false, message: "El código debe tener 8 caracteres (A-F, 0-9)." });
+    if (!/^LEY21719-[A-Z0-9]+-[A-Z0-9]+$/.test(cod)) {
+      setResult({ valid: false, message: "El código no tiene un formato válido." });
       return;
     }
     consultar(cod);
@@ -61,7 +69,7 @@ export default function VerificarCertificado() {
           Verificar Certificado
         </h1>
         <p className="mt-2 text-slate-600">
-          Introduce el código de verificación de 8 caracteres que aparece en el certificado.
+          Introduce el código de verificación que aparece en el certificado.
         </p>
       </header>
 
@@ -75,15 +83,15 @@ export default function VerificarCertificado() {
             type="text"
             value={code}
             onChange={(e) => setCode(e.target.value.toUpperCase())}
-            placeholder="ABC123EF"
-            maxLength={8}
+            placeholder="LEY21719-XXXXXX-XXXXXXXX"
+            maxLength={32}
             className="flex-1 px-4 py-3 text-center text-xl font-mono tracking-widest border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent"
             disabled={loading}
             autoComplete="off"
           />
           <button
             type="submit"
-            disabled={loading || code.length !== 8}
+            disabled={loading || code.trim().length === 0}
             className="px-6 py-3 bg-emerald-700 text-white font-semibold rounded-lg hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Verificando…" : "Verificar"}

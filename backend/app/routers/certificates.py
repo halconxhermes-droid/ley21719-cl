@@ -11,7 +11,7 @@ from typing import Optional
 from fastapi import APIRouter, HTTPException, Query, Response
 from pydantic import BaseModel
 
-router = APIRouter(prefix="/api/v1/certificates", tags=["certificates"])
+router = APIRouter(prefix="/certificates", tags=["certificates"])
 
 # Almacenamiento de certificados (en produccion seria DB)
 CERTIFICATES_DB = Path("/tmp/certificates_sence.json")
