@@ -1,7 +1,6 @@
 import { useState } from "react";
+import type { Pregunta, QuizCompleto } from "../lib/sence";
 import {
-  Pregunta,
-  QuizCompleto,
   useQuiz,
   generarFeedback,
   notaAEscalaChilena,

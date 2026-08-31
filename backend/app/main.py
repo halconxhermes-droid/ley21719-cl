@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.db import init_db
-from app.routers import admin, access, checklist, final_test, glossary, modules, quizzes
+from app.routers import admin, access, checklist, final_test, glossary, modules, quizzes, certificates
 
 logger = logging.getLogger("ley21719")
 
@@ -49,6 +49,7 @@ app.include_router(quizzes.router, prefix=API_PREFIX)
 app.include_router(checklist.router, prefix=API_PREFIX)
 app.include_router(glossary.router, prefix=API_PREFIX)
 app.include_router(final_test.router, prefix=API_PREFIX)
+app.include_router(certificates.router, prefix=API_PREFIX)
 
 
 # ---------------------------------------------------------------------------

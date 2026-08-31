@@ -1,76 +1,121 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import AccessGate from "../components/AccessGate";
+import InsForgeAuth from "../components/InsForgeAuth";
 import App from "../App";
+import type { InsForgeUser } from "../lib/insforgeAuth";
 
-describe("AccessGate component", () => {
+const {
+  mockSignInPassword,
+  mockSignUp,
+  mockSendVerificationLink,
+} = vi.hoisted(() => ({
+  mockSignInPassword: vi.fn(),
+  mockSignUp: vi.fn(),
+  mockSendVerificationLink: vi.fn(),
+}));
+
+vi.mock("../lib/insforgeAuth", async () => {
+  const actual = await vi.importActual<typeof import("../lib/insforgeAuth")>("../lib/insforgeAuth");
+  return {
+    ...actual,
+    signInPassword: mockSignInPassword,
+    signUp: mockSignUp,
+    sendVerificationLink: mockSendVerificationLink,
+  };
+});
+
+const user: InsForgeUser = {
+  id: "user-1",
+  email: "estudiante@example.cl",
+  emailVerified: true,
+  name: "Estudiante de Prueba",
+  createdAt: "2026-01-01T00:00:00.000Z",
+  updatedAt: "2026-01-01T00:00:00.000Z",
+  providers: ["password"],
+  profile: {},
+};
+
+describe("InsForgeAuth component", () => {
   beforeEach(() => {
     window.localStorage.clear();
-    vi.restoreAllMocks();
+    vi.clearAllMocks();
+    mockSignInPassword.mockResolvedValue({ user });
+    mockSignUp.mockResolvedValue({ user });
+    mockSendVerificationLink.mockResolvedValue(undefined);
   });
 
-  it("renderiza el formulario de acceso restringido", () => {
-    render(<AccessGate />);
-    expect(screen.getByText(/acceso restringido/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/contraseña de acceso/i)).toBeInTheDocument();
+  it("renderiza el formulario de inicio de sesión", () => {
+    render(<InsForgeAuth onSuccess={vi.fn()} />);
+    expect(screen.getByText(/iniciar sesion/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/correo@ejemplo.cl/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/contrasena/i)).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /acceder/i })).toBeInTheDocument();
   });
 
-  it("muestra error si se envía vacío", () => {
-    render(<AccessGate />);
+  it("muestra error si la contraseña es demasiado corta", async () => {
+    render(<InsForgeAuth onSuccess={vi.fn()} />);
+    fireEvent.change(screen.getByPlaceholderText(/correo@ejemplo.cl/i), {
+      target: { value: "estudiante@example.cl" },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/contrasena/i), {
+      target: { value: "123" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /acceder/i }));
-    expect(screen.getByRole("alert")).toHaveTextContent(/ingresa la contraseña/i);
+    expect(await screen.findByRole("alert")).toHaveTextContent(/al menos 6 caracteres/i);
+    expect(mockSignInPassword).not.toHaveBeenCalled();
   });
 
-  it("desbloquea con contraseña correcta", async () => {
-    const onUnlock = vi.fn();
-    (global.fetch as ReturnType<typeof vi.fn>) = vi.fn().mockResolvedValue({
-      ok: true,
-      json: async () => ({ token: "fake-jwt-token" }),
-    });
+  it("desbloquea con credenciales correctas", async () => {
+    const onSuccess = vi.fn();
+    render(<InsForgeAuth onSuccess={onSuccess} />);
 
-    render(<AccessGate onUnlock={onUnlock} />);
-    const input = screen.getByPlaceholderText(/contraseña de acceso/i);
-    fireEvent.change(input, { target: { value: "ley21719-2026" } });
+    fireEvent.change(screen.getByPlaceholderText(/correo@ejemplo.cl/i), {
+      target: { value: user.email },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/contrasena/i), {
+      target: { value: "clave-segura" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /acceder/i }));
 
     await waitFor(() => {
-      expect(onUnlock).toHaveBeenCalled();
-      expect(window.localStorage.getItem("ley21719_access_token")).toBe("fake-jwt-token");
+      expect(mockSignInPassword).toHaveBeenCalledWith(user.email, "clave-segura");
+      expect(onSuccess).toHaveBeenCalledWith(user);
     });
   });
 
-  it("muestra error de servidor si la contraseña es incorrecta", async () => {
-    (global.fetch as ReturnType<typeof vi.fn>) = vi.fn().mockResolvedValue({
-      ok: false,
-      json: async () => ({ error: { message: "Contraseña incorrecta." } }),
-    });
+  it("muestra error del servidor si las credenciales son incorrectas", async () => {
+    mockSignInPassword.mockRejectedValueOnce(new Error("Correo o contraseña incorrectos."));
+    render(<InsForgeAuth onSuccess={vi.fn()} />);
 
-    render(<AccessGate />);
-    const input = screen.getByPlaceholderText(/contraseña de acceso/i);
-    fireEvent.change(input, { target: { value: "clave-mala" } });
+    fireEvent.change(screen.getByPlaceholderText(/correo@ejemplo.cl/i), {
+      target: { value: user.email },
+    });
+    fireEvent.change(screen.getByPlaceholderText(/contrasena/i), {
+      target: { value: "clave-mala" },
+    });
     fireEvent.click(screen.getByRole("button", { name: /acceder/i }));
 
-    await waitFor(() => {
-      expect(screen.getByText(/contraseña incorrecta/i)).toBeInTheDocument();
-    });
+    expect(await screen.findByRole("alert")).toHaveTextContent(/correo o contrase[nñ]a incorrectos/i);
   });
 });
 
-describe("App con Gate", () => {
+describe("App con InsForge", () => {
   beforeEach(() => {
     window.localStorage.clear();
+    window.history.replaceState({}, "", "/");
+    vi.clearAllMocks();
   });
 
-  it("muestra AccessGate si no hay token", async () => {
+  it("muestra InsForgeAuth si no existe una sesión", async () => {
     render(<App />);
     await waitFor(() => {
-      expect(screen.getByText(/acceso restringido/i)).toBeInTheDocument();
+      expect(screen.getByText(/iniciar sesion/i)).toBeInTheDocument();
     });
   });
 
-  it("muestra Portal si ya hay token guardado", async () => {
-    window.localStorage.setItem("ley21719_access_token", "valid-token");
+  it("muestra Portal si existe una sesión guardada", async () => {
+    window.localStorage.setItem("insforge_access_token", "valid-token");
+    window.localStorage.setItem("insforge_user", JSON.stringify(user));
     render(<App />);
     await waitFor(() => {
       expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();

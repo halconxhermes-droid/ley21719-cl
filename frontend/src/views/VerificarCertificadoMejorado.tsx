@@ -3,7 +3,6 @@
  * Pagina publica para validar la autenticidad de certificados
  */
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 interface CertificadoData {
   codigo: string;
@@ -19,7 +18,6 @@ interface CertificadoData {
 }
 
 export default function VerificarCertificado() {
-  const location = useLocation();
   const [codigo, setCodigo] = useState("");
   const [resultado, setResultado] = useState<CertificadoData | null>(null);
   const [cargando, setCargando] = useState(false);
@@ -27,13 +25,13 @@ export default function VerificarCertificado() {
 
   // Extraer codigo de URL si existe
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
+    const params = new URLSearchParams(window.location.search);
     const codigoURL = params.get("cod");
     if (codigoURL) {
       setCodigo(codigoURL);
       verificar(codigoURL);
     }
-  }, [location]);
+  }, []);
 
   const verificar = async (codigoAVerificar?: string) => {
     const codigoFinal = codigoAVerificar || codigo;

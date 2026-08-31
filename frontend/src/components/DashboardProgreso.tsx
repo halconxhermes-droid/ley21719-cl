@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
+import type { ProgresoEstudiante, ResultadoQuiz } from "../lib/sence";
 import {
-  ProgresoEstudiante,
   calcularNotaFinal,
   generarFeedback,
   notaAEscalaChilena,
-  ResultadoQuiz,
 } from "../lib/sence";
 
 interface DashboardProgresoProps {
