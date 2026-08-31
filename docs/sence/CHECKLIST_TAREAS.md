@@ -5,28 +5,35 @@
 ## 🟢 FASE 1: Documentación Base (Semana 1-2) — 24h
 
 ### Perfil de Ingreso
-- [ ] Redactar nivel educacional mínimo
-- [ ] Definir conocimientos previos requeridos
-- [ ] Especificar edad y contexto laboral
-- [ ] Validar con stakeholders
+- [x] Redactar nivel educacional mínimo
+- [x] Definir conocimientos previos requeridos
+- [x] Especificar edad y contexto laboral
+- [x] Validar con stakeholders
 
 ### Perfil de Egreso
-- [ ] Redactar 5-7 competencias específicas
-- [ ] Definir habilidades técnicas
-- [ ] Definir habilidades transversales
-- [ ] Validar alineación con mercado laboral
+- [x] Redactar 5-7 competencias específicas
+- [x] Definir habilidades técnicas
+- [x] Definir habilidades transversales
+- [x] Validar alineación con mercado laboral
 
 ### Objetivos Medibles
-- [ ] Transformar contenido en objetivos con taxonomía de Bloom
-- [ ] Definir 3-5 objetivos específicos por módulo
-- [ ] Mapear objetivos → evaluaciones
-- [ ] Documentar en `objetivos.md`
+- [x] Transformar contenido en objetivos con taxonomía de Bloom
+- [x] Definir 3-5 objetivos específicos por módulo (40 objetivos totales)
+- [x] Mapear objetivos → evaluaciones
+- [x] Documentar en `objetivos.md`
 
 ### Plan de Estudios
-- [ ] Distribuir 80h en 7 módulos
-- [ ] Crear cronograma de actividades
-- [ ] Definir recursos por módulo
-- [ ] Documentar en `plan-estudios.md`
+- [x] Distribuir 80h en 7 módulos
+- [x] Crear cronograma de actividades (8 semanas)
+- [x] Definir recursos por módulo
+- [x] Documentar en `plan-estudios.md`
+
+### Recursos y Materiales
+- [x] Inventariar 7 manuales PDF
+- [x] Planificar 15 videos educativos
+- [x] Listar 20 PDFs descargables
+- [x] Diseñar 5 recursos interactivos
+- [x] Documentar en `recursos-materiales.md`
 
 ## 🟡 FASE 2: Expansión de Contenido (Semana 3-5) — 130h
 
@@ -205,14 +212,15 @@
 
 | Fase | Tareas | Completadas | % |
 |------|--------|-------------|---|
-| 1. Documentación Base | 16 | 0 | 0% |
+| 1. Documentación Base | 20 | 20 | **100%** ✅ |
 | 2. Expansión Contenido | 40 | 0 | 0% |
 | 3. Sistema Evaluación | 15 | 0 | 0% |
 | 4. Certificación | 12 | 0 | 0% |
 | 5. Cumplimiento Técnico | 16 | 0 | 0% |
 | 6. Operación | 13 | 0 | 0% |
 | 7. Postulación SENCE | 12 | 0 | 0% |
-| **TOTAL** | **124** | **0** | **0%** |
+| **TOTAL** | **128** | **20** | **16%** |
 
-**Última actualización:** [Fecha]
-**Próxima revisión:** [Fecha + 1 semana]
+**Última actualización:** 31 de agosto de 2026
+**Próxima revisión:** 7 de septiembre de 2026
+**Estado:** Fase 1 completada al 100%
