@@ -1,7 +1,7 @@
 [build]
   base = "frontend"
-  command = "cd frontend && pnpm install --frozen-lockfile && pnpm build"
-  publish = "frontend/dist"
+  command = "pnpm build"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
