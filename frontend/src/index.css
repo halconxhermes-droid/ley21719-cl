@@ -189,3 +189,34 @@ img {
   padding: 0;
   color: inherit;
 }
+.reader-content blockquote.reader-callout {
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--color-primary-600);
+  background: var(--color-primary-50);
+  color: var(--color-slate-700);
+}
+.reader-content blockquote.reader-callout-title {
+  margin-bottom: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: var(--color-primary-800);
+  font-size: 0.9rem;
+}
+.reader-content blockquote.reader-callout:not(.reader-callout-title) {
+  margin-top: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.reader-content .reader-highlight {
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--color-primary-100);
+  border-radius: 0.5rem;
+  background: var(--color-primary-50);
+  color: var(--color-slate-700);
+}
+.reader-content .reader-highlight strong {
+  margin-right: 0.35rem;
+}
+.reader-content blockquote.reader-callout + blockquote.reader-callout-title {
+  margin-top: 1rem;
+}

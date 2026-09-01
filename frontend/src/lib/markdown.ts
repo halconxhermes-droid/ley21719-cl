@@ -52,7 +52,16 @@ export function mdToHtml(md: string): string {
     // Negrita **text** (la entrada ya está escapada)
     const bolded = line.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
     let m: RegExpMatchArray | null;
-    if ((m = bolded.match(/^(#{1,4})\s+(.*)$/))) {
+    if ((m = bolded.match(/^>\s*<strong>(.+?)<\/strong>\s*$/))) {
+      flushList();
+      html.push(`<blockquote class="reader-callout reader-callout-title"><strong>${m[1]}</strong></blockquote>`);
+    } else if (bolded.startsWith("> ")) {
+      flushList();
+      html.push(`<blockquote class="reader-callout">${bolded.slice(2)}</blockquote>`);
+    } else if ((m = bolded.match(/^(💡|⚠️|✅|📌)\s*(.+)$/))) {
+      flushList();
+      html.push(`<aside class="reader-highlight"><strong>${m[1]}</strong> ${m[2]}</aside>`);
+    } else if ((m = bolded.match(/^(#{1,4})\s+(.*)$/))) {
       flushList();
       const lvl = Math.min(m[1].length + 1, 5); // # → h2 … #### → h5
       html.push(`<h${lvl}>${m[2]}</h${lvl}>`);
