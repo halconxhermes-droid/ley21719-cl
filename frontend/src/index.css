@@ -140,6 +140,12 @@ img {
   border: 0;
 }
 
+@media (max-width: 639px) {
+  main {
+    padding-bottom: 5rem;
+  }
+}
+
 /* Contenido del lector (markdown renderizado) */
 .reader-content h2 {
   font-size: 1.25rem;

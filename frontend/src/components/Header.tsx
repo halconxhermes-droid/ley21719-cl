@@ -122,6 +122,25 @@ export default function Header({ user, onSignOut }: HeaderProps) {
           </div>
         </nav>
       )}
+      <nav aria-label="Acceso rápido móvil" className="fixed inset-x-0 bottom-0 z-[90] grid grid-cols-4 border-t border-slate-200 bg-white/95 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] backdrop-blur sm:hidden">
+        {[
+          ["home", "Inicio", "⌂"],
+          ["checklist", "Checklist", "✓"],
+          ["glosario", "Glosario", "Aa"],
+          ["testfinal", "Test final", "□"],
+        ].map(([target, label, icon]) => (
+          <button
+            key={target}
+            type="button"
+            onClick={() => go(target as ViewId)}
+            aria-current={view === target ? "page" : undefined}
+            className={`flex min-h-14 flex-col items-center justify-center gap-0.5 px-1 text-[11px] font-medium ${view === target ? "bg-primary-50 text-primary-800" : "text-slate-600 hover:bg-slate-50"}`}
+          >
+            <span aria-hidden="true" className="text-base leading-5">{icon}</span>
+            <span>{label}</span>
+          </button>
+        ))}
+      </nav>
     </header>
   );
 }
