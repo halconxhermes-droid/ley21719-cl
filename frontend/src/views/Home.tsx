@@ -7,6 +7,7 @@ import { getModules } from "../lib/api";
 import type { ModuleSummary } from "../lib/api";
 import { Loading, ErrorPanel } from "../components/Feedback";
 import ProgressBar from "../components/ProgressBar";
+import LearningProgressExtras from "../components/LearningProgressExtras";
 
 const ROLE_ICONS: Record<Rol, string> = {
   empresa: "M3 21h18M5 21V7l7-4 7 4v14M9 21v-4a3 3 0 0 1 6 0v4",
@@ -64,7 +65,13 @@ export default function Home() {
 
   const openModule = (moduleId: string) => {
     setLastModuleId(moduleId);
-    try { window.localStorage.setItem(LAST_MODULE_KEY, moduleId); } catch { /* noop */ }
+    try {
+      window.localStorage.setItem(LAST_MODULE_KEY, moduleId);
+      const raw = window.localStorage.getItem("ley21719_activity_history");
+      const history = raw ? JSON.parse(raw) as { moduleId: string; action: string; at: string }[] : [];
+      history.unshift({ moduleId, action: "Módulo abierto", at: new Date().toISOString() });
+      window.localStorage.setItem("ley21719_activity_history", JSON.stringify(history.slice(0, 20)));
+    } catch { /* noop */ }
     navigate("lector", { moduleId });
   };
 
@@ -209,6 +216,8 @@ export default function Home() {
           })}
         </ol>
       )}
+
+      {modules && <LearningProgressExtras modules={modules} progress={moduleProgress} lastModuleId={lastModuleId} role={rol} />}
     </section>
   );
 }
