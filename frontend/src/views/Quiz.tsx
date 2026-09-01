@@ -5,6 +5,21 @@ import type { Quiz, QuizResult } from "../lib/api";
 import { Loading, ErrorPanel } from "../components/Feedback";
 import ProgressBar from "../components/ProgressBar";
 
+const COMPETENCIAS_POR_MODULO: Record<string, string[]> = {
+  empresa: ["Identificar obligaciones del responsable", "Aplicar criterios de cumplimiento", "Analizar riesgos para una organización"],
+  ciudadano: ["Reconocer derechos sobre los datos", "Ejercer solicitudes correctamente", "Analizar respuestas y alternativas"],
+  desarrollador: ["Aplicar privacidad desde el diseño", "Seleccionar medidas de seguridad", "Analizar riesgos técnicos"],
+  institucion: ["Distinguir obligaciones del sector público", "Aplicar transparencia y registro", "Resolver solicitudes de titulares"],
+};
+
+function competenciasDelModulo(moduleId: string): string[] {
+  return COMPETENCIAS_POR_MODULO[moduleId] ?? [
+    "Comprender los conceptos principales",
+    "Aplicar los criterios al contexto estudiado",
+    "Analizar situaciones prácticas",
+  ];
+}
+
 export default function QuizView() {
   const { moduleId, navigate } = useNavigation();
   const [quiz, setQuiz] = useState<Quiz | null>(null);
@@ -132,6 +147,22 @@ export default function QuizView() {
             <p className="mt-1 text-sm leading-6 text-slate-700">
               {r.passed ? "Has demostrado una comprensión suficiente de este módulo. Revisa las explicaciones para consolidar lo aprendido y continúa con la siguiente parte del curso." : "Revisa las explicaciones de las respuestas incorrectas y vuelve a estudiar el contenido antes de repetir el quiz."}
             </p>
+          </div>
+
+          <div className="mb-6 rounded-xl border border-slate-200 bg-white p-4 text-left">
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="font-semibold text-slate-900">Competencias trabajadas</h3>
+              <span className="text-xs text-slate-500">Indicador del módulo</span>
+            </div>
+            <div className="mt-3 grid gap-2">
+              {competenciasDelModulo(moduleId).map((competencia) => (
+                <div key={competencia} className="flex items-center gap-3 rounded-lg bg-slate-50 px-3 py-2 text-sm">
+                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${r.passed ? "bg-emerald-100 text-emerald-700" : "bg-amber-100 text-amber-700"}`} aria-hidden="true">{r.passed ? "✓" : "•"}</span>
+                  <span className="text-slate-700">{competencia}</span>
+                  <span className="ml-auto text-xs font-medium text-slate-500">{r.passed ? "Lograda" : "En refuerzo"}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mx-auto max-w-xl text-left">
