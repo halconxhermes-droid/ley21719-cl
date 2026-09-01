@@ -3,8 +3,10 @@ import { useNavigation } from "../context/NavigationContext";
 import {
   getModule,
   getQuiz,
+  getModules,
   type ModuleDetail,
   type ModuleResponse,
+  type ModuleSummary,
   type Quiz,
   type ReadLevel,
 } from "../lib/api";
@@ -103,6 +105,7 @@ function getScenario(m: ModuleDetail): { title: string; content: string } | null
 export default function LectorModulo() {
   const { moduleId, navigate } = useNavigation();
   const [mod, setMod] = useState<ModuleDetail | null>(null);
+  const [courseModules, setCourseModules] = useState<ModuleSummary[]>([]);
   const [quiz, setQuiz] = useState<Quiz | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [level, setLevel] = useState<LevelTab>("resumen");
@@ -115,6 +118,15 @@ export default function LectorModulo() {
       .then((res: ModuleResponse) => {
         if (!alive) return;
         setMod(res.module);
+        getModules()
+          .then((modulesRes) => {
+            if (alive && Array.isArray(modulesRes.modules)) {
+              setCourseModules(modulesRes.modules.slice().sort((a, b) => a.order - b.order));
+            }
+          })
+          .catch(() => {
+            // La navegación sigue funcionando con el módulo actual aunque falle el catálogo.
+          });
         return getQuiz(moduleId).then((qr) => {
           if (alive) setQuiz(qr.quiz);
         });
@@ -134,6 +146,12 @@ export default function LectorModulo() {
     friendly: mod.levels.friendly?.estimatedMinutes,
     legal: 25,
   };
+
+  const currentIndex = courseModules.findIndex((item) => item.id === moduleId);
+  const previousModule = currentIndex > 0 ? courseModules[currentIndex - 1] : null;
+  const nextModule = currentIndex >= 0 && currentIndex < courseModules.length - 1
+    ? courseModules[currentIndex + 1]
+    : null;
 
   return (
     <section aria-labelledby="lector-title">
@@ -254,23 +272,26 @@ export default function LectorModulo() {
         <CapsulasRol moduleId={moduleId} />
       </article>
 
-      {/* Navegación inferior */}
-      <div className="mt-6 flex flex-wrap justify-between gap-4">
-        <button
-          type="button"
-          onClick={() => navigate("home")}
-          className="rounded-md border border-slate-300 bg-white px-4 py-2 font-medium text-slate-700 hover:bg-slate-50"
-        >
-          ← Volver al inicio
-        </button>
-        <button
-          type="button"
-          onClick={() => navigate("quiz", { moduleId: moduleId })}
-          className="rounded-md bg-primary-700 px-4 py-2 font-medium text-white hover:bg-primary-800"
-        >
-          Quiz del módulo →
-        </button>
-      </div>
+      {/* Navegación entre módulos */}
+      <nav aria-label="Navegación entre módulos" className="mt-6 grid gap-3 sm:grid-cols-2">
+        {previousModule ? (
+          <button type="button" onClick={() => navigate("lector", { moduleId: previousModule.id })} className="rounded-xl border border-slate-300 bg-white px-4 py-3 text-left font-medium text-slate-700 hover:border-primary-500 hover:bg-slate-50">
+            <span className="block text-xs font-normal text-slate-500">← Módulo anterior</span>
+            <span className="mt-1 block">{previousModule.title}</span>
+          </button>
+        ) : <span />}
+        {nextModule ? (
+          <button type="button" onClick={() => navigate("lector", { moduleId: nextModule.id })} className="rounded-xl bg-primary-700 px-4 py-3 text-right font-medium text-white hover:bg-primary-800">
+            <span className="block text-xs font-normal text-primary-100">Siguiente módulo →</span>
+            <span className="mt-1 block">{nextModule.title}</span>
+          </button>
+        ) : (
+          <button type="button" onClick={() => navigate("home")} className="rounded-xl bg-primary-700 px-4 py-3 text-right font-medium text-white hover:bg-primary-800">
+            <span className="block text-xs font-normal text-primary-100">Ruta completada</span>
+            <span className="mt-1 block">Volver al curso →</span>
+          </button>
+        )}
+      </nav>
     </section>
   );
 }
