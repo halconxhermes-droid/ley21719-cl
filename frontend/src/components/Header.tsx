@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { useNavigation } from "../context/NavigationContext";
+import type { ViewId } from "../context/NavigationContext";
 import Countdown from "./Countdown";
 import RoleIndicator from "./RoleIndicator";
 
@@ -10,13 +12,19 @@ interface HeaderProps {
 /** Header sticky con logo, nav Portal/Curso, cuenta regresiva viva, indicador de rol y logout opcional. */
 export default function Header({ user, onSignOut }: HeaderProps) {
   const { view, navigate } = useNavigation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navBtn = (target: "portal" | "home", label: string) => {
+  const go = (target: ViewId) => {
+    navigate(target);
+    setMobileOpen(false);
+  };
+
+  const navBtn = (target: ViewId, label: string) => {
     const active = view === target || (target === "home" && view !== "portal");
     return (
       <button
         type="button"
-        onClick={() => navigate(target)}
+        onClick={() => go(target)}
         aria-current={active ? "page" : undefined}
         className={`cursor-pointer rounded-lg border-none px-3 py-2 text-sm font-medium transition-colors ${
           active
@@ -62,6 +70,16 @@ export default function Header({ user, onSignOut }: HeaderProps) {
         <div className="flex flex-wrap items-center gap-3">
           <RoleIndicator />
           <Countdown />
+          <button
+            type="button"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            onClick={() => setMobileOpen((open) => !open)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 sm:hidden"
+          >
+            <span aria-hidden="true" className="text-xl leading-none">{mobileOpen ? "×" : "☰"}</span>
+          </button>
           {user && (
             <div className="flex items-center gap-2">
               <span className="hidden text-xs text-slate-500 sm:inline" title={user.email}>
@@ -81,6 +99,29 @@ export default function Header({ user, onSignOut }: HeaderProps) {
           )}
         </div>
       </div>
+      {mobileOpen && (
+        <nav id="mobile-navigation" aria-label="Navegación móvil" className="border-t border-slate-200 bg-slate-50 px-4 py-3 sm:hidden">
+          <div className="mx-auto grid max-w-5xl gap-1">
+            {[
+              ["portal", "Portal informativo"],
+              ["home", "Curso"],
+              ["checklist", "Mi checklist"],
+              ["glosario", "Glosario"],
+              ["testfinal", "Test final"],
+            ].map(([target, label]) => (
+              <button
+                key={target}
+                type="button"
+                onClick={() => go(target as ViewId)}
+                className={`rounded-lg px-3 py-3 text-left text-sm font-medium ${view === target ? "bg-primary-100 text-primary-800" : "text-slate-700 hover:bg-white"}`}
+                aria-current={view === target ? "page" : undefined}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
