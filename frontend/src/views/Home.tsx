@@ -218,7 +218,7 @@ export default function Home() {
         </ol>
       )}
 
-      {modules && <PracticalRoutes onOpen={openModule} />}
+      {modules && <PracticalRoutes onOpen={(practiceId, moduleId) => navigate("practica", { practiceId, moduleId })} />}
       {modules && <LearningProgressExtras modules={modules} progress={moduleProgress} lastModuleId={lastModuleId} role={rol} />}
     </section>
   );
