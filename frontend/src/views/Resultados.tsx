@@ -38,33 +38,47 @@ export default function ResultadosView() {
 
   return (
     <section aria-labelledby="resultados-title" className="py-6">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 id="resultados-title" className="text-2xl font-semibold">
-          Resultados del test final
-        </h2>
-        <p id="result-score" className="my-2 text-4xl font-bold text-primary-700">
-          {result.score} / {result.total}
-        </p>
-        <p
-          id="result-status"
-          className={`my-6 text-xl font-semibold ${
-            result.passed ? "text-green-700" : "text-red-700"
-          }`}
-        >
-          {result.passed
-            ? `✓ Aprobado (${result.percentage}%)`
-            : `✗ No alcanzado (${result.percentage}%) — repasa y vuelve a intentarlo`}
-        </p>
+      <nav aria-label="Ruta de navegación" className="mb-5 text-sm text-slate-500">
+        <button type="button" onClick={() => navigate("home")} className="hover:text-primary-700 hover:underline">Curso</button>
+        <span className="mx-2" aria-hidden="true">/</span>
+        <span aria-current="page" className="font-medium text-slate-700">Resultados finales</span>
+      </nav>
+      <div className="mx-auto max-w-3xl">
+        <div className={`rounded-2xl p-6 text-center shadow-sm sm:p-8 ${result.passed ? "bg-gradient-to-br from-emerald-900 to-emerald-700 text-white" : "bg-gradient-to-br from-slate-800 to-slate-700 text-white"}`}>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] opacity-80">Cierre de evaluación</p>
+          <h1 id="resultados-title" className="mt-2 text-2xl font-bold sm:text-3xl">Resultados del test final</h1>
+          <p id="result-score" className="my-3 text-5xl font-bold">{result.score} / {result.total}</p>
+          <p id="result-status" className="text-lg font-semibold">
+            {result.passed ? `✓ Curso aprobado (${result.percentage}%)` : `✗ Aún no alcanzado (${result.percentage}%)`}
+          </p>
+          <p className="mx-auto mt-3 max-w-xl text-sm opacity-85">
+            {result.passed ? "Has completado la evaluación final. Revisa tu resumen y conserva tus resultados." : "Revisa el detalle de tus respuestas, vuelve al material y repite la evaluación cuando estés preparado."}
+          </p>
+        </div>
+
+        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm"><p className="text-xs uppercase tracking-wide text-slate-500">Porcentaje</p><p className="mt-1 text-2xl font-bold text-primary-700">{result.percentage}%</p></div>
+          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm"><p className="text-xs uppercase tracking-wide text-slate-500">Preguntas correctas</p><p className="mt-1 text-2xl font-bold text-slate-900">{result.score}/{result.total}</p></div>
+          <div className="rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm"><p className="text-xs uppercase tracking-wide text-slate-500">Estado</p><p className={`mt-1 text-lg font-bold ${result.passed ? "text-emerald-700" : "text-amber-700"}`}>{result.passed ? "Completado" : "En refuerzo"}</p></div>
+        </div>
 
         {result.certificateEligible ? (
-          <div className="mb-6 rounded-xl border border-green-200 bg-green-50 p-4 text-green-900">
-            <p className="m-0 font-semibold">¡Elegible para certificado de aprobación!</p>
-            <p className="m-0 text-sm">Has superado el umbral del 70% en el test final.</p>
+          <div className="mt-4 rounded-xl border border-green-200 bg-green-50 p-5 text-green-900">
+            <p className="font-semibold">¡Felicitaciones! Tu resultado permite solicitar la constancia de aprobación.</p>
+            <p className="mt-1 text-sm">Conserva esta pantalla y sigue las instrucciones de entrega disponibles en la plataforma.</p>
           </div>
         ) : null}
 
-        <div className="mb-8 rounded-xl border border-slate-200 bg-white p-6 text-left shadow-sm">
-          <h3 className="mb-4 text-lg font-semibold">Detalle por pregunta</h3>
+        <div className="mt-6 rounded-xl border border-slate-200 bg-white p-6 text-left shadow-sm">
+          <h2 className="text-lg font-semibold text-slate-900">Resumen de tu recorrido</h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <div className="rounded-lg bg-slate-50 p-4"><p className="text-xs uppercase tracking-wide text-slate-500">Cobertura</p><p className="mt-1 font-semibold text-slate-900">{result.detailByModule?.length ?? 0} módulos evaluados</p></div>
+            <div className="rounded-lg bg-slate-50 p-4"><p className="text-xs uppercase tracking-wide text-slate-500">Próximo paso</p><p className="mt-1 font-semibold text-slate-900">{result.passed ? "Revisar tus resultados" : "Repasar contenidos"}</p></div>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-xl border border-slate-200 bg-white p-6 text-left shadow-sm">
+          <h2 className="mb-4 text-lg font-semibold">Detalle de respuestas</h2>
           <div id="result-detail" className="divide-y divide-slate-200">
             {questions.map((q, i) => {
               const userOptId = answers[i];
