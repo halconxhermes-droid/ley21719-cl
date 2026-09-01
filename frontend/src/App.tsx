@@ -15,11 +15,12 @@ import GlosarioView from "./views/Glosario";
 import TestFinalView from "./views/TestFinal";
 import ResultadosView from "./views/Resultados";
 import VerificarCertificado from "./views/VerificarCertificado";
+import PracticalSimulator from "./views/PracticalSimulator";
 import Admin from "./views/Admin";
 import { getStoredToken, getStoredUser, clearSession, type InsForgeUser } from "./lib/insforgeAuth";
 
 function ViewRouter() {
-  const { view } = useNavigation();
+  const { view, practiceId } = useNavigation();
 
   switch (view) {
     case "portal":
@@ -42,6 +43,8 @@ function ViewRouter() {
       return <Admin />;
     case "verificar":
       return <VerificarCertificado />;
+    case "practica":
+      return <PracticalSimulator />;
     default:
       return <Home />;
   }

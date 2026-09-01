@@ -11,33 +11,38 @@ export type ViewId =
   | "glosario"
   | "testfinal"
   | "resultados"
-  | "verificar";
+  | "verificar"
+  | "practica";
 
 interface NavigationContextValue {
   view: ViewId;
   moduleId: string;
-  navigate: (view: ViewId, opts?: { moduleId?: string }) => void;
+  practiceId: string;
+  navigate: (view: ViewId, opts?: { moduleId?: string; practiceId?: string }) => void;
 }
 
 const NavigationContext = createContext<NavigationContextValue>({
   view: "admin",
   moduleId: "empresa",
+  practiceId: "breach",
   navigate: () => {},
 });
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
   const [view, setView] = useState<ViewId>("portal");
   const [moduleId, setModuleId] = useState("empresa");
+  const [practiceId, setPracticeId] = useState("breach");
 
-  const navigate = useCallback((v: ViewId, opts?: { moduleId?: string }) => {
+  const navigate = useCallback((v: ViewId, opts?: { moduleId?: string; practiceId?: string }) => {
     if (opts?.moduleId) setModuleId(opts.moduleId);
+    if (opts?.practiceId) setPracticeId(opts.practiceId);
     setView(v);
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
 
   const value = useMemo(
-    () => ({ view, moduleId, navigate }),
-    [view, moduleId, navigate],
+    () => ({ view, moduleId, practiceId, navigate }),
+    [view, moduleId, practiceId, navigate],
   );
 
   return (

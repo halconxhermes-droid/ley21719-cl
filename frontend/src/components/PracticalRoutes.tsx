@@ -1,5 +1,5 @@
 interface PracticalRoutesProps {
-  onOpen: (moduleId: string) => void;
+  onOpen: (practiceId: string, moduleId: string) => void;
 }
 
 const routes = [
@@ -28,7 +28,7 @@ export default function PracticalRoutes({ onOpen }: PracticalRoutesProps) {
               <div className="min-w-0">
                 <h3 className="font-semibold text-slate-900">{route.title}</h3>
                 <p className="mt-1 text-sm leading-5 text-slate-600">{route.description}</p>
-                <button type="button" onClick={() => onOpen(route.module)} className="mt-4 text-sm font-semibold text-primary-700 hover:text-primary-900 hover:underline">{route.label} →</button>
+                <button type="button" onClick={() => onOpen(route.id, route.module)} className="mt-4 text-sm font-semibold text-primary-700 hover:text-primary-900 hover:underline">{route.label} →</button>
               </div>
             </div>
           </article>
