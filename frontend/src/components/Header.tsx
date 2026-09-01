@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigation } from "../context/NavigationContext";
 import type { ViewId } from "../context/NavigationContext";
 import Countdown from "./Countdown";
@@ -13,6 +13,17 @@ interface HeaderProps {
 export default function Header({ user, onSignOut }: HeaderProps) {
   const { view, navigate } = useNavigation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      const stored = window.localStorage.getItem("ley21719_theme");
+      return stored ? stored === "dark" : window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
+    } catch { return false; }
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+    try { window.localStorage.setItem("ley21719_theme", darkMode ? "dark" : "light"); } catch { /* noop */ }
+  }, [darkMode]);
 
   const go = (target: ViewId) => {
     navigate(target);
@@ -70,6 +81,16 @@ export default function Header({ user, onSignOut }: HeaderProps) {
         <div className="flex flex-wrap items-center gap-3">
           <RoleIndicator />
           <Countdown />
+          <button
+            type="button"
+            onClick={() => setDarkMode((enabled) => !enabled)}
+            aria-pressed={darkMode}
+            aria-label={darkMode ? "Activar tema claro" : "Activar tema oscuro"}
+            title={darkMode ? "Tema claro" : "Tema oscuro"}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+          >
+            <span aria-hidden="true">{darkMode ? "☀" : "☾"}</span>
+          </button>
           <button
             type="button"
             aria-expanded={mobileOpen}

@@ -60,6 +60,24 @@ body {
   flex-direction: column;
 }
 
+html.dark body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+html.dark .bg-white { background-color: #1e293b; }
+html.dark .bg-slate-50 { background-color: #0f172a; }
+html.dark .bg-slate-100 { background-color: #1e293b; }
+html.dark .text-slate-900 { color: #f8fafc; }
+html.dark .text-slate-800 { color: #f1f5f9; }
+html.dark .text-slate-700 { color: #e2e8f0; }
+html.dark .text-slate-600 { color: #cbd5e1; }
+html.dark .text-slate-500 { color: #94a3b8; }
+html.dark .border-slate-200 { border-color: #334155; }
+html.dark .border-slate-300 { border-color: #475569; }
+html.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) { border-color: #334155; }
+html.dark input { color: #f8fafc; background-color: #1e293b; }
+html.dark input::placeholder { color: #94a3b8; }
+
 a {
   color: var(--color-primary-700);
   text-decoration: none;
