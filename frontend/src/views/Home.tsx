@@ -8,6 +8,7 @@ import type { ModuleSummary } from "../lib/api";
 import { Loading, ErrorPanel } from "../components/Feedback";
 import ProgressBar from "../components/ProgressBar";
 import LearningProgressExtras from "../components/LearningProgressExtras";
+import PracticalRoutes from "../components/PracticalRoutes";
 
 const ROLE_ICONS: Record<Rol, string> = {
   empresa: "M3 21h18M5 21V7l7-4 7 4v14M9 21v-4a3 3 0 0 1 6 0v4",
@@ -217,6 +218,7 @@ export default function Home() {
         </ol>
       )}
 
+      {modules && <PracticalRoutes onOpen={openModule} />}
       {modules && <LearningProgressExtras modules={modules} progress={moduleProgress} lastModuleId={lastModuleId} role={rol} />}
     </section>
   );

@@ -28,7 +28,7 @@
     "desarrollador": [
       { "item": "Implementar consentimiento explícito con checkbox no pre-marcado y registro de efectividad (Art. 12, Art. 2 letra p)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
       { "item": "Integrar flujos de ejercicio de derechos ARSOP (acceso, rectificación, supresión, oposición, portabilidad, bloqueo temporal) con plazos legales (30 días hábiles)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
-      { "item": "Aplicar medidas de seguridad por diseño: cifrado en reposo y tránsito (TLS 1.3), seudonimización/cifrado por Art. 14 quinquies", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
+      { "item": "Aplicar medidas de seguridad por diseño: cifrado en reposo y tránsito (por ejemplo, TLS 1.3), seudonimización/cifrado como controles proporcionales al riesgo", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
       { "item": "Contratar DPA (Data Processing Agreement) con encargados (Art. 15 bis): confidencialidad, límites de uso, seguridad, destrucción/devolución al término", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
       { "item": "Evitar Shadow AI: políticas internas de gobernanza para uso de IA generativa con datos personales; sanitizar PII antes de prompts", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
       { "item": "Para transferencias internacionales: validar país con adecuación o firmar cláusulas contractuales tipo/BCR (Art. 27-28)", "referencia_modulo": "contenido_desarrollador", "items_pendientes": false },
