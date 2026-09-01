@@ -63,16 +63,31 @@ export default function ChecklistView() {
 
   return (
     <section aria-labelledby="checklist-title">
-      <header className="mb-6">
-        <div className="mb-4">
-          <h2 id="checklist-title" className="text-2xl font-semibold">
-            Checklist «¿Estoy listo?»
-          </h2>
-          <p className="text-slate-600">
-            Tu progreso se guarda automáticamente por rol en este navegador.
-          </p>
+      <nav aria-label="Ruta de navegación" className="mb-5 text-sm text-slate-500">
+        <button type="button" onClick={() => navigate("home")} className="hover:text-primary-700 hover:underline">Curso</button>
+        <span className="mx-2" aria-hidden="true">/</span>
+        <span aria-current="page" className="font-medium text-slate-700">Mi checklist</span>
+      </nav>
+      <header className="mb-6 rounded-2xl bg-gradient-to-br from-primary-900 to-primary-700 p-6 text-white shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">Tu ruta de preparación</p>
+        <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h1 id="checklist-title" className="text-2xl font-bold sm:text-3xl">Checklist de aprendizaje</h1>
+            <p className="mt-2 text-sm text-primary-50">Marca cada actividad cuando la hayas completado. Tu avance se guarda automáticamente.</p>
+          </div>
+          <div className="rounded-xl bg-white/10 px-5 py-3 text-center">
+            <p className="text-3xl font-bold">{pct}%</p>
+            <p className="text-xs text-primary-100">avance total</p>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2" role="group" aria-label="Filtrar checklist por rol">
+      </header>
+      <div className="mb-6 grid gap-3 sm:grid-cols-3">
+        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"><p className="text-xs uppercase tracking-wide text-slate-500">Completadas</p><p className="mt-1 text-2xl font-bold text-emerald-700">{completedItems}</p></div>
+        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"><p className="text-xs uppercase tracking-wide text-slate-500">Pendientes</p><p className="mt-1 text-2xl font-bold text-slate-900">{totalItems - completedItems}</p></div>
+        <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm"><p className="text-xs uppercase tracking-wide text-slate-500">Perfil activo</p><p className="mt-1 text-lg font-bold text-slate-900">{CK_LABELS[ckRole]}</p></div>
+      </div>
+
+      <div className="mb-6 flex flex-wrap gap-2" role="group" aria-label="Filtrar checklist por rol">
           {CK_ROLES.map((r) => (
             <button
               key={r}
@@ -89,7 +104,6 @@ export default function ChecklistView() {
             </button>
           ))}
         </div>
-      </header>
 
       {/* Progreso global */}
       <ProgressBar
@@ -103,9 +117,14 @@ export default function ChecklistView() {
         {checklist.sections
           .slice()
           .sort((a, b) => a.order - b.order)
-          .map((section) => (
-            <div key={section.id} className="mb-6">
-              <h3 className="mb-3 text-lg font-semibold">{section.title}</h3>
+          .map((section) => {
+            const sectionCompleted = section.items.filter((item) => done[item.id]).length;
+            return (
+            <div key={section.id} className="mb-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+                <h3 className="text-lg font-semibold">{section.title}</h3>
+                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">{sectionCompleted}/{section.items.length} completados</span>
+              </div>
               <div className="flex flex-col gap-2">
                 {section.items.map((item) => {
                   const completed = !!done[item.id];
@@ -131,7 +150,7 @@ export default function ChecklistView() {
                 })}
               </div>
             </div>
-          ))}
+          )})}
       </div>
 
       {totalItems === 0 && (
