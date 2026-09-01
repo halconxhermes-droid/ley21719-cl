@@ -137,7 +137,54 @@ export default function LectorModulo() {
 
   return (
     <section aria-labelledby="lector-title">
-      {/* Toolbar de nivel */}
+      {/* Breadcrumb y contexto */}
+      <nav aria-label="Ruta de navegación" className="mb-5 text-sm text-slate-500">
+        <button type="button" onClick={() => navigate("home")} className="hover:text-primary-700 hover:underline">Curso</button>
+        <span className="mx-2" aria-hidden="true">/</span>
+        <span className="font-medium text-slate-700">Módulo {mod.order}</span>
+        <span className="mx-2" aria-hidden="true">/</span>
+        <span aria-current="page">Lectura</span>
+      </nav>
+
+      {/* Cabecera uniforme de unidad */}
+      <header className="mb-6 rounded-2xl bg-gradient-to-br from-primary-900 to-primary-700 p-6 text-white shadow-sm sm:p-8">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary-100">Módulo {mod.order} · Unidad de aprendizaje</p>
+            <h1 id="lector-title" className="text-2xl font-bold leading-tight sm:text-3xl">{mod.title}</h1>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-primary-50">Explora el contenido en el nivel que prefieras, aplica lo aprendido en un escenario y comprueba tu avance con el quiz.</p>
+          </div>
+          <div className="rounded-xl bg-white/10 px-4 py-3 text-right text-sm">
+            <p className="text-primary-100">Tiempo estimado</p>
+            <p className="mt-1 text-xl font-bold">{getEstimatedMinutes(level as ReadLevel, est) || "—"}</p>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2 text-xs font-medium">
+          <span className="rounded-full bg-white/15 px-3 py-1.5">Lectura guiada</span>
+          <span className="rounded-full bg-white/15 px-3 py-1.5">Caso práctico</span>
+          <span className="rounded-full bg-white/15 px-3 py-1.5">Quiz de unidad</span>
+        </div>
+      </header>
+
+      {/* Ruta de la unidad */}
+      <aside aria-label="Ruta de la unidad" className="mb-6 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-500">Ruta de aprendizaje</p>
+        <ol className="grid gap-2 text-sm sm:grid-cols-4">
+          {[
+            ["01", "Comprende", true],
+            ["02", "Aplica", Boolean(getScenario(mod))],
+            ["03", "Practica", Boolean(quiz)],
+            ["04", "Comprueba", false],
+          ].map(([number, label, active]) => (
+            <li key={String(number)} className={`flex items-center gap-2 rounded-lg px-3 py-2 ${active ? "bg-primary-50 text-primary-800" : "bg-slate-50 text-slate-500"}`}>
+              <span className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${active ? "bg-primary-700 text-white" : "bg-slate-200 text-slate-600"}`}>{number}</span>
+              <span className="font-medium">{label}</span>
+            </li>
+          ))}
+        </ol>
+      </aside>
+
+      {/* Selector de nivel */}
       <div className="mb-6 flex flex-wrap gap-2" role="group" aria-label="Nivel de lectura">
         {(["resumen", "amigable", "legal"] as LevelTab[]).map((lv) => (
           <button
@@ -160,7 +207,7 @@ export default function LectorModulo() {
       <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <header className="mb-6 flex flex-wrap items-start justify-between gap-4 border-b border-slate-200 pb-4">
           <div>
-            <h2 id="lector-title" className="m-0 text-2xl font-semibold">{mod.title}</h2>
+            <h2 className="m-0 text-xl font-semibold">Contenido de la unidad</h2>
             <p className="m-0 mt-1 text-sm text-slate-600">
               Tiempo de lectura estimado:{" "}
               <span className="font-medium">{getEstimatedMinutes(level as ReadLevel, est) || "—"}</span>
