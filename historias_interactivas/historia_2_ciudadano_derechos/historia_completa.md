@@ -125,7 +125,7 @@ Carlos estaba satisfecho. Finalmente tenía una respuesta completa.
 
 Pero Paula lo llamó:
 
-—Carlos, aunque la empresa respondió, deberías presentar una denuncia formal ante la APDP. La empresa reconadió la infracción en su respuesta, y eso es evidencia. Si no la denuncias, quizás vuelvan a hacerlo con otra persona.
+—Carlos, aunque la empresa respondió, deberías presentar una denuncia formal ante la APDP. La empresa reconoció la infracción en su respuesta, y eso es evidencia. Si no la denuncias, quizás vuelvan a hacerlo con otra persona.
 
 ### 🔀 **¿Presentas la denuncia formal?**
 
