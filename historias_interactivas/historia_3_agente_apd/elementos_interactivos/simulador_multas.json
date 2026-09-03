@@ -1,0 +1,164 @@
+{
+  "titulo": "Simulador de Calculo de Multas y Sanciones - Ley 21.719",
+  "descripcion": "Herramienta interactiva para calcular sanciones segun Art. 35 y aplicar atenuantes/agravantes segun Art. 49",
+  "base_legal": {
+    "articulo_35": "Regimen sancionatorio en UTM",
+    "articulo_49": "Atenuantes y agravantes",
+    "agencia": "Agencia de Proteccion de Datos Personales (APDP)"
+  },
+  "tipos_infracciones": [
+    {
+      "id": "leve",
+      "nombre": "Infraccion Leve",
+      "ejemplos": [
+        "Incumplimiento menor en el deber de informacion",
+        "Retraso leve en responder solicitudes ARCO (hasta 15 dias)",
+        "Errores formales en registro de actividades"
+      ],
+      "multa_rango_utm": {
+        "min": 1,
+        "max": 100,
+        "valor_utm_2026_clp": 67000,
+        "min_clp": 67000,
+        "max_clp": 6700000
+      },
+      "procedimiento": "Amonestacion escrita o multa"
+    },
+    {
+      "id": "grave",
+      "nombre": "Infraccion Grave",
+      "ejemplos": [
+        "Falta de registro de actividades de tratamiento",
+        "Casillas de consentimiento pre-marcadas",
+        "No designar DPO cuando es obligatorio",
+        "Incumplir plazos de respuesta ARCO (mas de 30 dias)",
+        "No implementar medidas de seguridad basicas"
+      ],
+      "multa_rango_utm": {
+        "min": 101,
+        "max": 1000,
+        "min_clp": 6767000,
+        "max_clp": 67000000
+      },
+      "procedimiento": "Multa + medidas correctivas obligatorias"
+    },
+    {
+      "id": "gravisima",
+      "nombre": "Infraccion Gravisima",
+      "ejemplos": [
+        "Tratamiento masivo sin base legal",
+        "No notificar brechas de seguridad graves",
+        "Vulnerabilidades criticas sin corregir (contrasenas en texto plano)",
+        "Cesion masiva de datos sin consentimiento",
+        "Reincidencia en infracciones graves",
+        "Obstruccion a la fiscalizacion de la APDP"
+      ],
+      "multa_rango_utm": {
+        "min": 1001,
+        "max": 5000,
+        "min_clp": 67067000,
+        "max_clp": 335000000
+      },
+      "procedimiento": "Multa elevada + posible clausura temporal + medidas correctivas"
+    }
+  ],
+  "atenuantes": [
+    {
+      "id": "primera_infraccion",
+      "nombre": "Primera infraccion",
+      "descripcion": "Empresa sin sanciones previas",
+      "reduccion_porcentaje": 20,
+      "aplicable": true
+    },
+    {
+      "id": "colaboracion",
+      "nombre": "Colaboracion con la fiscalizacion",
+      "descripcion": "Entrega voluntaria de antecedentes y facilitacion del procedimiento",
+      "reduccion_porcentaje": 15,
+      "aplicable": true
+    },
+    {
+      "id": "autodenuncia",
+      "nombre": "Autodenuncia espontanea",
+      "descripcion": "Empresa reporta voluntariamente el incumplimiento antes de fiscalizacion",
+      "reduccion_porcentaje": 30,
+      "aplicable": false
+    },
+    {
+      "id": "medidas_correctivas",
+      "nombre": "Implementacion rapida de medidas correctivas",
+      "descripcion": "Correccion del incumplimiento en plazo breve (menos de 15 dias)",
+      "reduccion_porcentaje": 25,
+      "aplicable": true
+    },
+    {
+      "id": "tamano_pyme",
+      "nombre": "Tamano de la empresa (PYME)",
+      "descripcion": "Consideracion por capacidad economica limitada",
+      "reduccion_porcentaje": 10,
+      "aplicable": true
+    }
+  ],
+  "agravantes": [
+    {
+      "id": "reincidencia",
+      "nombre": "Reincidencia",
+      "descripcion": "Empresa ya sancionada previamente por misma infraccion",
+      "aumento_porcentaje": 50,
+      "aplicable": false
+    },
+    {
+      "id": "multiples_infracciones",
+      "nombre": "Multiples infracciones simultaneas",
+      "descripcion": "Mas de 3 infracciones detectadas en misma fiscalizacion",
+      "aumento_porcentaje": 30,
+      "aplicable": true
+    },
+    {
+      "id": "danio_efectivo",
+      "nombre": "Danio efectivo a titulares",
+      "descripcion": "Se probo perjuicio economico o moral a personas afectadas",
+      "aumento_porcentaje": 40,
+      "aplicable": false
+    },
+    {
+      "id": "obstruccion",
+      "nombre": "Obstruccion a la fiscalizacion",
+      "descripcion": "Negativa a entregar informacion o facilitar auditoria",
+      "aumento_porcentaje": 60,
+      "aplicable": false
+    }
+  ],
+  "simulador": {
+    "instrucciones": "Selecciona infracciones y aplica atenuantes/agravantes para calcular la sancion",
+    "ejemplo_calculo": {
+      "infracciones_detectadas": [
+        {"tipo": "grave", "utm_base": 300, "descripcion": "Falta de registro de actividades"},
+        {"tipo": "grave", "utm_base": 200, "descripcion": "Consentimiento viciado"},
+        {"tipo": "gravisima", "utm_base": 1200, "descripcion": "Brecha no notificada"}
+      ],
+      "utm_base_total": 1700,
+      "atenuantes_aplicados": [
+        {"id": "primera_infraccion", "reduccion": 20},
+        {"id": "colaboracion", "reduccion": 15}
+      ],
+      "agravantes_aplicados": [
+        {"id": "multiples_infracciones", "aumento": 30}
+      ],
+      "calculo": {
+        "paso1_utm_base": 1700,
+        "paso2_aplicar_atenuantes": "1700 * (1 - 0.35) = 1105",
+        "paso3_aplicar_agravantes": "1105 * (1 + 0.30) = 1436.5",
+        "resultado_final_utm": 1437,
+        "resultado_final_clp": 96279000
+      }
+    }
+  },
+  "consejos_prevencion": [
+    "Realiza una autoevaluacion de cumplimiento antes de la entrada en vigencia (1 dic 2026)",
+    "Documenta TODO: politicas, registros, consentimientos, medidas de seguridad",
+    "Capacita a tu equipo en proteccion de datos",
+    "Designa un responsable interno aunque no sea obligatorio tener DPO",
+    "Implementa medidas de seguridad tecnicas (encriptacion, 2FA, copias de seguridad)"
+  ]
+}

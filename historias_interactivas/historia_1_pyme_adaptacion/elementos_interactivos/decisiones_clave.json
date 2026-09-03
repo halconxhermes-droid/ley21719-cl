@@ -1,0 +1,133 @@
+{
+  "escena1": {
+    "titulo": "La Notificacion",
+    "decision": "¿Como reacciona Maria a la notificacion de la Agencia?",
+    "opciones": [
+      {
+        "texto": "Ignorarla esperando que desaparezca",
+        "resultado": "PENALIDAD: Multa hasta 200 UTM",
+        "avance": -30,
+        "retroalimentacion": "Ignorar notificaciones de la APDP agrava la situacion legal. Siempre debe responderse formalmente."
+      },
+      {
+        "texto": "Revisar rapidamente sin accion formal",
+        "resultado": "MEDIO: Advertencia formal",
+        "avance": -10,
+        "retroalimentacion": "Una revision rapida sin acciones correctivas no resuelve el problema. Se requiere evidencia documentada."
+      },
+      {
+        "texto": "Consultar inmediatamente con un especialista",
+        "resultado": "EXCELENTE: Camino al cumplimiento total",
+        "avance": 50,
+        "retroalimentacion": "Buscar asesoria especializada demuestra buena fe y acelera el proceso de cumplimiento."
+      }
+    ],
+    "variable_cumplimiento": 0.3
+  },
+  "escena2": {
+    "titulo": "El Problema",
+    "decision": "¿Que documento legal descubre que le falta?",
+    "opciones": [
+      {
+        "texto": "Registro de actividades de tratamiento",
+        "resultado": "CRITICO: Obligatorio segun Art. 14",
+        "avance": -40,
+        "retroalimentacion": "El registro de actividades de tratamiento es obligatorio para todas las empresas que traten datos personales."
+      },
+      {
+        "texto": "Politica de privacidad en su sitio web",
+        "resultado": "ALTO: Requerido por Art. 14 ter",
+        "avance": -30,
+        "retroalimentacion": "Toda empresa debe tener una politica de privacidad accesible al publico."
+      },
+      {
+        "texto": "Sistema de gestion de consentimientos",
+        "resultado": "MEDIO: Necesario para licitud",
+        "avance": -20,
+        "retroalimentacion": "Un sistema de consentimiento valido es esencial para el tratamiento licito de datos."
+      }
+    ],
+    "variable_cumplimiento": 0.4
+  },
+  "escena3": {
+    "titulo": "La Solucion",
+    "decision": "¿Que medida tecnica prioriza primero?",
+    "opciones": [
+      {
+        "texto": "Encriptar base de datos de clientes",
+        "resultado": "ALTA SEGURIDAD: Protege datos sensibles",
+        "avance": 40,
+        "retroalimentacion": "La encriptacion es una medida tecnica clave segun Art. 14 quinquies para proteger datos almacenados."
+      },
+      {
+        "texto": "Cambiar contrasenas de acceso",
+        "resultado": "MEDIAS: Proteccion basica",
+        "avance": 20,
+        "retroalimentacion": "Politicas de contrasenas robustas son una medida basica pero insuficiente por si sola."
+      },
+      {
+        "texto": "Instalar software antivirus",
+        "resultado": "BAJA: No aborda el problema principal",
+        "avance": 5,
+        "retroalimentacion": "El antivirus es importante pero no resuelve los problemas legales de proteccion de datos."
+      },
+      {
+        "texto": "Implementar autenticacion de dos factores (2FA)",
+        "resultado": "EXCELENTE: Estandar de seguridad",
+        "avance": 45,
+        "retroalimentacion": "2FA es una medida tecnica y organizativa recomendada para todos los accesos a datos personales."
+      }
+    ],
+    "variable_cumplimiento": 0.6
+  },
+  "escena4": {
+    "titulo": "La Brecha",
+    "decision": "¿Que hace cuando detecta un acceso no autorizado?",
+    "opciones": [
+      {
+        "texto": "Notificar inmediatamente a la APDP y afectados",
+        "resultado": "EXCELENTE: Cumple Art. 14 sexies",
+        "avance": 50,
+        "retroalimentacion": "La notificacion de brechas a la Agencia y a los afectados en 72 horas es obligatoria."
+      },
+      {
+        "texto": "Investigar primero antes de notificar",
+        "resultado": "RIESGO: Puede exceder el plazo legal",
+        "avance": 10,
+        "retroalimentacion": "La notificacion debe hacerse en maximo 72 horas, no espere a tener todos los detalles."
+      },
+      {
+        "texto": "Intentar resolver internamente sin reportar",
+        "resultado": "GRAVE: Incumplimiento grave",
+        "avance": -50,
+        "retroalimentacion": "Ocultar una brecha de seguridad es una de las peores violaciones a la Ley 21.719."
+      }
+    ],
+    "variable_cumplimiento": 0.8
+  },
+  "escena5": {
+    "titulo": "El Exito",
+    "decision": "¿Como demuestra su cumplimiento?",
+    "opciones": [
+      {
+        "texto": "Certificacion de cumplimiento SENCE",
+        "resultado": "EXCELENTE: Reconocimiento oficial",
+        "avance": 60,
+        "retroalimentacion": "Una certificacion demuestra compromiso y genera confianza con clientes."
+      },
+      {
+        "texto": "Documentacion tecnica completa",
+        "resultado": "BUENO: Evidencia documentada",
+        "avance": 40,
+        "retroalimentacion": "La documentacion tecnica adecuada es prueba de cumplimiento ante la APDP."
+      },
+      {
+        "texto": "Politicas internas actualizadas",
+        "resultado": "ACEPTABLE: Cumplimiento minimo",
+        "avance": 25,
+        "retroalimentacion": "Las politicas internas son necesarias pero deben ir acompanadas de evidencia de implementacion."
+      }
+    ],
+    "variable_cumplimiento": 1.0
+  }
+}

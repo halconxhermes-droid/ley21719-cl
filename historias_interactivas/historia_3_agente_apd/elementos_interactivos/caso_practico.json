@@ -1,0 +1,183 @@
+{
+  "titulo": "Caso Practico: Fiscalizacion a EcoTienda",
+  "descripcion": "Caso practico donde el usuario toma el rol de oficial de la APDP y debe decidir el curso de accion ante diferentes hallazgos de fiscalizacion",
+  "contexto": {
+    "empresa": "EcoTienda SpA",
+    "rut": "76.123.456-7",
+    "giro": "Venta online de productos ecologicos",
+    "tamano": "PYME (15 empleados)",
+    "facturacion_anual": "UF 50.000",
+    "denuncia_recibida": "Cliente anonimo reporta que sus datos fueron compartidos con terceros sin consentimiento"
+  },
+  "evidencia_recolectada": [
+    {
+      "id": "evidencia_1",
+      "tipo": "Sitio web",
+      "hallazgo": "Politica de privacidad generica copiada de otra empresa, sin especificidad sobre los tratamientos realizados",
+      "gravedad": "MEDIA",
+      "articulo_infringido": "Art. 14 ter - Deber de informacion y transparencia"
+    },
+    {
+      "id": "evidencia_2",
+      "tipo": "Formulario de registro",
+      "hallazgo": "Casilla de consentimiento pre-marcada para envio de marketing y compartir datos con 'socios comerciales'",
+      "gravedad": "ALTA",
+      "articulo_infringido": "Art. 12 - Consentimiento debe ser libre, informado e inequivoco"
+    },
+    {
+      "id": "evidencia_3",
+      "tipo": "Base de datos",
+      "hallazgo": "No existe registro formal de actividades de tratamiento",
+      "gravedad": "ALTA",
+      "articulo_infringido": "Art. 14 - Obligaciones del responsable"
+    },
+    {
+      "id": "evidencia_4",
+      "tipo": "Seguridad informatica",
+      "hallazgo": "Contrasenas almacenadas en texto plano, sin encriptacion",
+      "gravedad": "GRAVE",
+      "articulo_infringido": "Art. 14 quinquies - Medidas de seguridad tecnicas"
+    },
+    {
+      "id": "evidencia_5",
+      "tipo": "Brecha de seguridad",
+      "hallazgo": "En marzo 2026 hubo un incidente de seguridad pero no se notifico a la APDP",
+      "gravedad": "GRAVE",
+      "articulo_infringido": "Art. 14 sexies - Notificacion de brechas"
+    }
+  ],
+  "decisiones_fiscalizador": [
+    {
+      "decision_id": "dec_1",
+      "pregunta": "Como procedes ante la politica de privacidad generica?",
+      "opciones": [
+        {
+          "texto": "Ordenar correccion inmediata con plazo de 15 dias",
+          "resultado": "Procede - Medida correctiva menor",
+          "fundamento": "Art. 31 - Medidas correctivas"
+        },
+        {
+          "texto": "Multar directamente sin oportunidad de corregir",
+          "resultado": "Improcedente - Vulneraria el debido proceso",
+          "fundamento": "Art. 36 - Procedimiento administrativo"
+        },
+        {
+          "texto": "Considerarlo como agravante al momento de la sancion final",
+          "resultado": "Procede - Evaluar en conjunto",
+          "fundamento": "Art. 49 - Atenuantes y agravantes"
+        }
+      ],
+      "respuesta_correcta": 0
+    },
+    {
+      "decision_id": "dec_2",
+      "pregunta": "Ante casillas pre-marcadas, que sancion recomiendas?",
+      "opciones": [
+        {
+          "texto": "Multa de 100 UTM por vicio en el consentimiento",
+          "resultado": "Procede - Sancion proporcional",
+          "fundamento": "Art. 35 literal b"
+        },
+        {
+          "texto": "Solo advertencia, ya que es primera infraccion",
+          "resultado": "Improcedente - Gravedad alta",
+          "fundamento": "Art. 35 y 49"
+        },
+        {
+          "texto": "Multa maxima de 5000 UTM",
+          "resultado": "Improcedente - Desproporcionado",
+          "fundamento": "Art. 35 - Proporcionalidad"
+        }
+      ],
+      "respuesta_correcta": 0
+    },
+    {
+      "decision_id": "dec_3",
+      "pregunta": "Sobre la falta de registro de actividades, cual es tu decision?",
+      "opciones": [
+        {
+          "texto": "Ordenar implementacion en 30 dias + multa de 50 UTM",
+          "resultado": "Procede - Combinacion de medida correctiva y multa",
+          "fundamento": "Art. 31 y 35"
+        },
+        {
+          "texto": "Solo ordenar sin multa",
+          "resultado": "Parcial - Falta efecto disuasorio",
+          "fundamento": "Art. 35"
+        },
+        {
+          "texto": "Clausura inmediata del sitio web",
+          "resultado": "Improcedente - Desproporcionado para una falta subsanable",
+          "fundamento": "Art. 35 - Clausura solo para infracciones graves"
+        }
+      ],
+      "respuesta_correcta": 0
+    },
+    {
+      "decision_id": "dec_4",
+      "pregunta": "Por contrasenas sin encriptar, que medida aplicas?",
+      "opciones": [
+        {
+          "texto": "Multa grave de 500 UTM + orden de implementacion inmediata",
+          "resultado": "Procede - Riesgo alto para los titulares",
+          "fundamento": "Art. 14 quinquies y 35"
+        },
+        {
+          "texto": "Solo advertencia porque ninguna brecha resulto en dano",
+          "resultado": "Improcedente - El riesgo ya existio",
+          "fundamento": "Art. 35 - No requiere dano efectivo"
+        },
+        {
+          "texto": "Multa de 10 UTM",
+          "resultado": "Improcedente - Insuficiente",
+          "fundamento": "Art. 35 - Proporcionalidad"
+        }
+      ],
+      "respuesta_correcta": 0
+    },
+    {
+      "decision_id": "dec_5",
+      "pregunta": "Por la brecha no notificada, que sancion es adecuada?",
+      "opciones": [
+        {
+          "texto": "Multa de 1000 UTM (sancion grave)",
+          "resultado": "Procede - Es una de las infracciones mas graves",
+          "fundamento": "Art. 14 sexies y 35"
+        },
+        {
+          "texto": "Multa de 50 UTM por omision",
+          "resultado": "Improcedente - Gravedad alta",
+          "fundamento": "Art. 35"
+        },
+        {
+          "texto": "Sin sancion porque ya paso tiempo",
+          "resultado": "Improcedente - No prescribe tan rapido",
+          "fundamento": "Art. 38 - Prescripcion"
+        }
+      ],
+      "respuesta_correcta": 0
+    }
+  ],
+  "resumen_caso": {
+    "sancion_total_calculada": "1650 UTM (aproximadamente $110 millones CLP al valor 2026)",
+    "medidas_correctivas": [
+      "Politica de privacidad especifica en 15 dias",
+      "Correccion de formularios en 7 dias",
+      "Registro de actividades en 30 dias",
+      "Implementacion de encriptacion en 60 dias",
+      "Protocolo de notificacion de brechas en 30 dias"
+    ],
+    "seguimiento": "Nueva fiscalizacion en 90 dias para verificar cumplimiento de medidas correctivas",
+    "atenuantes_aplicables": [
+      "Primera infraccion de la empresa",
+      "Colaboracion durante la fiscalizacion",
+      "Tamano de empresa (PYME)",
+      "Ausencia de dano efectivo a titulares"
+    ],
+    "agravantes_aplicables": [
+      "Multiples infracciones simultaneas",
+      "Vulnerabilidades de seguridad graves",
+      "Incumplimiento reiterado de plazos"
+    ]
+  }
+}

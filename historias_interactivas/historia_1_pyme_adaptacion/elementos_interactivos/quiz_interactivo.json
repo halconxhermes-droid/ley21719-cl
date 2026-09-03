@@ -1,0 +1,99 @@
+{
+  "titulo": "Quiz Interactivo: Ley 21.719 para PYMEs",
+  "descripcion": "Evaluacion formativa sobre los conceptos clave de la Ley 21.719 aplicados a pequenas y medianas empresas",
+  "preguntas": [
+    {
+      "numero": 1,
+      "pregunta": "¿Que significa el derecho de Acceso segun la Ley 21.719?",
+      "opciones": [
+        "El derecho a borrar todos sus datos",
+        "El derecho a solicitar confirmacion y copia de sus datos personales",
+        "El derecho a oponerse al tratamiento de sus datos",
+        "El derecho a que se le notifique cualquier brecha de seguridad"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 4 y Art. 5",
+      "explicacion": "El Art. 4 y Art. 5 establecen que el titular puede solicitar confirmacion y acceso a sus datos personales tratados por el responsable."
+    },
+    {
+      "numero": 2,
+      "pregunta": "¿En que caso es OBLIGATORIO designar un Delegado de Proteccion de Datos (DPO)?",
+      "opciones": [
+        "Siempre, para cualquier empresa",
+        "Cuando el tratamiento implique monitoreo sistematico a gran escala",
+        "Solo para empresas tecnologicas",
+        "Nunca, es opcional siempre"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 50",
+      "explicacion": "Art. 50: Es obligatorio designar un DPO cuando el tratamiento implique vigilancia sistematica a gran escala de titulares."
+    },
+    {
+      "numero": 3,
+      "pregunta": "¿Cual es el plazo maximo para notificar una brecha de seguridad a la APDP?",
+      "opciones": [
+        "24 horas",
+        "72 horas",
+        "7 dias habiles",
+        "30 dias habiles"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 14 sexies",
+      "explicacion": "Segun Art. 14 sexies, la notificacion de una brecha de seguridad debe realizarse en un plazo maximo de 72 horas desde que se tuvo conocimiento."
+    },
+    {
+      "numero": 4,
+      "pregunta": "¿Que es la Evaluacion de Impacto en Proteccion de Datos Personales (EIPD)?",
+      "opciones": [
+        "Una auditoria financiera de la empresa",
+        "Un analisis de riesgos para tratamientos de datos de alto riesgo",
+        "Un certificado internacional de calidad",
+        "Un registro de empleados"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 15 ter",
+      "explicacion": "La EIPD es una evaluacion obligatoria cuando un tratamiento pueda generar alto riesgo para los derechos de las personas, segun Art. 15 ter."
+    },
+    {
+      "numero": 5,
+      "pregunta": "¿Cuales son los principios basicos del tratamiento de datos en la Ley 21.719?",
+      "opciones": [
+        "Solo consentimiento",
+        "Licitud, lealtad, transparencia, finalidad, minimizacion, exactitud, limitacion del plazo de conservacion",
+        "Solo seguridad informatica",
+        "Marketing y publicidad"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 3 y siguientes",
+      "explicacion": "Los principios del tratamiento incluyen: licitud, lealtad, transparencia, finalidad especifica, minimizacion, exactitud, limitacion del plazo de conservacion, integridad y confidencialidad."
+    },
+    {
+      "numero": 6,
+      "pregunta": "¿Que documentos debe tener una PYME para cumplir con la Ley 21.719?",
+      "opciones": [
+        "Solo una pagina web",
+        "Registro de actividades, politica de privacidad, contratos de encargo de tratamiento",
+        "Solo una licencia comercial",
+        "Ninguno si es pequena"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 14 y Art. 14 ter",
+      "explicacion": "Toda empresa debe contar con: registro de actividades de tratamiento, politica de privacidad publica, y contratos con terceros que traten datos por encargo."
+    },
+    {
+      "numero": 7,
+      "pregunta": "¿Cual es la vigencia plena de la Ley 21.719?",
+      "opciones": [
+        "13 de diciembre de 2024",
+        "1 de diciembre de 2026",
+        "1 de enero de 2025",
+        "31 de diciembre de 2025"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Articulo primero transitorio",
+      "explicacion": "La Ley 21.719 fue publicada el 13 de diciembre de 2024 pero su vigencia plena es el 1 de diciembre de 2026, reemplazando la Ley 19.628."
+    }
+  ],
+  "puntuacion_aprobacion": 70,
+  "retroalimentacion_final": "Has aprendido los conceptos fundamentales que toda PYME debe conocer para cumplir con la Ley 21.719 de Proteccion de Datos Personales de Chile."
+}

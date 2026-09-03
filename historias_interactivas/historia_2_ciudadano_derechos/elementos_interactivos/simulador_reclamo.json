@@ -1,0 +1,119 @@
+{
+  "titulo": "Simulador: Ejercicio de Derechos ARCO",
+  "descripcion": "Simulador paso a paso para que el usuario aprenda como ejercer sus derechos ARCO (Acceso, Rectificacion, Cancelacion/Supresion, Oposicion, Portabilidad) segun la Ley 21.719",
+  "pasos": [
+    {
+      "paso": 1,
+      "titulo": "Identificar el derecho a ejercer",
+      "instrucciones": "Selecciona que derecho ARCO deseas ejercer segun tu situacion",
+      "opciones": [
+        {
+          "texto": "Derecho de Acceso (Art. 5)",
+          "id": "acceso",
+          "descripcion": "Quiero saber que datos personales tienen sobre mi"
+        },
+        {
+          "texto": "Derecho de Rectificacion (Art. 6)",
+          "id": "rectificacion",
+          "descripcion": "Quiero corregir datos inexactos o desactualizados"
+        },
+        {
+          "texto": "Derecho de Supresion (Art. 7)",
+          "id": "supresion",
+          "descripcion": "Quiero que eliminen mis datos personales"
+        },
+        {
+          "texto": "Derecho de Oposicion (Art. 8)",
+          "id": "oposicion",
+          "descripcion": "Me opongo a que sigan tratando mis datos"
+        },
+        {
+          "texto": "Derecho de Portabilidad (Art. 9)",
+          "id": "portabilidad",
+          "descripcion": "Quiero recibir mis datos en formato digital para llevarlos a otra empresa"
+        }
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 2,
+      "titulo": "Completar informacion personal",
+      "instrucciones": "Ingresa tus datos para identificarte como titular",
+      "campos": [
+        {
+          "tipo": "nombre",
+          "etiqueta": "Tu nombre completo",
+          "requerido": true
+        },
+        {
+          "tipo": "email",
+          "etiqueta": "Tu correo electronico de contacto",
+          "requerido": true
+        },
+        {
+          "tipo": "identificacion",
+          "etiqueta": "Tipo y numero de identificacion (RUT/DNI)",
+          "requerido": true
+        },
+        {
+          "tipo": "domicilio",
+          "etiqueta": "Tu domicilio",
+          "requerido": false
+        }
+      ]
+    },
+    {
+      "paso": 3,
+      "titulo": "Describir el caso",
+      "instrucciones": "Explica que datos personales estan siendo tratados indebidamente y la situacion especifica",
+      "textarea": "Describe con detalle que empresa o entidad esta tratando tus datos, que datos especificos, y por que consideras que se infringe la Ley 21.719",
+      "max_caracteres": 1000,
+      "requerido": true
+    },
+    {
+      "paso": 4,
+      "titulo": "Adjuntar evidencia",
+      "instrucciones": "Si tienes documentacion que respalde tu solicitud, adjuntala",
+      "archivos_permitidos": ["pdf", "jpg", "png"],
+      "max_archivos": 5
+    },
+    {
+      "paso": 5,
+      "titulo": "Seleccionar canal de envio",
+      "instrucciones": "Elige como enviaras tu solicitud formal",
+      "opciones": [
+        {
+          "texto": "Formulario web oficial de la Agencia de Proteccion de Datos",
+          "id": "formulario_web",
+          "plazo": "Inmediato"
+        },
+        {
+          "texto": "Correo electronico a derechos@apdpchile.gob.cl",
+          "id": "correo_electronico",
+          "plazo": "24-48 horas para confirmacion"
+        },
+        {
+          "texto": "Carta fisica dirigida a la Agencia",
+          "id": "carta_fisica",
+          "plazo": "3-5 dias habiles"
+        }
+      ]
+    }
+  ],
+  "plazos_legales": {
+    "respuesta_esperada": "30 dias habiles",
+    "extension_posible": "Hasta 60 dias habiles en casos complejos",
+    "consecuencia_silencio": "Si no hay respuesta en plazo, puedes interponer recurso ante el juez de letras civil o denunciar ante la APDP"
+  },
+  "resultados_posibles": {
+    "exito": "La empresa debe responder y atender tu solicitud dentro del plazo legal",
+    "rechazo": "Si rechazan, deben fundamentarlo por escrito y tu puedes escalar a la APDP",
+    "silencio_administrativo": "Si no responde en 30 dias, puedes denunciar ante el tribunal competente"
+  },
+  "consejos": [
+    "Guarda siempre una copia de tu solicitud y comprobante de envio",
+    "Utiliza correo certificado o medios que dejen constancia",
+    "Si la empresa no tiene canal claro, dirigete directamente a la APDP",
+    "Considera consultar con un abogado especializado si el caso es complejo"
+  ]
+}

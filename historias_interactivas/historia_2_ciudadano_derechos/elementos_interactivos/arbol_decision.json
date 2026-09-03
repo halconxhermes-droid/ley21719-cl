@@ -1,0 +1,172 @@
+{
+  "titulo": "Arbol de Decision: Proteccion de tus Datos Personales",
+  "descripcion": "Guia interactiva para que el ciudadano sepa que hacer ante diferentes situaciones relacionadas con sus datos personales",
+  "nodo_raiz": {
+    "id": "raiz",
+    "pregunta": "¿Cual es tu situacion actual respecto a tus datos personales?",
+    "opciones": [
+      {
+        "texto": "Mis datos fueron expuestos en una brecha",
+        "rama": "rama_brecha"
+      },
+      {
+        "texto": "Recibo correos o publicidad no deseada",
+        "rama": "rama_marketing"
+      },
+      {
+        "texto": "Una empresa no quiere darme mis datos",
+        "rama": "rama_acceso"
+      },
+      {
+        "texto": "Quiero llevar mis datos a otra empresa",
+        "rama": "rama_portabilidad"
+      },
+      {
+        "texto": "Solo quiero informarme sobre mis derechos",
+        "rama": "rama_informacion"
+      }
+    ]
+  },
+  "ramas": {
+    "rama_brecha": {
+      "titulo": "Brecha de Seguridad - Art. 14 sexies",
+      "pasos": [
+        {
+          "paso": 1,
+          "instruccion": "La empresa responsable DEBE notificarte dentro de las 72 horas de haber detectado la brecha",
+          "accion": "Verifica si recibiste notificacion formal"
+        },
+        {
+          "paso": 2,
+          "instruccion": "Si no te notificaron, ejerce tu Derecho de Acceso (Art. 5) para saber que datos fueron comprometidos",
+          "accion": "Solicita informe detallado de la brecha"
+        },
+        {
+          "paso": 3,
+          "instruccion": "Ejerce tu Derecho de Oposicion (Art. 8) para que NO sigan tratando tus datos sin tu consentimiento",
+          "accion": "Solicita suspension del tratamiento"
+        },
+        {
+          "paso": 4,
+          "instruccion": "Si los datos son sensibles, solicita Supresion (Art. 7) si ya no son necesarios",
+          "accion": "Solicita eliminacion definitiva"
+        },
+        {
+          "paso": 5,
+          "instruccion": "Denuncia ante la APDP si la empresa no tomo medidas correctivas",
+          "accion": "Presentar denuncia formal"
+        }
+      ]
+    },
+    "rama_marketing": {
+      "titulo": "Marketing No Deseado",
+      "pasos": [
+        {
+          "paso": 1,
+          "instruccion": "Verifica si diste consentimiento explicito para recibir comunicaciones comerciales",
+          "accion": "Revisar terminos y condiciones aceptados"
+        },
+        {
+          "paso": 2,
+          "instruccion": "Ejerce tu Derecho de Oposicion (Art. 8) para dejar de recibir publicidad",
+          "accion": "Solicitar exclusion de listas de marketing"
+        },
+        {
+          "paso": 3,
+          "instruccion": "Si no diste consentimiento, tambien puedes ejercer Supresion (Art. 7)",
+          "accion": "Solicitar eliminacion de bases de datos de marketing"
+        },
+        {
+          "paso": 4,
+          "instruccion": "Si la empresa no responde en 30 dias, denuncia ante APDP",
+          "accion": "Denuncia por envio no autorizado"
+        }
+      ]
+    },
+    "rama_acceso": {
+      "titulo": "Acceso Denegado",
+      "pasos": [
+        {
+          "paso": 1,
+          "instruccion": "Art. 5: Toda empresa DEBE entregarte tus datos en 30 dias habiles",
+          "accion": "Verificar plazo legal"
+        },
+        {
+          "paso": 2,
+          "instruccion": "Formaliza tu solicitud por escrito con todos los requisitos del Art. 11",
+          "accion": "Completar solicitud formal"
+        },
+        {
+          "paso": 3,
+          "instruccion": "Si no responden en plazo, considera que hubo silencio administrativo",
+          "accion": "Esperar 30 dias habiles"
+        },
+        {
+          "paso": 4,
+          "instruccion": "Interpone accion judicial o denuncia ante APDP",
+          "accion": "Accion legal correspondiente"
+        }
+      ]
+    },
+    "rama_portabilidad": {
+      "titulo": "Portabilidad de Datos - Art. 9",
+      "pasos": [
+        {
+          "paso": 1,
+          "instruccion": "Verifica que los datos los hayas proporcionado tu directamente a la empresa",
+          "accion": "Confirmar origen de los datos"
+        },
+        {
+          "paso": 2,
+          "instruccion": "Solicita la entrega en formato electronico estructurado (JSON, CSV, XML)",
+          "accion": "Especificar formato deseado"
+        },
+        {
+          "paso": 3,
+          "instruccion": "La empresa debe entregarte los datos en 30 dias habiles",
+          "accion": "Esperar plazo legal"
+        },
+        {
+          "paso": 4,
+          "instruccion": "Si decides transferirlos a otra empresa, asegurate que tenga politicas de privacidad solidas",
+          "accion": "Verificar nuevo responsable"
+        }
+      ]
+    },
+    "rama_informacion": {
+      "titulo": "Informacion General sobre tus Derechos",
+      "pasos": [
+        {
+          "paso": 1,
+          "instruccion": "Derecho de Acceso (Art. 5): Saber que datos tienen sobre ti",
+          "accion": "Aprender sobre acceso"
+        },
+        {
+          "paso": 2,
+          "instruccion": "Derecho de Rectificacion (Art. 6): Corregir datos inexactos",
+          "accion": "Aprender sobre rectificacion"
+        },
+        {
+          "paso": 3,
+          "instruccion": "Derecho de Supresion (Art. 7): Eliminar tus datos",
+          "accion": "Aprender sobre supresion"
+        },
+        {
+          "paso": 4,
+          "instruccion": "Derecho de Oposicion (Art. 8): Oponerte al tratamiento",
+          "accion": "Aprender sobre oposicion"
+        },
+        {
+          "paso": 5,
+          "instruccion": "Derecho de Portabilidad (Art. 9): Llevar tus datos a otro lado",
+          "accion": "Aprender sobre portabilidad"
+        }
+      ]
+    }
+  },
+  "recursos_adicionales": {
+    "sitio_apdp": "https://www.apdpchile.gob.cl",
+    "consulta_gratuita": "Puedes llamar a la APDP para orientacion gratuita",
+    "plazo_general": "Todas las solicitudes deben responderse en 30 dias habiles (Art. 11)"
+  }
+}
