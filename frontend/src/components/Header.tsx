@@ -1,33 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
 import { useNavigation } from "../context/NavigationContext";
 import type { ViewId } from "../context/NavigationContext";
 import Countdown from "./Countdown";
 import RoleIndicator from "./RoleIndicator";
+import HeaderProfileMenu from "./HeaderProfileMenu";
 
-interface HeaderProps {
-  user?: { email: string } | null;
-  onSignOut?: () => void;
-}
-
-/** Header sticky con logo, nav Portal/Curso, cuenta regresiva viva, indicador de rol y logout opcional. */
-export default function Header({ user, onSignOut }: HeaderProps) {
+/** Header simplificado que usa el ThemeProvider global y delega el logout al perfil. */
+export default function Header({ user, onSignOut }: { user?: { email: string } | null; onSignOut?: () => void }) {
   const { view, navigate } = useNavigation();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    try {
-      const stored = window.localStorage.getItem("ley21719_theme");
-      return stored ? stored === "dark" : window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
-    } catch { return false; }
-  });
+  const { colorMode } = useTheme();
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    try { window.localStorage.setItem("ley21719_theme", darkMode ? "dark" : "light"); } catch { /* noop */ }
-  }, [darkMode]);
+  // Solo setear dark si el modo activo es auto (system) para que el ThemeProvider maneje la lógica completa
+  // El dato colorMode aquí ya no controla el dark class aquí, ThemeProvider lo hace globalmente
 
   const go = (target: ViewId) => {
     navigate(target);
-    setMobileOpen(false);
   };
 
   const navBtn = (target: ViewId, label: string) => {
@@ -37,16 +25,14 @@ export default function Header({ user, onSignOut }: HeaderProps) {
         type="button"
         onClick={() => go(target)}
         aria-current={active ? "page" : undefined}
-        className={`cursor-pointer rounded-lg border-none px-3 py-2 text-sm font-medium transition-colors ${
-          active
-            ? "bg-primary-50 text-primary-800"
-            : "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-        }`}
+        className={`cursor-pointer rounded-lg border-none px-3 py-2 text-sm font-medium transition-colors ${active ? "bg-primary-50 text-primary-800" : "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900"}`}
       >
         {label}
       </button>
     );
   };
+
+  const colorIcon = colorMode === "light" ? "☀" : colorMode === "dark" ? "☾" : "🌓";
 
   return (
     <header
@@ -74,94 +60,38 @@ export default function Header({ user, onSignOut }: HeaderProps) {
             Ley 21.719
           </button>
           <nav aria-label="Navegación principal" className="ml-2 hidden sm:flex sm:items-center sm:gap-1">
-            {navBtn("portal", "Portal")}
-            {navBtn("home", "Curso")}
+            {navBtn("portal", "Portal")}{navBtn("home", "Curso")}
           </nav>
         </div>
+
+        {/* Selector de tema delegado al ThemeProvider */}
+        {/* Mostramos el icono simple y el ThemeSwitcher se encarga del resto */}
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            aria-pressed={colorMode !== "light"}
+            aria-label={
+              colorMode === "light"
+                ? "Cambiar a modo oscuro"
+                : colorMode === "dark"
+                  ? "Cambiar a modo automático"
+                  : "Cambiar a modo claro"
+            }
+            title={
+              colorMode === "light" ? "Modo oscuro" : colorMode === "dark" ? "Modo automático" : "Modo claro"
+            }
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+          >
+            <span aria-hidden="true">{colorIcon}</span>
+          </button>
+        </div>
+
         <div className="flex flex-wrap items-center gap-3">
           <RoleIndicator />
           <Countdown />
-          <button
-            type="button"
-            onClick={() => setDarkMode((enabled) => !enabled)}
-            aria-pressed={darkMode}
-            aria-label={darkMode ? "Activar tema claro" : "Activar tema oscuro"}
-            title={darkMode ? "Tema claro" : "Tema oscuro"}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
-          >
-            <span aria-hidden="true">{darkMode ? "☀" : "☾"}</span>
-          </button>
-          <button
-            type="button"
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-navigation"
-            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
-            onClick={() => setMobileOpen((open) => !open)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 sm:hidden"
-          >
-            <span aria-hidden="true" className="text-xl leading-none">{mobileOpen ? "×" : "☰"}</span>
-          </button>
-          {user && (
-            <div className="flex items-center gap-2">
-              <span className="hidden text-xs text-slate-500 sm:inline" title={user.email}>
-                {user.email.split("@")[0]}
-              </span>
-              {onSignOut && (
-                <button
-                  type="button"
-                  onClick={onSignOut}
-                  className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
-                  title="Cerrar sesión"
-                >
-                  Salir
-                </button>
-              )}
-            </div>
-          )}
+          <HeaderProfileMenu onSignOut={onSignOut} />
         </div>
       </div>
-      {mobileOpen && (
-        <nav id="mobile-navigation" aria-label="Navegación móvil" className="border-t border-slate-200 bg-slate-50 px-4 py-3 sm:hidden">
-          <div className="mx-auto grid max-w-5xl gap-1">
-            {[
-              ["portal", "Portal informativo"],
-              ["home", "Curso"],
-              ["checklist", "Mi checklist"],
-              ["glosario", "Glosario"],
-              ["testfinal", "Test final"],
-            ].map(([target, label]) => (
-              <button
-                key={target}
-                type="button"
-                onClick={() => go(target as ViewId)}
-                className={`rounded-lg px-3 py-3 text-left text-sm font-medium ${view === target ? "bg-primary-100 text-primary-800" : "text-slate-700 hover:bg-white"}`}
-                aria-current={view === target ? "page" : undefined}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </nav>
-      )}
-      <nav aria-label="Acceso rápido móvil" className="fixed inset-x-0 bottom-0 z-[90] grid grid-cols-4 border-t border-slate-200 bg-white/95 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] backdrop-blur sm:hidden">
-        {[
-          ["home", "Inicio", "⌂"],
-          ["checklist", "Checklist", "✓"],
-          ["glosario", "Glosario", "Aa"],
-          ["testfinal", "Test final", "□"],
-        ].map(([target, label, icon]) => (
-          <button
-            key={target}
-            type="button"
-            onClick={() => go(target as ViewId)}
-            aria-current={view === target ? "page" : undefined}
-            className={`flex min-h-14 flex-col items-center justify-center gap-0.5 px-1 text-[11px] font-medium ${view === target ? "bg-primary-50 text-primary-800" : "text-slate-600 hover:bg-slate-50"}`}
-          >
-            <span aria-hidden="true" className="text-base leading-5">{icon}</span>
-            <span>{label}</span>
-          </button>
-        ))}
-      </nav>
     </header>
   );
 }
