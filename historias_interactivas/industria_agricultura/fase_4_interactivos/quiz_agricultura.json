@@ -1,0 +1,196 @@
+{
+  "id": "quiz_agricultura",
+  "titulo": "Quiz Ley 21.719 - Sector Agricultura",
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿Datos de producción agrícola son sensibles bajo Art. 16?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, son datos comerciales",
+          "correcta": false,
+          "explicacion": "Pueden inferir salud por fumigación",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, cuando infieren salud o vivienda",
+          "correcta": true,
+          "explicacion": "Art. 16 bis",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo con consentimiento explícito",
+          "correcta": false,
+          "explicacion": "Ya definido en ley",
+          "articulo_referenciado": "Art. 16"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Plazo breach agroindustrial?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "72h",
+          "correcta": true,
+          "explicacion": "Plazo Ley 21.719",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "b",
+          "texto": "30 días",
+          "correcta": false,
+          "explicacion": "Tarde",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "c",
+          "texto": "Sin plazo",
+          "correcta": false,
+          "explicacion": "Siempre hay plazo",
+          "articulo_referenciado": "Art. 14 sexies"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "pregunta": "¿Cuándo designar DPO en cooperativa 150 socios?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Nunca, es opcional",
+          "correcta": false,
+          "explicacion": "Art. 50 obliga con 10K+ datos",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí si trata datos masivos",
+          "correcta": true,
+          "explicacion": "AgriTech masivo requiere DPO",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo si exporta",
+          "correcta": false,
+          "explicacion": "También doméstico",
+          "articulo_referenciado": "Art. 50"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Geolocalización de fincas es dato sensible?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, es solo ubicación",
+          "correcta": false,
+          "explicacion": "Puede revelar salud",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí cuando infiere vivienda privada",
+          "correcta": true,
+          "explicacion": "Art. 16 bis - sensibles",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo GPS del teléfono",
+          "correcta": false,
+          "explicacion": "Cualquier geolocalización",
+          "articulo_referenciado": "Art. 16"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿Multa grave Art. 35?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "5.000 UTM",
+          "correcta": false,
+          "explicacion": "Leve",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "b",
+          "texto": "10.000 UTM",
+          "correcta": true,
+          "explicacion": "Grave",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "c",
+          "texto": "20.000 UTM",
+          "correcta": false,
+          "explicacion": "Gravísima",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "pregunta": "¿Datos de fumigación agrícola son sensibles?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No",
+          "correcta": false,
+          "explicacion": "Pueden inferir salud",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, Art. 16 bis",
+          "correcta": true,
+          "explicacion": "Inferencias de salud",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo si es orgánico",
+          "correcta": false,
+          "explicacion": "Siempre sensible",
+          "articulo_referenciado": "Art. 16"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "pregunta": "¿Cómo notificar a 60 socios rurales sin acceso digital?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Solo por correo",
+          "correcta": false,
+          "explicacion": "Acceso no digital debe garantizarse",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "b",
+          "texto": "Asamblea presencial + carta",
+          "correcta": true,
+          "explicacion": "Accesibilidad garantía",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo en la próxima cosecha",
+          "correcta": false,
+          "explicacion": "Plazo 72h",
+          "articulo_referenciado": "Art. 14 sexies"
+        }
+      ]
+    }
+  ],
+  "total": 7
+}

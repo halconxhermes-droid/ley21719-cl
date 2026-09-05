@@ -1,0 +1,58 @@
+{
+  "id": "simulador_arco_agricultura",
+  "titulo": "Simulador Derechos ARCO - Socio Cooperativa",
+  "descripcion": "Simula derechos ARCO sobre tus datos productivos y de finca en cooperativa agrícola",
+  "pasos": [
+    {
+      "id": "p1",
+      "titulo": "Acceder a Datos de Finca",
+      "descripcion": "Deseas conocer qué datos tiene la cooperativa sobre tu producción y geolocalización de tu finca?",
+      "opciones": [
+        {
+          "texto": "Sí, descargar datos completos",
+          "siguiente": "p2",
+          "consecuencia_legal": "Art. 7 Ley 21.719"
+        },
+        {
+          "texto": "No, salir",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "titulo": "Verificar Identidad Rural",
+      "descripcion": "Ingresa tu RUT y rol en la cooperativa",
+      "opciones": [
+        {
+          "texto": "Verificar",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.3 - Identidad verificada"
+        },
+        {
+          "texto": "Cancelar",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "titulo": "Datos Recibidos",
+      "descripcion": "Tu perfil incluye: 12.5 ha producción, 47 cosechas registradas, geolocalización de 3 lotes, datos de fumigación",
+      "opciones": [
+        {
+          "texto": "Descargar CSV",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 7.4"
+        },
+        {
+          "texto": "Oponerse al uso",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 8 - Oposición"
+        }
+      ]
+    }
+  ]
+}

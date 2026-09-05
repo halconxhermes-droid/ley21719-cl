@@ -1,0 +1,79 @@
+{
+  "id": "arbol_decision_agricultura",
+  "titulo": "Arbol Decisión Breach Cooperativa",
+  "descripcion": "Gerente de cooperativa ante breach de plataforma AgriTech",
+  "nodos": [
+    {
+      "id": "n1",
+      "situacion": "Breach expone 60 socios a competidores",
+      "decision": [
+        {
+          "opcion": "Notificar APDP en 72h",
+          "consecuencia": "Art. 14 sexies cumplido",
+          "siguiente": "n2",
+          "probabilidad": 0.85
+        },
+        {
+          "opcion": "Negociar con el proveedor primero",
+          "consecuencia": "Multa agravada",
+          "siguiente": "n3",
+          "probabilidad": 0.7
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "situacion": "Notificación completada",
+      "decision": [
+        {
+          "opcion": "Auditar al proveedor AgriTech",
+          "consecuencia": "Art. 14 quinquies",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opcion": "Solo cambiar proveedor",
+          "consecuencia": "Riesgo legal sigue",
+          "siguiente": "n4",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "situacion": "Negociación interna",
+      "decision": [
+        {
+          "opcion": "Cerrar acceso del proveedor",
+          "consecuencia": "Contención rápida",
+          "siguiente": "n4",
+          "probabilidad": 0.9
+        },
+        {
+          "opcion": "Mantener durante negociación",
+          "consecuencia": "Riesgo",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "situacion": "Contención aplicada",
+      "decision": [
+        {
+          "opcion": "Pagar multa y corregir",
+          "consecuencia": "Art. 35 + 49",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        },
+        {
+          "opcione": "Implementar acceso granular",
+          "consecuencia": "Atenuantes",
+          "siguiente": "fin",
+          "probabilidad": 0.6
+        }
+      ]
+    }
+  ]
+}
