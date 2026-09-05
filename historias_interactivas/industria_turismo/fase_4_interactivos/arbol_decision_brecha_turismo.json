@@ -1,0 +1,79 @@
+{
+  "id": "arbol_decision_brecha_turismo",
+  "titulo": "Arbol Decisión Breach Turismo Internacional",
+  "descripcion": "Gerente hotelero ante breach de plataforma global afectando 12.000 viajeros",
+  "nodos": [
+    {
+      "id": "n1",
+      "situacion": "Breach expone 12.000 perfiles con pasaportes y fechas de estancia",
+      "decision": [
+        {
+          "opcion": "Notificar APDP + clientes en 72h + 3 idiomas",
+          "consecuencia": "Art. 14 sexies cumplido",
+          "siguiente": "n2",
+          "probabilidad": 0.85
+        },
+        {
+          "opcion": "Notificar solo a autoridades chilenas",
+          "consecuencia": "Multa transfronteriza",
+          "siguiente": "n3",
+          "probabilidad": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "situacion": "Notificación completada",
+      "decision": [
+        {
+          "opcion": "Ofrecer monitoreo de crédito a afectados",
+          "consecuencia": "Recuperación de confianza",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opcion": "Solo notificación mínima",
+          "consecuencia": "Riesgo reputacional",
+          "siguiente": "n4",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "situacion": "Notificación incompleta",
+      "decision": [
+        {
+          "opcion": "Notificar tarde con atenuantes Art. 49",
+          "consecuencia": "Multa reducida",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        },
+        {
+          "opcion": "Impugnar multa",
+          "consecuencia": "Proceso judicial",
+          "siguiente": "fin",
+          "probabilidad": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "situacion": "Sin notificar",
+      "decision": [
+        {
+          "opcion": "Descubrimiento público",
+          "consecuencia": "Multa agravada Art. 35",
+          "siguiente": "fin",
+          "probabilidad": 0.95
+        },
+        {
+          "opcion": "Control de daños internos",
+          "consecuencia": "Gestión privada",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        }
+      ]
+    }
+  ]
+}

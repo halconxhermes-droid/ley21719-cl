@@ -1,0 +1,58 @@
+{
+  "id": "simulador_arco_turismo",
+  "titulo": "Simulador Derechos ARCO - Viajero Internacional",
+  "descripcion": "Simula ejercicios de derechos ARCO sobre datos de reserva y huella facial en cadena hotelera",
+  "pasos": [
+    {
+      "id": "p1",
+      "titulo": "Solicitar Acceso a Datos de Reserva",
+      "descripcion": "Deseas conocer qué datos tenemos de tu reserva anterior?",
+      "opciones": [
+        {
+          "texto": "Sí, descargar historial",
+          "siguiente": "p2",
+          "consecuencia_legal": "Art. 7 Ley 21.719"
+        },
+        {
+          "texto": "No, salir",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "titulo": "Verificar Identidad Internacional",
+      "descripcion": "Ingresa tu pasaporte y nacionalidad",
+      "opciones": [
+        {
+          "texto": "Verificar",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.3 - Internacional"
+        },
+        {
+          "texto": "Cancelar",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "titulo": "Descargar Historial",
+      "descripcion": "Historial: 5 estancias, 3 países, 180 noches, datos de tarjeta x2",
+      "opciones": [
+        {
+          "texto": "Descargar CSV",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 7.4"
+        },
+        {
+          "texto": "Solicitar supresión",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 8 - Cancelación"
+        }
+      ]
+    }
+  ]
+}

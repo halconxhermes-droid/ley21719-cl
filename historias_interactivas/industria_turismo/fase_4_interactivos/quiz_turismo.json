@@ -1,0 +1,196 @@
+{
+  "id": "quiz_turismo",
+  "titulo": "Quiz Ley 21.719 - Sector Turismo",
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿El reconocimiento facial en hoteles califica como dato sensible bajo Art. 16?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, es solo para comodidad",
+          "correcta": false,
+          "explicacion": "Biométricos = sensibles por definición",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, exige consentimiento explícito",
+          "correcta": true,
+          "explicacion": "Art. 16 bis y desarrollado",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo si el usuario lo solicita",
+          "correcta": false,
+          "explicacion": "La condición está en la ley",
+          "articulo_referenciado": "Art. 16"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Qué artículo obliga a RAT en plataformas de reserva?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Art. 14",
+          "correcta": true,
+          "explicacion": "Registro obligatorio de todo tratamiento",
+          "articulo_referenciado": "Art. 14"
+        },
+        {
+          "letra": "b",
+          "texto": "Art. 50",
+          "correcta": false,
+          "explicacion": "DPO",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "c",
+          "texto": "Art. 35",
+          "correcta": false,
+          "explicacion": "Sanciones",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "pregunta": "¿Plazo breach notificación?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "24h",
+          "correcta": false,
+          "explicacion": "No corresponde",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "b",
+          "texto": "72h",
+          "correcta": true,
+          "explicacion": "Plazo Ley 21.719",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "c",
+          "texto": "5 días",
+          "correcta": false,
+          "explicacion": "Demasiado tarde",
+          "articulo_referenciado": "Art. 14 sexies"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Cuántas atenuantes Art. 49 aplicables?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Solo una (primera)",
+          "correcta": false,
+          "explicacion": "Tres disponibles",
+          "articulo_referenciado": "Art. 49"
+        },
+        {
+          "letra": "b",
+          "texto": "Tres: primera, colaboración, implementación",
+          "correcta": true,
+          "explicacion": "Art. 49.1",
+          "articulo_referenciado": "Art. 49"
+        },
+        {
+          "letra": "c",
+          "texto": "Ninguna, multas son fijas",
+          "correcta": false,
+          "explicacion": "Art. 49 existe para reducirlas",
+          "articulo_referenciado": "Art. 49"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿DPO obligatorio para cadena hotelera 8 hoteles + 2M clientes?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, es opcional",
+          "correcta": false,
+          "explicacion": "Art. 50 obliga a 10K+",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, Art. 50 obliga por perfilado masivo",
+          "correcta": true,
+          "explicacion": "2M clientes = monitoreo masivo",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo si hay breach previo",
+          "correcta": false,
+          "explicacion": "Es preventivo",
+          "articulo_referenciado": "Art. 50"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "pregunta": "¿Multa gravísima Art. 35?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "5.000 UTM",
+          "correcta": false,
+          "explicacion": "Leve",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "b",
+          "texto": "10.000 UTM",
+          "correcta": true,
+          "explicacion": "Grave máxima",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "c",
+          "texto": "20.000 UTM",
+          "correcta": false,
+          "explicacion": "Gravísima",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "pregunta": "¿EIPD obligatoria para IA recomendadora turística?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, es opcional",
+          "correcta": false,
+          "explicacion": "Art. 15 ter",
+          "articulo_referenciado": "Art. 15 ter"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, para profilado masivo",
+          "correcta": true,
+          "explicacion": "Art. 15 ter obliga",
+          "articulo_referenciado": "Art. 15 ter"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo si hay breach",
+          "correcta": false,
+          "explicacion": "Previene breach",
+          "articulo_referenciado": "Art. 15 ter"
+        }
+      ]
+    }
+  ],
+  "total": 7
+}
