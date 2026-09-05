@@ -1,0 +1,64 @@
+{
+  "id": "simulador_arco_tecnologia",
+  "titulo": "Simulador Derechos ARCO - Usuario Fintech",
+  "descripcion": "Simula tus derechos ARCO sobre datos de inversión y perfilado en Nexo Fintech",
+  "pasos": [
+    {
+      "id": "p1",
+      "titulo": "Acceder a Datos de Inversión",
+      "descripcion": "Deseas conocer qué datos tiene Nexo sobre tu perfil de inversión?",
+      "opciones": [
+        {
+          "texto": "Sí, descargar mis datos completos",
+          "siguiente": "p2",
+          "consecuencia_legal": "Art. 7 Ley 21.719",
+          "habilitada": true
+        },
+        {
+          "texto": "Salir",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "titulo": "Verificar Identidad",
+      "descripcion": "Verifica tu identidad con RUT y clave de la app",
+      "opciones": [
+        {
+          "texto": "Verificar",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.3",
+          "habilitada": true
+        },
+        {
+          "texto": "Cancelar",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "titulo": "Recibir Datos",
+      "descripcion": "Tu perfil incluye 47 compras, score de riesgo, perfilado algorítmico",
+      "opciones": [
+        {
+          "texto": "Descargar",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 7.4",
+          "habilitada": true
+        },
+        {
+          "texto": "Oponerse al perfilado",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 8 - Oposición",
+          "habilitada": true
+        }
+      ]
+    }
+  ]
+}

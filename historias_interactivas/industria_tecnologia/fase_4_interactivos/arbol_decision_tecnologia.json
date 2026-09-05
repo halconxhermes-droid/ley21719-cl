@@ -1,0 +1,79 @@
+{
+  "id": "arbol_decision_tecnologia",
+  "titulo": "Arbol Decisión Breach Cloud",
+  "descripcion": "CTO ante breach de bucket S3 con 30.000 usuarios",
+  "nodos": [
+    {
+      "id": "n1",
+      "situacion": "Breach detectado en bucket S3 sin cifrar",
+      "decision": [
+        {
+          "opcion": "Notificar APDP y usuarios en 72h",
+          "consecuencia": "Art. 14 sexies cumplido",
+          "siguiente": "n2",
+          "probabilidad": 0.85
+        },
+        {
+          "opcion": "Investigar primero",
+          "consecuencia": "Multa agravada Art. 35",
+          "siguiente": "n3",
+          "probabilidad": 0.7
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "situacion": "Notificación enviada",
+      "decision": [
+        {
+          "opcion": "Rotar credenciales AWS inmediatamente",
+          "consecuencia": "Art. 14 quinquies",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opcion": "Solo notificar y esperar",
+          "consecuencia": "Art. 14 quinquies parcial",
+          "siguiente": "n4",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "situacion": "Investigación interna",
+      "decision": [
+        {
+          "opcion": "Cerrar bucket de inmediato",
+          "consecuencia": "Contención rápida",
+          "siguiente": "n4",
+          "probabilidad": 0.9
+        },
+        {
+          "opcion": "Mantener abierto para análisis",
+          "consecuencia": "Riesgo agravado",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "situacion": "Notificación tardía",
+      "decision": [
+        {
+          "opcion": "Pagar multa y corregir",
+          "consecuencia": "Art. 35 + 49",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        },
+        {
+          "opcione": "Implementar cifrado en todo el cloud",
+          "consecuencia": "Atenuantes procesales",
+          "siguiente": "fin",
+          "probabilidad": 0.6
+        }
+      ]
+    }
+  ]
+}
