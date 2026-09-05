@@ -1,0 +1,93 @@
+{
+  "titulo": "Quiz: Conocimientos sobre Protección de Datos en el Sector Educativo",
+  "descripcion": "Evaluación formativa sobre la Ley 21.719 aplicada al sector educativo chileno. 7 preguntas de elección múltiple con fundamentación legal y casos reales.",
+  "preguntas": [
+    {
+      "pregunta": "¿Puede una escuela compartir los datos de un estudiante con una empresa de seguros sin consentimiento?",
+      "opciones": [
+        "Siempre que sea para mejorar el perfil del estudiante",
+        "Solo con consentimiento explícito firmado por el apoderado",
+        "Nunca, los datos de menores son totalmente privados",
+        "Solo si el estudiante tiene un seguro escolar"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16 bis",
+      "explicacion": "El Art. 16 bis establece que el tratamiento de datos sensibles requiere consentimiento explícito. En el caso de estudiantes y datos de salud, la ley es estricta: se requiere consentimiento por escrito del apoderado antes de compartir cualquier información médica o sensible con terceros."
+    },
+    {
+      "pregunta": "¿Cuál es el plazo máximo para notificar una brecha de seguridad en datos estudiantiles?",
+      "opciones": [
+        "24 horas",
+        "72 horas",
+        "15 días hábiles",
+        "30 días hábiles"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 14 sexies",
+      "explicacion": "El Art. 14 sexies establece que el responsable debe notificar a la Agencia de Protección de Datos Personales (APDP) respecto a una brecha de seguridad en un plazo máximo de 72 horas desde que tuvo conocimiento del incidente. A su vez, debe informar a los titulares afectados sin causa indebida."
+    },
+    {
+      "pregunta": "¿Puede un apoderado ejercer el derecho a la supresión de los datos de su hijo menor?",
+      "opciones": [
+        "No, los datos son propiedad exclusiva del establecimiento",
+        "Sí, siempre que los datos ya no sean necesarios para la finalidad para la cual fueron recabados",
+        "Solo si el estudiante tiene más de 18 años",
+        "Solo si el apoderado paga una tarifa administrativa"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 7",
+      "explicacion": "El Art. 7 establece el derecho a la supresión de datos personales. Para estudiantes menores, el apoderado puede ejercer este derecho, salvo obligaciones legales que exijan conservar ciertos datos (expedientes académicos por períodos determinados por ley educacional)."
+    },
+    {
+      "pregunta": "¿Cuándo es obligatorio designar un Delegado de Protección de Datos (DPO) en un establecimiento educativo?",
+      "opciones": [
+        "Siempre, para cualquier colegio o escuela",
+        "Cuando el tratamiento implique monitoreo sistemático a gran escala de estudiantes",
+        "Solo para universidades",
+        "Nunca, es opcional para el sector educativo"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 50",
+      "explicacion": "El Art. 50 establece la obligatoriedad de designar un DPO cuando el tratamiento de datos personales implique vigilancia sistemática o monitoreo a gran escala. En establecimientos con más de 1.000 estudiantes (o en redes de colegios), esto es obligatorio."
+    },
+    {
+      "pregunta": "¿Qué se considera dato sensible en el ámbito educativo?",
+      "opciones": [
+        "Solo el RUT y fecha de nacimiento",
+        "Datos de salud, diagnóstico médico, alergias, orientación sexual, identidad de género, convicciones religiosas y afiliación sindical",
+        "Solo calificaciones y asistencia",
+        "Solo fotografías escolares"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16",
+      "explicacion": "El Art. 16 define los datos sensibles como aquellos que refieren al origen étnico, afiliación política o sindical, convicciones ideológicas o religiosas, y datos de salud, entre otros. En educación, esto incluye diagnóstico de TEA/TDAH, alergias, medicación, y cualquier información médica."
+    },
+    {
+      "pregunta": "¿Puede una plataforma LMS (Google Classroom, Moodle) comercializar datos de estudiantes con terceros?",
+      "opciones": [
+        "Sí, siempre y cuando esté en los términos de uso",
+        "No requiere consentimiento si son datos académicos básicos",
+        "No, requiere consentimiento explícito del apoderado (Art. 16 bis)",
+        "Sí, para fines de marketing educativo"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16 bis, Art. 12",
+      "explicacion": "El Art. 16 bis clasifica los datos de salud y otros sensibles como categorías especialmente protegidas. El Art. 12 exige que el consentimiento sea libre, informado, específico e inequívoco. Comercializar datos de estudiantes para marketing sin consentimiento explícito es una infracción grave."
+    },
+    {
+      "pregunta": "¿Cuál es la sanción máxima por violación de datos de estudiantes bajo la Ley 21.719?",
+      "opciones": [
+        "50 UTM",
+        "100 UTM",
+        "500 UTM",
+        "1.000 a 5.000 UTM (gravisima infracción)",
+        "10.000 UTM"
+      ],
+      "correcta": 3,
+      "articulo_referencia": "Art. 35",
+      "explicacion": "El Art. 35 establece multas de 1 a 5.000 UTM para gravisimas infracciones, y hasta 10.000 UTM para reincidentes o conductas especialmente dolosas. En el caso de datos de estudiantes y vulnerabilidad de menores, las multas pueden estar en el rango superior considerando el daño social y la vulnerabilidad del titular."
+    }
+  ],
+  "puntuacion_aprobacion": 70,
+  "retroalimentacion_final": "Felicidades. Has demostrado conocimientos básicos sobre la protección de datos de estudiantes bajo la Ley 21.719. Revisa los artículos correspondientes si necesitas profundizar en algún concepto específico."
+}

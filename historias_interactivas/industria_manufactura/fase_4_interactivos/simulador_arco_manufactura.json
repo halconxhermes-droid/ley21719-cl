@@ -1,0 +1,93 @@
+{
+  "titulo": "Simulador: Derechos ARCO para Datos de Trabajadores Industriales",
+  "descripcion": "Guía paso a paso para que trabajadores aprendan a ejercer derechos sobre sus datos personales en el contexto industrial bajo Ley 21.719",
+  "pasos": [
+    {
+      "paso": 1,
+      "titulo": "Identificar qué datos del trabajador desea consultar o modificar",
+      "instrucciones": "Selecciona la categoría de datos del trabajador",
+      "opciones": [
+        {"texto": "Datos de identificación y contacto (RUT, dirección, teléfono)", "id": "datos_identificacion", "articulo": "Art. 5"},
+        {"texto": "Registro de turnos y horarios de trabajo", "id": "turnos_horarios", "articulo": "Art. 5"},
+        {"texto": "Datos de salud ocupacional (lesiones, evaluaciones, accidentes)", "id": "salud_ocupacional", "articulo": "Art. 16 bis"},
+        {"texto": "Datos de huella dactilar (biometría) o reconocimiento facial", "id": "biometria", "articulo": "Art. 16 ter"},
+        {"texto": "Evaluaciones de desempeño y capacitación", "id": "desempeno_capacitacion", "articulo": "Art. 5"},
+        {"texto": "Datos de seguridad e higiene en el trabajo", "id": "seguridad_higiene", "articulo": "Art. 5"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 2,
+      "titulo": "Seleccionar el derecho ARCO que desea ejercer",
+      "instrucciones": "¿Qué desea hacer con sus datos en la empresa?",
+      "opciones": [
+        {"texto": "ACCESO: Conocer qué datos tiene la empresa sobre mí", "id": "acceso", "articulo": "Art. 5"},
+        {"texto": "RECTIFICACIÓN: Corregir datos erróneos (horarios, evaluaciones, salarios)", "id": "rectificacion", "articulo": "Art. 6"},
+        {"texto": "SUPRESIÓN: Solicitar eliminación de datos biométricos o sensibles una vez terminado el contrato", "id": "supresion", "articulo": "Art. 7"},
+        {"texto": "OPOSICIÓN: Oponerse a monitoreo excesivo o uso indebido", "id": "oposicion", "articulo": "Art. 8"},
+        {"texto": "PORTABILIDAD: Recibir expediente laboral en formato estructurado", "id": "portabilidad", "articulo": "Art. 9"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 3,
+      "titulo": "Completar información de identificación",
+      "instrucciones": "Ingrese sus datos como trabajador de la empresa",
+      "campos": [
+        {"tipo": "nombre_trabajador", "etiqueta": "Nombre completo del trabajador", "requerido": true},
+        {"tipo": "rut_trabajador", "etiqueta": "RUT del trabajador", "requerido": true},
+        {"tipo": "email_trabajador", "etiqueta": "Correo electrónico de contacto", "requerido": true},
+        {"tipo": "telefono_trabajador", "etiqueta": "Teléfono de contacto", "requerido": false},
+        {"tipo": "empresa", "etiqueta": "Nombre de la empresa manufacturera", "requerido": true},
+        {"tipo": "departamento_cargo", "etiqueta": "Departamento y cargo ocupado", "requerido": true}
+      ]
+    },
+    {
+      "paso": 4,
+      "titulo": "Redactar el requerimiento",
+      "instrucciones": "Describa de forma clara qué solicita y por qué",
+      "textarea": "Ejemplo: Solicito acceso completo a mis registros de turnos y evaluaciones de desempeño del último año para verificar la precisión de mis registros laborales antes de solicitar un crédito. También solicito la rectificación de una evaluación registrada incorrectamente como negativa el 20 de mayo de 2026.",
+      "max_caracteres": 1500,
+      "requerido": true,
+      "plantilla": "SOLICITUD DE EJERCICIO DE DERECHOS ARCO LABORALES\n\nYo, [NOMBRE TRABAJADOR], RUN [RUT], en calidad de trabajador de la empresa [NOMBRE EMPRESA], del departamento [DEPARTAMENTO], con cargo [CARGO], solicito:\n\n□ Derecho de ACCESO (Art. 5)\n□ Derecho de RECTIFICACIÓN (Art. 6)\n□ Derecho de SUPRESIÓN (Art. 7)\n□ Derecho de OPOSICIÓN (Art. 8)\n□ Derecho de PORTABILIDAD (Art. 9)\n\nDetalle de la solicitud:\n[DESCRIPCIÓN]\n\nFecha: [FECHA]\nFirma: _______________\n\nNOTA: Conforme al Art. 14 quinquies de la Ley 21.719, la empresa debe responder dentro de los 30 días hábiles siguientes a la recepción de esta solicitud."
+    },
+    {
+      "paso": 5,
+      "titulo": "Enviar la solicitud a la empresa",
+      "instrucciones": "Elija el medio de envío de su solicitud",
+      "opciones": [
+        {"texto": "Presencial en oficina de Recursos Humanos con copia escrita", "id": "presencial", "plazo": "Inmediato", "recomendado": true},
+        {"texto": "Correo electrónico al DPO (Delegado de Protección de Datos)", "id": "email_dpo", "plazo": "24-48 horas", "recomendado": true},
+        {"texto": "A través del sindicato o delegado gremial (si aplica)", "id": "sindicato", "plazo": "5-7 días hábiles", "recomendado": false},
+        {"texto": "Por carta certificada dirigida al Departamento Legal", "id": "certificada", "plazo": "3-5 días hábiles", "recomendado": false}
+      ],
+      "consejo": "Siempre pida recibo o número de folio de su solicitud. Si la empresa no tiene DPO, envíe al Departamento Legal o Gerencia."
+    }
+  ],
+  "plazos_legales": {
+    "respuesta_empresa": "30 días hábiles",
+    "extension_permitida": "Hasta 60 días hábiles en casos complejos",
+    "silencio_administrativo": "Transcurrido el plazo sin respuesta, puede presentar reclamo ante la APDP o recurrir a la Dirección del Trabajo"
+  },
+  "documentos_soporte": [
+    "Copia de cédula de identidad del trabajador",
+    "Contrato de trabajo vigente o finiquito (si aplicable)",
+    "Liquidaciones de sueldo recientes (para solicitudes de acceso/rectificación)",
+    "Documento que acredite relación laboral actual o pasada"
+  ],
+  "casos_especiales": {
+    "datos_salud_ocupacional": "Requieren consentimiento explícito del Art. 16 bis. Solo el trabajador o su médico tratante pueden acceder",
+    "datos_biometricos": "Consentimiento explícito Art. 16 ter. Al terminar el contrato, puede solicitar eliminación inmediata de la huella dactilar o reconocimiento facial",
+    "monitoreo_electronico": "Si el monitoreo es excesivo o arbitrario, puede ejercer oposición (Art. 8). La empresa debe justificar el monitoreo y limitarlo a finalidades legítimas",
+    "expediente_laboral_completo": "Art. 9 establece derecho a portabilidad: puede solicitar su expediente completo en formato digital estructurado",
+    "termino_relacion_laboral": "Una vez terminado el contrato, puede solicitar supresión de todos los datos que no sean necesarios para obligaciones legales (ej: finiquito, certificados)"
+  },
+  "consejos_importantes": [
+    "Guarde siempre copia de su solicitud y del acuse de recibo",
+    "Si necesita datos urgentes para una operación (ej: crédito, arriendo), indique claramente la urgencia",
+    "Los datos de salud ocupacional son especialmente sensibles: la empresa debe restringir el acceso a personal autorizado (médico del trabajo, prevencionista de riesgos)",
+    "Si la empresa no tiene canal digital, acuda presencialmente con su cédula",
+    "Ante negativa, pida siempre la fundamentación por escrito antes de escalar a la APDP o a la Dirección del Trabajo",
+    "El sindicato o delegado gremial puede acompañarlo en el proceso sin necesidad de representación legal"
+  ]
+}

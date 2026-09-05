@@ -1,0 +1,62 @@
+{
+  "titulo": "Arbol de Decision: Brecha de Seguridad en Datos de Salud",
+  "descripcion": "Guia interactiva para pacientes y funcionarios ante una violacion de datos medicos bajo Ley 21.719",
+  "nodo_raiz": {
+    "id": "raiz",
+    "pregunta": "Sus datos de salud fueron expuestos en una brecha de seguridad?",
+    "opciones": [
+      {
+        "texto": "Soy notificado por la clinica/hospital",
+        "rama": "rama_notificado"
+      },
+      {
+        "texto": "Sospecho que mis datos fueron comprometidos",
+        "rama": "rama_sospecha"
+      },
+      {
+        "texto": "Recibo publicidad medica no solicitada",
+        "rama": "rama_publicidad"
+      }
+    ]
+  },
+  "ramas": {
+    "rama_notificado": {
+      "titulo": "Brecha Notificada",
+      "pasos": [
+        {"paso": 1, "instruccion": "La empresa DEVE NOTIFICAR en 72h (Art. 14 sexies)", "accion": "Verificar recibo de notificacion"},
+        {"paso": 2, "instruccion": "Ejercer Derecho Acceso (Art. 5) para saber datos comprometidos", "accion": "Solicitar informe"},
+        {"paso": 3, "instruccion": "Ejercer Derecho Oposicion (Art. 8) para detener tratamiento", "accion": "Solicitar suspension"},
+        {"paso": 4, "instruccion": "Ejercer Supresion (Art. 7) si ya no son necesarios", "accion": "Solicitar eliminacion"},
+        {"paso": 5, "instruccion": "Denuncia ante APDP si no hay medidas correctivas", "accion": "Presentar denuncia formal"}
+      ]
+    },
+    "rama_sospecha": {
+      "titulo": "Sospecha de Brecha",
+      "pasos": [
+        {"paso": 1, "instruccion": "Solicitar acceso a datos (Art. 5) para verificarlos", "accion": "Presentar solicitud"},
+        {"paso": 2, "instruccion": "Revisar estados de cuenta y alertas medicas inusuales", "accion": "Verificar anomalias"},
+        {"paso": 3, "instruccion": "Notificar anomalia a clinica y APDP", "accion": "Denuncia por vulneracion"}
+      ]
+    },
+    "rama_publicidad": {
+      "titulo": "Publicidad No Deseada",
+      "pasos": [
+        {"paso": 1, "instruccion": "Ejercer Oposicion al tratamiento marketing (Art. 8)", "accion": "Exclusion de listas"},
+        {"paso": 2, "instruccion": "Verificar consentimiento en formularios de admision", "accion": "Revisar autorizacion previa"},
+        {"paso": 3, "instruccion": "Reiterar solicitud de exclusión si persiste", "accion": "Nueva solicitud oposicion"}
+      ]
+    }
+  },
+  "plazos_legales": {
+    "notificacion_empresa": "72 horas despues de detectar brecha",
+    "respuesta_solicitud": "30 dias habiles",
+    "denuncia_apdp": "Inmediato si no hay respuesta administrativa"
+  },
+  "consejos_urgentes": [
+    "Si son datos sensibles, la brecha debe notificarse en 72h",
+    "No compartir credenciales de historias clinicas digitales",
+    "Solicitar certificacion de eliminacion al pedir supresion",
+    "Considerar cambiar de proveedor si hay brechas reiteradas",
+    "Guardar siempre copia de exmenes y diagnosticos"
+  ]
+}

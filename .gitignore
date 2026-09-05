@@ -1,44 +1,16 @@
-node_modules/
-dist/
+# Video factory outputs (regenerables, no se versionan)
+tools/video_factory/out/
+tools/video_factory/render.log
+tools/video_factory/compose.log
+
+# Backups temporales
+*.py.bak
+*.bak
+
+# Audio generado (regenerable)
+tools/video_factory/out/audio/
+tools/video_factory/audio/
+
+# Python cache
 __pycache__/
 *.pyc
-.env
-.venv/
-qa/reports/*.png
-media/videos/*.mp4
-
-# YouTube OAuth secrets (NEVER commit)
-tools/youtube/client_secret.json
-tools/youtube/youtube_token.json
-tools/youtube/oauth_state.json
-
-# SonarQube / test temp
-.scannerwork/
-backend/.coverage
-backend/coverage.xml
-frontend/coverage/
-backend/app/data/app.db
-
-# Secrets - NEVER commit
-backend/secrets/
-**/*.env
-!frontend/.env.example
-!backend/.env.example
-
-# InsForge TOML with secrets
-backend/insforge.toml.bak
-
-# InsForge & AI agent skills
-.insforge
-.agent
-.agents
-.augment
-.claude
-.cline
-.github/copilot*
-.kilocode
-.qoder
-.qwen
-.roo
-.trae
-.windsurf

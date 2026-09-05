@@ -1,0 +1,11 @@
+{
+  "video_filename": "video_1_dpo_15s_minimax_h3-max-turbo_20260905_200643.mp4",
+  "original_prompt": "60s animated explainer about DPO role under Ley 21.719",
+  "adapted_prompt": "Animated explainer video about DPO role under Chile's Ley 21.719. Whiteboard animation. Key text: Appoint DPO Art 50. Spanish subtitles. 9:16 vertical.",
+  "model": "minimax/h3-max-turbo/text-to-video",
+  "duration_seconds": 15,
+  "aspect_ratio": "16:9",
+  "generated_at": "2026-09-05T20:06:45.111686",
+  "fal_url": "https://v3b.fal.media/files/b/0aa93f15/A9NE0g1ATOu61wgDW1lTl_minimax-h3.mp4",
+  "request_id": "01a0732c-b4a5-7f71-9265-754fe5dae4d5"
+}

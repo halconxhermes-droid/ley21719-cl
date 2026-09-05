@@ -1,0 +1,91 @@
+{
+  "titulo": "Simulador: Derechos ARCO para Datos de Estudiantes (Apoderados)",
+  "descripcion": "Guía paso a paso para que apoderados aprendan a ejercer derechos sobre datos personales de sus hijos estudiantes bajo Ley 21.719",
+  "pasos": [
+    {
+      "paso": 1,
+      "titulo": "Identificar qué datos del estudiante desea consultar o modificar",
+      "instrucciones": "Selecciona la categoría de datos del estudiante",
+      "opciones": [
+        {"texto": "Calificaciones y rendimiento académico", "id": "calificaciones", "articulo": "Art. 5"},
+        {"texto": "Registro de asistencia y justificación de inasistencias", "id": "asistencia", "articulo": "Art. 5"},
+        {"texto": "Datos de salud escolar (alergias, medicación, diagnósticos)", "id": "salud", "articulo": "Art. 16 bis"},
+        {"texto": "Fotografías en actividades escolares", "id": "fotografias", "articulo": "Art. 16"},
+        {"texto": "Datos de convivencia escolar y medidas disciplinarias", "id": "convivencia", "articulo": "Art. 5"},
+        {"texto": "Expediente completo del estudiante", "id": "expediente", "articulo": "Art. 5, 6"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 2,
+      "titulo": "Seleccionar el derecho ARCO que desea ejercer",
+      "instrucciones": "¿Qué desea hacer con los datos de su hijo/a?",
+      "opciones": [
+        {"texto": "ACCESO: Conocer qué datos tiene el establecimiento sobre mi hijo/a", "id": "acceso", "articulo": "Art. 5"},
+        {"texto": "RECTIFICACIÓN: Corregir datos inexactos o desactualizados", "id": "rectificacion", "articulo": "Art. 6"},
+        {"texto": "SUPRESIÓN: Solicitar eliminación de datos que ya no son necesarios", "id": "supresion", "articulo": "Art. 7"},
+        {"texto": "OPOSICIÓN: Exigir que cesen tratamientos (ej: marketing educativo)", "id": "oposicion", "articulo": "Art. 8"},
+        {"texto": "PORTABILIDAD: Recibir copia de datos para cambiar de establecimiento", "id": "portabilidad", "articulo": "Art. 9"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 3,
+      "titulo": "Completar información de identificación",
+      "instrucciones": "Ingrese sus datos como representante legal del estudiante",
+      "campos": [
+        {"tipo": "nombre_apoderado", "etiqueta": "Nombre completo del apoderado", "requerido": true},
+        {"tipo": "rut_apoderado", "etiqueta": "RUT del apoderado", "requerido": true},
+        {"tipo": "email_apoderado", "etiqueta": "Correo electrónico de contacto", "requerido": true},
+        {"tipo": "telefono_apoderado", "etiqueta": "Teléfono de contacto", "requerido": false},
+        {"tipo": "nombre_estudiante", "etiqueta": "Nombre completo del estudiante", "requerido": true},
+        {"tipo": "rut_estudiante", "etiqueta": "RUT del estudiante", "requerido": true},
+        {"tipo": "curso_actual", "etiqueta": "Curso actual del estudiante", "requerido": true}
+      ]
+    },
+    {
+      "paso": 4,
+      "titulo": "Redactar el requerimiento",
+      "instrucciones": "Describa de forma clara qué solicita y por qué",
+      "textarea": "Ejemplo: Solicito acceso completo al expediente académico de mi hijo/a [NOMBRE] (RUT [XXX]) para verificar sus calificaciones del primer semestre 2026. También solicito copia de cualquier informe psicopedagógico elaborado por el equipo PIE.",
+      "max_caracteres": 1500,
+      "requerido": true,
+      "plantilla": "SOLICITUD DE EJERCICIO DE DERECHOS ARCO\n\nYo, [NOMBRE APODERADO], RUN [RUT], en calidad de padre/madre/apoderado legal del estudiante [NOMBRE ESTUDIANTE], RUN [RUT ESTUDIANTE], del curso [CURSO], solicito:\n\n□ Derecho de ACCESO (Art. 5)\n□ Derecho de RECTIFICACIÓN (Art. 6)\n□ Derecho de SUPRESIÓN (Art. 7)\n□ Derecho de OPOSICIÓN (Art. 8)\n□ Derecho de PORTABILIDAD (Art. 9)\n\nDetalle de la solicitud:\n[DESCRIPCIÓN]\n\nFecha: [FECHA]\nFirma: _______________"
+    },
+    {
+      "paso": 5,
+      "titulo": "Enviar la solicitud al establecimiento educativo",
+      "instrucciones": "Elija el medio de envío de su solicitud",
+      "opciones": [
+        {"texto": "Presencial en oficina de partes del establecimiento", "id": "presencial", "plazo": "Inmediato", "recomendado": true},
+        {"texto": "Correo electrónico oficial del establecimiento", "id": "email", "plazo": "24-48 horas", "recomendado": false},
+        {"texto": "Carta certificada dirigida al director/a", "id": "certificada", "plazo": "3-5 días hábiles", "recomendado": false}
+      ],
+      "consejo": "Siempre pida recibo o número de folio de su solicitud"
+    }
+  ],
+  "plazos_legales": {
+    "respuesta_establecimiento": "30 días hábiles",
+    "extension_permitida": "Hasta 60 días hábiles en casos complejos",
+    "silencio_administrativo": "Transcurrido el plazo sin respuesta, puede presentar reclamo ante la APDP"
+  },
+  "documentos_soporte": [
+    "Copia de cédula de identidad del apoderado",
+    "Certificado de alumno regular del estudiante",
+    "Documento que acredite calidad de apoderado (firmado por ambos padres)",
+    "En caso de supresión: Justificación de por qué los datos ya no son necesarios"
+  ],
+  "casos_especiales": {
+    "menores_14_anos": "El representante legal ejerce los derechos en nombre del menor",
+    "estudiantes_14_18_anos": "El estudiante puede ejercer sus derechos directamente, pero el apoderado también puede hacerlo",
+    "datos_salud": "Requieren consentimiento expreso del representante legal (Art. 16 bis)",
+    "datos_sensible_sin_consentimiento": "Puede solicitar supresión inmediata si fueron recabados sin base legal"
+  },
+  "consejos_importantes": [
+    "Guarde siempre copia de su solicitud y del acuse de recibo",
+    "Si necesita urgencia (ej: dato de salud que pone en riesgo al estudiante), indique claramente la urgencia",
+    "Los datos de salud mental o evaluaciones psicopedagógicas son especialmente sensibles: puede solicitar máxima confidencialidad",
+    "Si el establecimiento no tiene canal digital, acuda presencialmente con su cédula",
+    "Ante negativa, pida siempre la fundamentación por escrito antes de escalar a la APDP"
+  ]
+}

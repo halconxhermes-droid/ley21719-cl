@@ -1,0 +1,92 @@
+{
+  "titulo": "Quiz: Conocimientos sobre Protección de Datos en el Sector Manufacturero",
+  "descripcion": "Evaluación formativa sobre la Ley 21.719 aplicada al sector manufacturero chileno. 7 preguntas de elección múltiple con fundamentación legal y casos reales de industria.",
+  "preguntas": [
+    {
+      "pregunta": "¿Puede una empresa manufacturera usar datos biométricos (huella dactilar) para control de acceso sin consentimiento?",
+      "opciones": [
+        "Sí, es parte de las condiciones de trabajo estándar",
+        "No, requiere consentimiento explícito del trabajador por escrito (Art. 16 ter)",
+        "Solo si es para seguridad de la planta",
+        "Nunca, los datos biométricos están prohibidos"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16 ter",
+      "explicacion": "El Art. 16 ter establece que los datos biométricos requieren consentimiento explícito del titular. En el sector manufacturero, el uso de huella dactilar o reconocimiento facial para control de acceso debe contar con consentimiento informado y específico del trabajador."
+    },
+    {
+      "pregunta": "¿Cuál es el plazo máximo para notificar una brecha de seguridad en datos de trabajadores?",
+      "opciones": [
+        "24 horas",
+        "72 horas",
+        "15 días hábiles",
+        "30 días hábiles"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 14 sexies",
+      "explicacion": "El Art. 14 sexies establece que el responsable debe notificar a la APDP en un plazo máximo de 72 horas desde que tuvo conocimiento del incidente de seguridad que afectó datos personales."
+    },
+    {
+      "pregunta": "¿Puede un trabajador ejercer el derecho a la portabilidad de sus datos laborales al cambiar de empresa?",
+      "opciones": [
+        "No, los datos son propiedad exclusiva de la empresa",
+        "Sí, en formato digital estructurado (CSV, JSON) solicitando a la empresa",
+        "Solo parcial, solo el certificado de trabajo",
+        "Solo si la empresa acepta voluntariamente"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 9",
+      "explicacion": "El Art. 9 establece el Derecho a la Portabilidad: el trabajador puede solicitar y recibir una copia de sus datos personales en un formato electrónico estructurado. La empresa debe entregarlos en 30 días hábiles."
+    },
+    {
+      "pregunta": "¿En qué caso es OBLIGATORIO designar un DPO en una empresa manufacturera?",
+      "opgenos": [
+        "Siempre, para cualquier empresa industrial",
+        "Cuando tiene más de 500 trabajadores o implementa IIoT a gran escala",
+        "Solo para empresas exportadoras",
+        "Nunca, es opcional para el sector manufacturero"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 50",
+      "explicacion": "El Art. 50 establece la obligatoriedad de designar un DPO cuando el tratamiento de datos personales implique vigilancia sistemática o monitoreo a gran escala. Empresas manufactureras con más de 500 trabajadores o que implementan sistemas IIoT deben tener DPO designado."
+    },
+    {
+      "pregunta": "¿Qué tipo de datos se consideran 'sensibles' en el sector manufacturero bajo la Ley 21.719?",
+      "opciones": [
+        "Solo RUT y número de empleado",
+        "Datos de salud ocupacional (lesiones, evaluaciones), datos biométricos (huella, reconocimiento facial), origen étnico",
+        "Solo turnos y horarios de trabajo",
+        "Solo evaluaciones de desempeño"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16",
+      "explicacion": "El Art. 16 define los datos sensibles como aquellos que refieren al origen étnico, afiliación política o sindical, convicciones ideológicas o religiosas, y datos de salud. En manufactura, esto incluye: datos de salud ocupacional para prevención de riesgos, datos biométricos para control de acceso, y afiliación sindical."
+    },
+    {
+      "pregunta": "¿Puede una empresa manufacturera compartir datos de lesiones laborales con terceros sin consentimiento?",
+      "opciones": [
+        "Sí, para estadísticas de seguridad",
+        "No, los datos de salud ocupacional requieren consentimiento explícito (Art. 16 bis)",
+        "Solo si es para prevenir futuros accidentes",
+        "Sí, si la mutuelle lo solicita"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16 bis",
+      "explicacion": "El Art. 16 bis establece que los datos de salud requieren consentimiento explícito del titular para su tratamiento. Los datos de lesiones laborales son datos de salud ocupacional y no pueden compartirse con terceros (mutuelle, aseguradoras, otras empresas) sin consentimiento específico del trabajador."
+    },
+    {
+      "pregunta": "¿Cuál es la sanción máxima por violación de datos de trabajadores bajo la Ley 21.719?",
+      "opciones": [
+        "100 UTM",
+        "500 UTM",
+        "1.000 UTM",
+        "5.000 UTM"
+      ],
+      "correcta": 3,
+      "articulo_referencia": "Art. 35",
+      "explicacion": "El Art. 35 establece multas de 1 a 5.000 UTM para gravisimas infracciones. En el sector manufacturero, las violaciones de datos sensibles de trabajadores (salud ocupacional, biometría) pueden sancionarse en el rango de 500-1.000 UTM, pudiendo llegar a 5.000 UTM reincidentes o casos de daño grave. 1 UTM ≈ $33.289 CLP (2026)."
+    }
+  ],
+  "puntuacion_aprobacion": 70,
+  "retroalimentacion_final": "Felicidades. Has demostrado conocimientos básicos sobre la protección de datos de trabajadores en el sector manufacturero bajo la Ley 21.719. Revisa los artículos correspondientes si necesitas profundizar en algún concepto específico."
+}

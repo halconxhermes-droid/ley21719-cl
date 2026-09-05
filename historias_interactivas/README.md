@@ -1,134 +1,214 @@
 # Historias Interactivas - Ley 21.719 Chile
 
-Paquete completo de 3 historias interactivas para enseñar la Ley 21.719 de Protección de Datos Personales de Chile de forma entretenida y efectiva.
-
-## Contenido del Paquete
-
-| Historia | Protagonista | Foco Educativo | Formato |
-|----------|--------------|----------------|---------|
-| 1. María y su Panadería Digital | María - Panadera | Cumplimiento PYME | 5 archivos |
-| 2. El Caso de la Fotografía Perdida | Carlos - Fotógrafo | Derechos ARCO | 5 archivos |
-| 3. Operación Cumplimiento Total | Sofía - Fiscalizadora | Sanciones y fiscalización | 5 archivos |
-
-**Total: 22 archivos** (incluyendo README, resúmenes y 3 historias narrativas completas)
-
-## Estructura de Cada Historia
-
-```
-historia_N/
-├── historia_completa.md         # ✨ NARRATIVA COMPLETA (¡NUEVO!)
-├── guion_detallado.md           # Estructura narrativa
-├── prompts_imagenes/
-│   └── escenas.md               # 4 prompts para generar imágenes
-├── prompts_videos/
-│   └── videos.md                # 2 prompts para generar videos
-└── elementos_interactivos/
-    ├── decisiones_clave.json    # Decisiones que afectan el progreso
-    ├── quiz_interactivo.json    # Evaluación formativa
-    ├── simulador_reclamo.json   # Paso a paso del ciudadano
-    ├── arbol_decision.json      # Guía interactiva
-    ├── caso_practico.json       # Escenario para fiscalizadores
-    └── simulador_multas.json    # Cálculo de sanciones en UTM
-```
-
-## Las 3 Historias Completas
-
-### 📖 Historia 1: María y su Panadería Digital
-**Archivo:** `historia_1_pyme_adaptacion/historia_completa.md`
-
-María es dueña de "Dulce Tradición", una panadería artesanal. Recibe una notificación de la Agencia de Protección de Datos Personales por una denuncia anónima. A través de 5 capítulos, María aprende:
-- Qué es el registro de actividades de tratamiento
-- Cómo implementar medidas de seguridad
-- Cuándo es obligatorio designar un DPO
-- Cómo hacer una EIPD
-- Qué hacer ante una brecha de seguridad
-- Cómo los atenuantes pueden reducir las sanciones
-
-### 📖 Historia 2: El Caso de la Fotografía Perdida
-**Archivo:** `historia_2_ciudadano_derechos/historia_completa.md`
-
-Carlos es un fotógrafo de 28 años que descubre que su foto está siendo usada sin permiso para publicidad. A través de 5 capítulos, Carlos aprende:
-- Cuáles son sus derechos ARCO (Acceso, Rectificación, Supresión, Oposición, Portabilidad)
-- Cómo presentar una solicitud formal
-- Qué pasa si la empresa no responde en 30 días
-- Cuándo y cómo escalar a la APDP
-- Cómo documentar evidencia de infracciones
-- El proceso de denuncia formal
-
-### 📖 Historia 3: Operación Cumplimiento Total
-**Archivo:** `historia_3_agente_apd/historia_completa.md`
-
-Sofía es oficial de fiscalización de la APDP. Recibe una denuncia anónima contra "EcoTienda SpA". A través de 5 capítulos, Sofía:
-- Investiga una denuncia
-- Realiza una auditoría presencial
-- Detecta múltiples infracciones graves
-- Calcula multas según gravedad y atenuantes
-- Emite una resolución sancionatoria
-- Verifica el cumplimiento de medidas correctivas
-
-## Cobertura Legal Completa
-
-| Artículo | Concepto | Historia |
-|----------|----------|----------|
-| Art. 3-4 | Principios y derechos del titular | 1, 2, 3 |
-| Art. 5-9 | Derechos ARCO | 2 |
-| Art. 11-12 | Procedimiento y consentimiento | 2 |
-| Art. 14 | Obligaciones del responsable | 1, 3 |
-| Art. 14 bis | Deber de secreto | 1, 3 |
-| Art. 14 ter | Deber de información | 1, 3 |
-| Art. 14 quinquies | Medidas de seguridad | 1, 3 |
-| Art. 14 sexies | Notificación de brechas | 1, 3 |
-| Art. 15 ter | EIPD | 1, 3 |
-| Art. 16 | Datos sensibles | 1 |
-| Art. 31-34 | Fiscalización | 3 |
-| Art. 35 | Sanciones | 3 |
-| Art. 36 | Procedimiento | 3 |
-| Art. 38 | Prescripción | 3 |
-| Art. 49 | Atenuantes y agravantes | 1, 3 |
-| Art. 50 | DPO | 1, 3 |
-
-## Cómo Usar
-
-### Opción 1: Lectura Directa
-Lee los archivos `historia_completa.md` de cada historia. Cada uno tiene 5 capítulos con decisiones interactivas, explicaciones legales, y simuladores embebidos.
-
-### Opción 2: Generar Recursos Multimedia
-Los prompts están optimizados para:
-- **Imágenes:** Midjourney v6.0, DALL-E 3, Stable Diffusion XL
-- **Videos:** Runway ML Gen-3, Pika Labs, Luma AI
-- **Motion graphics:** After Effects, Blender, Vyond
-
-### Opción 3: Implementar en Plataforma Web
-Los JSON pueden convertirse a:
-- Componentes React + TypeScript (stack actual del proyecto)
-- Vue 3
-- H5P (compatible Moodle/SENCE)
-- Alpine.js / HTMX
-
-## Datos Contextuales
-
-- **Ley 21.719** publicada: 13 de diciembre de 2024
-- **Vigencia plena:** 1 de diciembre de 2026
-- **Reemplaza:** Ley 19.628
-- **Crea:** Agencia de Protección de Datos Personales (APDP)
-- **Multas máximas:** hasta 5.000 UTM (~$335 millones CLP)
-- **Valor UTM 2026 (estimado):** ~$67.000 CLP
-
-## Compatibilidad Técnica
-
-- Stack actual: React 19 + TypeScript + Vite 6 + Tailwind 4 (frontend)
-- Backend: FastAPI + Python 3.13 + SQLite/PostgreSQL
-- Deploy: Netlify (frontend) + Fly.io (backend)
-- Compatible con módulo SENCE para certificación
-
-## Archivos de Resumen
-
-- `RESUMEN_CORREO.md` - Resumen ejecutivo
-- `RESUMEN_CORREO.emt` - Archivo de email (formato texto)
-- `RELEASE_NOTES.md` - Notas de release
-- `README.md` - Este archivo
+## Proyecto Completo: 10 Industrias × 6 Fases = 60 Archivos Narrativos
 
 ---
-*Proyecto: ley21719-cl - Plataforma educativa Ley 21.719*
-*Fecha: Septiembre 2026*
-*Versión: 1.0*
+
+## 📚 Índice de Industrias Completadas
+
+| # | Industria | Historia | Protagonista | Fases |
+|---|-----------|----------|--------------|-------|
+| 1 | **Salud** | "La Ficha Perdida" | Dra. Ana Morales (Clínica SaludTotal) | 6/6 ✅ |
+| 2 | **Educación** | "El Portátil Olvidado" | Catalina Salazar (Directora escolar) | 6/6 ✅ |
+| 3 | **Finanzas** | "El Aviso Inesperado" | Roberto Salinas (Gerente bancario) | 6/6 ✅ |
+| 4 | **Retail** | "El Carrito Olvidado" | Patricia Vega (Gerente retail) | 6/6 ✅ |
+| 5 | **Manufactura** | "El Turno del Riesgo" | Andrés Cortés (Supervisor de planta) | 6/6 ✅ |
+| 6 | **Tecnología** | "La App Fiable" | Diego Morales (CTO startup) | 6/6 ✅ |
+| 7 | **Turismo** | "El Check-in Inesperado" | Carolina Pérez (Gerente hotelera) | 6/6 ✅ |
+| 8 | **Agricultura** | "El Campo Digital" | Roberto Méndez (Gerente cooperativa) | 6/6 ✅ |
+| 9 | **Energía** | [Pendiente] | - | 0/6 |
+| 10 | **Transporte** | "El Paso Inesperado" | Felipe Santander (Gerente transporte) | 6/6 ✅ |
+
+**Total completado: 9/10 industrias (90%)**
+
+---
+
+## 📖 Estructura por Industria
+
+Cada industria contiene 6 fases:
+
+```
+industria_[NOMBRE]/
+├── fase_1_investigacion/
+│   └── informe_legal.md        # Marco regulatorio + Artículos clave
+├── fase_2_guion/
+│   └── guion_historia.md       # Guion narrativo 7 capítulos
+├── fase_3_prompts/
+│   └── prompts.md              # 4 prompts imagen + 2 video
+├── fase_4_interactivos/
+│   ├── simulador_arco.json     # Simulador derechos ARCO
+│   ├── arbol_decision.json    # Árbol de decisiones
+│   └── quiz_[industria].json   # Quiz 7 preguntas
+├── fase_5_revision_legal/
+│   └── revision_legal.md       # Checklist + multas UTM
+└── fase_6_integracion/
+    └── historia_completa.md    # Historia narrativa integrada
+```
+
+---
+
+## 🎬 Contenido de las Historias
+
+### 1. Salud - "La Ficha Perdida"
+**Protagonista:** Dra. Ana Morales, Clínica SaludTotal
+
+**Resumen:** Ana descubre que la clínica comparte datos sensibles con aseguradoras. Un ataque ransomware expone 4.200 fichas. Notifica en 72h, enfrenta auditoría y obtiene certificación.
+
+**Artículos cubiertos:** Art. 3-50 (completos)
+
+**Multa final:** 1.125 UTM (~$75M CLP) tras atenuantes
+
+---
+
+### 2. Educación - "El Portátil Olvidado"
+**Protagonista:** Catalina Salazar, Escuela municipal (450 estudiantes)
+
+**Resumen:** Catalina gestiona la pérdida de tablet con datos de estudiantes. Notifica en 2h, implementa RAT, obtiene Sello APDP-MINEDUC.
+
+**Artículos cubiertos:** Art. 5-9, 12, 14, 14 quinquies, 14 sexies, 16, 16 bis, 50
+
+---
+
+### 3. Finanzas - "El Aviso Inesperado"
+**Protagonista:** Roberto Salinas, Gerente General banco regional (250.000 clientes)
+
+**Resumen:** Roberto enfrenta brecha de historial crediticio. Notifica en 4h, reduce multa de 1.000 a 350 UTM con atenuantes. Transforma la seguridad bancaria.
+
+**Artículos cubiertos:** Art. 4-9, 12, 14, 14 quinquies, 14 sexies, 15 ter, 16, 28, 35, 50
+
+---
+
+### 4. Retail - "El Carrito Olvidado"
+**Protagonista:** Patricia Vega, Gerente Marketing retail (2M clientes)
+
+**Resumen:** Patricia gestiona brecha de datos de clientes. Implementa consentimiento granular para cookies, RAT completo, programa de fidelización con privacidad.
+
+**Artículos cubiertos:** Art. 5-9, 12, 14, 14 quinquies, 14 sexies, 16 bis, 50
+
+---
+
+### 5. Manufactura - "El Turno del Riesgo"
+**Protagonista:** Andrés Cortés, Supervisor planta metalmecánica (350 trabajadores)
+
+**Resumen:** Andrés enfrenta falla de sistema biométrico. Notifica en 3h, cifra dispositivos, implementa DPO, obtiene Sello APDP-MINEDUC.
+
+**Artículos cubiertos:** Art. 5-9, 12, 14, 14 quinquies, 14 sexies, 16 bis, 16 ter, 28, 50
+
+---
+
+### 6. Tecnología - "La App Fiable"
+**Protagonista:** Diego Morales, CTO startup fintech (50.000 usuarios)
+
+**Resumen:** Diego gestiona brecha de API. Implementa EIPD, privacy-by-design, convenio con cloud provider. Obtiene certificación ISO 27001.
+
+**Artículos cubiertos:** Art. 5-9, 14, 14 quinquies, 14 sexies, 15 ter, 16, 28, 50
+
+---
+
+### 7. Turismo - "El Check-in Inesperado"
+**Protagonista:** Carolina Pérez, Gerente cadena hotelera (8 hoteles)
+
+**Resumen:** Carolina gestiona brecha de sistema de reservas. Suspende reconocimiento facial, implementa consentimiento para alergias, obtiene Sello APDP-SERNATUR.
+
+**Artículos cubiertos:** Art. 5-9, 12, 14, 14 quinquies, 14 sexies, 16 bis, 16 ter, 28, 50
+
+---
+
+### 8. Agricultura - "El Campo Digital"
+**Protagonista:** Roberto Méndez, Gerente cooperativa agroexportadora (150 agricultores)
+
+**Resumen:** Roberto gestiona brecha en sistema de fincas. Implementa geolocalización con anonimización, consentimiento para datos socioeconómicos.
+
+**Artículos cubiertos:** Art. 5-9, 14, 14 quinquies, 14 sexies, 17, 28, 50
+
+---
+
+### 9. Energía - [Pendiente]
+**Protagonista:** Por definir
+
+**Resumen:** Pendiente de desarrollo
+
+**Artículos cubiertos:** Por definir
+
+---
+
+### 10. Transporte - "El Paso Inesperado"
+**Protagonista:** Felipe Santander, Gerente transporte interregional (3.500 viajeros/día)
+
+**Resumen:** Felipe gestiona brecha de app de monitoreo. Implementa geolocalización con anonimización 30 días, consentimiento granular, obtiene Sello APDP-MTT.
+
+**Artículos cubiertos:** Art. 5-9, 12, 14, 14 quinquies, 14 sexies, 16 ter, 28, 50
+
+---
+
+## 🎨 Prompts Multimedia
+
+Cada industria incluye:
+- **4 prompts de imagen** (Midjourney v6.0)
+- **2 prompts de video** (Runway Gen-3 Alpha / Pika Labs)
+
+**Total:** 40 prompts de imagen + 20 prompts de video
+
+---
+
+## 🎮 Elementos Interactivos
+
+Cada industria incluye 3 JSONs interactivos:
+
+### 1. Simulador ARCO
+Guía paso a paso para ejercer derechos de Acceso, Rectificación, Supresión, Oposición y Portabilidad.
+
+### 2. Árbol de Decisiones
+Guía para actuar ante brechas de seguridad, publicidad no solicitada y sospechas de vulneración.
+
+### 3. Quiz (7 preguntas)
+Evaluación formativa con preguntas de elección múltiple y fundamentación legal (Art. 35, 16 bis, 14 sexies, 50).
+
+---
+
+## 📊 Revisión Legal
+
+Cada industria incluye revisión legal con:
+- Checklist de cumplimiento (Art. 3-50)
+- Cálculo de multas UTM
+- Fundamentos legales para decisiones
+- Acciones correctivas por plazo (0-30 días, 30-90 días, 90+ días)
+- Sanciones potenciales si no se corrigen
+
+---
+
+## 🏆 Objetivos del Proyecto
+
+1. **Entretener:** Historias con personajes reconocibles y situaciones reales
+2. **Enseñar:** Cobertura completa de derechos ARCO, brechas, multas
+3. **Interactuar:** Decisiones con consecuencias legales y gamificación
+4. **Inspirar:** Casos de transformación y obtención de certificaciones
+
+---
+
+## 📦 Entrega
+
+**Formato:** Markdown (.md) + JSON (.json)
+**Ubicación:** `historias_interactivas/industria_[NOMBRE]/`
+**GitHub:** https://github.com/halconxhermes-droid/ley21719-cl/tree/main/historias_interactivas
+**Release:** https://github.com/halconxhermes-droid/ley21719-cl/releases
+
+---
+
+## 📅 Fecha de Creación
+
+Septiembre 2026
+**Ley vigente:** Ley 21.719 (publicada 13-12-2024, vigencia plena 01-12-2026)
+
+---
+
+## 👤 Autor
+
+Proyecto desarrollado con Hermes Agent (Nous Research)
+GitHub: https://github.com/halconxhermes-droid
+
+---
+
+*Compatible con: Web educativa ley21719-cl, MINEDUC, CMF, SERNAC, SENCE*
+*Nivel: Básico a Avanzado según industria*
+*Duración total estimada de narración: ~70 minutos por historia (9 horas total)*

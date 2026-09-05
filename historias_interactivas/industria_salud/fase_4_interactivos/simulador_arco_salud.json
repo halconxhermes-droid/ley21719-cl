@@ -1,0 +1,78 @@
+{
+  "titulo": "Simulador: Derechos ARCO para Datos de Salud",
+  "descripcion": "Simulador paso a paso para que pacientes y profesionales aprendan a ejercer derechos sobre datos médicos personales bajo Ley 21.719",
+  "pasos": [
+    {
+      "paso": 1,
+      "titulo": "Identificar el tipo de dato médico",
+      "instrucciones": "Selecciona que categoria de datos de salud solicitas",
+      "opciones": [
+        {"texto": "Ficha clinica electronica", "id": "ficha_clinica", "descripcion": "Historial medico, diagnosticos, tratamientos previos"},
+        {"texto": "Resultados de examenes y laboratorios", "id": "examenes", "descripcion": "Analisis de sangre, orina, imagenologia"},
+        {"texto": "Datos biometricos", "id": "biometricos", "descripcion": "Huella dactilar, reconocimiento facial"},
+        {"texto": "Consultas y diagnosticos", "id": "diagnostico", "descripcion": "Diagnosticos realizados por profesionales"},
+        {"texto": "Historia clinica completa", "id": "historia", "descripcion": "Registro completo de todas las atenciones"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 2,
+      "titulo": "Seleccionar el derecho a ejercer",
+      "instrucciones": "Elige cual derecho ARCO deseas ejercer",
+      "opciones": [
+        {"texto": "Derecho de Acceso (Art. 5)", "id": "acceso", "descripcion": "Saber que datos tienen sobre mi estado de salud"},
+        {"texto": "Derecho de Rectificacion (Art. 6)", "id": "rectificacion", "descripcion": "Corregir datos inexactos en mi ficha clinica"},
+        {"texto": "Derecho de Supresion (Art. 7)", "id": "supresion", "descripcion": "Eliminar mis datos personales de salud"},
+        {"texto": "Derecho de Oposicion (Art. 8)", "id": "oposicion", "descripcion": "Oponerme al tratamiento para marketing"},
+        {"texto": "Derecho de Portabilidad (Art. 9)", "id": "portabilidad", "descripcion": "Recibir datos en formato digital"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 3,
+      "titulo": "Completar informacion personal",
+      "instrucciones": "Ingresa tus datos para identificarte como titular",
+      "campos": [
+        {"tipo": "nombre", "etiqueta": "Tu nombre completo", "requerido": true},
+        {"tipo": "email", "etiqueta": "Tu correo electronico de contacto", "requerido": true},
+        {"tipo": "identificacion", "etiqueta": "RUT u otro documento de identidad", "requerido": true},
+        {"tipo": "establecimiento", "etiqueta": "Clinica o hospital donde fuiste atendido", "requerido": false}
+      ]
+    },
+    {
+      "paso": 4,
+      "titulo": "Describir el caso",
+      "instrucciones": "Describe que datos de salud estan siendo tratados indebidamente",
+      "textarea": "Ejemplo: Mis datos de laboratorio fueron compartidos con una empresa de seguros sin mi consentimiento.",
+      "max_caracteres": 1000,
+      "requerido": true
+    },
+    {
+      "paso": 5,
+      "titulo": "Seleccionar canal de envio",
+      "instrucciones": "Elige como enviaras tu solicitud formal",
+      "opciones": [
+        {"texto": "Formulario web oficial APDP", "id": "formulario_web", "plazo": "Inmediato"},
+        {"texto": "Correo electronico a solicitudes@apdpchile.gob.cl", "id": "correo_electronico", "plazo": "24-48 horas"},
+        {"texto": "Carta fisica dirigida a la Agencia", "id": "carta_fisica", "plazo": "3-5 dias habiles"}
+      ]
+    }
+  ],
+  "plazos_legales": {
+    "respuesta_esperada": "30 dias habiles",
+    "extension_posible": "Hasta 60 dias habiles en casos complejos",
+    "consecuencia_silencio": "Puedes interponer recurso ante el juez de letras o denunciar ante la APDP"
+  },
+  "resultados_posibles": {
+    "exito": "La clinica debe responder y atender tu solicitud dentro del plazo legal",
+    "rechazo": "Si rechazan, deben fundamentarlo por escrito y puedes escalar a la APDP",
+    "silencio_administrativo": "Si no responde en 30 dias, denuncia ante el tribunal competente"
+  },
+  "consejos_medicos": [
+    "Solicita siempre un recibo o confirmacion de tu solicitud",
+    "Si los datos son sensibles (salud), prioriza el Derecho de Supresion (Art. 7)",
+    "Si quieres cambiar de clinica, usa el Derecho de Portabilidad (Art. 9)",
+    "Si la clinica no tiene base legal para tus datos, ejercita el Derecho de Oposicion (Art. 8)",
+    "Conserva siempre copias de tus solicitudes y respuestas medicas"
+  ]
+}

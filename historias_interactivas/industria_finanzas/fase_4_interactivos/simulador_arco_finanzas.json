@@ -1,0 +1,90 @@
+{
+  "titulo": "Simulador: Derechos ARCO para Datos Financieros",
+  "descripcion": "Guía paso a paso para que clientes bancarios aprendan a ejercer derechos sobre sus datos personales bajo Ley 21.719",
+  "pasos": [
+    {
+      "paso": 1,
+      "titulo": "Identificar qué datos financieros desea consultar o modificar",
+      "instrucciones": "Selecciona la categoría de datos financieros",
+      "opciones": [
+        {"texto": "Historial crediticio y deudas", "id": "historico_crediticio", "articulo": "Art. 5"},
+        {"texto": "Ingresos y declaraciones de renta", "id": "ingresos", "articulo": "Art. 5"},
+        {"texto": "Historial de transacciones últimos 12 meses", "id": "transacciones", "articulo": "Art. 5"},
+        {"texto": "Datos de tarjetas de crédito (últimos 4 dígitos)", "id": "tarjetas", "articulo": "Art. 16"},
+        {"texto": "Perfil de riesgo y scoring", "id": "perfil_riesgo", "articulo": "Art. 16 bis"},
+        {"texto": "Consultas realizadas en los últimos 12 meses", "id": "consultas", "articulo": "Art. 5"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 2,
+      "titulo": "Seleccionar el derecho ARCO que desea ejercer",
+      "instrucciones": "¿Qué desea hacer con sus datos financieros?",
+      "opciones": [
+        {"texto": "ACCESO: Conocer qué datos tiene el banco sobre mí", "id": "acceso", "articulo": "Art. 5"},
+        {"texto": "RECTIFICACIÓN: Corregir datos erróneos en mi historial", "id": "rectificacion", "articulo": "Art. 6"},
+        {"texto": "SUPRESIÓN: Solicitar eliminación de datos que ya no son necesarios", "id": "supresion", "articulo": "Art. 7"},
+        {"texto": "OPOSICIÓN: Exigir que cesen tratamientos (ej: ofertas no solicitadas)", "id": "oposicion", "articulo": "Art. 8"},
+        {"texto": "PORTABILIDAD: Recibir datos para cambiar de banco", "id": "portabilidad", "articulo": "Art. 9"}
+      ],
+      "requerido": true
+    },
+    {
+      "paso": 3,
+      "titulo": "Completar información de identificación",
+      "instrucciones": "Ingrese sus datos como titular de productos financieros",
+      "campos": [
+        {"tipo": "nombre_titular", "etiqueta": "Nombre completo del titular", "requerido": true},
+        {"tipo": "rut_titular", "etiqueta": "RUT del titular", "requerido": true},
+        {"tipo": "email_titular", "etiqueta": "Correo electrónico bancario", "requerido": true},
+        {"tipo": "producto_bancario", "etiqueta": "Producto(s) bancario(s) contratados", "requerido": true},
+        {"tipo": "tipo_identificacion", "etiqueta": "Tipo de documento (Cédula/RUT)", "requerido": true}
+      ]
+    },
+    {
+      "paso": 4,
+      "titulo": "Redactar el requerimiento",
+      "instrucciones": "Describa de forma clara qué solicita y por qué",
+      "textarea": "Ejemplo: Solicito acceso completo a mi historial crediticio y datos de transacciones del último año para verificar la precisión de mis registros antes de solicitar una hipoteca. También solicito la rectificación de una transacción incorrectamente registrada como mora el 15 de mayo de 2026.",
+      "max_caracteres": 2000,
+      "requerido": true,
+      "plantilla": "SOLICITUD DE EJERCICIO DE DERECHOS ARCO FINANCIEROS\n\nYo, [NOMBRE TITULAR], RUN [RUT], en calidad de titular de los siguientes productos bancarios: [LISTA], solicito:\n\n□ Derecho de ACCESO (Art. 5)\n□ Derecho de RECTIFICACIÓN (Art. 6)\n□ Derecho de SUPRESIÓN (Art. 7)\n□ Derecho de OPOSICIÓN (Art. 8)\n□ Derecho de PORTABILIDAD (Art. 9)\n\nDetalle de la solicitud:\n[DESCRIPCIÓN]\n\nFecha: [FECHA]\nFirma: _______________\nProducto afectado: [NOMBRE PRODUCTO]"    },
+    {
+      "paso": 5,
+      "titulo": "Enviar la solicitud a la institución financiera",
+      "instrucciones": "Elija el medio de envío de su solicitud",
+      "opciones": [
+        {"texto": "Formulario web seguro del banco", "id": "formulario_web", "plazo": "24-48 horas", "recomendado": true},
+        {"texto": "Correo electrónico oficial al DPO del banco", "id": "email_dpo", "plazo": "24-48 horas", "recomendado": false},
+        {"texto": "Presencial en oficina con turno previo", "id": "presencial_banco", "plazo": "Inmediato", "recomendado": false}
+      ],
+      "consejo": "Siempre solicite número de folio o acuse de recibo de su solicitud"
+    }
+  ],
+  "plazos_legales": {
+    "respuesta_establecimiento": "30 días hábiles",
+    "extension_permitida": "Hasta 60 días hábiles en casos complejos",
+    "silencio_administrativo": "Transcurrido el plazo sin respuesta, puede presentar reclamo ante la APDP"
+  },
+  "documentos_soporte": [
+    "Copia de cédula de identidad del titular",
+    "Estado de cuenta reciente (para solicitudes de acceso/rectificación)",
+    "Certificado de titularidad de productos bancarios",
+    "En caso de portabilidad: solicitud escrita dirigida al nuevo establecimiento"
+  ],
+  "casos_especiales": {
+    "datos_salud_en_seguros": "Requiere consentimiento explícito del Art. 16 bis para acceder o modificar",
+    "perfil_riesgo_automatizado": "Puede oponerse (Art. 8) si no está conforme con el scoring",
+    "datos_biometricos": "Consentimiento explícito Art. 16 ter para firma digital o reconocimiento facial",
+    "menores_18_anos": "El representante legal ejerce los derechos en nombre del menor",
+    "tarjetas adicionales": "Solicitud afecta a titular principal y tarjetas adicionales registradas"
+  },
+  "consejos_importantes": [
+    "Guarde siempre copia de su solicitud y del acuse de recibo",
+    "Si necesita datos urgentes para una operación crítica (ej: hipoteca), indique claramente la urgencia",
+    "Los datos de historial crediticio son sensibles: puede solicitar máxima confidencialidad en el manejo",
+    "Si el banco no tiene canal digital, acuda presencialmente con su cédula",
+    "Ante negativa, pida siempre la fundamentación por escrito antes de escalar a la APDP",
+    "Si solicita portabilidad, el nuevo banco debe facilitar el proceso dentro de los 30 días hábiles"
+  ]
+}

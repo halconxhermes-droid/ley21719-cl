@@ -1,0 +1,92 @@
+{
+  "titulo": "Quiz: Conocimientos sobre Protección de Datos en el Sector Financiero",
+  "descripcion": "Evaluación formativa sobre la Ley 21.719 aplicada al sector financiero chileno. 7 preguntas de elección múltiple con fundamentación legal y casos reales de banca y fintech.",
+  "preguntas": [
+    {
+      "pregunta": "¿Puede un banco compartir tus datos de historial crediticio con una empresa de seguros sin consentimiento?",
+      "opciones": [
+        "Siempre que sea para ofrecerte un mejor seguro",
+        "Solo con tu consentimiento explícito firmado",
+        "Nunca, los datos crediticios son totalmente privados",
+        "Solo si tienes un seguro contratado con ese banco"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16 bis",
+      "explicacion": "El Art. 16 bis establece que el tratamiento de datos sensibles requiere consentimiento explícito. En el sector financiero, los datos de historial crediticio y salud (para seguros) son categorías especialmente protegidas. No pueden compartirse con terceros sin consentimiento por escrito y específico del titular."
+    },
+    {
+      "pregunta": "¿Cuál es el plazo máximo para notificar una brecha de seguridad en datos financieros?",
+      "opciones": [
+        "24 horas",
+        "72 horas",
+        "15 días hábiles",
+        "30 días hábiles"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 14 sexies",
+      "explicacion": "El Art. 14 sexies establece que el responsable debe notificar a la Agencia de Protección de Datos Personales (APDP) respecto a una brecha de seguridad en un plazo máximo de 72 horas desde que tuvo conocimiento del incidente. A su vez, debe informar a los titulares afectados sin causa indebida."
+    },
+    {
+      "pregunta": "¿Puede un cliente ejercer el derecho a la portabilidad de sus datos para cambiar de banco?",
+      "opciones": [
+        "No, los datos son propiedad exclusiva del banco",
+        "Sí, en formato digital estructurado (CSV, JSON) solicitando al banco facilitador",
+        "Solo parcial, solo los históricos de transacciones",
+        "Solo si el cliente paga una tarifa administrativa"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 9",
+      "explicacion": "El Art. 9 establece el Derecho a la Portabilidad: el titular puede solicitar y recibir una copia de sus datos personales en un formato electrónico estructurado, genérico y de uso común que permita ser operado por distintos sistemas. El banco debe entregarlos en 30 días hábiles contados desde la solicitud."
+    },
+    {
+      "pregunta": "¿En qué caso es OBLIGATORIO designar un Delegado de Protección de Datos (DPO) en una institución financiera?",
+      "opciones": [
+        "Siempre, para cualquier banco o institución financiera",
+        "Cuando el tratamiento implique monitoreo sistemático a gran escala de clientes",
+        "Solo para bancos extranjeros en Chile",
+        "Nunca, es opcional para el sector financiero"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 50",
+      "explicacion": "El Art. 50 establece la obligatoriedad de designar un DPO cuando el tratamiento de datos personales implique vigilancia sistemática o monitoreo a gran escala. Bancos con más de 50.000 clientes, tarjetas de crédito con base significativa y fintech con más de 100.000 usuarios deben tener DPO designado."
+    },
+    {
+      "pregunta": "¿Qué tipo de datos se consideran 'sensibles' en el sector financiero bajo la Ley 21.719?",
+      "opciones": [
+        "Solo RUT y número de cuenta bancaria",
+        "Datos de salud (al solicitar seguros), orientación sexual (beneficiarios), datos biométricos (firma digital, reconocimiento facial), origen étnico",
+        "Solo historiales de transacciones",
+        "Solo datos de ingresos y sueldo"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16",
+      "explicacion": "El Art. 16 define los datos sensibles como aquellos que refieren al origen étnico, afiliación política o sindical, convicciones ideológicas o religiosas, y datos de salud, entre otros. En el sector financiero, esto incluye: datos de salud para seguros de vida/salud, orientación sexual e identidad de género en beneficiarios, y datos biométricos para firma digital o acceso."
+    },
+    {
+      "pregunta": "¿Puede un banco utilizar tus datos para perfiles de riesgo y scoring crediticio sin tu conocimiento?",
+      "opciones": [
+        "Sí, es parte de los términos y condiciones estándar",
+        "No requiere consentimiento si son datos anónimos",
+        "Sí, pero debe ofrecer opción de oposición (Art. 8) y el cliente puede oponerse",
+        "No, requiere consentimiento explícito previo (Art. 16 bis)"
+      ],
+      "correcta": 2,
+      "articulo_referencia": "Art. 16 bis, Art. 8",
+      "explicacion": "El Art. 16 bis clasifica ciertos datos como sensibles y requiere consentimiento explícito para su tratamiento. Sin embargo, el Art. 8 establece el Derecho a Oposición: el cliente puede oponerse al tratamiento de sus datos para fines de marketing o perfilamiento, y el banco debe cesar el tratamiento u ofrecer alternativas compatibles con la ley."
+    },
+    {
+      "pregunta": "¿Cuál es la sanción máxima por violación de datos financieros bajo la Ley 21.719?",
+      "opciones": [
+        "100 UTM",
+        "500 UTM",
+        "1.000 UTM (gravisima infracción)",
+        "5.000 UTM"
+      ],
+      "correcta": 3,
+      "articulo_referencia": "Art. 35",
+      "explicacion": "El Art. 35 establece multas de 1 a 5.000 UTM para gravisimas infracciones. En el sector financiero, las violaciones de datos sensibles (historial crediticio, salud para seguros) pueden sancionarse en el rango de 500-1.000 UTM (~$25-50M CLP), pudiendo llegar a 5.000 UTM reincidentes o casos de daño grave. 1 UTM ≈ $33.289 CLP (2026)."
+    }
+  ],
+  "puntuacion_aprobacion": 70,
+  "retroalimentacion_final": "Felicidades. Has demostrado conocimientos básicos sobre la protección de datos financieros bajo la Ley 21.719. Revisa los artículos correspondientes si necesitas profundizar en algún concepto específico."
+}

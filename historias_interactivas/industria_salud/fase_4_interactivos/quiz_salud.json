@@ -1,0 +1,92 @@
+{
+  "titulo": "Quiz: Conocimientos sobre Protección de Datos en Salud",
+  "descripcion": "Evaluacion formativa sobre la Ley 21.719 aplicada al sector salud chileno. 7 preguntas de eleccion multiple con fundamento legal",
+  "preguntas": [
+    {
+      "pregunta": "¿Puede una clínica compartir tus datos de salud con una empresa de seguros sin tu consentimiento?",
+      "opciones": [
+        "Siempre que sea para mejorar tu perfil de riesgo",
+        "Solo con tu consentimiento explícito firmado",
+        "Nunca, los datos de salud son totalmente privados",
+        "Solo si tienes un seguro complementario"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16 bis",
+      "explicacion": "El Art. 16 bis establece que el tratamiento de datos de salud requiere consentimiento explícito, salvo excepciones legales específicas (alerta sanitaria, salvamento de vida, fines estadísticos con anonimización)."
+    },
+    {
+      "pregunta": "¿Cuál es el plazo máximo para notificar una brecha de seguridad en datos de salud?",
+      "opciones": [
+        "24 horas",
+        "72 horas",
+        "15 días hábiles",
+        "30 días hábiles"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 14 sexies",
+      "explicacion": "Segun Art. 14 sexies, la notificación de una brecha de seguridad debe realizarse en un plazo máximo de 72 horas desde que se tuvo conocimiento del incidente."
+    },
+    {
+      "pregunta": "¿En qué caso es OBLIGATORIO designar un Delegado de Protección de Datos (DPO) en el sector salud?",
+      "opciones": [
+        "Siempre, para cualquier clínica o hospital",
+        "Cuando el tratamiento implique monitoreo sistemático a gran escala de pacientes",
+        "Solo para hospitals públicos",
+        "Nunca, es opcional para el sector salud"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 50",
+      "explicacion": "Art. 50: Es obligatorio designar un DPO cuando el tratamiento implique vigilancia sistemática a gran escala de pacientes, lo cual es común en hospitales y clínicas."
+    },
+    {
+      "pregunta": "¿Qué tipo de datos se consideran 'sensibles' bajo la Ley 21.719 en el sector salud?",
+      "opciones": [
+        "Solo nombres y fechas de nacimiento",
+        "Datos de salud, perfil biológico, datos biométricos, información sobre vida sexual, orientación sexual e identidad de género",
+        "Solo historiales clínicos digitales",
+        "Solo datos de seguros médicos"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 16, Art. 16 bis",
+      "explicacion": "El Art. 16 y 16 bis definen datos sensibles como aquellos que refieren a la salud, perfil biológico humano, datos biométricos, y la información relativa a la vida sexual, orientación sexual e identidad de género de una persona natural."
+    },
+    {
+      "pregunta": "¿Puede un médico acceder a la ficha clínica de cualquier paciente sin autorización?",
+      "opciones": [
+        "Sí, si es su trabajo",
+        "Solo a pacientes a su cargo o en emergencia",
+        "No, debe tener base legal y respeto al Art. 16 bis",
+        "Solo si el paciente firmó un formulario genérico"
+      ],
+      "correcta": 2,
+      "articulo_referencia": "Art. 16 bis, Principio de menor privilegio",
+      "explicacion": "El Art. 16 bis establece condiciones para tratamiento de datos de salud. El principio de menor privilegio establece que solo los profesionales con relación asistencial directa deben acceder, y todo acceso debe registrarse en log de auditoría."
+    },
+    {
+      "pregunta": "¿Cuál es la sanción máxima por violación de datos sensibles en el sector salud?",
+      "opciones": [
+        "100 UTM",
+        "500 UTM",
+        "1.000 UTM (gravisima infracción)",
+        "5.000 UTM"
+      ],
+      "correcta": 2,
+      "articulo_referencia": "Art. 35",
+      "explicacion": "El Art. 35 establece multas de 1 a 5.000 UTM, siendo las infracciones gravisimas (como tratamiento de datos sensibles sin base legal) sancionables hasta por 1.000-5.000 UTM (~$67 millones - $335 millones CLP)."
+    },
+    {
+      "pregunta": "¿Puede un paciente ejercer su derecho de portabilidad para llevarse su ficha clínica completa a otro prestador?",
+      "opciones": [
+        "No, la ficha clínica es propiedad exclusiva del prestador de salud",
+        "Sí, en formato digital estructurado (FHIR/JSON) solicitando al prestador facilitador",
+        "Solo parcial, solo los resultados de laboratorio",
+        "Solo si el paciente paga una tarifa administrativa"
+      ],
+      "correcta": 1,
+      "articulo_referencia": "Art. 9",
+      "explicacion": "El Art. 9 establece el Derecho de Portabilidad: el titular puede solicitar y recibir una copia de sus datos personales en un formato electrónico estructurado, genérico y de uso común que permita ser operado por distintos sistemas. La clínica debe entregarlos en 30 días hábiles."
+    }
+  ],
+  "puntuacion_aprobacion": 70,
+  "retroalimentacion_final": "Has aprendido los conceptos fundamentales que todo paciente y profesional de salud debe conocer para ejercer y garantizar el cumplimiento de la Ley 21.719 en el sector salud."
+}

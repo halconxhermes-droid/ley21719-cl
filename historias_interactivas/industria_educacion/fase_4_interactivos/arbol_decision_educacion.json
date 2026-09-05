@@ -1,0 +1,62 @@
+{
+  "titulo": "Árbol de Decisión: Brecha de Seguridad en Datos Estudiantiles",
+  "descripcion": "Guía interactiva para directivos y apoderados ante una violación de datos escolares bajo Ley 21.719",
+  "nodo_raiz": {
+    "id": "raiz",
+    "pregunta": "Sus datos o los datos de sus hijos estudiantes fueron expuestos en una brecha de seguridad?",
+    "opciones": [
+      {
+        "texto": "Soy notificado por el establecimiento",
+        "rama": "rama_notificado"
+      },
+      {
+        "texto": "Sospecho que datos fueron comprometidos",
+        "rama": "rama_sospecha"
+      },
+      {
+        "texto": "Recibo publicidad educativa no solicitada",
+        "rama": "rama_publicidad"
+      }
+    ]
+  },
+  "ramas": {
+    "rama_notificado": {
+      "titulo": "Brecha Notificada por Establecimiento",
+      "pasos": [
+        {"paso": 1, "instruccion": "La establecimiento DEBE notificar a la APDP en 72h (Art. 14 sexies)", "accion": "Verificar recibo de notificación"},
+        {"paso": 2, "instruccion": "Ejercer Derecho Acceso (Art. 5) para conocer datos comprometidos", "accion": "Solicitar informe detallado"},
+        {"paso": 3, "instruccion": "Ejercer Derecho Oposición (Art. 8) para detener tratamientos", "accion": "Solicitar exclusión de campañas"},
+        {"paso": 4, "instruccion": "Ejercer Supresion (Art. 7) si datos son sensibles", "accion": "Solicitar eliminación de datos"},
+        {"paso": 5, "instruccion": "Denuncia ante APDP si medidas insuficientes", "accion": "Presentar denuncia formal"}
+      ]
+    },
+    "rama_sospecha": {
+      "titulo": "Sospecha de Brecha",
+      "pasos": [
+        {"paso": 1, "instruccion": "Solicitar acceso a datos (Art. 5) para verificarlos", "accion": "Presentar solicitud formal"},
+        {"paso": 2, "instruccion": "Revisar estados de cuenta y alertas escolares inusuales", "accion": "Verificar anomalias en calificaciones"},
+        {"paso": 3, "instruccion": "Notificar anomalia a establecimiento y APDP", "accion": "Denuncia por vulneración"}
+      ]
+    },
+    "rama_publicidad": {
+      "titulo": "Publicidad No Deseada",
+      "pasos": [
+        {"paso": 1, "instruccion": "Ejercer Oposición al tratamiento marketing (Art. 8)", "accion": "Exclusion de listas"},
+        {"paso": 2, "instruccion": "Verificar consentimiento en formularios de admisión", "accion": "Revisar autorización previa"},
+        {"paso": 3, "instruccion": "Reiterar solicitud de exclusión si persiste", "accion": "Nueva solicitud oposición"}
+      ]
+    }
+  },
+  "plazos_legales": {
+    "notificacion_establecimiento": "72 horas despues de detectar brecha",
+    "respuesta_solicitud": "30 dias habiles",
+    "denuncia_apdp": "Inmediato si no hay respuesta administrativa"
+  },
+  "consejos_urgentes": [
+    "Si son datos sensibles (salud), la brecha debe notificarse en 72h",
+    "No compartir credenciales de acceso a portales de alumnos",
+    "Solicitar certificacion de eliminacion al pedir supresion",
+    "Considerar cambiar de establecimiento si hay brechas reiteradas",
+    "Guardar siempre copia de calificaciones y expedientes"
+  ]
+}
