@@ -1,0 +1,196 @@
+{
+  "id": "quiz_retail",
+  "titulo": "Quiz Ley 21.719 - Sector Retail",
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿El historial de compras retail permite inferir datos sensibles bajo Ley 21.719?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, son solo datos comerciales",
+          "correcta": false,
+          "explicacion": "Permite inferir salud, religión, etc.",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, cuando se infieren datos sensibles",
+          "correcta": true,
+          "explicacion": "Art. 16 y 16 bis",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo con consentimiento explícito",
+          "correcta": false,
+          "explicacion": "La condición ya está en la ley",
+          "articulo_referenciado": "Art. 16"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Qué artículo obliga a designar DPO en retail con perfilado masivo?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Art. 50",
+          "correcta": true,
+          "explicacion": "Perfilado masivo requiere DPO",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "b",
+          "texto": "Art. 16",
+          "correcta": false,
+          "explicacion": "Define datos sensibles",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Art. 35",
+          "correcta": false,
+          "explicacion": "Sanciones",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "pregunta": "¿Plazo para notificar breach retail bajo Ley 21.719?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "24 horas",
+          "correcta": false,
+          "explicacion": "No aplica",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "b",
+          "texto": "72 horas",
+          "correcta": true,
+          "explicacion": "Plazo legal",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "c",
+          "texto": "7 días",
+          "correcta": false,
+          "explicacion": "Muy tarde",
+          "articulo_referenciado": "Art. 14 sexies"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Cuál es la multa grave en retail según Art. 35?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "5.000 UTM",
+          "correcta": false,
+          "explicacion": "Es la leve",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "b",
+          "texto": "10.000 UTM",
+          "correcta": true,
+          "explicacion": "Sanción grave máxima",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "c",
+          "texto": "20.000 UTM",
+          "correcta": false,
+          "explicacion": "Gravísima",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿Cuándo aplica atenuante por implementación rápida Art. 49?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Nunca",
+          "correcta": false,
+          "explicacion": "Sí aplica",
+          "articulo_referenciado": "Art. 49"
+        },
+        {
+          "letra": "b",
+          "texto": "Cuando se corrige en 90 días",
+          "correcta": true,
+          "explicacion": "Reducción 25%",
+          "articulo_referenciado": "Art. 49"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo en multas graves",
+          "correcta": false,
+          "explicacion": "Aplica en todas",
+          "articulo_referenciado": "Art. 49"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "pregunta": "¿Qué artículo define datos sensibles biométricos?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Art. 16",
+          "correcta": true,
+          "explicacion": "Datos sensibles incluye biométricos",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Art. 50",
+          "correcta": false,
+          "explicacion": "DPO",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "c",
+          "texto": "Art. 14 bis",
+          "correcta": false,
+          "explicacion": "Seguridad",
+          "articulo_referenciado": "Art. 14"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "pregunta": "¿EIPD es obligatoria para retail con perfilado masivo?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Sí, según Art. 15 ter",
+          "correcta": true,
+          "explicacion": "Tratamientos masivos requieren EIPD",
+          "articulo_referenciado": "Art. 15 ter"
+        },
+        {
+          "letra": "b",
+          "texto": "No, es opcional",
+          "correcta": false,
+          "explicacion": "Es obligatoria en estos casos",
+          "articulo_referenciado": "Art. 15 ter"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo para datos sensibles",
+          "correcta": false,
+          "explicacion": "También para perfilado masivo",
+          "articulo_referenciado": "Art. 15 ter"
+        }
+      ]
+    }
+  ],
+  "total": 7
+}

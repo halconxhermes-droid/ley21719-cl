@@ -1,0 +1,83 @@
+{
+  "id": "simulador_arco_retail",
+  "titulo": "Simulador Derechos ARCO - Cliente Retail",
+  "descripcion": "Simula el ejercicio de tus derechos ARCO sobre tus datos de compras en Supermercados del Sur",
+  "pasos": [
+    {
+      "id": "p1",
+      "titulo": "Solicitar Acceso al Historial",
+      "descripcion": "Deseas conocer qué datos de tus compras tiene Supermercados del Sur?",
+      "opciones": [
+        {
+          "texto": "Sí, descargar mi historial completo",
+          "siguiente": "p2",
+          "consecuencia_legal": "Art. 7 Ley 21.719",
+          "habilitada": true
+        },
+        {
+          "texto": "No, salir",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "titulo": "Verificar Identidad",
+      "descripcion": "Ingresa tu RUT para validar identidad",
+      "opciones": [
+        {
+          "texto": "Ingresar RUT",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.3 Ley 21.719 - Verificación",
+          "habilitada": true
+        },
+        {
+          "texto": "Cancelar",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "titulo": "Recibir Historial",
+      "descripcion": "Tu solicitud fue procesada. Historial incluye: 124 compras, 3 categorías de marketing activas",
+      "opciones": [
+        {
+          "texto": "Descargar CSV",
+          "siguiente": "p4",
+          "consecuencia_legal": "Art. 7.4",
+          "habilitada": true
+        },
+        {
+          "texto": "Cancelar marketing",
+          "siguiente": "p4",
+          "consecuencia_legal": "Art. 8 - Oposición",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "titulo": "Confirmar Acción",
+      "descripcion": "Tu acción fue registrada exitosamente",
+      "opciones": [
+        {
+          "texto": "Cerrar sesión",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        },
+        {
+          "texto": "Ver siguiente paso",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    }
+  ]
+}

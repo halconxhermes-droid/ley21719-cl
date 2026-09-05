@@ -1,0 +1,79 @@
+{
+  "id": "arbol_decision_retail",
+  "titulo": "Arbol Decisión Breach Retail",
+  "descripcion": "Gerente de Marketing ante breach de plataforma de fidelización",
+  "nodos": [
+    {
+      "id": "n1",
+      "situacion": "Breach expone 450.000 perfiles de clientes",
+      "decision": [
+        {
+          "opcion": "Notificar APDP inmediatamente",
+          "consecuencia": "Art. 14 sexies - 72h cumplido",
+          "siguiente": "n2",
+          "probabilidad": 0.85
+        },
+        {
+          "opcion": "Esperar investigación interna",
+          "consecuencia": "Riesgo multa Art. 35",
+          "siguiente": "n3",
+          "probabilidad": 0.7
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "situacion": "Notificación enviada",
+      "decision": [
+        {
+          "opcion": "Cifrar base de datos de inmediato",
+          "consecuencia": "Art. 14 quinquies cumplido",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opcion": "Solo actualizar contraseñas",
+          "consecuencia": "Art. 14 quinquies parcial",
+          "siguiente": "n4",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "situacion": "Investigación interna sin notificación",
+      "decision": [
+        {
+          "opcion": "Mantener en reserva 30 días",
+          "consecuencia": "Multa agravada Art. 35",
+          "siguiente": "fin",
+          "probabilidad": 0.9
+        },
+        {
+          "opcion": "Notificar tarde",
+          "consecuencia": "Atenuantes Art. 49 parciales",
+          "siguiente": "n4",
+          "probabilidad": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "situacion": "Notificación tardía",
+      "decision": [
+        {
+          "opcion": "Pagar multa y corregir",
+          "consecuencia": "Art. 35 + 49",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        },
+        {
+          "opcione": "Impugnar sanción",
+          "consecuencia": "Atenuantes procesales",
+          "siguiente": "fin",
+          "probabilidad": 0.5
+        }
+      ]
+    }
+  ]
+}
