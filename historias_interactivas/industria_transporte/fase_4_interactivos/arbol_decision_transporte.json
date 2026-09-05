@@ -1,0 +1,79 @@
+{
+  "id": "arbol_decision_transporte",
+  "titulo": "Arbol Decisión Breach Tracking",
+  "descripcion": "Gerente transporte ante breach de tracking de 80K pasajeros",
+  "nodos": [
+    {
+      "id": "n1",
+      "situacion": "Breach expone tracking GPS y datos de pago de 80K pasajeros",
+      "decision": [
+        {
+          "opcion": "Notificar APDP y pasajeros en 72h",
+          "consecuencia": "Art. 14 sexies cumplido",
+          "siguiente": "n2",
+          "probabilidad": 0.85
+        },
+        {
+          "opcion": "Investigar y notificar después",
+          "consecuencia": "Multa agravada",
+          "siguiente": "n3",
+          "probabilidad": 0.7
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "situacion": "Notificación completada",
+      "decision": [
+        {
+          "opcion": "Anonimizar tracking restante",
+          "consecuencia": "Art. 14 quinquies",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opcion": "Mantener tracking sin cambios",
+          "consecuencia": "Riesgo legal sigue",
+          "siguiente": "n4",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "situacion": "Investigación interna",
+      "decision": [
+        {
+          "opcion": "Cerrar sistema de tracking temporalmente",
+          "consecuencia": "Contención rápida",
+          "siguiente": "n4",
+          "probabilidad": 0.9
+        },
+        {
+          "opcion": "Mantener durante análisis",
+          "consecuencia": "Riesgo",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "situacion": "Contención aplicada",
+      "decision": [
+        {
+          "opcion": "Pagar multa y corregir",
+          "consecuencia": "Art. 35 + 49",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        },
+        {
+          "opcione": "Implementar anonimización retroactiva",
+          "consecuencia": "Atenuantes procesales",
+          "siguiente": "fin",
+          "probabilidad": 0.6
+        }
+      ]
+    }
+  ]
+}

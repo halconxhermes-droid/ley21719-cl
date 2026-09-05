@@ -1,0 +1,58 @@
+{
+  "id": "simulador_arco_transporte",
+  "titulo": "Simulador Derechos ARCO - Pasajero Transporte",
+  "descripcion": "Simula derechos ARCO sobre tus datos de viaje y tracking en TransRuta",
+  "pasos": [
+    {
+      "id": "p1",
+      "titulo": "Acceder a Datos de Viaje",
+      "descripcion": "Deseas conocer qué datos de tus viajes tiene TransRuta?",
+      "opciones": [
+        {
+          "texto": "Sí, descargar historial",
+          "siguiente": "p2",
+          "consecuencia_legal": "Art. 7 Ley 21.719"
+        },
+        {
+          "texto": "No, salir",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "titulo": "Verificar Identidad",
+      "descripcion": "Ingresa RUT y datos de contacto",
+      "opciones": [
+        {
+          "texto": "Verificar",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.3"
+        },
+        {
+          "texto": "Cancelar",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "titulo": "Recibir Historial",
+      "descripcion": "Tu historial: 47 viajes, 6 meses tracking GPS, 3 perfiles de ruta, datos de pago x5",
+      "opciones": [
+        {
+          "texto": "Descargar CSV",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 7.4"
+        },
+        {
+          "texto": "Oponerse al tracking",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 8 - Oposición"
+        }
+      ]
+    }
+  ]
+}
