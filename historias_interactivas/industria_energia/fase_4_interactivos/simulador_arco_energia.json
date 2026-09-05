@@ -1,0 +1,84 @@
+{
+  "id": "simulador_arco_energia",
+  "titulo": "Simulador Derechos ARCO - Cliente EnerSur",
+  "descripcion": "Simula el ejercicio de tus derechos ARCO sobre los datos de consumo de tu smart meter",
+  "pasos": [
+    {
+      "id": "p1",
+      "titulo": "Solicitar Acceso",
+      "descripcion": "¿Deseas conocer qué datos personales estamos tratando sobre ti?",
+      "opciones": [
+        {
+          "texto": "Sí, quiero ejercer mi derecho de acceso",
+          "siguiente": "p2",
+          "consecuencia_legal": "Art. 7 Ley 21.719 - Derecho de acceso",
+          "habilitada": true
+        },
+        {
+          "texto": "No, agradezco la información",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "titulo": "Confirmar Solicitud",
+      "descripcion": "Confirmas que quieres acceder a todo tu historial de consumo de los últimos 12 meses?",
+      "opciones": [
+        {
+          "texto": "Sí, acceder a todo mi historial",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.1 Ley 21.719",
+          "habilitada": true
+        },
+        {
+          "texto": "No, solo datos del último mes",
+          "siguiente": "p3",
+          "consecuencia_legal": "Art. 7.2 Ley 21.719 - Limitaciones",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "titulo": "Identificación",
+      "descripcion": "Ingresa tu RUT y correo registrado para verificar tu identidad",
+      "opciones": [
+        {
+          "texto": "Ingresar RUT y correo",
+          "siguiente": "p4",
+          "consecuencia_legal": "Art. 7.3 Ley 21.719 - Verificación de identidad",
+          "habilitada": true
+        },
+        {
+          "texto": "Cancelar solicitud",
+          "siguiente": "fin",
+          "consecuencia_legal": "Sin acción",
+          "habilitada": true
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "titulo": "Descargar Datos",
+      "descripcion": "Tu solicitud ha sido procesada. Aquí tienes un resumen de tus datos de consumo",
+      "opciones": [
+        {
+          "texto": "Descargar reporte CSV",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 7.4 Ley 21.719 - Entrega en formato",
+          "habilitada": true
+        },
+        {
+          "texto": "Solicitar formato distinto",
+          "siguiente": "fin",
+          "consecuencia_legal": "Art. 7.5 Ley 21.719 - Alternativas",
+          "habilitada": true
+        }
+      ]
+    }
+  ],
+  "terminologia": "Según Ley 21.719 Art. 7-11 (Chile)"
+}

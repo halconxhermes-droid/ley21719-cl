@@ -1,0 +1,196 @@
+{
+  "id": "quiz_energia",
+  "titulo": "Quiz Ley 21.719 - Sector Energía",
+  "preguntas": [
+    {
+      "id": "q1",
+      "pregunta": "¿Cuándo entró en vigencia plena la Ley 21.719 en Chile?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "13-12-2024",
+          "correcta": false,
+          "explicacion": "Es la fecha de publicación, no vigencia",
+          "articulo_referenciado": "Art. 1º"
+        },
+        {
+          "letra": "b",
+          "texto": "01-12-2026",
+          "correcta": true,
+          "explicacion": "Fecha de vigencia plena de la normativa",
+          "articulo_referenciado": "Art. 1º"
+        },
+        {
+          "letra": "c",
+          "texto": "01-01-2025",
+          "correcta": false,
+          "explicacion": "No corresponde",
+          "articulo_referenciado": "Art. 1º"
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "pregunta": "¿Perfil de consumo eléctrico califica como dato sensible bajo Ley 21.719?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "No, es datos públicos",
+          "correcta": false,
+          "explicacion": "El consumo revela hábitos y perfil biológico",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Sí, cuando permite inferir hábitos, presencia o salud",
+          "correcta": true,
+          "explicacion": "Art. 16 define datos sensibles",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "c",
+          "texto": "Solo si el usuario lo autoriza explícitamente",
+          "correcta": false,
+          "explicacion": "La condición ya está definida en la ley",
+          "articulo_referenciado": "Art. 16"
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "pregunta": "¿Qué artículo obliga a designar un DPO en empresas eléctricas con monitoreo masivo?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Art. 16",
+          "correcta": false,
+          "explicacion": "Define datos sensibles",
+          "articulo_referenciado": "Art. 16"
+        },
+        {
+          "letra": "b",
+          "texto": "Art. 50",
+          "correcta": true,
+          "explicacion": "DPO obligatorio para monitoreo masivo de datos sensibles",
+          "articulo_referenciado": "Art. 50"
+        },
+        {
+          "letra": "c",
+          "texto": "Art. 14 bis",
+          "correcta": false,
+          "explicacion": "Medidas de seguridad",
+          "articulo_referenciado": "Art. 14"
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "pregunta": "¿Cuál es el plazo para notificar una brecha de seguridad de datos según Ley 21.719?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "24 horas",
+          "correcta": false,
+          "explicacion": "No corresponde a la normativa",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "b",
+          "texto": "72 horas",
+          "correcta": true,
+          "explicacion": "Art. 14 sexies establece este plazo",
+          "articulo_referenciado": "Art. 14 sexies"
+        },
+        {
+          "letra": "c",
+          "texto": "5 días hábiles",
+          "correcta": false,
+          "explicacion": "No corresponde",
+          "articulo_referenciado": "Art. 14 sexies"
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "pregunta": "¿Qué sanción establece Art. 35 para una infracción leve?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "1.000 UTM",
+          "correcta": false,
+          "explicacion": "El doble de la sanción máxima",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "b",
+          "texto": "5.000 UTM",
+          "correcta": true,
+          "explicacion": "Sanción máxima para infracción leve",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "c",
+          "texto": "Sin sanción, solo advertencia",
+          "correcta": false,
+          "explicacion": "Siempre hay sanción",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "pregunta": "¿Cuándo aplican las atenuantes Art. 49 a la multa?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "Solo para reincidentes",
+          "correcta": false,
+          "explicacion": "Opuesto a lo que dicta la ley",
+          "articulo_referenciado": "Art. 49"
+        },
+        {
+          "letra": "b",
+          "texto": "Para primera infracción, colaboración espontánea e implementación rápida",
+          "correcta": true,
+          "explicacion": "Las tres atenuantes enumeradas en Art. 49",
+          "articulo_referenciado": "Art. 49"
+        },
+        {
+          "letra": "c",
+          "texto": "Nunca, las multas son fijas",
+          "correcta": false,
+          "explicacion": "Art. 49 existe precisamente para reducir multas",
+          "articulo_referenciado": "Art. 49"
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "pregunta": "¿Cuál es la multa gravísima según Art. 35?",
+      "opciones": [
+        {
+          "letra": "a",
+          "texto": "5.000 UTM",
+          "correcta": false,
+          "explicacion": "Es la leve",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "b",
+          "texto": "10.000 UTM",
+          "correcta": false,
+          "explicacion": "Es la grave",
+          "articulo_referenciado": "Art. 35"
+        },
+        {
+          "letra": "c",
+          "texto": "20.000 UTM",
+          "correcta": true,
+          "explicacion": "Sanción máxima para gravísima infracción",
+          "articulo_referenciado": "Art. 35"
+        }
+      ]
+    }
+  ],
+  "total": 7
+}

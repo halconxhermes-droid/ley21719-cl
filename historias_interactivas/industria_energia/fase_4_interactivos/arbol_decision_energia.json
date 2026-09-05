@@ -1,0 +1,98 @@
+{
+  "id": "arbol_decision_energia",
+  "titulo": "Arbol Decisión Brecha Smart Meter",
+  "descripcion": "Funcionario de EnerSur ante descubrimiento de brecha de seguridad",
+  "nodos": [
+    {
+      "id": "n1",
+      "situacion": "Descubrimiento de que 80.000 perfiles de consumo fueron expuestos por consultor subcontratado",
+      "decision": [
+        {
+          "opcion": "Notificar inmediatamente a APDP y afectados",
+          "consecuencia": "Art. 14 sexies - Notificación 72h",
+          "siguiente": "n2",
+          "probabilidad": 0.9
+        },
+        {
+          "opcion": "Evaluar internamente primero, notificar después",
+          "consecuencia": "Riesgo: multa Art. 35, Art. 35 - Grave",
+          "siguiente": "n3",
+          "probabilidad": 0.7
+        }
+      ]
+    },
+    {
+      "id": "n2",
+      "situacion": "Notificación realizada a APDY y comienza flujo de afectados",
+      "decision": [
+        {
+          "opcion": "Implementar cifrado inmediato en todos los smart meters",
+          "consecuencia": "Art. 14 quinquies - Medidas de seguridad",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opcion": "Actualizar solo el lote afectado",
+          "consecuencia": "Art. 14 quinquies - Parcial",
+          "siguiente": "n4",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n3",
+      "situacion": "Internalización del caso sin notificación oficial",
+      "decision": [
+        {
+          "opcion": "Filtración conocida becomes pública",
+          "consecuencia": "Art. 35 - Grave (10.000 UTM)",
+          "siguiente": "fin",
+          "probabilidad": 0.95
+        },
+        {
+          "opcion": "Control de daños interno",
+          "consecuencia": "Art. 49 - Atenuantes parciales",
+          "siguiente": "n5",
+          "probabilidad": 0.6
+        }
+      ]
+    },
+    {
+      "id": "n4",
+      "situacion": "Notificación tardía a APDP",
+      "decision": [
+        {
+          "opcion": "Pagar multa y corregir",
+          "consecuencia": "Art. 35 + Art. 49",
+          "siguiente": "fin",
+          "probabilidad": 0.7
+        },
+        {
+          "opcione": "Impugnar la multa",
+          "consecuencia": "Art. 49 - Atenuantes",
+          "siguiente": "fin",
+          "probabilidad": 0.5
+        }
+      ]
+    },
+    {
+      "id": "n5",
+      "situacion": "Acciones correctivas internas sin notificación",
+      "decision": [
+        {
+          "opcion": "Revisar todos los perfiles de consumo",
+          "consecuencia": "Implementación rápida -25% Art. 49",
+          "siguiente": "fin",
+          "probabilidad": 0.8
+        },
+        {
+          "opción": "Dejar status quo",
+          "consecuencia": "Sanciones acumulativas",
+          "siguiente": "fin",
+          "probabilidad": 0.9
+        }
+      ]
+    }
+  ],
+  "referencia_legal": "Ley 21.719 Art. 14 quinquies, Art. 14 sexies, Art. 35, Art. 49"
+}
