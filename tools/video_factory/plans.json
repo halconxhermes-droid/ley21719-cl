@@ -1,0 +1,215 @@
+{
+  "ciudadano": {
+    "titulo": "TUS DERECHOS BAJO LA LEY 21.719",
+    "subtitulo": "Lo que la ley garantiza a los titulares de datos",
+    "escenas": [
+      [
+        "01_hook",
+        8.0,
+        "¿Sabías que tienes derechos específicos sobre tus datos personales? La Ley 21.719 te los garantiza. Y a partir del primero de diciembre de 2026, la Agencia de Protección de Datos Personales va a hacerlos valer."
+      ],
+      [
+        "02_contexto",
+        12.0,
+        "Antes de la Ley 21.719, la Ley 19.628 era tibia. No había agencia, no había fiscalización, no había sanciones reales. Ahora eso cambió. Tú tienes el poder."
+      ],
+      [
+        "03_derechos_arco",
+        15.0,
+        "Tus derechos ARCO+. Acceso, rectificación, cancelación, oposición, y dos más: portabilidad y bloqueo. Son seis derechos que ninguna empresa puede negarte."
+      ],
+      [
+        "04_acceso",
+        18.0,
+        "Primero: acceso. Puedes pedir una copia de TODOS tus datos a cualquier empresa que los tenga. Gratuito, una vez al año como mínimo. Plazo: 30 días corridos."
+      ],
+      [
+        "05_rectificacion",
+        18.0,
+        "Segundo: rectificación. Si tus datos son incorrectos o están desactualizados, puedes exigir que los corrijan. La empresa tiene plazo legal para responder."
+      ],
+      [
+        "06_cancelacion",
+        18.0,
+        "Tercero: cancelación. El famoso derecho al olvido. Puedes pedir que eliminen tus datos. Con excepciones: obligaciones legales, contratos vigentes, interés público."
+      ],
+      [
+        "07_portabilidad",
+        22.0,
+        "Cuarto y quinto: portabilidad y bloqueo. Tus datos en formato estructurado, legible por máquina, para llevártelos a otro servicio. Y bloqueo temporal cuando hay disputa."
+      ],
+      [
+        "08_menores",
+        22.0,
+        "Si tienes hijos menores de edad, esta ley te protege especialmente. El consentimiento para tratar datos de menores debe ser verificable, y el interés superior del menor siempre prevalece."
+      ],
+      [
+        "09_datos_sensibles",
+        18.0,
+        "Datos sensibles: salud, orientación sexual, religión, opinión política, datos biométricos. Requieren consentimiento explícito y por escrito. No se pueden tratar sin tu autorización clara."
+      ],
+      [
+        "10_caso_correo",
+        35.0,
+        "Caso real. Una empresa te envía correos publicitarios sin tu consentimiento. ¿Qué hacer? Primero, solicita el cese por escrito. Segundo, si siguen, presenta reclamación ante la Agencia. Tercero, espera el plazo legal de respuesta."
+      ],
+      [
+        "11_caso_rechazo",
+        30.0,
+        "Otro caso. Una empresa se niega a entregarte tus datos. ¿Opciones? Primera, reitera tu solicitud por escrito certificado. Segunda, presenta reclamación ante la Agencia con tu solicitud rechazada. La Agencia puede multar."
+      ],
+      [
+        "12_agencia",
+        20.0,
+        "Tu aliado: la Agencia de Protección de Datos Personales. Órgano técnico, independiente. Puedes presentar reclamaciones, denuncias, y solicitar medidas cautelares si hay riesgo."
+      ],
+      [
+        "13_cierre",
+        12.0,
+        "Tus datos son tuyos. Conoce tus derechos. Ejerce tus derechos. Y si no te respetan, la Agencia está para hacerte escuchar. Te vemos en el siguiente módulo."
+      ]
+    ]
+  },
+  "desarrollador": {
+    "titulo": "IMPLEMENTACIÓN TÉCNICA DE LA LEY 21.719",
+    "subtitulo": "Para desarrolladores, ingenieros y arquitectos de software",
+    "escenas": [
+      [
+        "01_hook",
+        8.0,
+        "Eres desarrollador. Tu código procesa datos personales. ¿Está preparado para la Ley 21.719? A partir del primero de diciembre de 2026, la fiscalización es real."
+      ],
+      [
+        "02_contexto",
+        12.0,
+        "Esta ley no es opcional. Es código que debes escribir. Diseño de seguridad, modelos de datos, derechos del usuario, todo cambia. Vamos a los detalles técnicos."
+      ],
+      [
+        "03_privacidad_design",
+        15.0,
+        "Principio uno: privacidad desde el diseño. No agregues seguridad al final. Cada nueva funcionalidad debe considerar protección de datos desde el primer commit."
+      ],
+      [
+        "04_securidades",
+        18.0,
+        "Modelo de seguridad según el Artículo 14 quinquies. Cifrado en tránsito y en reposo. Logs de acceso inmutables. Control de acceso por rol. Auditoría continua."
+      ],
+      [
+        "05_datos_sensibles",
+        18.0,
+        "Datos sensibles: biometría, salud, financieros. Requieren cifrado adicional, separación lógica, acceso just in time. Artículo 16 ter. Sin esto, multa directa."
+      ],
+      [
+        "06_consentimiento",
+        22.0,
+        "Implementa consentimiento granular. El usuario debe poder activar o desactivar cada tipo de tratamiento por separado. No más consentimientos 'todo o nada'."
+      ],
+      [
+        "07_arco_endpoints",
+        22.0,
+        "Necesitas endpoints para derechos ARCO+. GET para portabilidad. DELETE con verificación de excepciones. PATCH para rectificar. Con autenticación robusta."
+      ],
+      [
+        "08_registro_operaciones",
+        18.0,
+        "Cada operación sobre datos personales debe quedar registrada. Quién, qué, cuándo, por qué. Logs inmutables, firmados criptográficamente, conservados por años."
+      ],
+      [
+        "09_brechas",
+        18.0,
+        "Plan de respuesta a brechas. Detección, contención, evaluación, notificación. Si hay riesgo para titulares, notificación sin dilaciones a la Agencia. A todos los afectados."
+      ],
+      [
+        "10_eipd",
+        35.0,
+        "Evaluación de impacto obligatoria para tratamientos de alto riesgo. ¿Qué datos? ¿Qué riesgo? ¿Qué mitigaciones? Documenta la decisión antes de escribir código."
+      ],
+      [
+        "11_arquitectura",
+        30.0,
+        "Patrón de arquitectura recomendado. Capa de identidad, capa de consentimiento, capa de datos personales, capa de auditoría, capa de derechos del usuario. Cada capa con su responsabilidad clara."
+      ],
+      [
+        "12_checklist_tecnico",
+        20.0,
+        "Tu checklist de código. Cifrado en reposo. Cifrado en tránsito. Logs firmados. Endpoints ARCO+. Consentimiento granular. Mecanismo de notificación de brechas. Plan de portabilidad."
+      ],
+      [
+        "13_cierre",
+        12.0,
+        "El código que escribes hoy determina si tu empresa cumple mañana. Privacidad desde el diseño. Te vemos en el siguiente módulo."
+      ]
+    ]
+  },
+  "institucion": {
+    "titulo": "LEY 21.719 PARA INSTITUCIONES PÚBLICAS",
+    "subtitulo": "Sector público, gobierno central, municipalidades",
+    "escenas": [
+      [
+        "01_hook",
+        8.0,
+        "¿Tu institución pública está preparada para la Ley 21.719? El sector público tiene obligaciones especiales que el sector privado no tiene."
+      ],
+      [
+        "02_contexto",
+        12.0,
+        "La Ley 21.719 aplica a TODOS los responsables: empresas, institucioneses públicas, organismos del Estado. Las municipalidades, los ministerios, las universidades públicas. Todos."
+      ],
+      [
+        "03_marco_juridico",
+        15.0,
+        "Marco jurídico aplicable. Además de la Ley 21.719, el sector público debe cumplir la Ley 18.575 de Bases Generales de la Administración del Estado."
+      ],
+      [
+        "04_responsable",
+        18.0,
+        "Concepto clave: el responsable del tratamiento. En el sector público, es la autoridad superior del organismo. No es un empleado. Es el jefe de servicio, el alcalde, el rector."
+      ],
+      [
+        "05_obligaciones",
+        18.0,
+        "Obligaciones especiales. Designar DPO obligatorio para instituciones con alto volumen de datos. Registro de operaciones obligatorio. Informes periódicos a la Agencia."
+      ],
+      [
+        "06_periodo_transitorio",
+        22.0,
+        "Período transitorio. Las instituciones tienen hasta el primero de diciembre de 2026 para adecuarse completamente. Algunas obligaciones son inmediatas."
+      ],
+      [
+        "07_datos_sensibles",
+        22.0,
+        "Datos sensibles en el sector público. Salud, seguridad social, antecedentes penales. Reglas especiales: autorización legal específica, propósito claro, plazo de conservación definido."
+      ],
+      [
+        "08_transferencia_publica",
+        18.0,
+        "Transferencias entre organismos públicos. Permiten coordinación pero requieren bases legales específicas. No es lo mismo que el sector privado."
+      ],
+      [
+        "09_fiscalizacion",
+        18.0,
+        "Fiscalización y control interno. La Agencia fiscaliza. Pero también la Contraloría General de la República, a través de auditorías regulares."
+      ],
+      [
+        "10_caso_municipio",
+        35.0,
+        "Caso real. Un municipio mantiene registros de beneficiarios de programas sociales de hace 20 años. ¿Qué hacer? Primero, identificar qué datos son de personas ya no vivas. Segundo, eliminar registros con consentimiento caduco. Tercero, documentar el proceso."
+      ],
+      [
+        "11_caso_universidad",
+        30.0,
+        "Otro caso. Una universidad pública tiene registros de estudiantes que se graduaron hace años. ¿Opciones? Primera, evaluar si hay base legal para conservarlos. Segunda, anonimizar para fines estadísticos. Tercera, eliminar si no hay base legal."
+      ],
+      [
+        "12_recomendaciones",
+        20.0,
+        "Recomendaciones prácticas. Designa un DPO con dedicación exclusiva. Crea un comité de protección de datos. Establece canales directos con la Agencia. Documenta todo. Forma a tu equipo."
+      ],
+      [
+        "13_cierre",
+        12.0,
+        "El sector público debe liderar con el ejemplo. La Ley 21.719 es también una oportunidad para modernizar la gestión pública. Te vemos en el siguiente módulo."
+      ]
+    ]
+  }
+}
